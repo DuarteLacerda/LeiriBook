@@ -3,7 +3,10 @@
 @section('title', 'LeiriBook-Evento')
 
 @section('styles')
-<script src="{{ asset('css/danielcochico_evento.css') }}"></script>
+<link src="{{ asset('css/danielcochico_evento.css') }}">
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/css/themes/splide-skyblue.min.css" />
+
 @endsection
 
 @section('hero')
@@ -23,9 +26,7 @@
     </div>
 
   </section><!-- End Hero -->
-@endsection
 
-@section('main')
  <!-- ======= Event Section ======= -->
 
  <div id="caminho">
@@ -46,16 +47,16 @@
           <div class="splide__track">
             <ul class="splide__list">
               <li class="splide__slide">
-                <img src="img/danielcochico/camoes.jpg" alt="" />
+                <img src="images/danielcochico/camoes.jpg" alt="" />
               </li>
               <li class="splide__slide">
-                <img src="img/danielcochico/camoes2.jpg" alt="" />
+                <img src="images/danielcochico/camoes2.jpg" alt="" />
               </li>
               <li class="splide__slide">
-                <img src="img/danielcochico/camoes3.jpg" alt="" />
+                <img src="images/danielcochico/camoes3.jpg" alt="" />
               </li>
               <li class="splide__slide">
-                <img src="img/danielcochico/camoes.jpg" alt="" />
+                <img src="images/danielcochico/camoes.jpg" alt="" />
               </li>
             </ul>
           </div>
@@ -63,16 +64,16 @@
 
         <ul id="thumbnails" class="thumbnails">
           <li class="thumbnail">
-            <img src="img/danielcochico/camoes.jpg" alt="" />
+            <img src="images/danielcochico/camoes.jpg" alt="" />
           </li>
           <li class="thumbnail">
-            <img src="img/danielcochico/camoes2.jpg" alt="" />
+            <img src="images/danielcochico/camoes2.jpg" alt="" />
           </li>
           <li class="thumbnail">
-            <img src="img/danielcochico/camoes3.jpg" alt="" />
+            <img src="images/danielcochico/camoes3.jpg" alt="" />
           </li>
           <li class="thumbnail">
-            <img src="img/danielcochico/camoes.jpg" alt="" />
+            <img src="images/danielcochico/camoes.jpg" alt="" />
           </li>
         </ul>
 
@@ -104,9 +105,9 @@
             </tr>
             <tr class="text-center">
               <td>
-                <img id="img_redesocial" src="img/danielcochico/facebook.png" alt="">
-                <img id="img_redesocial" src="img/danielcochico/instagram.png" alt="">
-                <img id="img_redesocial" src="img/danielcochico/twitter.png" alt="">
+                <img id="img_redesocial" src="images/danielcochico/facebook.png" alt="">
+                <img id="img_redesocial" src="images/danielcochico/instagram.png" alt="">
+                <img id="img_redesocial" src="images/danielcochico/twitter.png" alt="">
               </td>
             </tr>
           </tbody>
@@ -136,6 +137,8 @@
 
    @section('scripts')
    <script src="{{ asset('js/danielcochico_evento.js') }}"></script>
+   <script type="text/javascript"
+   src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/js/splide.min.js"></script>
    @endsection
 
 @endsection
