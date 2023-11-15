@@ -36,11 +36,16 @@
 }
 
 .form-group input[type="submit"] {
-    background-color: #4caf50;
+    background-color: #0db6cc;
     color: #fff;
     cursor: pointer;
 }
 
 .form-group input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: rgb(41, 45, 50);
+}
+#location{
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
