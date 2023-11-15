@@ -12,4 +12,9 @@ class PageController extends Controller
     public function politica_privacidade(){
         return view("politica_privacidade");
     }
+
+    public function termos_e_condicoes()
+    {
+        return view("termos_e_condicoes");
+    }
 }
