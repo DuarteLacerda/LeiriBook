@@ -9,11 +9,12 @@
             </div>
             <div class="nave">
                 <ul>
-                    <li><a href="#"><img src="images/logo-text.svg" alt="logotipo" width="140px"></a></li>
+                    <li><a href="#"><img src="images/logo/SVG/logo-ext.svg" alt="logotipo" width="140px"></a>
+                    </li>
                     <li><a href="#">Sobre</a></li>
                     <li><a href="#">Bilioteca Virtual</a></li>
                     <li><a href="#">Eventos</a></li>
-                    <li><a href="{{route ('contactos')}}">Contactos</a></li>
+                    <li><a href="{{ route('contactos') }}">Contactos</a></li>
                 </ul>
             </div>
             <div class="logo">

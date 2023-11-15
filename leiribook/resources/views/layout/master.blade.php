@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="favicon" href="images/logo.ico" type="image/x-icon">
+    <link rel="icon" href="images/logo/logo.ico" type="image/x-icon">
     @yield('styles')
 </head>
 
