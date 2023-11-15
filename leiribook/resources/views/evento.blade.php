@@ -37,99 +37,101 @@
  <h1 id="titulo">Semana do Camões</h1>
 
  <div class="container custom-container">
-   <div class="row">
-     <div class="col-lg-9 col-sm-12 text-center">
+    <div class="row">
+      <div class="col-lg-9 col-sm-12 text-center">
 
 
 
-       <section id="slider" class="splide" aria-label="Galeria">
-         <div class="splide__track">
-           <ul class="splide__list">
-             <li class="splide__slide">
-               <img src="img/camoes.jpg" alt="" />
-             </li>
-             <li class="splide__slide">
-               <img src="img/camoes2.jpg" alt="" />
-             </li>
-             <li class="splide__slide">
-               <img src="img/camoes3.jpg" alt="" />
-             </li>
-             <li class="splide__slide">
-               <img src="img/camoes.jpg" alt="" />
-             </li>
-           </ul>
-         </div>
-       </section>
+        <section id="slider" class="splide" >
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img src="img/camoes.jpg" alt="" />
+              </li>
+              <li class="splide__slide">
+                <img src="img/camoes2.jpg" alt="" />
+              </li>
+              <li class="splide__slide">
+                <img src="img/camoes3.jpg" alt="" />
+              </li>
+              <li class="splide__slide">
+                <img src="img/camoes.jpg" alt="" />
+              </li>
+            </ul>
+          </div>
+        </section>
 
-       <ul id="thumbnails" class="thumbnails">
-         <li class="thumbnail">
-           <img src="img/camoes.jpg" alt="" />
-         </li>
-         <li class="thumbnail">
-           <img src="img/camoes2.jpg" alt="" />
-         </li>
-         <li class="thumbnail">
-           <img src="img/camoes3.jpg" alt="" />
-         </li>
-         <li class="thumbnail">
-           <img src="img/camoes.jpg" alt="" />
-         </li>
-       </ul>
+        <ul id="thumbnails" class="thumbnails">
+          <li class="thumbnail">
+            <img src="img/camoes.jpg" alt="" />
+          </li>
+          <li class="thumbnail">
+            <img src="img/camoes2.jpg" alt="" />
+          </li>
+          <li class="thumbnail">
+            <img src="img/camoes3.jpg" alt="" />
+          </li>
+          <li class="thumbnail">
+            <img src="img/camoes.jpg" alt="" />
+          </li>
+        </ul>
 
 
-     </div>
-     <div class="col-lg-3 col-sm-12" id="labels">
-       <table class="table table-borderless text-start">
-         <tbody>
-           <tr class="table-active">
-             <td>Localidade</td>
-           </tr>
-           <tr>
-             <td>Leiria, Rua de Leiria, 2400-181</td>
-           </tr>
-           <tr class="table-active">
-             <td>Horário</td>
-           </tr>
-           <tr>
-             <td>01/12/2023 - 31/12/2023</td>
-           </tr>
-           <tr>
-             <td>10:00 - 16:30</td>
-           </tr>
-           <tr class="table-active">
-             <td>Contactos</td>
-           </tr>
-           <tr>
-             <td>+(351) 912 732 123</td>
-           </tr>
-           <tr class="text-center">
-             <td>
-               <img id="img_redesocial" src="img/facebook.png" alt="">
-               <img id="img_redesocial" src="img/instagram.png" alt="">
-               <img id="img_redesocial" src="img/twitter.png" alt="">
-             </td>
-           </tr>
-         </tbody>
-       </table>
-     </div>
-   </div>
+      </div>
+      <div class="col-lg-3 col-sm-12" id="labels">
+        <table class="table table-borderless text-start">
+          <tbody>
+            <tr class="table-active">
+              <td>Localidade</td>
+            </tr>
+            <tr>
+              <td>Leiria, Rua de Leiria, 2400-181</td>
+            </tr>
+            <tr class="table-active">
+              <td>Horário</td>
+            </tr>
+            <tr>
+              <td>01/12/2023 - 31/12/2023</td>
+            </tr>
+            <tr>
+              <td>10:00 - 16:30</td>
+            </tr>
+            <tr class="table-active">
+              <td>Contactos</td>
+            </tr>
+            <tr>
+              <td>+(351) 912 732 123</td>
+            </tr>
+            <tr class="text-center">
+              <td>
+                <img id="img_redesocial" src="img/facebook.png" alt="">
+                <img id="img_redesocial" src="img/instagram.png" alt="">
+                <img id="img_redesocial" src="img/twitter.png" alt="">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-   <h2 id="descricao">Descrição</h2>
+    <h2 id="descricao">Descrição</h2>
 
-   <div class="col-md-12">
-     <div class="form-group">
-       <div id="texto">
-         Nesta semana, o livro principal vai ser "Os Lusíadas" de Luís de Camões,
-         lançado em 1572 e o incentivo vai ser para ler este livro para depois
-         discutirmos de forma ordenada para tirar uma boa conclusão sobre o mesmo
-         e para adquirir uma boa quantidade de conhecimento
-       </div>
-     </div>
-   </div>
-   <a href="evento.html"><input id="botao_evento" class="btn btn-dark btn-block fa-lg gradient-custom-2 mb-3"
-       value="Voltar aos Eventos"></a>
+    <div class="col-md-12">
+      <div class="form-group">
+        <div id="texto">
+          Nesta semana, o livro principal vai ser "Os Lusíadas" de Luís de Camões,
+          lançado em 1572 e o incentivo vai ser para ler este livro para depois
+          discutirmos de forma ordenada para tirar uma boa conclusão sobre o mesmo
+          e para adquirir uma boa quantidade de conhecimento
+        </div>
+      </div>
+    </div>
+      <a href="#">
+          <input id="botao_evento" class="btn btn-dark btn-block fa-lg gradient-custom-2 mb-3" value="Voltar aos Eventos">
+      </a>
+  </div>
 
- </div>
+  <hr>
    </section><!-- End Cliens Section -->
 
    @section('scripts')
