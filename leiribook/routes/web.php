@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/contactos',[PageController::class,'contactos'])->name('contactos');
+Route::get('/politica_privacidade',[PageController::class,'politica_privacidade'])->name('politica_privacidade');
