@@ -41,7 +41,7 @@
 
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                <img src="images/logo.svg" alt="logotipo" width="100px" style="opacity: 0.75;">
+                <img src="images/logo/SVG/logo.svg" alt="logotipo" width="100px" style="opacity: 0.75;">
             </div>
             <!--Grid column-->
 
