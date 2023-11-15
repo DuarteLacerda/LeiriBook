@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Eras Demi ITC";
+    src: url(../fonts/eras-demi-itc/ERASDEMI.TTF);
+    font-weight: 600;
+    font-style: normal;
+}
+
+footer {
+    font-family: "Eras Demi ITC";
+}
