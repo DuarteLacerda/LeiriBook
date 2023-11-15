@@ -9,18 +9,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Eras Demi ITC";
 }
 
 .container {
     max-width: 1050px;
     width: 90%;
     margin: auto;
+    z-index: 1;
 }
 
 .navbar {
     width: 100%;
     box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+    font-family: "Eras Demi ITC";
 }
 
 .nav-container {
@@ -115,7 +116,7 @@
 
 .navbar .menu-items {
     padding-top: 120px;
-    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.747);
     height: 100vh;
     width: 100%;
     transform: translate(-150%);
@@ -125,6 +126,7 @@
     padding-left: 50px;
     transition: transform 0.5s ease-in-out;
     text-align: center;
+    background-color: #fff;
 }
 
 .navbar .menu-items li {
