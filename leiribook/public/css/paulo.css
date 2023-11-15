@@ -1,0 +1,16 @@
+#tc-section {
+    width: 60svw;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.tc-title {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+h2{
+    font-size: 1.8rem;
+    margin-top: 2.5rem;
+}
