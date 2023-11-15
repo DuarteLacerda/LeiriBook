@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function contactos(){
+    public function contactos()
+    {
         return view("contactos");
     }
-    public function politica_privacidade(){
+    public function politica_privacidade()
+    {
         return view("politica_privacidade");
     }
 
@@ -22,9 +24,14 @@ class PageController extends Controller
     {
         return view("evento");
     }
+
     public function eventos()
     {
         return view("eventos");
     }
 
+    public function faqs()
+    {
+        return view("faqs");
+    }
 }

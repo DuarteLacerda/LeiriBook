@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'Your Default Title')</title>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="icon" href="images/logo/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+    <link rel="icon" href="{{ asset('images/logo/logo.ico') }}" type="image/x-icon">
     @yield('styles')
 </head>
 
@@ -26,13 +26,13 @@
         @include('layout.parcial.footer') <!-- Include your footer here -->
     </footer>
     <!-- Include your scripts, such as JavaScript libraries, at the end of the body -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/all.min.js"></script>
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/smoothscroll.min.js"></script>
-    <script src="js/owl.carousel.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/navbar.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/all.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ asset('js/smoothscroll.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/navbar.js') }}"></script>
     @yield('scripts')
 </body>
 

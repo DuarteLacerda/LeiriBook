@@ -9,7 +9,8 @@
             </div>
             <div class="nave">
                 <ul>
-                    <li><a href="#"><img src="images/logo/SVG/logo-ext.svg" alt="logotipo" width="140px"></a>
+                    <li><a href="/"><img src="{{ asset('images/logo/SVG/logo-ext.svg') }}" alt="logotipo"
+                                width="140px"></a>
                     </li>
                     <li><a href="#">Sobre</a></li>
                     <li><a href="#">Bilioteca Virtual</a></li>
@@ -28,11 +29,11 @@
                         class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <div class="menu-items">
-                <li><a href="#">Inicio</a></li>
+                <li><a href="/">Inicio</a></li>
                 <li><a href="#">Sobre</a></li>
                 <li><a href="#">Bilioteca Virtual</a></li>
                 <li><a href="#">Eventos</a></li>
-                <li><a href="#">Contactos</a></li>
+                <li><a href="{{ route('contactos') }}">Contactos</a></li>
                 </a></li>
             </div>
         </div>
