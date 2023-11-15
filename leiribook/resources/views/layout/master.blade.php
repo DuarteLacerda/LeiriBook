@@ -8,13 +8,13 @@
 </head>
 <body>
     <header>
-        @include('nav') <!-- Include your navigation here -->
+        @include('layout.parcial.nav') <!-- Include your navigation here -->
     </header>
     <main>
         @yield('content')
     </main>
     <footer>
-        @include('footer') <!-- Include your footer here -->
+        @include('layout.parcial.footer') <!-- Include your footer here -->
     </footer>
     <!-- Include your scripts, such as JavaScript libraries, at the end of the body -->
     @yield('scripts')
