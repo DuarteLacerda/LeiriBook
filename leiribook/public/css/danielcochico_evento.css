@@ -1,19 +1,21 @@
+/*
+    nav{
+        margin-bottom: 50px;
+    }
+
+    #logonav {
+        height: 50px;
+        width: 50px;
+        margin-right: 10px;
+    }
+
+    #logonav:hover {
+        cursor: pointer;
+    }
+*/
+
 body {
     text-align: center;
-}
-
-nav{
-    margin-bottom: 50px;
-}
-
-#logonav {
-    height: 50px;
-    width: 50px;
-    margin-right: 10px;
-}
-
-#logonav:hover {
-    cursor: pointer;
 }
 
 #caminho{
@@ -45,6 +47,7 @@ nav{
 
 .splide {
     margin: 0 auto;
+    z-index: 0;
   }
 
   .thumbnails {
@@ -132,6 +135,11 @@ h2::after {
     margin-top: 20px;
     font-size: 14pt;
 }
+
+#botao_evento{
+    user-select: none;
+}
+
 #copyright{
     background-color: #d6d6d6;
 }
