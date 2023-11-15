@@ -9,7 +9,7 @@ href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/css/themes/splide
 
 @endsection
 
-@section('hero')
+@section('content')
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="inner-page d-flex align-items-center">
 
