@@ -2,6 +2,9 @@
 
 @section('title', 'LeiriBook-Evento')
 
+@section('styles')
+<script src="{{ asset('css/danielcochico_evento.css') }}"></script>
+@endsection
 
 @section('hero')
   <!-- ======= Hero Section ======= -->
@@ -24,6 +27,13 @@
 
 @section('main')
  <!-- ======= Event Section ======= -->
+
+ <div id="caminho">
+    <a id="caminho_links" href="">Página Principal</a> >
+    <a id="caminho_links" href="">Eventos</a> >
+    Semana do Camões
+  </div>
+
  <h1 id="titulo">Semana do Camões</h1>
 
  <div class="container custom-container">
@@ -121,5 +131,9 @@
 
  </div>
    </section><!-- End Cliens Section -->
+
+   @section('scripts')
+   <script src="{{ asset('js/danielcochico_evento.js') }}"></script>
+   @endsection
 
 @endsection
