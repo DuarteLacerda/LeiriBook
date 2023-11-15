@@ -15,7 +15,7 @@
         <div class="col-lg-12 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
           <h1>Evento</h1>
           <h2>
-            <a href="{{route('index')}}">Home</a>
+            <a href="#">Home</a>
             > <a href="#">Eventos</a> > Evento
           </h2>
         </div>
@@ -46,16 +46,16 @@
           <div class="splide__track">
             <ul class="splide__list">
               <li class="splide__slide">
-                <img src="img/camoes.jpg" alt="" />
+                <img src="img/danielcochico/camoes.jpg" alt="" />
               </li>
               <li class="splide__slide">
-                <img src="img/camoes2.jpg" alt="" />
+                <img src="img/danielcochico/camoes2.jpg" alt="" />
               </li>
               <li class="splide__slide">
-                <img src="img/camoes3.jpg" alt="" />
+                <img src="img/danielcochico/camoes3.jpg" alt="" />
               </li>
               <li class="splide__slide">
-                <img src="img/camoes.jpg" alt="" />
+                <img src="img/danielcochico/camoes.jpg" alt="" />
               </li>
             </ul>
           </div>
@@ -63,16 +63,16 @@
 
         <ul id="thumbnails" class="thumbnails">
           <li class="thumbnail">
-            <img src="img/camoes.jpg" alt="" />
+            <img src="img/danielcochico/camoes.jpg" alt="" />
           </li>
           <li class="thumbnail">
-            <img src="img/camoes2.jpg" alt="" />
+            <img src="img/danielcochico/camoes2.jpg" alt="" />
           </li>
           <li class="thumbnail">
-            <img src="img/camoes3.jpg" alt="" />
+            <img src="img/danielcochico/camoes3.jpg" alt="" />
           </li>
           <li class="thumbnail">
-            <img src="img/camoes.jpg" alt="" />
+            <img src="img/danielcochico/camoes.jpg" alt="" />
           </li>
         </ul>
 
@@ -104,9 +104,9 @@
             </tr>
             <tr class="text-center">
               <td>
-                <img id="img_redesocial" src="img/facebook.png" alt="">
-                <img id="img_redesocial" src="img/instagram.png" alt="">
-                <img id="img_redesocial" src="img/twitter.png" alt="">
+                <img id="img_redesocial" src="img/danielcochico/facebook.png" alt="">
+                <img id="img_redesocial" src="img/danielcochico/instagram.png" alt="">
+                <img id="img_redesocial" src="img/danielcochico/twitter.png" alt="">
               </td>
             </tr>
           </tbody>
