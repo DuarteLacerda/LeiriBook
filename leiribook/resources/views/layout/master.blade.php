@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="favicon" href="images/logo.ico" type="image/x-icon">
+    @yield('styles')
 </head>
 
 <body>
@@ -32,6 +33,7 @@
     <script src="js/owl.carousel.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/navbar.js"></script>
+    @yield('scripts')
 </body>
 
 </html>
