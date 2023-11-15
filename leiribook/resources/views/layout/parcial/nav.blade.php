@@ -13,7 +13,7 @@
                     <li><a href="#">Sobre</a></li>
                     <li><a href="#">Bilioteca Virtual</a></li>
                     <li><a href="#">Eventos</a></li>
-                    <li><a href="#">Contactos</a></li>
+                    <li><a href="{{route ('contactos')}}">Contactos</a></li>
                 </ul>
             </div>
             <div class="logo">
