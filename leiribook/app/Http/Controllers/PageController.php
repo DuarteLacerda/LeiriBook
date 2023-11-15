@@ -17,4 +17,14 @@ class PageController extends Controller
     {
         return view("termos_e_condicoes");
     }
+
+    public function evento()
+    {
+        return view("evento");
+    }
+    public function eventos()
+    {
+        return view("eventos");
+    }
+
 }
