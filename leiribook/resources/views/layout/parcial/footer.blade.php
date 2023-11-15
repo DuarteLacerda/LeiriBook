@@ -48,12 +48,13 @@
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                 <h5 class="text-uppercase mb-4">Subscreve a nossa newsletter</h5>
+                <form action="#">
+                    <div class="form-outline form-dark mb-3">
+                        <input type="email" id="form5Example2" class="form-control" placeholder="Email" required />
+                    </div>
+                    <button type="submit" class="btn btn-outline-dark btn-block">Subscrever</button>
+                </form>
 
-                <div class="form-outline form-dark mb-4">
-                    <input type="email" id="form5Example2" class="form-control" placeholder="Email" />
-                </div>
-
-                <button type="submit" class="btn btn-outline-dark btn-block">Subscrever</button>
             </div>
             <!--Grid column-->
         </div>
