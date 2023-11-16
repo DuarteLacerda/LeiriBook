@@ -49,10 +49,13 @@
     height: auto;
   }
 
+  .card-text{
+    font-size: 20px;
+  }
 
   .card {
 
-    margin: 65px;
+margin:65px 45px 65px 45px;
     border-radius: 8px;
 }
 
@@ -69,8 +72,10 @@
     margin:0px;
 }
 
+.card-text{
+    font-size: 14px;
+  }
     .card {
-
       margin: 15px;
       border-radius: 2px;
   }
@@ -80,9 +85,3 @@
   }
 }
 
-@media only screen and (max-width: 1514px) {
-    /* #segundo{
-        margin-left: 2em;
-        margin-right: 2em;
-    } */
-}
