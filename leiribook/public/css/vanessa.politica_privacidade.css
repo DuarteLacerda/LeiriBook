@@ -3,10 +3,10 @@
     margin-right: 13em;
 } */
 
-#segundo{
+/* #segundo{
     margin-left: 18.5em;
     margin-right: 18.5em;
-}
+} */
 
   #scrollCard,#scrollCard1,#scrollCard2,#scrollCard3,#scrollCard4,#scrollCard5,#scrollCard6,#scrollCard7,#scrollCard8 {
     opacity: 0;
@@ -58,10 +58,16 @@
 
 @media only screen and (max-width: 703px) {
 
-    #segundo{
+    /* #segundo{
         margin-left: 10px;
         margin-right: 10px;
-    }
+    } */
+
+
+
+#segundo{
+    margin:0px;
+}
 
     .card {
 
@@ -75,8 +81,8 @@
 }
 
 @media only screen and (max-width: 1514px) {
-    #segundo{
+    /* #segundo{
         margin-left: 2em;
         margin-right: 2em;
-    }
+    } */
 }

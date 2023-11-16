@@ -8,7 +8,13 @@
     <h2>Política de Privacidade</h2>
 </div>
 
-<div class="card  mb-3" id="segundo">
+
+
+
+
+<div class="container">
+
+<div class="card" id="segundo">
     <div class="card-header">Data de Atualização: 15/11/2023</div>
     <div class="card-body">
         <h4 class="card-title">Informações Gerais</h4>
@@ -26,7 +32,12 @@
 
 
 
-<div class="container">
+
+
+
+
+
+
     <div class="card bg-light" id="scrollCard">
         <h4>Tratamento de Dados Pessoais<button class="arrow float-right"><img src="{{ asset('images/vanessa/arrow.png') }}" height="40" width="40" /></button></h4>
         <div class="content">
