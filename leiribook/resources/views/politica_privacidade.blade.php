@@ -18,7 +18,7 @@
     <div class="card-header">Data de Atualização: 15/11/2023</div>
     <div class="card-body">
         <h4 class="card-title">Informações Gerais</h4>
-        <p class="card-text">Mediante a disponibilização do website alojado em www.leiribook.pt e os seus serviços e
+        <p class="card-text">Mediante a disponibilização do website alojado em <a href="#">www.leiribook.pt</a>e os seus serviços e
             comunicações, a LeiriBook poderá solicitar ao Utilizador que disponibilize dados pessoais, isto é,
             informações fornecidas pelo Utilizador que permitam à LeiriBook identificá-lo ou contactá-lo.
             <br>Através da presente Política de Privacidade, a LeiriBook presta ao Utilizador, nos termos do seu
