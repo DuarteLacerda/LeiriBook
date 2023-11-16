@@ -1,0 +1,82 @@
+/* body{
+    margin-left: 13em;
+    margin-right: 13em;
+} */
+
+#segundo{
+    margin-left: 18.5em;
+    margin-right: 18.5em;
+}
+
+  #scrollCard,#scrollCard1,#scrollCard2,#scrollCard3,#scrollCard4,#scrollCard5,#scrollCard6,#scrollCard7,#scrollCard8 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-top:0px !important;
+    margin-bottom:0px !important;
+  }
+
+  #scrollCard,#scrollCard1,#scrollCard2,#scrollCard3,#scrollCard4,#scrollCard5,#scrollCard6,#scrollCard7,#scrollCard8  {
+    opacity: 1;
+    transform: translateY(0);
+    /* transform: translateY(20); */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 50px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .arrow {
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    float: right;
+  }
+  .arrow img{
+    display: flex;
+
+  }
+
+  .content {
+    display: none;
+  }
+
+  .card.expanded {
+    height: auto;
+  }
+
+
+  .card {
+
+    margin: 65px;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width: 703px) {
+
+    #segundo{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .card {
+
+      margin: 15px;
+      border-radius: 2px;
+  }
+
+  #scrollCard,#scrollCard1,#scrollCard2,#scrollCard3,#scrollCard4,#scrollCard5,#scrollCard6,#scrollCard7,#scrollCard8{
+    margin:0px !important;
+  }
+}
+
+@media only screen and (max-width: 1514px) {
+    #segundo{
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+}
