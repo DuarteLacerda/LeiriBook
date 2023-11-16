@@ -14,7 +14,7 @@
                     </li>
                     <li><a href="#">Sobre</a></li>
                     <li><a href="#">Bilioteca Virtual</a></li>
-                    <li><a href="#">Eventos</a></li>
+                    <li><a href="{{ route('evento') }}">Eventos</a></li>
                     <li><a href="{{ route('contactos') }}">Contactos</a></li>
                 </ul>
             </div>
@@ -32,7 +32,7 @@
                 <li><a href="/">Inicio</a></li>
                 <li><a href="#">Sobre</a></li>
                 <li><a href="#">Bilioteca Virtual</a></li>
-                <li><a href="#">Eventos</a></li>
+                <li><a href="{{ route('evento') }}">Eventos</a></li>
                 <li><a href="{{ route('contactos') }}">Contactos</a></li>
                 </a></li>
             </div>

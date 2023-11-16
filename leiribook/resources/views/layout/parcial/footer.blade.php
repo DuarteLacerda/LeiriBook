@@ -15,10 +15,10 @@
                         <a href="#" class="text-dark text-decoration-none">Biblioteca Virtual</a>
                     </li>
                     <li>
-                        <a href="#" class="text-dark text-decoration-none">Eventos</a>
+                        <a href="{{ route('evento') }}" class="text-dark text-decoration-none">Eventos</a>
                     </li>
                     <li>
-                        <a href="#" class="text-dark text-decoration-none">Contactos</a>
+                        <a href="{{ route('contactos') }}" class="text-dark text-decoration-none">Contactos</a>
                     </li>
                 </ul>
             </div>
@@ -33,7 +33,7 @@
                         <a href="#" class="text-dark text-decoration-none">Politica de Privacidade</a>
                     </li>
                     <li>
-                        <a href="#" class="text-dark text-decoration-none">Preguntas Frequentes</a>
+                        <a href="{{ route('faqs') }}" class="text-dark text-decoration-none">Preguntas Frequentes</a>
                     </li>
                 </ul>
             </div>
