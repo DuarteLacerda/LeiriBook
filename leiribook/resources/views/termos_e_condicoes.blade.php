@@ -7,7 +7,7 @@
 
     <section id="tc-section">
 
-        <h1 class="tc-title">Termos e Condições da LeiriBook</h1>
+        <h1 class="tc-title">Termos e Condições</h1>
 
         <h2>1. Aceitação dos Termos</h2>
         <p>1.1 Ao aceder e utilizar o site da LeiriBook, concorda em cumprir e ficar vinculado a estes Termos e Condições.
