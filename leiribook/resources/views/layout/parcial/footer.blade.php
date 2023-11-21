@@ -26,14 +26,19 @@
 
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                <h5 class="text-uppercase mb-4">Termos e condiçoes</h5>
+                <h5 class="text-uppercase mb-4">Termos e Condições</h5>
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#" class="text-dark text-decoration-none">Politica de Privacidade</a>
+                        <a href="{{ route('politica_privacidade') }}" class="text-dark text-decoration-none">Politica de
+                            Privacidade</a>
                     </li>
                     <li>
                         <a href="{{ route('faqs') }}" class="text-dark text-decoration-none">Preguntas Frequentes</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('termos_e_condicoes') }}" class="text-dark text-decoration-none">Termos e
+                            condiçoes</a>
                     </li>
                 </ul>
             </div>

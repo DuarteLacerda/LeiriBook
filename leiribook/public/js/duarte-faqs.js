@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $(".card").each(function (index) {
         // Use fadeIn para transição suave
-        $(this).delay(600 * index).fadeIn();
+        $(this).delay(250 * index).fadeIn();
     });
 
     // Adicione um manipulador de evento para os botões

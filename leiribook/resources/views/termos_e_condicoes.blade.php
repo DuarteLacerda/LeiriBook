@@ -47,7 +47,8 @@
                 Privacidade</a>.</p>
 
         <h2>8. Contacto</h2>
-        <p>8.1 Para questões relacionadas a estes Termos e Condições, entre em contacto connosco através de <a href="mailto:leiribook.contact@gmail.com">leiribook.contact@gmail.com</a>.</p>
+        <p>8.1 Para questões relacionadas a estes Termos e Condições, entre em contacto connosco através de <a
+                href="mailto:leiribook.contact@gmail.com">leiribook.contact@gmail.com</a>.</p>
 
     </section>
 
