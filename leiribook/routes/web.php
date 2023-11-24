@@ -24,3 +24,6 @@ Route::get('/termos_e_condicoes', [PageController::class, 'termos_e_condicoes'])
 Route::get('/evento', [PageController::class, 'evento'])->name('evento');
 Route::get('/eventos', [PageController::class, 'eventos'])->name('eventos');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
+
+
+Route::get('/admin', [PageController::class, 'admin'])->name('admin');

@@ -34,4 +34,8 @@ class PageController extends Controller
     {
         return view("faqs");
     }
+    public function admin()
+    {
+        return view("_admin.dashboard");
+    }
 }
