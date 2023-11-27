@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome')->unique();
             $table->text('descricao');
-            $table->integer('livro_id')->unsigned();
+            $table->unsignedBigInteger('livro_id');
             $table->foreign('livro_id')->references('id')->on('livros');
             $table->timestamps();
         });

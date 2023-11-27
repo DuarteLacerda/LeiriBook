@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->text('descricao');
             $table->enum('nivel', ['1', '2', '3', '4', '5']);
-            $table->integer('livro_id')->unsigned();
+            $table->unsignedBigInteger('livro_id');
             $table->foreign('livro_id')->references('id')->on('livros');
-            $table->integer('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

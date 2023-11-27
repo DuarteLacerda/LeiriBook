@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('local');
             $table->date('data_inicio');
             $table->date('data_fim');
-            $table->integer('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->softDeletes();
             $table->timestamps();

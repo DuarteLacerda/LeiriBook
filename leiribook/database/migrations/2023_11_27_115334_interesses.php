@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->date('data_leitura');
             $table->enum('estado', ['lido', 'a_ler', 'quero_ler']);
-            $table->integer('livro_id')->unsigned();
+            $table->unsignedBigInteger('livro_id');
             $table->foreign('livro_id')->references('id')->on('livros');
-            $table->integer('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
