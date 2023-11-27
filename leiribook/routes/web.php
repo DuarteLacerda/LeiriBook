@@ -27,3 +27,7 @@ Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 
 
 Route::get('/admin', [PageController::class, 'admin'])->name('admin');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
