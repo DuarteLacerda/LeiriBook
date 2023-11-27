@@ -17,7 +17,6 @@ return new class extends Migration
             $table->text('descricao');
             $table->integer('livro_id')->unsigned();
             $table->foreign('livro_id')->references('id')->on('livros');
-            $table->softDeletes();
             $table->timestamps();
         });
     }
