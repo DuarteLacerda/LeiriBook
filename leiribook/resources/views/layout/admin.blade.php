@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>LeirBook - ashboard</title>
+    <title>@yield('title', 'Dashboard - Leiribook')</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -50,8 +50,13 @@
                     <div class="image img-cir img-120">
                         <img src="{{ asset('images/admin/default-user.png') }}" alt="John Doe" />
                     </div>
-                    <h4 class="name">[Nome Utilizador]</h4>
-                    <a href="#">Terminar Sessão</a>
+                    <h4 class="name">{{ Auth::user()->name }}</h4>
+                    <a href="{{ Auth::user()->foto }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Terminar
+                        Sessão</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
@@ -187,7 +192,7 @@
                             <div class="logo d-block d-lg-none">
                                 <a href="#">
                                     <img src="{{ asset('images/logo/PNG/logo-ext-white.png') }}" width="200px"
-                                        alt="CoolAdmin" />
+                                        alt="logotipo" />
                                 </a>
                             </div>
                             <div class="header-button2">
@@ -294,8 +299,13 @@
                         <div class="image img-cir img-120">
                             <img src="{{ asset('images/admin/default-user.png') }}" alt="utilizador" />
                         </div>
-                        <h4 class="name">[Utilizador]</h4>
-                        <a href="#">Terminar Sessão</a>
+                        <h4 class="name">{{ Auth::user()->name }}</h4>
+                        <a href="{{ Auth::user()->foto }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Terminar
+                            Sessão</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
@@ -430,7 +440,8 @@
                                 <div class="au-breadcrumb-content">
                                     <div class="au-breadcrumb-left">
                                         <span class="au-breadcrumb-span">You are here:</span>
-                                        <ul class="list-unstyled list-inline au-breadcrumb__list">
+                                        @yield('breadcrumb')
+                                        {{-- <ul class="list-unstyled list-inline au-breadcrumb__list">
                                             <li class="list-inline-item active">
                                                 <a href="#">Home</a>
                                             </li>
@@ -438,10 +449,8 @@
                                                 <span>/</span>
                                             </li>
                                             <li class="list-inline-item">Dashboard</li>
-                                        </ul>
+                                        </ul> --}}
                                     </div>
-                                    <button class="au-btn au-btn-icon au-btn--green">
-                                        <i class="zmdi zmdi-plus"></i>add item</button>
                                 </div>
                             </div>
                         </div>
@@ -449,7 +458,6 @@
                 </div>
             </section>
             <!-- END BREADCRUMB-->
-            <!-- BODY -->
             @yield('content')
         </div>
         <!-- Jquery JS-->
