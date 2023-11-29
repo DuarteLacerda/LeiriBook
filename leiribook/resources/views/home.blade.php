@@ -2,7 +2,7 @@
 @section('breadcrumb')
 <ul class="list-unstyled list-inline au-breadcrumb__list">
     <li class="list-inline-item active">
-        <a href="#">Dashboard</a>
+        <p>Home</p>
     </li>
     <li class="list-inline-item seprate">
         <span>/</span>

@@ -41,17 +41,17 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar2">
             <div class="logo">
-                <a href="#">
-                    <img id="logo-admin" src="{{ asset('images/logo/PNG/logo-ext-white.png') }}" alt="Leiribook" />
+                <a href="{{ route('home') }}">
+                    <img id="logo-admin" src="{{ asset('images/logo/PNG/logo-ext-white.png') }}" alt="logotipo" />
                 </a>
             </div>
             <div class="menu-sidebar2__content js-scrollbar1">
                 <div class="account2">
                     <div class="image img-cir img-120">
-                        <img src="{{ asset('images/admin/default-user.png') }}" alt="John Doe" />
+                        <img src="{{ Auth::user()->foto }}" alt="John Doe" />
                     </div>
                     <h4 class="name">{{ Auth::user()->name }}</h4>
-                    <a href="{{ Auth::user()->foto }}"
+                    <a href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Terminar
                         Sessão</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -190,7 +190,7 @@
                     <div class="container-fluid">
                         <div class="header-wrap2">
                             <div class="logo d-block d-lg-none">
-                                <a href="#">
+                                <a href="{{ route('home') }}">
                                     <img src="{{ asset('images/logo/PNG/logo-ext-white.png') }}" width="150"
                                         alt="logotipo" />
                                 </a>
@@ -290,8 +290,8 @@
             </header>
             <aside class="menu-sidebar2 js-right-sidebar d-block d-lg-none">
                 <div class="logo">
-                    <a href="#">
-                        <img src="{{ asset('images/icon/logo-white.png') }}" alt="Cool Admin" />
+                    <a href="{{ route('home') }}">
+                        <img src="{{ asset('images/icon/logo-white.png') }}" alt="logotipo" />
                     </a>
                 </div>
                 <div class="menu-sidebar2__content js-scrollbar2">
@@ -433,7 +433,7 @@
 
             <!-- BREADCRUMB-->
             <section class="au-breadcrumb m-t-75">
-                <div class="section__content section__content--p30">
+                <div class=" section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
