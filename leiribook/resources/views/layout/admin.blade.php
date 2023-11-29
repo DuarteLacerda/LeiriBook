@@ -48,7 +48,7 @@
             <div class="menu-sidebar2__content js-scrollbar1">
                 <div class="account2">
                     <div class="image img-cir img-120">
-                        <img src="{{ Auth::user()->foto }}" alt="John Doe" />
+                        <img src="{{ Auth::user()->foto }}" alt="Perfil de Utilizador" />
                     </div>
                     <h4 class="name">{{ Auth::user()->name }}</h4>
                     <a href="{{ route('logout') }}"
@@ -297,10 +297,10 @@
                 <div class="menu-sidebar2__content js-scrollbar2">
                     <div class="account2">
                         <div class="image img-cir img-120">
-                            <img src="{{ asset('images/admin/default-user.png') }}" alt="utilizador" />
+                            <img src="{{ Auth::user()->foto }}" alt="Perfil de Utilizador" />
                         </div>
                         <h4 class="name">{{ Auth::user()->name }}</h4>
-                        <a href="{{ Auth::user()->foto }}"
+                        <a href="{{ route('logout') }}"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Terminar
                             Sessão</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
