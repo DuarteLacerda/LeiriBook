@@ -26,9 +26,9 @@ Route::get('/evento', [PageController::class, 'evento'])->name('evento');
 Route::get('/eventos', [PageController::class, 'eventos'])->name('eventos');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 
-
-Route::get('/admin', [PageController::class, 'admin'])->name('admin');
-
-Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Auth::routes(['register' => false, 'verify' => true]);
+Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.', 'prefix' => 'admin'], function () {
+    Route::get('/', [PageController::class, 'admin'])->name('dashboard');
+    Route::get('/users/{user}/send_reactivate_mail', [UserController::class, 'send_reactivate_email'])->name('users.sendActivationEmail');
+    /* Route::delete('/users/{user}/destroy_photo', [UserController::class, 'destroy_photo'])->name('users.destroyPhoto'); */
+});
