@@ -2145,6 +2145,12 @@ section {
     padding: 0 35px;
 }
 
+.menu-sidebar2 .logo a{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
 @media (max-width: 991px) {
     .menu-sidebar2 {
         top: 0;

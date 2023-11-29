@@ -42,7 +42,7 @@
         <aside class="menu-sidebar2">
             <div class="logo">
                 <a href="#">
-                    <img src="{{ asset('images/logo/PNG/logo-ext-white.png') }}" alt="Leiribook" />
+                    <img id="logo-admin" src="{{ asset('images/logo/PNG/logo-ext-white.png') }}" alt="Leiribook" />
                 </a>
             </div>
             <div class="menu-sidebar2__content js-scrollbar1">
@@ -191,7 +191,7 @@
                         <div class="header-wrap2">
                             <div class="logo d-block d-lg-none">
                                 <a href="#">
-                                    <img src="{{ asset('images/logo/PNG/logo-ext-white.png') }}" width="200px"
+                                    <img src="{{ asset('images/logo/PNG/logo-ext-white.png') }}" width="150"
                                         alt="logotipo" />
                                 </a>
                             </div>
