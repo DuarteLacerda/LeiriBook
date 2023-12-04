@@ -25,7 +25,7 @@
 
     <div class="container custom-container">
         <div class="row">
-            <div class="col-lg-9 col-sm-12 text-center">
+            <div class="col-lg-8 col-sm-12 text-center">
                 <section id="slider" class="splide">
                     <div class="splide__track">
                         <ul class="splide__list">
@@ -61,7 +61,7 @@
 
 
             </div>
-            <div class="col-lg-3 col-sm-12" id="labels">
+            <div class="col-lg-4 col-sm-12" id="labels">
                 <table class="table table-borderless text-start">
                     <tbody>
                         <tr class="table-active">
@@ -71,29 +71,13 @@
                             <td>Leiria, Rua de Leiria, 2400-181</td>
                         </tr>
                         <tr class="table-active">
-                            <td>Horário</td>
+                            <td>Datas</td>
                         </tr>
                         <tr>
-                            <td>01/12/2023 - 31/12/2023</td>
+                            <td>Data Inícial - 01/12/2023</td>
                         </tr>
                         <tr>
-                            <td>10:00 - 16:30</td>
-                        </tr>
-                        <tr class="table-active">
-                            <td>Contactos</td>
-                        </tr>
-                        <tr>
-                            <td>+(351) 912 732 123</td>
-                        </tr>
-                        <tr class="text-center">
-                            <td>
-                                <img id="img_redesocial" src="{{ asset('images/danielcochico/facebook.png') }}"
-                                    alt="">
-                                <img id="img_redesocial" src="{{ asset('images/danielcochico/instagram.png') }}"
-                                    alt="">
-                                <img id="img_redesocial" src="{{ asset('images/danielcochico/twitter.png') }}"
-                                    alt="">
-                            </td>
+                            <td>Data Final - 31/12/2023</td>
                         </tr>
                     </tbody>
                 </table>
@@ -108,7 +92,7 @@
                     Nesta semana, o livro principal vai ser "Os Lusíadas" de Luís de Camões,
                     lançado em 1572 e o incentivo vai ser para ler este livro para depois
                     discutirmos de forma ordenada para tirar uma boa conclusão sobre o mesmo
-                    e para adquirir uma boa quantidade de conhecimento
+                    e para adquirir uma boa quantidade de conhecimento.
                 </div>
             </div>
         </div>

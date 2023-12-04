@@ -1,34 +1,18 @@
-/*
-    nav{
-        margin-bottom: 50px;
-    }
-
-    #logonav {
-        height: 50px;
-        width: 50px;
-        margin-right: 10px;
-    }
-
-    #logonav:hover {
-        cursor: pointer;
-    }
-*/
-
 body {
     text-align: center;
 }
 
-#caminho{
+#caminho {
     text-align: left;
     margin-left: 15%;
     margin-bottom: 25px;
 }
 
-#caminho_links{
+#caminho_links {
     text-decoration: none;
 }
 
-#titulo{
+#titulo {
     text-align: left;
     margin-left: 15%;
     font-size: 40pt;
@@ -48,17 +32,17 @@ body {
 .splide {
     margin: 0 auto;
     z-index: 0;
-  }
+}
 
-  .thumbnails {
+.thumbnails {
     display: flex;
     margin: 1rem auto 0;
     padding: 0;
     justify-content: center;
     margin-bottom: 25px;
-  }
+}
 
-  .thumbnail {
+.thumbnail {
     width: 70px;
     height: 70px;
     overflow: hidden;
@@ -69,40 +53,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .thumbnail.is-active {
+.thumbnail.is-active {
     opacity: 1;
-  }
+}
 
-  .thumbnail img {
+.thumbnail img {
     width: 100%;
     height: 80%;
     object-fit: cover;
-  }
-
-
-
-
-/*
-
-#img {
-    border-radius: 15px;
-    object-fit: cover;
-    width: 650px;
-    height: auto;
-    margin-bottom: 5px;
-    margin-top: 5px;
-}
-
-
-*/
-
-
-
-#img_redesocial {
-    width: 50px;
-    height: auto;
 }
 
 h2::before,
@@ -124,7 +84,7 @@ h2::after {
     left: 0.5em;
 }
 
-#descricao{
+#descricao {
     margin-top: 25px;
 }
 
@@ -136,31 +96,32 @@ h2::after {
     font-size: 14pt;
 }
 
-#botao_evento{
+#botao_evento {
     user-select: none;
 }
 
-#copyright{
+#copyright {
     background-color: #d6d6d6;
 }
-#copyrightlink{
+
+#copyrightlink {
     text-decoration: none;
 }
 
 @media only screen and (max-width: 768px) {
 
-    #caminho{
+    #caminho {
         text-align: center;
         margin-left: 0;
     }
 
-    #titulo{
+    #titulo {
         text-align: center;
         margin-left: 0;
         font-size: 26pt;
     }
 
-    .thumbnails{
+    .thumbnails {
         margin-bottom: 50px;
     }
 
