@@ -62,7 +62,10 @@
 
             </div>
             <div class="col-lg-4 col-sm-12" id="labels">
-                <table class="table table-borderless text-start">
+
+                <h1 id="detalhes">Detalhes do Evento</h1>
+
+                <table class="table table-bordered text-start">
                     <tbody>
                         <tr class="table-active">
                             <td>Localidade</td>

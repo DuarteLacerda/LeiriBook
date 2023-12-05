@@ -65,6 +65,13 @@ body {
     object-fit: cover;
 }
 
+#detalhes{
+    text-align: start;
+    font-size: 24pt;
+    margin-bottom: 30px;
+    text-decoration: underline #b4b4b4;
+}
+
 h2::before,
 h2::after {
     background-color: #b4b4b4;
@@ -125,15 +132,9 @@ h2::after {
         margin-bottom: 50px;
     }
 
-    /*
-
-    #img {
-        width: 1150px;
-        height: auto;
-        margin-bottom: 50px;
+    #detalhes{
+        text-align: center;
     }
-
-    */
 
     h2::before,
     h2::after {
