@@ -8,21 +8,40 @@ class InteresseRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
+     *
+     * @return bool
      */
-    public function authorize(): bool
+    public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array
      */
-    public function rules(): array
+    public function rules()
     {
         return [
-            //
+            'data_leitura' => 'required|date',
+            'estado' => 'required',
+            'livro_id' => 'required', // Não é necessário exists nesta versão
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'data_leitura.required' => 'O campo data_leitura é obrigatório.',
+            'data_leitura.date' => 'O campo data_leitura deve ser uma data válida.',
+            'estado.required' => 'O campo estado é obrigatório.',
+            'livro_id.required' => 'O campo livro_id é obrigatório.',
         ];
     }
 }
