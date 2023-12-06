@@ -20,6 +20,6 @@ class Evento extends Model
     // Relacionamento com a tabela 'eventos_photos' (se existir)
     public function fotos()
     {
-        return $this->hasMany(EventoPhoto::class, 'evento_id');
+        return $this->hasMany(EventoFoto::class, 'evento_id');
     }
 }

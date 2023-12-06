@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Evento;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -31,7 +32,8 @@ class PageController extends Controller
 
     public function eventos()
     {
-        return view("eventos");
+        $eventos=Evento::all();
+        return view("eventos",compact("eventos"));
     }
 
     public function faqs()

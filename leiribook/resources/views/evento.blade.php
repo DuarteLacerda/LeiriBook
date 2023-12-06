@@ -99,9 +99,7 @@
                 </div>
             </div>
         </div>
-        <a href="#">
-            <input id="botao_evento" class="btn btn-dark btn-block fa-lg gradient-custom-2 mb-3" value="Voltar aos Eventos">
-        </a>
+        <div id="botao_evento" class="text-center"><a class="btn btn-dark btn-block gradient-custom-2 mb-3" href="#">Voltar aos eventos</a></div>
     </div>
 
     <hr>

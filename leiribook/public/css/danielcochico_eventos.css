@@ -1,14 +1,25 @@
-* {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
-.mySlides {display: none; width: 100%; height: 400px;}
-#slider {vertical-align: middle; width: 100%; height: 100%; object-fit: cover;}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Verdana, sans-serif; margin:0
+}
+.mySlides {
+    display: none; width: 100%; height: 500px;
+}
+.slider {
+    vertical-align: middle; width: 100%; height: 100%; object-fit: cover;
+}
+
+.fade:not(.show) {
+    opacity: 1;
+}
 
 body {
     text-align: center;
 }
 
 .slideshow-container {
-  max-width: 1000px;
   position: relative;
   margin: auto;
   overflow: hidden;
@@ -18,10 +29,9 @@ body {
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 200px;
   width: auto;
   padding: 15px;
-  margin-top: -25px;
   color: white;
   font-weight: bold;
   font-size: 18px;
@@ -29,6 +39,10 @@ body {
   user-select: none;
 }
 
+.dots{
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
 
 .next {
   right: 0;
@@ -44,13 +58,13 @@ body {
 .text {
   color: white;
   font-size: 16px;
-  padding: 10px;
+  padding: 20px;
   position: absolute;
-  bottom: 28px;
   width: 100%;
   text-align: center;
   background-color: black;
   opacity: 0.9;
+  margin-top: -64px;
 }
 
 
@@ -85,12 +99,31 @@ body {
 #caminho {
     text-align: left;
     margin-left: 15%;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 }
 
 #caminho_links {
     text-decoration: none;
 }
+
+#eventos_carta {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 15px;
+  }
+
+  #carta_border{
+    border: none;
+  }
+
+  #img_carta_eventos{
+    height:200px;
+    object-fit:cover;
+    border-radius: 15px;
+    margin-top: 25px;
+  }
+
+
+
 
 #botao_evento {
     user-select: none;
@@ -99,9 +132,11 @@ body {
 
 @media only screen and (max-width: 768px) {
   .prev, .next,.text {
-    font-size: 11px
+    font-size: 14px
 }
-.slideshow-container{
-    margin: 5%;
-}
+
+.text {
+    margin-top: -60px;
+  }
+
 }

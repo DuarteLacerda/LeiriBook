@@ -3,8 +3,7 @@
 @section('title', 'LeiriBook-Eventos')
 
 @section('styles')
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/css/themes/splide-skyblue.min.css" />
+
     <link rel="stylesheet" href="{{ asset('css/danielcochico_eventos.css') }}">
 
 
@@ -17,40 +16,40 @@
     <div class="slideshow-container">
         <div class="mySlides fade">
             <div class="prev" onclick="plusSlides(-1)" onmouseover="resetTimer()">❮</div>
-            <img id="slider" src="{{ asset('images/danielcochico/camoes.jpg') }}" alt="" />
-            <div class="text">Semana do Camões</div>
+            <img class="slider" src="{{ asset('images/danielcochico/camoes.jpg') }}" alt="" />
+            <div class="text">Semana do Camões | 27/12 - 23/01</div>
             <div class="next" onclick="plusSlides(1)" onmouseover="resetTimer()">❯</div>
         </div>
 
         <div class="mySlides fade">
             <div class="prev" onclick="plusSlides(-1)" onmouseover="resetTimer()">❮</div>
-            <img id="slider" src="{{ asset('images/danielcochico/camoes2.jpg') }}" alt="" />
-            <div class="text">Semana do Camões 2</div>
+            <img class="slider" src="{{ asset('images/danielcochico/camoes2.jpg') }}" alt="" />
+            <div class="text">Semana do Camões 2 | 27/12 - 23/01</div>
             <div class="next" onclick="plusSlides(1)" onmouseover="resetTimer()">❯</div>
         </div>
 
         <div class="mySlides fade">
             <div class="prev" onclick="plusSlides(-1)" onmouseover="resetTimer()">❮</div>
-            <img id="slider" src="{{ asset('images/danielcochico/camoes3.jpg') }}" alt="" />
-            <div class="text">Semana do Camões 3</div>
+            <img class="slider" src="{{ asset('images/danielcochico/camoes3.jpg') }}" alt="" />
+            <div class="text">Semana do Camões 3 | 27/12 - 23/01</div>
             <div class="next" onclick="plusSlides(1)" onmouseover="resetTimer()">❯</div>
         </div>
 
         <div class="mySlides fade">
             <div class="prev" onclick="plusSlides(-1)" onmouseover="resetTimer()">❮</div>
-            <img id="slider" src="{{ asset('images/danielcochico/camoes.jpg') }}" alt="" />
-            <div class="text">Semana do Camões 4</div>
+            <img class="slider" src="{{ asset('images/danielcochico/camoes.jpg') }}" alt="" />
+            <div class="text">Semana do Camões 4 | 27/12 - 23/01</div>
             <div class="next" onclick="plusSlides(1)" onmouseover="resetTimer()">❯</div>
         </div>
 
         <div class="mySlides fade">
             <div class="prev" onclick="plusSlides(-1)" onmouseover="resetTimer()">❮</div>
-            <img id="slider" src="{{ asset('images/danielcochico/camoes.jpg2') }}" alt="" />
-            <div class="text">Semana do Camões 5</div>
+            <img class="slider" src="{{ asset('images/danielcochico/camoes2.jpg') }}" alt="" />
+            <div class="text">Semana do Camões 5 | 27/12 - 23/01</div>
             <div class="next" onclick="plusSlides(1)" onmouseover="resetTimer()">❯</div>
         </div>
 
-        <div style="text-align:center">
+        <div class="dots" style="text-align:center">
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
@@ -63,17 +62,43 @@
         <a id="caminho_links" href="">Página Principal</a> > Eventos
     </div>
 
+    <div class="px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div id="eventos_carta" class="col mb-5">
 
-        <a href="#">
-            <input id="botao_evento" class="btn btn-dark btn-block fa-lg gradient-custom-2 mb-3" value="Voltar à página principal">
-        </a>
+
+            @foreach ($eventos as $evento)
+
+                <div id="carta_border" class="card h-100">
+                    <img class="card-img-top" id="img_carta_eventos" src="{{ asset('images/danielcochico/'.$evento->foto) }}" alt="..." />
+
+                    <div class="card-body p-4">
+                        <div class="text-center">
+
+                            <h5 class="fw-bolder">Semana do Camões</h5>
+                            27/12 - 23/01
+                        </div>
+                    </div>
+
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn bg-dark text-light mt-auto" href="{{ route('evento', $evento) }}">Ver detalhes</a></div>
+                    </div>
+                </div>
+
+                @endforeach
+
+            </div>
+        </div>
+    </div>
+
+            <div id="botao_evento" class="text-center"><a class="btn btn-dark btn-block gradient-custom-2 mb-3" href="#">Voltar à página principal</a></div>
     </div>
 
     <hr>
     </section><!-- End Cliens Section -->
 
 @section('scripts')
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/js/splide.min.js"></script>
+
     <script src="{{ asset('js/danielcochico_eventos.js') }}"></script>
 @endsection
 
