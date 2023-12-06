@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Pedido extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['titulo', 'descricao', 'edicao', 'foto', 'user_id'];
+
+    // Relacionamento com a tabela 'users'
+    public function usuario()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
