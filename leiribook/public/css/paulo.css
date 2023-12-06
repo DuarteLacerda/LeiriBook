@@ -4,13 +4,28 @@
     margin-right: auto !important;
 }
 
+.text-section {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
 .tc-title {
     margin-top: 3rem;
     margin-bottom: 3rem;
     text-align: center;
 }
 
-h2{
+h2 {
     font-size: 1.8rem;
     margin-top: 2.5rem;
+}
+
+.desc-title{
+    font-weight: 400;
+    color: #959595;
+    margin-top: 1rem;
+    font-size: 1.1rem;
 }
