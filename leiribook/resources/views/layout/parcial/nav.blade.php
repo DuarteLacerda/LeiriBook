@@ -9,8 +9,8 @@
             </div>
             <div class="nave">
                 <ul>
-                    <li><a href="/"><img src="{{ asset('images/logo/SVG/logo-ext.svg') }}" alt="logotipo"
-                                width="140px"></a>
+                    <li><a href="{{ route('home') }}"><img src="{{ asset('images/logo/SVG/logo-ext.svg') }}"
+                                alt="logotipo" width="140px"></a>
                     </li>
                     <li><a href="{{route('sobre')}}">Sobre</a></li>
                     <li><a href="#">Bilioteca Virtual</a></li>
@@ -28,8 +28,8 @@
                 <button type="button" class="search" id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <div class="menu-items">
-                <li><a href="/">Inicio</a></li>
-                <li><a href="#">Sobre</a></li>
+                <li><a href="{{ route('home') }}">Inicio</a></li>
+                <li><a href="{{route('sobre')}}">Sobre</a></li>
                 <li><a href="#">Bilioteca Virtual</a></li>
                 <li><a href="{{ route('evento') }}">Eventos</a></li>
                 <li><a href="{{ route('contactos') }}">Contactos</a></li>
