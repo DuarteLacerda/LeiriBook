@@ -15,7 +15,7 @@
     <div class="background">
         <div class="center">
             <h1>Registo</h1>
-            <form method="post" method="{{ route('register') }}">
+            <form method="POST" method="{{ route('register') }}">
                 <div class="txt_field">
                     <input type="text" class="@error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"
                         required autocomplete="name" autofocus>
