@@ -14,7 +14,7 @@
                     </li>
                     <li><a href="{{route('sobre')}}">Sobre</a></li>
                     <li><a href="#">Bilioteca Virtual</a></li>
-                    <li><a href="{{ route('evento') }}">Eventos</a></li>
+                    <li><a href="{{ route('eventos') }}">Eventos</a></li>
                     <li><a href="{{ route('contactos') }}">Contactos</a></li>
                 </ul>
             </div>
@@ -31,7 +31,7 @@
                 <li><a href="{{ route('home') }}">Inicio</a></li>
                 <li><a href="{{route('sobre')}}">Sobre</a></li>
                 <li><a href="#">Bilioteca Virtual</a></li>
-                <li><a href="{{ route('evento') }}">Eventos</a></li>
+                <li><a href="{{ route('eventos') }}">Eventos</a></li>
                 <li><a href="{{ route('contactos') }}">Contactos</a></li>
                 </a></li>
             </div>
