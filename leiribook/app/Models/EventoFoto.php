@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class EventoFoto extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['titulo', 'fotos', 'tipo', 'evento_id'];
+protected $table='eventos_fotos';
+    protected $fillable = ['titulo', 'foto', 'ordem', 'evento_id'];
 
     // Relacionamento com a tabela 'eventos'
     public function evento()
