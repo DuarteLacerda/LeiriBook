@@ -48,4 +48,10 @@ class PageController extends Controller
     {
         return view("_admin.dashboard");
     }
+
+    public function sobrenos()
+    {
+        $users=User::all();
+        return view("sobrenos",compact("users"));
+    }
 }
