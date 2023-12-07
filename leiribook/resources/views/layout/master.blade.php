@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Your Default Title')</title>
+    <title>@yield('title', 'Leiribook')</title>
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
@@ -17,13 +17,15 @@
 
 <body>
     <header>
-        @include('layout.parcial.nav') <!-- Include your navigation here -->
+        @include('layout.parcial.nav')
+        <!-- Include your navigation here -->
     </header>
     <main>
         @yield('content')
     </main>
     <footer>
-        @include('layout.parcial.footer') <!-- Include your footer here -->
+        @include('layout.parcial.footer')
+        <!-- Include your footer here -->
     </footer>
     <!-- Include your scripts, such as JavaScript libraries, at the end of the body -->
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>

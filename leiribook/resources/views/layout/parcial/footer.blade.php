@@ -68,7 +68,7 @@
     <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center p-3 border-top border-dark">
+    <div class="text-center p-3 border-top border-dark text-dark">
         © 2023 Copyright
         <a class="text-dark text-decoration-none" href="#">LeiriBook</a>
     </div>
