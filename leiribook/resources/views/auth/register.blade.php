@@ -41,8 +41,8 @@
                     @enderror
                 </div>
                 <div class="txt_field">
-                    <input type="password" id="pass" type="password" class="@error('password') is-invalid @enderror"
-                        name="password" required autocomplete="new-password">
+                    <input type="password" id="pass" class="@error('password') is-invalid @enderror" name="password"
+                        required autocomplete="new-password">
                     <span></span>
                     <label>Password</label>
                     <button type="button" class="eye1"><i class="fa-solid fa-eye-slash" id="eye1"></i></button>
