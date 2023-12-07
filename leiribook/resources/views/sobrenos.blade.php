@@ -50,6 +50,7 @@
                         <img src="{{ asset('images/vanessa/utilizador.png') }}" class="card-img-top p-4">
                         <div class="card-body">
                             <h5 class="card-title text-center">Título do Card 1</h5>
+                            <p class="card-text text-center">Nome Pessoa</p>
                         </div>
                     </div>
                 </div>
@@ -60,6 +61,7 @@
                         <img src="{{ asset('images/vanessa/utilizador.png') }}" class="card-img-top p-4">
                         <div class="card-body">
                             <h5 class="card-title text-center">Título do Card 2</h5>
+                            <p class="card-text text-center">Nome Pessoa</p>
                         </div>
                     </div>
                 </div>
@@ -70,6 +72,7 @@
                         <img src="{{ asset('images/vanessa/utilizador.png') }}" class="card-img-top p-4">
                         <div class="card-body">
                             <h5 class="card-title text-center">Título do Card 3</h5>
+                            <p class="card-text text-center">Nome Pessoa</p>
                         </div>
                     </div>
                 </div>
@@ -80,6 +83,7 @@
                         <img src="{{ asset('images/vanessa/utilizador.png') }}" class="card-img-top p-4">
                         <div class="card-body">
                             <h5 class="card-title text-center">Título do Card 4</h5>
+                            <p class="card-text text-center">Nome Pessoa</p>
                         </div>
                     </div>
                 </div>
@@ -90,6 +94,7 @@
                         <img src="{{ asset('images/vanessa/utilizador.png') }}" class="card-img-top p-4">
                         <div class="card-body">
                             <h5 class="card-title text-center">Título do Card 5</h5>
+                            <p class="card-text text-center">Nome Pessoa</p>
                         </div>
                     </div>
                 </div>
