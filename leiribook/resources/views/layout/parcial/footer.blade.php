@@ -15,7 +15,7 @@
                         <a href="#" class="text-dark text-decoration-none">Biblioteca Virtual</a>
                     </li>
                     <li>
-                        <a href="{{ route('evento') }}" class="text-dark text-decoration-none">Eventos</a>
+                        <a href="{{ route('eventos') }}" class="text-dark text-decoration-none">Eventos</a>
                     </li>
                     <li>
                         <a href="{{ route('contactos') }}" class="text-dark text-decoration-none">Contactos</a>

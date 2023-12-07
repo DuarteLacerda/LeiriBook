@@ -41,10 +41,13 @@ class PageController extends Controller
         return view("evento",compact("evento"));
     }
 
-    public function eventos()
+    public function eventos(Evento $evento = null)
     {
-        $eventos = Evento::all();
-        return view("eventos", compact("eventos"));
+        if ($evento)
+            $eventos = Evento::where('category_id', $evento->id)->get();
+        else
+            $eventos = Evento::all();
+        return view('eventos', compact('eventos'));
     }
 
     public function faqs()
