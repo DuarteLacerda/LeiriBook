@@ -14,7 +14,7 @@ class PageController extends Controller
         $users = User::all();
         $livros = Livro::all();
         $eventos = Evento::all();
-        return view("welcome");
+        return view("welcome", compact("eventos", "livros", "users"));
     }
     public function contactos()
     {

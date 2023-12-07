@@ -30,94 +30,26 @@
 </div>
 <div class="sec3">
     <div class="cards">
+        @foreach ($eventos as $evento)
         <div class="card">
-            <div class="image"></div>
+            <div class="image">
+                <img src="{{ asset('storage/eventos/'.$evento->foto) }}" alt="">
+            </div>
             <div class="content">
                 <a href="#">
                     <span class="title">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        {{ $evento->nome }}
                     </span>
                 </a>
-
-                <p class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                    dolores, possimus pariatur animi temporibus nesciunt praesentium
-                </p>
-
                 <a class="action" href="#">
-                    Find out more
+                    Saber mais
                     <span aria-hidden="true">
                         →
                     </span>
                 </a>
             </div>
         </div>
-        <div class="card">
-            <div class="image"></div>
-            <div class="content">
-                <a href="#">
-                    <span class="title">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </span>
-                </a>
-
-                <p class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                    dolores, possimus pariatur animi temporibus nesciunt praesentium
-                </p>
-
-                <a class="action" href="#">
-                    Find out more
-                    <span aria-hidden="true">
-                        →
-                    </span>
-                </a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="image"></div>
-            <div class="content">
-                <a href="#">
-                    <span class="title">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </span>
-                </a>
-
-                <p class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                    dolores, possimus pariatur animi temporibus nesciunt praesentium
-                </p>
-
-                <a class="action" href="#">
-                    Find out more
-                    <span aria-hidden="true">
-                        →
-                    </span>
-                </a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="image"></div>
-            <div class="content">
-                <a href="#">
-                    <span class="title">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </span>
-                </a>
-
-                <p class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                    dolores, possimus pariatur animi temporibus nesciunt praesentium
-                </p>
-
-                <a class="action" href="#">
-                    Find out more
-                    <span aria-hidden="true">
-                        →
-                    </span>
-                </a>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 @endsection

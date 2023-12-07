@@ -8,7 +8,6 @@
 
   /* Scroll to top */
   #myBtn {
-    display: none;
     position: fixed;
     bottom: 20px;
     right: 30px;
@@ -18,14 +17,15 @@
     background-color: #37bced;
     color: white;
     cursor: pointer;
-    padding: 15px;
+    padding: 5px;
     border-radius: 10px;
     font-size: 18px;
+    width:50px;
+    height:50px;
   }
 
   #myBtn:hover {
     background-color: #237391;
     transition: 0.5s ease-in-out;
   }
-
 
