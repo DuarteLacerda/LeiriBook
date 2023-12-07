@@ -16,8 +16,8 @@
     <!-- ======= Event Section ======= -->
 
     <div id="caminho">
-        <a id="caminho_links" href="">Página Principal</a> >
-        <a id="caminho_links" href="">Eventos</a> >
+        <a id="caminho_links" href="{{ route('home') }}">Página Principal</a> >
+        <a id="caminho_links" href="{{ route('eventos') }}">Eventos</a> >
         Semana do Camões
     </div>
 
@@ -39,7 +39,7 @@
                                 <img src="{{ asset('images/danielcochico/camoes3.jpg') }}" alt="" />
                             </li>
                             <li class="splide__slide">
-                                <img src="{{ asset('images/danielcochico/camoes.jpg') }}" alt="" />
+                                <img src="{{ asset('images/danielcochico/camoes4.jpg') }}" alt="" />
                             </li>
                         </ul>
                     </div>
@@ -55,7 +55,7 @@
                         <img src="{{ asset('images/danielcochico/camoes3.jpg') }}" alt="" />
                     </li>
                     <li class="thumbnail">
-                        <img src="{{ asset('images/danielcochico/camoes.jpg') }}" alt="" />
+                        <img src="{{ asset('images/danielcochico/camoes4.jpg') }}" alt="" />
                     </li>
                 </ul>
 
@@ -99,7 +99,7 @@
                 </div>
             </div>
         </div>
-        <div id="botao_evento" class="text-center"><a class="btn btn-dark btn-block gradient-custom-2 mb-3" href="#">Voltar aos eventos</a></div>
+        <div id="botao_evento" class="text-center"><a class="btn btn-dark btn-block gradient-custom-2 mb-3" href="{{ route('eventos') }}">Voltar aos eventos</a></div>
     </div>
 
     <hr>
