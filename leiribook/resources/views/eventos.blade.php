@@ -37,7 +37,7 @@
 
         <div class="mySlides fade">
             <div class="prev" onclick="plusSlides(-1)" onmouseover="resetTimer()">❮</div>
-            <img class="slider" src="{{ asset('images/danielcochico/camoes.jpg') }}" alt="" />
+            <img class="slider" src="{{ asset('images/danielcochico/camoes4.jpg') }}" alt="" />
             <div class="text">Semana do Camões 4 | 27/12 - 23/01</div>
             <div class="next" onclick="plusSlides(1)" onmouseover="resetTimer()">❯</div>
         </div>
@@ -59,7 +59,7 @@
 
 
     <div id="caminho">
-        <a id="caminho_links" href="">Página Principal</a> > Eventos
+        <a id="caminho_links" href="{{ route('home') }}">Página Principal</a> > Eventos
     </div>
 
     <div class="px-4 px-lg-5 mt-5">
@@ -70,13 +70,13 @@
             @foreach ($eventos as $evento)
 
                 <div id="carta_border" class="card h-100">
-                    <img class="card-img-top" id="img_carta_eventos" src="{{ asset('images/danielcochico/'.$evento->foto) }}" alt="..." />
+                    <img class="card-img-top" id="img_carta_eventos" src="{{ asset('storage/eventos_fotos/'.$evento->foto) }}" alt="..." />
 
                     <div class="card-body p-4">
                         <div class="text-center">
 
-                            <h5 class="fw-bolder">Semana do Camões</h5>
-                            27/12 - 23/01
+                            <h5 class="fw-bolder">{{ $evento->nome }}</h5>
+                            {{ date('d-m-y', strtotime($evento->data_inicio)) }} / {{ date('d-m-y', strtotime($evento->data_fim)) }}
                         </div>
                     </div>
 
@@ -91,7 +91,7 @@
         </div>
     </div>
 
-            <div id="botao_evento" class="text-center"><a class="btn btn-dark btn-block gradient-custom-2 mb-3" href="#">Voltar à página principal</a></div>
+            <div id="botao_evento" class="text-center"><a class="btn btn-dark btn-block gradient-custom-2 mb-3" href="{{ route('home') }}">Voltar à página principal</a></div>
     </div>
 
     <hr>

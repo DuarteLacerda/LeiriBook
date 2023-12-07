@@ -4,7 +4,8 @@
     <link rel="stylesheet" href="{{ asset('css/vanessa.sobrenos.css') }}">
 @endsection
 @section('content')
-div class="container pt-5 pb-5">
+    <button onclick="topFunction()" id="myBtn" title="Ir para cima"><i class="fa-solid fa-arrow-up"></i></button>
+    <div class="container pt-5 pb-5">
         <h3 class="text-left pb-4">A nossa História</h3>
         <div class="row">
             <div class="col-md-6 ">
@@ -19,14 +20,14 @@ div class="container pt-5 pb-5">
             </div>
 
             <div class="col-md-6">
-                <img src="imagens/livraria.jpg" alt="Descrição da Imagem" class="img-fluid">
+                <img src="{{ asset('images/vanessa/livraria.jpg') }}" alt="Descrição da Imagem" class="img-fluid">
             </div>
 
         </div>
         <h3 class="text-center p-5">A Nossa Missão</h3>
         <div class="row">
             <div class="col-md-6">
-                <img src="imagens/missao.jpg" alt="Descrição da Imagem" class="img-fluid">
+                <img src="{{ asset('images/vanessa/missao.jpg') }}" alt="Descrição da Imagem" class="img-fluid">
             </div>
             <div class="col-md-6">
 
@@ -40,74 +41,61 @@ div class="container pt-5 pb-5">
 
         <h3 class="text-center p-5">Equipa da LeiriBook</h3>
 
-    <div class="container">
-        <div class="row justify-content-center">
+        <div class="container">
+            <div class="row justify-content-center">
 
-            <!-- Card 1 -->
-            <div class="m-2 mb-2">
-                <div class="card" style="width: 18rem;">
-                    <img src="imagens/utilizador.png" class="card-img-top p-4">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Título do Card 1</h5>
+                <!-- Card 1 -->
+                <div class="col-md-3 m-2 mb-2" id="cartao">
+                    <div class="card">
+                        <img src="{{ asset('images/vanessa/utilizador.png') }}" class="card-img-top p-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Título do Card 1</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-3 m-2 mb-2" id="cartao">
+                    <div class="card">
+                        <img src="{{ asset('images/vanessa/utilizador.png') }}" class="card-img-top p-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Título do Card 2</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-3 m-2 mb-2" id="cartao">
+                    <div class="card">
+                        <img src="{{ asset('images/vanessa/utilizador.png') }}" class="card-img-top p-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Título do Card 3</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-md-3 m-2 mb-2" id="cartao">
+                    <div class="card">
+                        <img src="{{ asset('images/vanessa/utilizador.png') }}" class="card-img-top p-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Título do Card 4</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col-md-3 m-2 mb-2" id="cartao">
+                    <div class="card">
+                        <img src="{{ asset('images/vanessa/utilizador.png') }}" class="card-img-top p-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Título do Card 5</h5>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Card 2 -->
-            <div class="m-2 mb-2">
-                <div class="card" style="width: 18rem;">
-                    <img src="imagens/utilizador.png" class="card-img-top p-4">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Título do Card 2</h5>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="m-2 mb-2">
-                <div class="card" style="width: 18rem;">
-                    <img src="imagens/utilizador.png" class="card-img-top p-4">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Título do Card 3</h5>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="m-2 mb-2">
-                <div class="card" style="width: 18rem;">
-                    <img src="imagens/utilizador.png" class="card-img-top p-4">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Título do Card 4</h5>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="m-2 mb-2">
-                <div class="card" style="width: 18rem;">
-                    <img src="imagens/utilizador.png" class="card-img-top p-4">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Título do Card 5</h5>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
     </div>
-
-
-
-
-    <button onclick="topFunction()" id="myBtn" title="Ir para cima"><i class="fa-solid fa-arrow-up"></i></button>
-
-    <div class="sec1"></div>
-    <div class="sec2"></div>
-    <div class="sec3"></div>
-
-
-
 @section('scripts')
     <script src="{{ asset('js/vanessa.sobrenos.js') }}"></script>
 @endsection
