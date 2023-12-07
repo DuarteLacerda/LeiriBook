@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Livro;
 use App\Models\Evento;
 use Illuminate\Http\Request;
 
@@ -9,6 +11,9 @@ class PageController extends Controller
 {
     public function home()
     {
+        $users = User::all();
+        $livros = Livro::all();
+        $eventos = Evento::all();
         return view("welcome");
     }
     public function contactos()
@@ -25,7 +30,8 @@ class PageController extends Controller
         return view("termos_e_condicoes");
     }
 
-    public function pedido_livro() {
+    public function pedido_livro()
+    {
         return view("pedido_livro");
     }
 
@@ -37,8 +43,8 @@ class PageController extends Controller
 
     public function eventos()
     {
-        $eventos=Evento::all();
-        return view("eventos",compact("eventos"));
+        $eventos = Evento::all();
+        return view("eventos", compact("eventos"));
     }
 
     public function faqs()
@@ -48,5 +54,11 @@ class PageController extends Controller
     public function admin()
     {
         return view("_admin.dashboard");
+    }
+
+    public function sobrenos()
+    {
+        $users = User::all();
+        return view("sobrenos", compact("users"));
     }
 }
