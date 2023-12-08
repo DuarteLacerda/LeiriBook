@@ -35,10 +35,10 @@ class PageController extends Controller
         return view("pedido_livro");
     }
 
-    public function evento()
+    public function evento($id)
     {
-        $evento=Evento::all();
-        return view("evento",compact("evento"));
+            $evento = Evento::find($id);
+            return view('evento', compact('evento'));
     }
 
     public function eventos(Evento $evento = null)

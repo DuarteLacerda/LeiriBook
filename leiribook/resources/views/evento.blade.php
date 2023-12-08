@@ -18,10 +18,10 @@
     <div id="caminho">
         <a id="caminho_links" href="{{ route('home') }}">Página Principal</a> >
         <a id="caminho_links" href="{{ route('eventos') }}">Eventos</a> >
-        Semana do Camões
+        {{ $evento->nome }}
     </div>
 
-    <h1 id="titulo">Semana do Camões</h1>
+    <h1 id="titulo">{{ $evento->nome }}</h1>
 
     <div class="container custom-container">
         <div class="row">
@@ -71,16 +71,16 @@
                             <td>Localidade</td>
                         </tr>
                         <tr>
-                            <td>Leiria, Rua de Leiria, 2400-181</td>
+                            <td>{{ $evento->local }}</td>
                         </tr>
                         <tr class="table-active">
                             <td>Datas</td>
                         </tr>
                         <tr>
-                            <td>Data Inícial - 01/12/2023</td>
+                            <td>Data Inícial - {{ date('d-m-y', strtotime($evento->data_inicio)) }}</td>
                         </tr>
                         <tr>
-                            <td>Data Final - 31/12/2023</td>
+                            <td>Data Final - {{ date('d-m-y', strtotime($evento->data_fim)) }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -92,10 +92,7 @@
         <div class="col-md-12">
             <div class="form-group">
                 <div id="texto">
-                    Nesta semana, o livro principal vai ser "Os Lusíadas" de Luís de Camões,
-                    lançado em 1572 e o incentivo vai ser para ler este livro para depois
-                    discutirmos de forma ordenada para tirar uma boa conclusão sobre o mesmo
-                    e para adquirir uma boa quantidade de conhecimento.
+                    {{ $evento->descricao }}
                 </div>
             </div>
         </div>

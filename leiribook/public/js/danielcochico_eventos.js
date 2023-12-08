@@ -35,3 +35,22 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   resetTimer();
 }
+
+$(document).ready(function () {
+
+    $('.prev').hide();
+    $('.next').hide();
+
+    $('#sliders').hover(
+      function () {
+
+        $('.prev').fadeIn(600);
+        $('.next').fadeIn(600);
+      },
+      function () {
+
+        $('.prev').fadeOut(600);
+        $('.next').fadeOut(600);
+      }
+    );
+  });
