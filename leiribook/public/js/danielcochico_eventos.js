@@ -54,3 +54,12 @@ $(document).ready(function () {
       }
     );
   });
+
+  function onMouseOver(element) {
+    element.classList.add('hovered');
+    resetTimer();
+}
+
+function onMouseOut(element) {
+    element.classList.remove('hovered');
+}

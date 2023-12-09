@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title', 'LeiriBook-Evento')
+@section('title', 'LeiriBook-' . $tituloPagina)
 
 @section('styles')
     <link rel="stylesheet"
@@ -29,34 +29,20 @@
                 <section id="slider" class="splide">
                     <div class="splide__track">
                         <ul class="splide__list">
-                            <li class="splide__slide">
-                                <img src="{{ asset('images/danielcochico/camoes.jpg') }}" alt="" />
-                            </li>
-                            <li class="splide__slide">
-                                <img src="{{ asset('images/danielcochico/camoes2.jpg') }}" alt="" />
-                            </li>
-                            <li class="splide__slide">
-                                <img src="{{ asset('images/danielcochico/camoes3.jpg') }}" alt="" />
-                            </li>
-                            <li class="splide__slide">
-                                <img src="{{ asset('images/danielcochico/camoes4.jpg') }}" alt="" />
-                            </li>
+                            @foreach ($evento->fotos as $foto)
+                                <li class="splide__slide">
+                                    <img src="{{ $foto->foto_url }}" alt="" />
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </section>
                 <ul id="thumbnails" class="thumbnails">
-                    <li class="thumbnail">
-                        <img src="{{ asset('images/danielcochico/camoes.jpg') }}" alt="" />
-                    </li>
-                    <li class="thumbnail">
-                        <img src="{{ asset('images/danielcochico/camoes2.jpg') }}" alt="" />
-                    </li>
-                    <li class="thumbnail">
-                        <img src="{{ asset('images/danielcochico/camoes3.jpg') }}" alt="" />
-                    </li>
-                    <li class="thumbnail">
-                        <img src="{{ asset('images/danielcochico/camoes4.jpg') }}" alt="" />
-                    </li>
+                    @foreach ($evento->fotos as $thumbnail)
+                        <li class="thumbnail">
+                            <img src="{{ $thumbnail->foto_url }}" alt="" />
+                        </li>
+                    @endforeach
                 </ul>
 
 
@@ -96,7 +82,8 @@
                 </div>
             </div>
         </div>
-        <div id="botao_evento" class="text-center"><a class="btn btn-dark btn-block gradient-custom-2 mb-3" href="{{ route('eventos') }}">Voltar aos eventos</a></div>
+        <div id="botao_evento" class="text-center"><a class="btn btn-dark btn-block gradient-custom-2 mb-3"
+                href="{{ route('eventos') }}">Voltar aos eventos</a></div>
     </div>
 
     <hr>

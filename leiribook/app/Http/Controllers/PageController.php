@@ -36,10 +36,16 @@ class PageController extends Controller
     }
 
     public function evento($id)
-    {
-            $evento = Evento::find($id);
-            return view('evento', compact('evento'));
+{
+    $evento = Evento::with(['fotos' => function ($query) {
+        $query->orderBy('ordem');
+    }])->find($id);
+
+
+    if (!$evento) {
+        return redirect()->route('eventos');
     }
+}
 
     public function eventos(Evento $evento = null)
     {

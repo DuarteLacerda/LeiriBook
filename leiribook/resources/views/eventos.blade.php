@@ -13,44 +13,23 @@
 
 
     <!-- ======= Event Section ======= -->
-    <div id="sliders">
-        <div class="mySlides fade">
-            <a href="#">
-                <div class="prev" onclick="plusSlides(-1)" onmouseover="resetTimer()">❮</div>
-                <img class="slider" src="{{ asset('images/danielcochico/camoes.jpg') }}" alt="" />
-                <div class="text">Semana do Camões 1 | 01/12 - 31/01</div>
-                <div class="next" onclick="plusSlides(1)" onmouseover="resetTimer()">❯</div>
-            </a>
-        </div>
+    <div id="sliders" onmouseover="onMouseOver(this)" onmouseout="onMouseOut(this)">
+        @foreach ($eventos->take(5) as $evento)
+            <div class="mySlides fade">
+                <div class="prev" onclick="plusSlides(-1)">❮</div>
 
-        <div class="mySlides fade">
-            <div class="prev" onclick="plusSlides(-1)" onmouseover="resetTimer()">❮</div>
-            <img class="slider" src="{{ asset('images/danielcochico/camoes2.jpg') }}" alt="" />
-            <div class="text">Semana do Camões 2 | 27/12 - 23/01</div>
-            <div class="next" onclick="plusSlides(1)" onmouseover="resetTimer()">❯</div>
-        </div>
+                @if ($evento->fotos->isNotEmpty())
+                    <img class="slider" src="{{ asset('storage/eventos_fotos/' . $evento->fotos->first()->foto) }}" alt="" />
+                @else
+                    <img class="slider" src="{{ asset('storage/eventos_fotos/logo.png') }}" alt="" />
+                @endif
 
-        <div class="mySlides fade">
-            <div class="prev" onclick="plusSlides(-1)" onmouseover="resetTimer()">❮</div>
-            <img class="slider" src="{{ asset('images/danielcochico/camoes3.jpg') }}" alt="" />
-            <div class="text">Semana do Camões 3 | 27/12 - 23/01</div>
-            <div class="next" onclick="plusSlides(1)" onmouseover="resetTimer()">❯</div>
-        </div>
-
-        <div class="mySlides fade">
-            <div class="prev" onclick="plusSlides(-1)" onmouseover="resetTimer()">❮</div>
-            <img class="slider" src="{{ asset('images/danielcochico/camoes4.jpg') }}" alt="" />
-            <div class="text">Semana do Camões 4 | 27/12 - 23/01</div>
-            <div class="next" onclick="plusSlides(1)" onmouseover="resetTimer()">❯</div>
-        </div>
-
-        <div class="mySlides fade">
-            <div class="prev" onclick="plusSlides(-1)" onmouseover="resetTimer()">❮</div>
-            <img class="slider" src="{{ asset('images/danielcochico/camoes2.jpg') }}" alt="" />
-            <div class="text">Semana do Camões 5 | 27/12 - 23/01</div>
-            <div class="next" onclick="plusSlides(1)" onmouseover="resetTimer()">❯</div>
-        </div>
+                <div class="text">{{ $evento->nome }} | {{ $evento->data_inicio }} - {{ $evento->data_fim }}</div>
+                <div class="next" onclick="plusSlides(1)">❯</div>
+            </div>
+        @endforeach
     </div>
+
 
     <div class="dots" style="text-align:center">
         <span class="dot" onclick="currentSlide(1)"></span>
@@ -73,9 +52,13 @@
                 <div id="eventos_carta" class="col mb-3  mx-xl-1">
                     <div id="carta_border" class="card h-100">
 
-                        <img class="card-img-top" id="img_carta_eventos"
-                            src="{{ asset('storage/eventos_fotos/' . $evento->fotos->where('ordem', 1)->first()->foto) }}"
-                            alt="..." />
+                        @if ($evento->fotos->isNotEmpty())
+                            <img class="card-img-top" id="img_carta_eventos"
+                                src="{{ asset('storage/eventos_fotos/' . $evento->fotos->where('ordem', 1)->first()->foto) }}"
+                                alt="..." />
+                        @else
+                            <img class="card-img-top" id="img_carta_eventos" src="{{ asset('images/danielcochico/logo.png') }}" alt="" />
+                        @endif
 
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -87,8 +70,10 @@
                         </div>
 
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-dark btn-block gradient-custom-2 mb-3"
-                                    href="{{ route('evento', $evento) }}">Ver detalhes</a></div>
+                            <div class="text-center">
+                                <a class="btn btn-dark btn-block gradient-custom-2 mb-3"
+                                    href="{{ route('evento', $evento) }}">Ver detalhes</a>
+                            </div>
                         </div>
                     </div>
                 </div>
