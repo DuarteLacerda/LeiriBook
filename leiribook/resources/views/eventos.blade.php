@@ -72,7 +72,7 @@
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
                                 <a class="btn btn-dark btn-block gradient-custom-2 mb-3"
-                                    href="{{ route('evento', $evento) }}">Ver detalhes</a>
+                                    href="{{ route('evento', str_replace(' ', '-', $evento->nome)) }}">Ver detalhes</a>
                             </div>
                         </div>
                     </div>

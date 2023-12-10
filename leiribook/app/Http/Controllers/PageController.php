@@ -35,16 +35,20 @@ class PageController extends Controller
         return view("pedido_livro");
     }
 
-    public function evento($id)
+    public function evento($nome)
 {
+
+    $nome = str_replace('-', ' ', $nome);
+
     $evento = Evento::with(['fotos' => function ($query) {
         $query->orderBy('ordem');
-    }])->findOrFail($id);
+    }])->where('nome', $nome)->firstOrFail();
 
     $tituloPagina = $evento->nome;
 
     return view('evento', compact('evento', 'tituloPagina'));
 }
+
 
     public function eventos(Evento $evento = null)
     {

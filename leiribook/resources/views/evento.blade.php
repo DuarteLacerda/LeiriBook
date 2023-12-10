@@ -29,23 +29,33 @@
                 <section id="slider" class="splide">
                     <div class="splide__track">
                         <ul class="splide__list">
-                            @foreach ($evento->fotos as $foto)
+                            @if ($evento->fotos->isNotEmpty())
+                                @foreach ($evento->fotos as $foto)
+                                    <li class="splide__slide">
+                                        <img src="{{ $foto->foto_url }}" alt="" />
+                                    </li>
+                                @endforeach
+                            @else
                                 <li class="splide__slide">
-                                    <img src="{{ $foto->foto_url }}" alt="" />
+                                    <img src="{{ asset('images/danielcochico/logo.png') }}" alt="" />
                                 </li>
-                            @endforeach
+                            @endif
                         </ul>
                     </div>
                 </section>
                 <ul id="thumbnails" class="thumbnails">
-                    @foreach ($evento->fotos as $thumbnail)
+                    @if ($evento->fotos->isNotEmpty())
+                        @foreach ($evento->fotos as $thumbnail)
+                            <li class="thumbnail">
+                                <img src="{{ $thumbnail->foto_url }}" alt="" />
+                            </li>
+                        @endforeach
+                    @else
                         <li class="thumbnail">
-                            <img src="{{ $thumbnail->foto_url }}" alt="" />
+                            <img src="{{ asset('images/danielcochico/logo.png') }}" alt="" />
                         </li>
-                    @endforeach
+                    @endif
                 </ul>
-
-
             </div>
             <div class="col-lg-4 col-sm-12" id="labels">
 
