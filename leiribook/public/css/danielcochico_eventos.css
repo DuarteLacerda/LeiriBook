@@ -114,13 +114,22 @@ body {
     text-decoration: none;
 }
 
-#eventos_carta {
+.btn-group button.active {
+    background-color: grey ;
+}
+
+.eventos-carta {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 15px;
+    transition: opacity 0.6s ease-in-out;
+    opacity: 0;
   }
 
-  #eventos_carta:hover,
-  #eventos_carta:hover #carta_border {
+.eventos-carta:not(.hidden) {
+    opacity: 1;
+}
+  .eventos-carta:hover,
+  .eventos-carta:hover #carta_border {
       background-color: rgb(238, 238, 238);
   }
 

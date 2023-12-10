@@ -44,12 +44,17 @@
         <a id="caminho_links" href="{{ route('home') }}">Página Principal</a> > Eventos
     </div>
 
+    <div id="botaodatas" class="btn-group mt-3" role="group" aria-label="Event Filters">
+        <button type="button" class="btn btn-dark active" onclick="filterEvents('todos')" data-filter="todos">Todos os eventos</button>
+        <button type="button" class="btn btn-dark" onclick="filterEvents('decorrer')" data-filter="decorrer">Eventos a decorrer</button>
+        <button type="button" class="btn btn-dark" onclick="filterEvents('futuro')" data-filter="futuro">Eventos futuros</button>
+        <button type="button" class="btn btn-dark" onclick="filterEvents('passado')" data-filter="passado">Eventos passados</button>
+    </div>
+
     <div class="px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-
-
+        <div id="eventos-container" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             @foreach ($eventos as $evento)
-                <div id="eventos_carta" class="col mb-3  mx-xl-1">
+                <div class="eventos-carta col mb-3  mx-xl-1" data-data-inicio="{{ $evento->data_inicio }}" data-data-fim="{{ $evento->data_fim }}">
                     <div id="carta_border" class="card h-100">
 
                         @if ($evento->fotos->isNotEmpty())

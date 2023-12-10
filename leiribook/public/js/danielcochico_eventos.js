@@ -63,3 +63,60 @@ $(document).ready(function () {
 function onMouseOut(element) {
     element.classList.remove('hovered');
 }
+
+function filterEvents(filter) {
+    const eventos = document.querySelectorAll('#eventos-container .eventos-carta');
+
+
+    const buttons = document.querySelectorAll('#botaodatas button');
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+
+    const activeButton = document.querySelector(`#botaodatas button[data-filter="${filter}"]`);
+    activeButton.classList.add('active');
+
+
+    eventos.forEach(evento => {
+        evento.style.transition = 'opacity 0.6s ease-in-out';
+        evento.style.opacity = 0;
+        setTimeout(() => {
+            evento.style.display = 'none';
+        }, 400);
+    });
+
+
+    setTimeout(() => {
+        eventos.forEach(evento => {
+            const dataInicio = new Date(evento.dataset.dataInicio);
+            const dataFim = new Date(evento.dataset.dataFim);
+            const currentDate = new Date();
+
+            switch (filter) {
+                case 'decorrer':
+                    if (dataInicio <= currentDate && dataFim >= currentDate) {
+                        evento.style.display = 'block';
+                        evento.style.opacity = 1;
+                    }
+                    break;
+                case 'futuro':
+                    if (dataInicio > currentDate) {
+                        evento.style.display = 'block';
+                        evento.style.opacity = 1;
+                    }
+                    break;
+                case 'passado':
+                    if (dataFim < currentDate) {
+                        evento.style.display = 'block';
+                        evento.style.opacity = 1;
+                    }
+                    break;
+                default:
+                    evento.style.display = 'block';
+                    evento.style.opacity = 1;
+            }
+        });
+    }, 400);
+}
+
