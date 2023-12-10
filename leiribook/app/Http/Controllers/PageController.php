@@ -39,12 +39,11 @@ class PageController extends Controller
 {
     $evento = Evento::with(['fotos' => function ($query) {
         $query->orderBy('ordem');
-    }])->find($id);
+    }])->findOrFail($id);
 
+    $tituloPagina = $evento->nome;
 
-    if (!$evento) {
-        return redirect()->route('eventos');
-    }
+    return view('evento', compact('evento', 'tituloPagina'));
 }
 
     public function eventos(Evento $evento = null)
