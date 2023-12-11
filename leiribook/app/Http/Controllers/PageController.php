@@ -11,10 +11,21 @@ class PageController extends Controller
 {
     public function home()
     {
-        $users = User::all();
+        $currentDateTime = now();
+
         $livros = Livro::all();
+        $livros = Livro::where('created_at', '>', $currentDateTime)
+            ->orderBy('created_at', 'asc')
+            ->take(3)
+            ->get();
+
         $eventos = Evento::all();
-        return view("welcome", compact("eventos", "livros", "users"));
+        $eventos = Evento::where('data_fim', '>', $currentDateTime)
+            ->orderBy('data_fim', 'asc')
+            ->take(3)
+            ->get();
+
+        return view("welcome", compact("eventos", "livros"));
     }
     public function contactos()
     {
@@ -36,40 +47,40 @@ class PageController extends Controller
     }
 
     public function evento($nome)
-{
+    {
 
-    $nome = str_replace('-', ' ', $nome);
+        $nome = str_replace('-', ' ', $nome);
 
-    $evento = Evento::with(['fotos' => function ($query) {
-        $query->orderBy('ordem');
-    }])->where('nome', $nome)->firstOrFail();
+        $evento = Evento::with(['fotos' => function ($query) {
+            $query->orderBy('ordem');
+        }])->where('nome', $nome)->firstOrFail();
 
-    $tituloPagina = $evento->nome;
-
-
-    return view('evento', compact('evento', 'tituloPagina'));
-}
+        $tituloPagina = $evento->nome;
 
 
-public function eventos(Evento $evento = null)
-{
-    $currentDateTime = now();
-
-    $eventosRecentes = Evento::where('data_fim', '>', $currentDateTime)
-        ->orderBy('data_fim', 'asc')
-        ->take(5)
-        ->get();
-
-    if ($evento) {
-        $eventos = Evento::where('category_id', $evento->id)
-            ->orderBy('data_fim', 'asc')
-            ->get();
-    } else {
-        $eventos = Evento::orderBy('data_fim', 'asc')->get();
+        return view('evento', compact('evento', 'tituloPagina'));
     }
 
-    return view('eventos', compact('eventos', 'eventosRecentes'));
-}
+
+    public function eventos(Evento $evento = null)
+    {
+        $currentDateTime = now();
+
+        $eventosRecentes = Evento::where('data_fim', '>', $currentDateTime)
+            ->orderBy('data_fim', 'asc')
+            ->take(5)
+            ->get();
+
+        if ($evento) {
+            $eventos = Evento::where('category_id', $evento->id)
+                ->orderBy('data_fim', 'asc')
+                ->get();
+        } else {
+            $eventos = Evento::orderBy('data_fim', 'asc')->get();
+        }
+
+        return view('eventos', compact('eventos', 'eventosRecentes'));
+    }
 
     public function faqs()
     {
