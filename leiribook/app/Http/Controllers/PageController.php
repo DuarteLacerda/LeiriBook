@@ -46,18 +46,30 @@ class PageController extends Controller
 
     $tituloPagina = $evento->nome;
 
+
     return view('evento', compact('evento', 'tituloPagina'));
 }
 
 
-    public function eventos(Evento $evento = null)
-    {
-        if ($evento)
-            $eventos = Evento::where('category_id', $evento->id)->get();
-        else
-            $eventos = Evento::all();
-        return view('eventos', compact('eventos'));
+public function eventos(Evento $evento = null)
+{
+    $currentDateTime = now();
+
+    $eventosRecentes = Evento::where('data_fim', '>', $currentDateTime)
+        ->orderBy('data_fim', 'asc')
+        ->take(5)
+        ->get();
+
+    if ($evento) {
+        $eventos = Evento::where('category_id', $evento->id)
+            ->orderBy('data_fim', 'asc')
+            ->get();
+    } else {
+        $eventos = Evento::orderBy('data_fim', 'asc')->get();
     }
+
+    return view('eventos', compact('eventos', 'eventosRecentes'));
+}
 
     public function faqs()
     {
