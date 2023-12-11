@@ -13,7 +13,7 @@
                                 alt="logotipo" width="140px"></a>
                     </li>
                     <li><a href="{{route('sobre')}}">Sobre</a></li>
-                    <li><a href="#">Bilioteca Virtual</a></li>
+                    <li><a href="{{route('biblioteca')}}">Bilioteca Virtual</a></li>
                     <li><a href="{{ route('eventos') }}">Eventos</a></li>
                     <li><a href="{{ route('contactos') }}">Contactos</a></li>
                 </ul>
@@ -30,7 +30,7 @@
             <div class="menu-items">
                 <li><a href="{{ route('home') }}">Inicio</a></li>
                 <li><a href="{{route('sobre')}}">Sobre</a></li>
-                <li><a href="#">Bilioteca Virtual</a></li>
+                <li><a href="{{route('biblioteca')}}">Bilioteca Virtual</a></li>
                 <li><a href="{{ route('eventos') }}">Eventos</a></li>
                 <li><a href="{{ route('contactos') }}">Contactos</a></li>
                 </a></li>
