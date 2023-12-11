@@ -16,6 +16,7 @@
         <div class="center">
             <h1>Registo</h1>
             <form method="POST" method="{{ route('register') }}">
+                @csrf
                 <div class="txt_field">
                     <input type="text" class="@error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"
                         required autocomplete="name" autofocus>
@@ -53,7 +54,7 @@
                     @enderror
                 </div>
                 <div class="txt_field">
-                    <input type="password" id="pass" required>
+                    <input type="password" id="pass" name="password_confirmation" required autocomplete="new-password">
                     <span></span>
                     <label>Confirme a Password</label>
                     <button type="button" class="eye2"><i class="fa-solid fa-eye-slash" id="eye2"></i></button>
