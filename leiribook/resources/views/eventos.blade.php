@@ -14,7 +14,7 @@
 
     <!-- ======= Event Section ======= -->
     <div id="sliders" onmouseover="onMouseOver(this)" onmouseout="onMouseOut(this)">
-        @foreach ($eventos->take(5) as $evento)
+        @foreach ($eventosRecentes as $evento)
             <div class="mySlides fade">
                 <div class="prev" onclick="plusSlides(-1)">❮</div>
 
@@ -24,7 +24,7 @@
                     <img class="slider" src="{{ asset('storage/eventos_fotos/logo.png') }}" alt="" />
                 @endif
 
-                <div class="text">{{ $evento->nome }} | {{ $evento->data_inicio }} - {{ $evento->data_fim }}</div>
+                <div class="text">{{ $evento->nome }} | {{ date('d-m-y', strtotime($evento->data_inicio)) }} /  {{ date('d-m-y', strtotime($evento->data_fim)) }}</div>
                 <div class="next" onclick="plusSlides(1)">❯</div>
             </div>
         @endforeach
