@@ -6,7 +6,7 @@
 @section('content')
     <button onclick="topFunction()" id="myBtn" title="Ir para cima"><i class="fa-solid fa-arrow-up"></i></button>
     <div class="container pt-5 pb-5">
-        <h3 class="text-left pb-4">A nossa História</h3>
+        <h3 class="text-center pb-4">A nossa História</h3>
         <div class="row">
             <div class="col-md-6 ">
 
@@ -20,14 +20,14 @@
             </div>
 
             <div class="col-md-6">
-                <img src="{{ asset('images/vanessa/livraria.jpg') }}" alt="Descrição da Imagem" class="img-fluid">
+                <img src="{{ asset('images/vanessa/livraria.jpg') }}" alt="Descrição da Imagem" class="img-fluid shadow">
             </div>
 
         </div>
-        <h3 class="text-center p-5">A Nossa Missão</h3>
+        <h3 class="text-center pb-4 pt-5">A Nossa Missão</h3>
         <div class="row">
             <div class="col-md-6">
-                <img src="{{ asset('images/vanessa/missao.jpg') }}" alt="Descrição da Imagem" class="img-fluid">
+                <img src="{{ asset('images/vanessa/missao.jpg') }}" alt="Descrição da Imagem" class="img-fluid shadow">
             </div>
             <div class="col-md-6">
 
@@ -43,61 +43,29 @@
 
         <div class="container">
             <div class="row justify-content-center">
-
-                <!-- Card 1 -->
-                <div class="col-md-3 m-2 mb-2" id="cartao">
-                    <div class="card">
-                        <img src="{{ asset('images/vanessa/utilizador.png') }}" class="card-img-top p-4">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Título do Card 1</h5>
-                            <p class="card-text text-center">Nome Pessoa</p>
+                @if ($users->isNotEmpty())
+                    @foreach ($users as $user)
+                        <!-- Card 1 -->
+                        <div class="col-md-3 m-2 mb-2" id="cartao">
+                            <div class="card shadow">
+                                @if ($user->foto != null)
+                                    <img src="{{ asset('storage/projects_images/' . $project->image) }}"
+                                        class="card-img-top p-4">
+                                @else
+                                    <img src="{{ asset('images/admin/default-user.png') }}" alt="" />
+                                @endif
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">{{($user->role == 'A') ? 'Administrador' : 'Normal'}}</h5>
+                                    <p class="card-text text-center">{{ $user->name }}</p>
+                                </div>
+                            </div>
                         </div>
+                    @endforeach
+                @else
+                    <div class="col-md-12 m-2 mb-2 text-center" id="cartao">
+                        <h4>Não existem utilizadores registados na base de dados.</h4>
                     </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="col-md-3 m-2 mb-2" id="cartao">
-                    <div class="card">
-                        <img src="{{ asset('images/vanessa/utilizador.png') }}" class="card-img-top p-4">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Título do Card 2</h5>
-                            <p class="card-text text-center">Nome Pessoa</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-md-3 m-2 mb-2" id="cartao">
-                    <div class="card">
-                        <img src="{{ asset('images/vanessa/utilizador.png') }}" class="card-img-top p-4">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Título do Card 3</h5>
-                            <p class="card-text text-center">Nome Pessoa</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="col-md-3 m-2 mb-2" id="cartao">
-                    <div class="card">
-                        <img src="{{ asset('images/vanessa/utilizador.png') }}" class="card-img-top p-4">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Título do Card 4</h5>
-                            <p class="card-text text-center">Nome Pessoa</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="col-md-3 m-2 mb-2" id="cartao">
-                    <div class="card">
-                        <img src="{{ asset('images/vanessa/utilizador.png') }}" class="card-img-top p-4">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Título do Card 5</h5>
-                            <p class="card-text text-center">Nome Pessoa</p>
-                        </div>
-                    </div>
-                </div>
+                @endif
             </div>
         </div>
     </div>
