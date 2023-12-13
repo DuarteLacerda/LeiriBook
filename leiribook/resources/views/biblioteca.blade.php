@@ -9,12 +9,22 @@
         <div class="container">
             <h1>Biblioteca</h1>
             <br>
+            <!-- Filters -->
+            <form action="{{ route('filter.books') }}" method="GET">
+                <label for="genre">Filter by Genre:</label>
+                <select name="genre" id="genre">
+                    @foreach ($categorias as $categoria)
+                        <option value="{{ $categoria->nome }}">{{ $categoria->nome }}</option>
+                    @endforeach
+                </select>
+                <button type="submit">Apply Filter</button>
+            </form>
+            <!-- End Filters -->
             <div id="list-th">
                 @forelse ($livros as $livro)
                     <div class="book">
                         <div class="cover">
-                            <img
-                                src="{{ asset('storage/books/' . $livro->foto) }}">
+                            <img src="{{ asset('storage/books/' . $livro->foto) }}">
                         </div>
                         <div class="description">
                             <p class="title">{{ $livro->titulo }}<br>
@@ -22,20 +32,20 @@
                             </p>
                         </div>
                     </div>
-                    @empty
+                @empty
                     <p>Não há livros</p>
                 @endforelse
 
-                    <!--<div class="book">
-                        <div class="cover">
-                            <img src="https://alysbcohen.files.wordpress.com/2015/01/little-princess-book-cover.jpg">
-                        </div>
-                        <div class="description">
-                            <p class="title">A Little Princess<br>
-                                <span class="author">Frances Hodgson Burnett</span>
-                            </p>
-                        </div>
-                    </div>-->
+                <!--<div class="book">
+                            <div class="cover">
+                                <img src="https://alysbcohen.files.wordpress.com/2015/01/little-princess-book-cover.jpg">
+                            </div>
+                            <div class="description">
+                                <p class="title">A Little Princess<br>
+                                    <span class="author">Frances Hodgson Burnett</span>
+                                </p>
+                            </div>
+                        </div>-->
             </div>
         </div>
     </div>
