@@ -33,7 +33,11 @@
         @foreach ($eventos as $evento)
         <div class="card">
             <div class="image">
+                @if ($evento->fotos->isNotEmpty())
                 <img src="{{ asset('storage/eventos/'.$evento->foto) }}" alt="">
+                @else
+                <img src="{{ asset('images/admin/default-user.png') }}" alt="" />
+                @endif
             </div>
             <div class="content">
                 <a href="#">
