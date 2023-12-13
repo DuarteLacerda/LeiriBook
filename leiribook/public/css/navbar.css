@@ -7,11 +7,12 @@
 
 .navbar {
     position: absolute;
-    top: 0;
+    top: 0px;
     left: 0;
     width: 100%;
     z-index: 1000;
     background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
     font-family: "Eras Demi ITC";
     display: flex;
     justify-content: center;
@@ -24,7 +25,7 @@
 
 .navbar .nav-container a {
     text-decoration: none;
-    color: #0e2431;
+    color: rgb(39, 39, 39);
     font-weight: 500;
     font-size: 1.2rem;
     padding: 0.7rem;
@@ -71,7 +72,7 @@
     height: 4px;
     width: 100%;
     border-radius: 10px;
-    background: #0e2431;
+    background: rgb(39, 39, 39);
 }
 
 .nav-container .hamburger-lines .line1 {
@@ -107,33 +108,41 @@
 
 .navbar .menu-items {
     height: 40vh;
+    position: absolute;
     width: 100%;
+    top: 70px;
     transform: translate(-150%);
     display: flex;
     flex-direction: column;
-    align-self: center;
-    justify-self: center;
     justify-content: center;
     align-items: center;
     transition: transform 0.5s ease-in-out;
     text-align: center;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
 }
 
 .navbar .menu-items li {
-    margin-bottom: 1rem;
-    font-size: larger;
+    margin-bottom: 0.5rem;
+}
+
+.navbar .menu-items li a {
+    font-size: 1.5rem;
+    color: rgb(39, 39, 39);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
 .logo {
     display: flex;
     align-self: center;
-    font-size: 1.2rem;
     color: rgb(39, 39, 39);
 }
 
 .search {
     background-color: transparent;
+    color: rgb(39, 39, 39);
     border: 0;
 }
 
