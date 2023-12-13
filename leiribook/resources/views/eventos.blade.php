@@ -77,8 +77,8 @@
                             <div class="text-center">
 
                                 <h5 class="fw-bolder">{{ $evento->nome }}</h5>
-                                {{ date('d-m-y', strtotime($evento->data_inicio)) }} /
-                                {{ date('d-m-y', strtotime($evento->data_fim)) }}
+                                <label id="datas">{{ date('d-m-y', strtotime($evento->data_inicio)) }} /
+                                {{ date('d-m-y', strtotime($evento->data_fim)) }}</label>
                             </div>
                         </div>
 

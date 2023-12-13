@@ -139,7 +139,7 @@ body {
 
 #img_carta_eventos {
     height: 200px;
-    object-fit: cover;
+    object-fit:cover;
     border-radius: 15px;
     margin-top: 25px;
 }
@@ -161,6 +161,10 @@ body {
 
     .text {
         margin-top: -60px;
+    }
+
+    #datas{
+        font-size: 9pt;
     }
 
 }
