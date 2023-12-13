@@ -65,7 +65,7 @@ body {
     object-fit: cover;
 }
 
-#detalhes{
+#detalhes {
     text-align: start;
     font-size: 24pt;
     margin-bottom: 30px;
@@ -132,7 +132,7 @@ h2::after {
         margin-bottom: 50px;
     }
 
-    #detalhes{
+    #detalhes {
         text-align: center;
     }
 

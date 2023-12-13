@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\LivroController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LivroController;
+use App\Http\Controllers\CategoriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ Route::get('/evento/{nome}', [PageController::class, 'evento'])->name('evento')-
 Route::get('/eventos', [PageController::class, 'eventos'])->name('eventos');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 Route::get('/biblioteca', [LivroController::class, 'biblioteca'])->name('biblioteca');
-
+Route::get('/books/filter', [LivroController::class, 'filterByGenre'])->name('filter.books');
 Auth::routes(['register' => true, 'verify' => true]);
 Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.', 'prefix' => 'admin'], function () {
     Route::get('/', [PageController::class, 'admin'])->name('dashboard');

@@ -3,32 +3,32 @@ var splide = new Splide("#slider", {
     height: 300,
     pagination: false,
     cover: true
-  });
+});
 
-  var thumbnails = document.getElementsByClassName("thumbnail");
-  var current;
+var thumbnails = document.getElementsByClassName("thumbnail");
+var current;
 
-  for (var i = 0; i < thumbnails.length; i++) {
+for (var i = 0; i < thumbnails.length; i++) {
     initThumbnail(thumbnails[i], i);
-  }
+}
 
-  function initThumbnail(thumbnail, index) {
+function initThumbnail(thumbnail, index) {
     thumbnail.addEventListener("click", function () {
-      splide.go(index);
+        splide.go(index);
     });
-  }
+}
 
-  splide.on("mounted move", function () {
+splide.on("mounted move", function () {
     var thumbnail = thumbnails[splide.index];
 
     if (thumbnail) {
-      if (current) {
-        current.classList.remove("is-active");
-      }
+        if (current) {
+            current.classList.remove("is-active");
+        }
 
-      thumbnail.classList.add("is-active");
-      current = thumbnail;
+        thumbnail.classList.add("is-active");
+        current = thumbnail;
     }
-  });
+});
 
-  splide.mount();
+splide.mount();
