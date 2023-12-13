@@ -14,14 +14,14 @@ class PageController extends Controller
         $currentDateTime = now();
 
         $livros = Livro::all();
-        $livros = Livro::where('created_at', '>', $currentDateTime)
-            ->orderBy('created_at', 'asc')
-            ->take(3)
+        $livros = Livro::where('created_at', '<', $currentDateTime)
+            ->orderBy('created_at', 'desc')
+            ->take(6)
             ->get();
 
         $eventos = Evento::all();
         $eventos = Evento::where('data_fim', '>', $currentDateTime)
-            ->orderBy('data_fim', 'asc')
+            ->orderBy('data_fim', 'desc')
             ->take(3)
             ->get();
 
@@ -94,6 +94,7 @@ class PageController extends Controller
     public function sobrenos()
     {
         $users = User::all();
+        $users = User::where('role', 'like', 'A')->get();
         return view("sobrenos", compact("users"));
     }
 }
