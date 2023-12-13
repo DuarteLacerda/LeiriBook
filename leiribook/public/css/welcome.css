@@ -14,19 +14,27 @@
 
 .sec1 {
     height: 100vh;
-    background-color: cadetblue;
+    background: url('../images/bg-home.jpg');
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #fff;
+    color: #111;
 }
 
 .sec1_title {
     position: relative;
-    width: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 20%;
+    height: 25%;
     font-size: 250%;
-    text-align: center;
     top: 20%;
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 1px #111;
+
 }
 
 /* Ani Scroll */
@@ -42,7 +50,7 @@
     margin-left: -20px;
     top: 80%;
     margin-top: -35px;
-    box-shadow: inset 0 0 0 1px #fff;
+    box-shadow: inset 0 0 0 1px #111;
     border-radius: 25px;
 }
 
@@ -50,7 +58,7 @@
     content: "";
     width: 8px;
     height: 8px;
-    background: #fff;
+    background: #111;
     margin-left: -4px;
     top: 8px;
     border-radius: 4px;

@@ -12,8 +12,6 @@
         <h1>Leiribook</h1>
         <br>
         <h2>Ler para Crescer</h2>
-        <br>
-        <hr style="width: 100%;">
     </div>
     <a href="#sec2">
         <div class='icon-scroll'></div>
