@@ -6,8 +6,8 @@
 @section('content')
 <button onclick="topFunction()" id="myBtn" title="Ir para cima"><i class="fa-solid fa-arrow-up"></i></button>
 <div class="container pt-5 pb-5">
-    <h3 class="text-center pb-4">A nossa História</h3>
-    <div class="row">
+    <h3 class="text-center pb-4" id="leiriBookHistoria">A nossa História</h3>
+    <div class="row" id="leiriBookDescricao">
         <div class="col-md-6 ">
 
             <p>Bem-vindo(a) à LeiriBook, uma associação dedicada ao incentivo da leitura em Leiria.
@@ -24,8 +24,8 @@
         </div>
 
     </div>
-    <h3 class="text-center pb-4 pt-5">A Nossa Missão</h3>
-    <div class="row">
+    <h3 class="text-center pb-4 pt-5" id="leiriBookTitulo">A Nossa Missão</h3>
+    <div class="row" id="leiriBookRow">
         <div class="col-md-6">
             <img src="{{ asset('images/vanessa/missao.jpg') }}" alt="Descrição da Imagem" class="img-fluid shadow">
         </div>
@@ -39,9 +39,9 @@
         </div>
     </div>
 
-    <h3 class="text-center p-5">Equipa da LeiriBook</h3>
+    <h3 class="text-center p-5" id="leiriBookEquipa">Equipa da LeiriBook</h3>
 
-    <div class="container">
+    <div class="container" id="leiriBookEq">
         <div class="row justify-content-center">
             @if ($users)
             @foreach ($users as $user)
