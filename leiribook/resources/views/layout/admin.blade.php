@@ -63,37 +63,37 @@
                             </a>
                         </li>
                         <li>
-                            <a href="inbox.html">
-                                <i class="fas fa-chart-bar"></i>Inbox</a>
+                            <a href="#">
+                                <i class="fas fa-chart-bar"></i>Utilizadores</a>
                             <span class="inbox-num">3</span>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-shopping-basket"></i>eCommerce</a>
+                            <a>
+                                <i class="fas fa-shopping-basket"></i>Livros</a>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-trophy"></i>Features
+                                <i class="fas fa-calendar-alt"></i>Eventos
                                 <span class="arrow">
                                     <i class="fas fa-angle-down"></i>
                                 </span>
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="table.html">
-                                        <i class="fas fa-table"></i>Tables</a>
+                                    <a href="{{ route('admin.evento.index') }}">
+                                        </i>Listagem de eventos</a>
                                 </li>
                                 <li>
-                                    <a href="form.html">
-                                        <i class="far fa-check-square"></i>Forms</a>
+                                    <a href="{{ route('admin.evento.create') }}">
+                                        Novo Evento</a>
                                 </li>
                                 <li>
-                                    <a href="calendar.html">
-                                        <i class="fas fa-calendar-alt"></i>Calendar</a>
+                                    <a href="#">
+                                        </i>Listagem de Fotos para eventos</a>
                                 </li>
                                 <li>
-                                    <a href="map.html">
-                                        <i class="fas fa-map-marker-alt"></i>Maps</a>
+                                    <a href="#">
+                                        </i>Nova Foto para Evento</a>
                                 </li>
                             </ul>
                         </li>
@@ -279,11 +279,11 @@
                                                 <i class="zmdi zmdi-notifications"></i>Notifications</a>
                                         </div>
                                     </div> --}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </header>
             <aside class="menu-sidebar2 js-right-sidebar d-block d-lg-none">
                 <div class="logo">
@@ -312,37 +312,37 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="inbox.html">
-                                    <i class="fas fa-chart-bar"></i>Inbox</a>
+                                <a href="#">
+                                    <i class="fas fa-chart-bar"></i>Utilizadores</a>
                                 <span class="inbox-num">3</span>
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="fas fa-shopping-basket"></i>eCommerce</a>
+                                    <i class="fas fa-shopping-basket"></i>Livros</a>
                             </li>
                             <li class="has-sub">
-                                <a class="js-arrow" href="#">
-                                    <i class="fas fa-trophy"></i>Features
+                                <a class="js-arrow">
+                                    <i class="fas fa-calendar-alt"></i>Eventos
                                     <span class="arrow">
                                         <i class="fas fa-angle-down"></i>
                                     </span>
                                 </a>
                                 <ul class="list-unstyled navbar__sub-list js-sub-list">
                                     <li>
-                                        <a href="table.html">
-                                            <i class="fas fa-table"></i>Tables</a>
+                                        <a href="{{ route('admin.evento.index') }}">
+                                            </i>Listagem de eventos</a>
                                     </li>
                                     <li>
-                                        <a href="form.html">
-                                            <i class="far fa-check-square"></i>Forms</a>
+                                        <a href="{{ route('admin.evento.create') }}">
+                                            Novo Evento</a>
                                     </li>
                                     <li>
-                                        <a href="calendar.html">
-                                            <i class="fas fa-calendar-alt"></i>Calendar</a>
+                                        <a href="#">
+                                            </i>Listagem de Fotos para eventos</a>
                                     </li>
                                     <li>
-                                        <a href="map.html">
-                                            <i class="fas fa-map-marker-alt"></i>Maps</a>
+                                        <a href="#">
+                                            </i>Nova Foto para Evento</a>
                                     </li>
                                 </ul>
                             </li>
@@ -463,20 +463,16 @@
         <script src="vendor/bootstrap-4.1/popper.min.js"></script>
         <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
         <!-- Vendor JS       -->
-        <script src="vendor/slick/slick.min.js">
-        </script>
+        <script src="vendor/slick/slick.min.js"></script>
         <script src="vendor/wow/wow.min.js"></script>
         <script src="vendor/animsition/animsition.min.js"></script>
-        <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-        </script>
+        <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
         <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-        <script src="vendor/counter-up/jquery.counterup.min.js">
-        </script>
+        <script src="vendor/counter-up/jquery.counterup.min.js"></script>
         <script src="vendor/circle-progress/circle-progress.min.js"></script>
         <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
         <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-        <script src="vendor/select2/select2.min.js">
-        </script>
+        <script src="vendor/select2/select2.min.js"></script>
         <script src="vendor/vector-map/jquery.vmap.js"></script>
         <script src="vendor/vector-map/jquery.vmap.min.js"></script>
         <script src="vendor/vector-map/jquery.vmap.sampledata.js"></script>

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LivroController;
+use App\Http\Controllers\EventoController;
 use App\Http\Controllers\CategoriaController;
 
 /*
@@ -34,4 +35,5 @@ Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.', 'prefix' =
     Route::get('/', [PageController::class, 'admin'])->name('dashboard');
     Route::get('/users/{user}/send_reactivate_mail', [UserController::class, 'send_reactivate_email'])->name('users.sendActivationEmail');
     /* Route::delete('/users/{user}/destroy_photo', [UserController::class, 'destroy_photo'])->name('users.destroyPhoto'); */
+    Route::resource('evento', EventoController::class);
 });
