@@ -5,11 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LivroController;
-<<<<<<< HEAD
 use App\Http\Controllers\EventoController;
-=======
 use App\Http\Controllers\CategoriaController;
->>>>>>> 1d000f77378319e7a6b1d22ba720fb5ad09d447b
 
 /*
 |--------------------------------------------------------------------------
