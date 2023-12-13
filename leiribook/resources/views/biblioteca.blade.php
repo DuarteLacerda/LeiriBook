@@ -14,7 +14,7 @@
                     <div class="book">
                         <div class="cover">
                             <img
-                                src="https://upload.wikimedia.org/wikipedia/pt/8/86/Mein_Kampf.png">
+                                src="{{ asset('storage/books/' . $livro->foto) }}">
                         </div>
                         <div class="description">
                             <p class="title">{{ $livro->titulo }}<br>
