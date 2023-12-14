@@ -64,12 +64,12 @@
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fas fa-chart-bar"></i>Utilizadores</a>
+                                <i class="fas fa-user"></i>Utilizadores</a>
                             <span class="inbox-num">3</span>
                         </li>
                         <li>
                             <a>
-                                <i class="fas fa-shopping-basket"></i>Livros</a>
+                                <i class="fas fa-book"></i>Livros</a>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
@@ -99,77 +99,19 @@
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages
+                                <i class="fas fa-question"></i>Preguntas Frequentes
                                 <span class="arrow">
                                     <i class="fas fa-angle-down"></i>
                                 </span>
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="login.html">
-                                        <i class="fas fa-sign-in-alt"></i>Login</a>
+                                    <a href="{{ route('admin.evento.index') }}">
+                                        </i>Listagem de Preguntas</a>
                                 </li>
                                 <li>
-                                    <a href="register.html">
-                                        <i class="fas fa-user"></i>Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">
-                                        <i class="fas fa-unlock-alt"></i>Forget Password</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements
-                                <span class="arrow">
-                                    <i class="fas fa-angle-down"></i>
-                                </span>
-                            </a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="button.html">
-                                        <i class="fab fa-flickr"></i>Button</a>
-                                </li>
-                                <li>
-                                    <a href="badge.html">
-                                        <i class="fas fa-comment-alt"></i>Badges</a>
-                                </li>
-                                <li>
-                                    <a href="tab.html">
-                                        <i class="far fa-window-maximize"></i>Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="card.html">
-                                        <i class="far fa-id-card"></i>Cards</a>
-                                </li>
-                                <li>
-                                    <a href="alert.html">
-                                        <i class="far fa-bell"></i>Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="progress-bar.html">
-                                        <i class="fas fa-tasks"></i>Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html">
-                                        <i class="far fa-window-restore"></i>Modals</a>
-                                </li>
-                                <li>
-                                    <a href="switch.html">
-                                        <i class="fas fa-toggle-on"></i>Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">
-                                        <i class="fas fa-th-large"></i>Grids</a>
-                                </li>
-                                <li>
-                                    <a href="fontawesome.html">
-                                        <i class="fab fa-font-awesome"></i>FontAwesome</a>
-                                </li>
-                                <li>
-                                    <a href="typo.html">
-                                        <i class="fas fa-font"></i>Typography</a>
+                                    <a href="{{ route('admin.evento.create') }}">
+                                        Nova Pregunta</a>
                                 </li>
                             </ul>
                         </li>
@@ -279,11 +221,11 @@
                                                 <i class="zmdi zmdi-notifications"></i>Notifications</a>
                                         </div>
                                     </div> --}}
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </header>
             <aside class="menu-sidebar2 js-right-sidebar d-block d-lg-none">
                 <div class="logo">
