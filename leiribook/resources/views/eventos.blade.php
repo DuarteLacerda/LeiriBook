@@ -63,7 +63,7 @@
         </div>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             @foreach ($eventos as $evento)
-            <div class="eventos -carta col mb-3  mx-xl-1" data-data-inicio="{{ $evento->data_inicio }}"
+            <div class="eventos-carta col mb-3  mx-xl-1" data-data-inicio="{{ $evento->data_inicio }}"
                 data-data-fim="{{ $evento->data_fim }}">
                 <div id="carta_border" class="card h-100">
 

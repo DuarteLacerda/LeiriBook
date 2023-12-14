@@ -31,6 +31,7 @@ Route::get('/evento/{nome}', [PageController::class, 'evento'])->name('evento')-
 Route::get('/eventos/{listar?}', [PageController::class, 'eventos'])->name('eventos');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 Route::get('/biblioteca', [LivroController::class, 'biblioteca'])->name('biblioteca');
+Route::get('/pedidos', [PedidoController::class, 'showPedidos'])->name('pedidos');
 Route::post('/enviar-pedido', [PedidoController::class, 'pedido'])->name('enviar-pedido');
 
 Route::get('/books/filter', [LivroController::class, 'filterByGenre'])->name('filter.books');

@@ -21,7 +21,7 @@ class PedidoController extends Controller
 
         // Handle image upload if provided
         if ($request->hasFile('imagem')) {
-            $imagemPath = $request->file('imagem')->store('public/images/imagem_pedidos');
+            $imagemPath = $request->file('imagem')->store('images/imagem_pedidos', 'public');
         } else {
             $imagemPath = null;
         }
@@ -40,5 +40,12 @@ class PedidoController extends Controller
 
         // Redirect or do additional processing as needed
         return redirect()->back()->with('success', 'Pedido enviado com sucesso!');
+    }
+
+    public function showPedidos()
+    {
+        $pedidos = Pedido::with('usuario')->get();
+
+        return view('pedidos', compact('pedidos'));
     }
 }
