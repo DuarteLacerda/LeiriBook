@@ -11,14 +11,14 @@
             <br>
             <!-- Filters -->
             <form action="{{ route('filter.books') }}" method="GET">
-                <label for="genre">Filter by Genre:</label>
+                <label for="genre">Filtrar por género</label>
                 <select name="genre" id="genre">
-                    <option value="all">All Genres</option> <!-- Default option -->
+                    <option value="all">-</option> <!-- Default option -->
                     @foreach ($categorias as $categoria)
                         <option value="{{ $categoria->nome }}">{{ $categoria->nome }}</option>
                     @endforeach
                 </select>
-                <button type="submit">Apply Filter</button>
+                <button type="submit">Filtrar</button>
             </form>
             <!-- End Filters -->
             <div id="list-th">

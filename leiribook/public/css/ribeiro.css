@@ -105,9 +105,18 @@
     margin-top: 12px;
     font-size: 20px;
   }
+  .book p.title {
+    white-space: nowrap;       /* Prevents text from wrapping to the next line */
+    overflow: hidden;          /* Hides any content that exceeds the width */
+    text-overflow: ellipsis;   /* Displays an ellipsis (...) when text overflows */
+}
+
 
   .book .author {
     font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   @media (max-width: 941px) {
     .container {
