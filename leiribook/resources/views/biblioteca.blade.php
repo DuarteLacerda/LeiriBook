@@ -12,13 +12,15 @@
             <!-- Filters -->
             <form action="{{ route('filter.books') }}" method="GET">
                 <label for="genre">Filtrar por género</label>
-                <select name="genre" id="genre">
+                <div class="filter-container">
+                <select name="genre" id="genre" class="select-css">
                     <option value="all">-</option> <!-- Default option -->
                     @foreach ($categorias as $categoria)
                         <option value="{{ $categoria->nome }}">{{ $categoria->nome }}</option>
                     @endforeach
                 </select>
-                <button type="submit">Filtrar</button>
+                <button class="custom-btn btn-3" type="submit"><span>Filtrar</span></button>
+                </div>
             </form>
             <!-- End Filters -->
             <div id="list-th">
