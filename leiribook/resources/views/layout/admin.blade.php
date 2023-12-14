@@ -48,7 +48,7 @@
                         <img src="{{ Auth::user()->foto }}" alt="Perfil de Utilizador" />
                     </div>
                     <h4 class="name">{{ Auth::user()->name }}</h4>
-                    <a href="{{ route('logout') }}"
+                    <a href="#"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Terminar
                         Sessão</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
