@@ -16,6 +16,7 @@
                     <li><a href="{{route('biblioteca')}}">Bilioteca Virtual</a></li>
                     <li><a href="{{ route('eventos') }}">Eventos</a></li>
                     <li><a href="{{ route('contactos') }}">Contactos</a></li>
+                    <li><a href="{{ route('pedidos') }}">Pedidos</a></li>
                 </ul>
             </div>
             <div class="logo">
@@ -33,6 +34,7 @@
                 <li><a href="{{route('biblioteca')}}">Bilioteca Virtual</a></li>
                 <li><a href="{{ route('eventos') }}">Eventos</a></li>
                 <li><a href="{{ route('contactos') }}">Contactos</a></li>
+                <li><a href="{{ route('pedidos') }}">Pedidos</a></li>
                 </a></li>
             </div>
         </div>
@@ -50,5 +52,6 @@
             </form>
         </div>
 
-    </div>
+    </
+div>
 </div>
