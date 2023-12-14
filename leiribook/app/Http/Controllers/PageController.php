@@ -13,11 +13,7 @@ class PageController extends Controller
     {
         $currentDateTime = now();
 
-        $livros = Livro::all();
-        $livros = Livro::where('created_at', '<', $currentDateTime)
-            ->orderBy('created_at', 'desc')
-            ->take(6)
-            ->get();
+        $livros = Livro::all()->take(3);
 
         $eventos = Evento::all();
         $eventos = Evento::where('data_fim', '>', $currentDateTime)
@@ -62,7 +58,7 @@ class PageController extends Controller
     }
 
 
-    public function eventos($listar=null)
+    public function eventos($listar = null)
     {
 
         $currentDateTime = now();
@@ -77,11 +73,11 @@ class PageController extends Controller
                 ->orderBy('data_fim', 'asc')->paginate(6);
         } elseif ($listar == "decorrer") {
             $eventos = Evento::where('data_fim', '>=', $currentDateTime)->where('data_inicio', '<=', $currentDateTime)
-            ->orderBy('data_fim', 'asc')->paginate(6);
+                ->orderBy('data_fim', 'asc')->paginate(6);
         } elseif ($listar == "futuros") {
 
             $eventos = Evento::where('data_inicio', '>', $currentDateTime)
-            ->orderBy('data_fim', 'asc')->paginate(6);
+                ->orderBy('data_fim', 'asc')->paginate(6);
         } else {
             $eventos = Evento::orderBy('data_fim', 'asc')->paginate(6);
         }
