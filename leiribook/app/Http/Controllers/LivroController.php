@@ -10,28 +10,33 @@ class LivroController extends Controller
 {
     public function biblioteca()
     {
-         // Fetch all categories from the "categorias" table
-         $categorias = Categoria::all();
+        // Fetch all categories from the "categorias" table
+        $categorias = Categoria::all();
 
-         // Fetch all books from the "livros" table
-         $livros = Livro::all();
+        // Fetch all books from the "livros" table
+        $livros = Livro::all();
 
-         // Pass both variables to the "biblioteca" view
-         return view('biblioteca', compact('categorias', 'livros'));
+        // Pass both variables to the "biblioteca" view
+        return view('biblioteca', compact('categorias', 'livros'));
     }
-    /*public function filterByGenre(Request $request)
+    public function filterByGenre(Request $request)
     {
         // Get the selected genre from the request
         $genre = $request->input('genre');
 
-        // Query the books based on the selected genre
-        $livros = Livro::whereHas('categorias', function ($query) use ($genre) {
-            $query->where('nome', $genre);
-        })->get();
+        // Check if the default option (All Genres) is selected
+        if ($genre === '') {
+            // Retrieve all books without applying the genre filter
+            $livros = Livro::all();
+        } else {
+            // Query the books based on the selected genre
+            $livros = Livro::whereHas('categorias', function ($query) use ($genre) {
+                $query->where('nome', $genre);
+            })->get();
+        }
 
-        // You can also pass other data or perform additional filtering logic as needed
-
-        // Return the view with the filtered books
+        // Pass the filtered books to the 'biblioteca' view
         return view('biblioteca', compact('livros'));
-    }*/
+    }
+
 }
