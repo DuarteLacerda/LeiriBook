@@ -27,7 +27,7 @@
                 @forelse ($livros as $livro)
                     <div class="book">
                         <div class="cover">
-                            <img src="{{ asset('storage/books/' . $livro->foto) }}">
+                            <img src="{{ asset('storage/books/' . $livro->foto) }}" alt="imagem">
                         </div>
                         <div class="description">
                             <p class="title">{{ $livro->titulo }}<br>
