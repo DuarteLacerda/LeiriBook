@@ -62,8 +62,9 @@ class PageController extends Controller
     }
 
 
-    public function eventos(Evento $evento = null)
+    public function eventos($listar=null)
     {
+
         $currentDateTime = now();
 
         $eventosRecentes = Evento::where('data_fim', '>', $currentDateTime)
@@ -71,13 +72,21 @@ class PageController extends Controller
             ->take(5)
             ->get();
 
-        if ($evento) {
-            $eventos = Evento::where('category_id', $evento->id)
-                ->orderBy('data_fim', 'asc')
-                ->get();
+        if ($listar == "passados") {
+            $eventos = Evento::where('data_fim', '<', $currentDateTime)
+                ->orderBy('data_fim', 'asc')->paginate(6);
+        } elseif ($listar == "decorrer") {
+            $eventos = Evento::where('data_fim', '>=', $currentDateTime)->where('data_inicio', '<=', $currentDateTime)
+            ->orderBy('data_fim', 'asc')->paginate(6);
+        } elseif ($listar == "futuros") {
+
+            $eventos = Evento::where('data_inicio', '>', $currentDateTime)
+            ->orderBy('data_fim', 'asc')->paginate(6);
         } else {
-            $eventos = Evento::orderBy('data_fim', 'asc')->get();
+            $eventos = Evento::orderBy('data_fim', 'asc')->paginate(6);
         }
+
+
 
         return view('eventos', compact('eventos', 'eventosRecentes'));
     }
