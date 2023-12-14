@@ -48,15 +48,21 @@
 
     <div id="botaodatas" class="btn-group mt-3" role="group" aria-label="Event Filters">
 
-        <a class="btn btn-dark {{(request()->route('listar')=='todos' || request()->route('listar')==null)?'active':'' }}" href="{{route('eventos',['listar'=>'todos'])}}">Todos os eventos</a>
-        <a class="btn btn-dark {{request()->route('listar')=='decorrer'?'active':'' }}" href="{{route('eventos',['listar'=>'decorrer'])}}">Eventos a decorrer</a>
-        <a class="btn btn-dark {{request()->route('listar')=='futuros'?'active':'' }}" href="{{route('eventos',['listar'=>'futuros'])}}">Eventos futuros</a>
-        <a class="btn btn-dark {{request()->route('listar')=='passados'?'active':'' }}" href="{{route('eventos',['listar'=>'passados'])}}">Eventos passados</a>
+        <a class="btn btn-dark {{ request()->route('listar') == 'todos' || request()->route('listar') == null ? 'active' : '' }}"
+            href="{{ route('eventos', ['listar' => 'todos']) }}">Todos os eventos</a>
+        <a class="btn btn-dark {{ request()->route('listar') == 'decorrer' ? 'active' : '' }}"
+            href="{{ route('eventos', ['listar' => 'decorrer']) }}">Eventos a decorrer</a>
+        <a class="btn btn-dark {{ request()->route('listar') == 'futuros' ? 'active' : '' }}"
+            href="{{ route('eventos', ['listar' => 'futuros']) }}">Eventos futuros</a>
+        <a class="btn btn-dark {{ request()->route('listar') == 'passados' ? 'active' : '' }}"
+            href="{{ route('eventos', ['listar' => 'passados']) }}">Eventos passados</a>
     </div>
 
     <div class="px-4 px-lg-5 mt-5">
-        {{$eventos->withQueryString()->links()}}
-        <div id="eventos-container" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="d-flex justify-content-center mt-4">
+                    {{ $eventos->withQueryString()->links() }}
+                </div>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             @foreach ($eventos as $evento)
                 <div class="eventos -carta col mb-3  mx-xl-1" data-data-inicio="{{ $evento->data_inicio }}"
                     data-data-fim="{{ $evento->data_fim }}">
@@ -76,7 +82,7 @@
 
                                 <h5 class="fw-bolder">{{ $evento->nome }}</h5>
                                 <label id="datas">{{ date('d-m-y', strtotime($evento->data_inicio)) }} /
-                                {{ date('d-m-y', strtotime($evento->data_fim)) }}</label>
+                                    {{ date('d-m-y', strtotime($evento->data_fim)) }}</label>
                             </div>
                         </div>
 
@@ -89,7 +95,6 @@
                     </div>
                 </div>
             @endforeach
-
         </div>
     </div>
 
