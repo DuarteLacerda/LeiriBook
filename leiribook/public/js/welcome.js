@@ -26,7 +26,7 @@ showSlides();
 let slideInterval = setInterval(function () {
     slideIndex++;
     showSlides();
-}, 3000);
+}, 5000);
 
 document.getElementById("next").addEventListener("click", function () {
     slideIndex++;
@@ -35,7 +35,7 @@ document.getElementById("next").addEventListener("click", function () {
     slideInterval = setInterval(function () { // Restart the automatic slideshow
         slideIndex++;
         showSlides();
-    }, 3000);
+    }, 5000);
 });
 
 document.getElementById("prev").addEventListener("click", function () {

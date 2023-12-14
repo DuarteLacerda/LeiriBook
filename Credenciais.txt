@@ -1,0 +1,16 @@
+Wordpress:
+
+Username: Prof
+Password: 
+
+Laravel:
+
+Administradores
+
+Username(s): duartelacerda4@gmail.com | danielcochico39@gmail.com | Paulo | DanielR | vanessa310804@gmail.com
+Password(s): LeiriBook_2023
+
+Clientes
+
+Username(s): 2221019@my.ipleiria.pt | 2220997@my.ipleiria.pt | 2221003@my.ipleiria.pt | 2221031@my.ipleiria.pt | 2221009@my.ipleiria.pt
+Password(s): LeiriBook_2023

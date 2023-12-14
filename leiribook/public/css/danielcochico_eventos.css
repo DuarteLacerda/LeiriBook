@@ -45,7 +45,7 @@ body {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 300px;
+    top: 250px;
     width: auto;
     padding: 15px;
     color: white;
@@ -111,10 +111,6 @@ body {
 
 #caminho_links {
     text-decoration: none;
-}
-
-.btn-group button.active {
-    background-color: grey;
 }
 
 .eventos-carta {
