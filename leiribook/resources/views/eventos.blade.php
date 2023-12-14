@@ -19,12 +19,14 @@
                 <div class="prev" onclick="plusSlides(-1)">❮</div>
 
                 @if ($evento->fotos->isNotEmpty())
-                    <img class="slider" src="{{ asset('storage/eventos_fotos/' . $evento->fotos->first()->foto) }}" alt="" />
+                    <img class="slider" src="{{ asset('storage/eventos_fotos/' . $evento->fotos->first()->foto) }}"
+                        alt="" />
                 @else
                     <img class="slider" src="{{ asset('storage/eventos_fotos/logo.png') }}" alt="" />
                 @endif
 
-                <div class="text">{{ $evento->nome }} | {{ date('d-m-y', strtotime($evento->data_inicio)) }} /  {{ date('d-m-y', strtotime($evento->data_fim)) }}</div>
+                <div class="text">{{ $evento->nome }} | {{ date('d-m-y', strtotime($evento->data_inicio)) }} /
+                    {{ date('d-m-y', strtotime($evento->data_fim)) }}</div>
                 <div class="next" onclick="plusSlides(1)">❯</div>
             </div>
         @endforeach
@@ -45,16 +47,19 @@
     </div>
 
     <div id="botaodatas" class="btn-group mt-3" role="group" aria-label="Event Filters">
-        <button type="button" class="btn btn-dark active" onclick="filterEvents('todos')" data-filter="todos">Todos os eventos</button>
-        <button type="button" class="btn btn-dark" onclick="filterEvents('decorrer')" data-filter="decorrer">Eventos a decorrer</button>
-        <button type="button" class="btn btn-dark" onclick="filterEvents('futuro')" data-filter="futuro">Eventos futuros</button>
-        <button type="button" class="btn btn-dark" onclick="filterEvents('passado')" data-filter="passado">Eventos passados</button>
+
+        <a class="btn btn-dark {{(request()->route('listar')=='todos' || request()->route('listar')==null)?'active':'' }}" href="{{route('eventos',['listar'=>'todos'])}}">Todos os eventos</a>
+        <a class="btn btn-dark {{request()->route('listar')=='decorrer'?'active':'' }}" href="{{route('eventos',['listar'=>'decorrer'])}}">Eventos a decorrer</a>
+        <a class="btn btn-dark {{request()->route('listar')=='futuros'?'active':'' }}" href="{{route('eventos',['listar'=>'futuros'])}}">Eventos futuros</a>
+        <a class="btn btn-dark {{request()->route('listar')=='passados'?'active':'' }}" href="{{route('eventos',['listar'=>'passados'])}}">Eventos passados</a>
     </div>
 
     <div class="px-4 px-lg-5 mt-5">
+        {{$eventos->withQueryString()->links()}}
         <div id="eventos-container" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             @foreach ($eventos as $evento)
-                <div class="eventos-carta col mb-3  mx-xl-1" data-data-inicio="{{ $evento->data_inicio }}" data-data-fim="{{ $evento->data_fim }}">
+                <div class="eventos -carta col mb-3  mx-xl-1" data-data-inicio="{{ $evento->data_inicio }}"
+                    data-data-fim="{{ $evento->data_fim }}">
                     <div id="carta_border" class="card h-100">
 
                         @if ($evento->fotos->isNotEmpty())
@@ -62,15 +67,16 @@
                                 src="{{ asset('storage/eventos_fotos/' . $evento->fotos->where('ordem', 1)->first()->foto) }}"
                                 alt="..." />
                         @else
-                            <img class="card-img-top" id="img_carta_eventos" src="{{ asset('images/danielcochico/logo.png') }}" alt="" />
+                            <img class="card-img-top" id="img_carta_eventos"
+                                src="{{ asset('images/danielcochico/logo.png') }}" alt="" />
                         @endif
 
                         <div class="card-body p-4">
                             <div class="text-center">
 
                                 <h5 class="fw-bolder">{{ $evento->nome }}</h5>
-                                {{ date('d-m-y', strtotime($evento->data_inicio)) }} /
-                                {{ date('d-m-y', strtotime($evento->data_fim)) }}
+                                <label id="datas">{{ date('d-m-y', strtotime($evento->data_inicio)) }} /
+                                {{ date('d-m-y', strtotime($evento->data_fim)) }}</label>
                             </div>
                         </div>
 

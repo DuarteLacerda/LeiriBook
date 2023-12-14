@@ -6,5 +6,6 @@
 }
 
 footer {
+    z-index: -1;
     font-family: "Eras Demi ITC";
 }

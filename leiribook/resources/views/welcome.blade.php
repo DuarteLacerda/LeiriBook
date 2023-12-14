@@ -10,21 +10,26 @@
 <div class="sec1">
     <div class="sec1_title">
         <h1>Leiribook</h1>
-        <br>
         <h2>Ler para Crescer</h2>
-        <br>
-        <hr style="width: 100%;">
     </div>
     <a href="#sec2">
         <div class='icon-scroll'></div>
     </a>
 </div>
 <div class="sec2" id="sec2">
-    <div class="cards1">
-        <div class="card1">
-        </div>
-        <div class="card2">
-            <div class="text"></div>
+    <div class="slider-wrapper">
+        <div class="slider">
+            <img id="slide-1"
+                src="https://images.unsplash.com/photo-1656464868371-602be27fd4c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80"
+                alt="3D rendering of an imaginary orange planet in space" />
+            <img id="slide-2"
+                src="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80"
+                alt="3D rendering of an imaginary green planet in space" />
+            <img id="slide-3"
+                src="https://images.unsplash.com/photo-1656077217715-bdaeb06bd01f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80"
+                alt="3D rendering of an imaginary blue planet in space" />
+            <button id="prev"><i class="fa-solid fa-chevron-right fa-rotate-180"></i></button>
+            <button id="next"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
     </div>
 </div>
@@ -33,7 +38,11 @@
         @foreach ($eventos as $evento)
         <div class="card">
             <div class="image">
+                @if ($evento->fotos->isNotEmpty())
                 <img src="{{ asset('storage/eventos/'.$evento->foto) }}" alt="">
+                @else
+                <img src="{{ asset('images/admin/default-user.png') }}" alt="" />
+                @endif
             </div>
             <div class="content">
                 <a href="#">
