@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\LivroController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\CategoriaController;
@@ -25,11 +26,14 @@ Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos'
 Route::get('/politica_privacidade', [PageController::class, 'politica_privacidade'])->name('politica_privacidade');
 Route::get('/termos_e_condicoes', [PageController::class, 'termos_e_condicoes'])->name('termos_e_condicoes');
 Route::get('/pedido_livro', [PageController::class, 'pedido_livro'])->name('pedido_livro');
+Route::get('/pedidos', [PageController::class, 'pedidos'])->name('pedidos');
 Route::get('/evento/{nome}', [PageController::class, 'evento'])->name('evento')->where('nome', '[\w\d\-\_]+');
 Route::get('/eventos/{listar?}', [PageController::class, 'eventos'])->name('eventos');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 Route::get('/biblioteca', [LivroController::class, 'biblioteca'])->name('biblioteca');
-/*Route::get('/books/filter', [LivroController::class, 'filterByGenre'])->name('filter.books');*/
+Route::post('/enviar-pedido', [PedidoController::class, 'pedido'])->name('enviar-pedido');
+
+Route::get('/books/filter', [LivroController::class, 'filterByGenre'])->name('filter.books');
 Auth::routes(['register' => true, 'verify' => true]);
 Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.', 'prefix' => 'admin'], function () {
     Route::get('/', [PageController::class, 'admin'])->name('dashboard');

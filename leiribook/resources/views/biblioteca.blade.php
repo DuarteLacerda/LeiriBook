@@ -13,6 +13,7 @@
             <form action="{{ route('filter.books') }}" method="GET">
                 <label for="genre">Filter by Genre:</label>
                 <select name="genre" id="genre">
+                    <option value="">All Genres</option> <!-- Default option -->
                     @foreach ($categorias as $categoria)
                         <option value="{{ $categoria->nome }}">{{ $categoria->nome }}</option>
                     @endforeach
@@ -37,15 +38,15 @@
                 @endforelse
 
                 <!--<div class="book">
-                            <div class="cover">
-                                <img src="https://alysbcohen.files.wordpress.com/2015/01/little-princess-book-cover.jpg">
-                            </div>
-                            <div class="description">
-                                <p class="title">A Little Princess<br>
-                                    <span class="author">Frances Hodgson Burnett</span>
-                                </p>
-                            </div>
-                        </div>-->
+                                <div class="cover">
+                                    <img src="https://alysbcohen.files.wordpress.com/2015/01/little-princess-book-cover.jpg">
+                                </div>
+                                <div class="description">
+                                    <p class="title">A Little Princess<br>
+                                        <span class="author">Frances Hodgson Burnett</span>
+                                    </p>
+                                </div>
+                            </div>-->
             </div>
         </div>
     </div>
