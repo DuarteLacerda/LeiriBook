@@ -19,7 +19,7 @@ class LivroController extends Controller
          // Pass both variables to the "biblioteca" view
          return view('biblioteca', compact('categorias', 'livros'));
     }
-    public function filterByGenre(Request $request)
+    /*public function filterByGenre(Request $request)
     {
         // Get the selected genre from the request
         $genre = $request->input('genre');
@@ -33,5 +33,5 @@ class LivroController extends Controller
 
         // Return the view with the filtered books
         return view('biblioteca', compact('livros'));
-    }
+    }*/
 }
