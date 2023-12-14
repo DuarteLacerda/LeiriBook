@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Livro;
 use App\Models\Evento;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -94,7 +95,8 @@ class PageController extends Controller
 
     public function faqs()
     {
-        return view("faqs");
+        $faqs = Faq::where('approved', '=', 1)->get();
+        return view('faqs', compact('faqs'));
     }
     public function admin()
     {

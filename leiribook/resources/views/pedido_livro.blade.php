@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title', 'Pedido para Livro')
+@section('title', 'LeiriBook - Pedido para Livro')
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/paulo.css') }}">
 @endsection
