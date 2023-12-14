@@ -10,14 +10,15 @@
         <h2 class="desc-title">Não encontra um livro em particular? Faça um pedido para adicionarmos o livro em falta</h2>
     </div>
 
-    <form class="form-request" action="#" method="post" enctype="multipart/form-data">
+    <form class="form-request" action="{{ route('enviar-pedido') }}" method="post" enctype="multipart/form-data">
+        @csrf
         <!-- Coluna da Esquerda -->
         <div class="column">
             <label for="titulo">Título</label>
             <input type="text" id="titulo" name="titulo" required>
 
             <label for="descricao">Descrição</label>
-            <textarea id="descricao" name="descricao" rows="4" required ></textarea>
+            <textarea id="descricao" name="descricao" rows="4" required></textarea>
 
             <label for="edicao">Nº de Edição</label>
             <input type="number" id="edicao" name="edicao" required>
@@ -27,19 +28,25 @@
         <div class="column">
             <div class="upload-area" id="uploadArea" ondrop="handleDrop(event)" ondragover="handleDragOver(event)"
                 ondragleave="handleDragLeave()">
-                <p>Arraste e solte a imagem aqui ou </p>
-                <input type="file" id="imagem" name="imagem" accept="image/*" onchange="displayImage()">
-                <label id="image-pickup" for="imagem">clique para selecionar</label>
-                <div id="preview"></div>
-            </div>
-        </div>
+                <div id="uploadContent">
+                    <p id="uploadText">Arraste e solte a imagem aqui ou </p>
+                    <input type="file" id="imagem" name="imagem" accept="image/*" onchange="displayImage()" multiple>
+                    <label id="image-pickup" for="imagem">clique para selecionar</label>
+                </div>
+                <div id="previewContainer" style="position: relative; max-width: 100%; max-height: 80vh; overflow: hidden;">
+                    <!-- Adiciona um botão "X" no canto superior direito da caixa de upload -->
 
+                    <span id="cancelButton" onclick="cancelUpload()" style="visibility: hidden;"
+                        src="{{ asset('images/paulo/close-icon.png') }}"></span>
+                </div>
+            </div>
+            <!-- Mantém o botão de upload fora da área de visualização -->
+
+        </div>
         <div class="button-container">
             <input id="request-submit" type="submit" value="Enviar">
         </div>
     </form>
-
-
 
     <script>
         function handleDragOver(event) {
@@ -66,24 +73,62 @@
 
         function displayImage() {
             const fileInput = document.getElementById('imagem');
-            const preview = document.getElementById('preview');
+            const uploadContent = document.getElementById('uploadContent');
+            const preview = document.getElementById('previewContainer');
+            const cancelButton = document.getElementById('cancelButton');
 
-            while (preview.firstChild) {
-                preview.removeChild(preview.firstChild);
-            }
+            // Limpa a visualização existente
 
-            const file = fileInput.files[0];
+            if (preview.getElementsByTagName('img').length > 0)
+                preview.getElementsByTagName('img')[0].remove();
 
-            if (file) {
-                const img = document.createElement('img');
-                img.src = URL.createObjectURL(file);
-                img.alt = 'Imagem selecionada';
-                img.style.maxWidth = '100%';
-                preview.appendChild(img);
+            // Verifica se foram selecionadas imagens
+            if (fileInput.files.length > 0) {
+                // Oculta o conteúdo da caixa de upload
+                uploadContent.style.display = 'none';
+
+                // Itera sobre as imagens selecionadas
+                for (const file of fileInput.files) {
+                    // Cria uma nova imagem
+                    const img = document.createElement('img');
+                    img.src = URL.createObjectURL(file);
+                    img.alt = 'Imagem selecionada';
+
+                    // Adiciona a nova imagem à visualização
+                    preview.appendChild(img);
+                }
+
+                // Exibe a visualização
+                preview.style.display = 'block';
+
+                // Torna o botão de cancelar visível
+                cancelButton.style.visibility = 'visible';
             }
         }
-    </script>
 
+        function cancelUpload() {
+            const fileInput = document.getElementById('imagem');
+            const uploadContent = document.getElementById('uploadContent');
+            const preview = document.getElementById('previewContainer');
+            const cancelButton = document.getElementById('cancelButton');
+
+            // Limpa o input de arquivo
+            fileInput.value = '';
+
+            // Exibe novamente o conteúdo da caixa de upload
+            uploadContent.style.display = 'block';
+
+            // Limpa a visualização
+            if (preview.getElementsByTagName('img').length > 0)
+                preview.getElementsByTagName('img')[0].remove();
+
+            // Oculta a visualização
+            preview.style.display = 'none';
+
+            // Torna o botão de cancelar invisível
+            cancelButton.style.visibility = 'hidden';
+        }
+    </script>
 
 
 @endsection

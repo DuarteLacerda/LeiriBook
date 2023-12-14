@@ -35,6 +35,11 @@ class PageController extends Controller
         return view("pedido_livro");
     }
 
+    public function pedidos()
+    {
+        return view("pedidos");
+    }
+
     public function evento($nome)
 {
 
