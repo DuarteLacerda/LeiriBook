@@ -13,7 +13,7 @@
             <form action="{{ route('filter.books') }}" method="GET">
                 <label for="genre">Filter by Genre:</label>
                 <select name="genre" id="genre">
-                    <option value="">All Genres</option> <!-- Default option -->
+                    <option value="all">All Genres</option> <!-- Default option -->
                     @foreach ($categorias as $categoria)
                         <option value="{{ $categoria->nome }}">{{ $categoria->nome }}</option>
                     @endforeach
