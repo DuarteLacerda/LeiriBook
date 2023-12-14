@@ -14,6 +14,6 @@ class Categoria extends Model
     // Relacionamento com a tabela 'livros' (exemplo)
     public function livros()
     {
-        return $this->hasMany(Livro::class, 'categoria_id');
+        return $this->belongsToMany(Livro::class, 'livros_categorias', 'categoria_id', 'livro_id');
     }
 }

@@ -9,11 +9,12 @@ class Livro extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titulo', 'descricao', 'autor', 'foto', 'edicao', 'user_id'];
+    protected $fillable = ['titulo', 'descricao', 'autor', 'foto', 'edicao'];
 
     // Relacionamento com a tabela 'users'
-    public function usuario()
+    public function categorias()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsToMany(Categoria::class, 'livros_categorias', 'livro_id', 'categoria_id');
     }
+
 }
