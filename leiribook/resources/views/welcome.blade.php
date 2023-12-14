@@ -28,11 +28,8 @@
             <img id="slide-3"
                 src="https://images.unsplash.com/photo-1656077217715-bdaeb06bd01f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80"
                 alt="3D rendering of an imaginary blue planet in space" />
-        </div>
-        <div class="slider-nav">
-            <a href="#slide-1"></a>
-            <a href="#slide-2"></a>
-            <a href="#slide-3"></a>
+            <button id="prev"><i class="fa-solid fa-chevron-right fa-rotate-180"></i></button>
+            <button id="next"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
     </div>
 </div>
