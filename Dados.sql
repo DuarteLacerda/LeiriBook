@@ -61,3 +61,13 @@ INSERT INTO `categorias` (`id`, `nome`, `descricao`, `created_at`, `updated_at`)
 
 #Livro_Categorias
 INSERT INTO `livros_categorias` (`id`, `livro_id`, `categoria_id`, `created_at`, `updated_at`) VALUES (NULL, '1', '1', NULL, NULL), (NULL, '2', '2', NULL, NULL), (NULL, '4', '1', NULL, NULL);
+
+#Faqs
+Insert INTO `faqs` (`id`, `question`, `answer`, `approved`, `created_at`, `updated_at`) VALUES
+(NULL, 'Que eventos é que a Leiribook promove regularmente?', 'Organizamos uma variedade de eventos, incluindo discussões de livros, palestras com autores, e clubes do livro. Consulte o nosso calendário de eventos para obter informações atualizadas.', 1, NULL, NULL),
+(NULL, 'Como é que posso participar em eventos da Leiribook?', 'Para participar dos eventos, basta verificar o calendário no nosso site e seguir as instruções de inscrição ou comparecer aos eventos abertos.', 1, NULL, NULL),
+(NULL, 'Como posso sugerir um livro para a leitura em grupo?', 'Aceitamos sugestões de leitura. Envie as suas recomendações para leirbook.contact@gmail.com ou através do formulário de contato no nosso site.', 1, NULL, NULL),
+(NULL, 'Posso doar livros à associação? Como proceder?', 'Sim, aceitamos doações de livros. Entre em contato connosco através do formulário de contacto para obter mais informações.', 1, NULL, NULL),
+(NULL, 'Qual é a política de privacidade da Leiribook em relação aos dados dos membros?', 'Respeitamos a privacidade dos nossos membros. Consulte as nossas políticas de privacidade para obter informações detalhadas sobre como tratamos e protegemos os dados pessoais.', 1, NULL, NULL),
+(NULL, 'Como é que posso entrar em contato com a equipa da Leiribook em caso de dúvidas ou preocupações?', 'Você pode entrar em contato conosco através do formulário de contacto em nosso site. Estamos aqui para ajudar!', 1, NULL, NULL),
+(NULL, 'Posso sugerir tópicos ou autores para futuros eventos ou discussões?', 'Sim, encorajamos sugestões de membros. Envie as suas ideias para leiribook.contact@gmail.com ou através do formulário de contacto.', 1, NULL, NULL);

@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title', 'LeiriBook-Contactos')
+@section('title', 'LeiriBook - Contactos')
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/ribeiro.css') }}">
 @endsection
