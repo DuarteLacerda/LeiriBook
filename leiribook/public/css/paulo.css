@@ -7,6 +7,7 @@ body {
     --color-main-button-hover: #34bbeb;
     --color-light-blue: #8ab4c5;
     --color-grey: #c3c3c3;
+    --color-grey-dark: #8a8a8a;
     --color-grey-light: #d9d9d9;
 }
 
@@ -333,15 +334,21 @@ textarea {
 
 .list-card .pedido-info .card-user{
     position: absolute;
-    font-size: smaller;
+    font-size: 95%;
     font-style: italic;
-    color: var(--color-grey);
+    color: var(--color-grey-dark);
     bottom: 0;
     right: 0;
+    padding-right: 1rem;
 }
 
 .list-card .pedido-info .card-desc{
     margin-top: 0.8rem;
+}
+
+.pedidos-list{
+    overflow-y: scroll;
+    height: 90svh;
 }
 
 
