@@ -8,6 +8,10 @@ body {
     text-align: center;
 }
 
+.container-eventos {
+    margin-top: 75px;
+}
+
 .mySlides {
     display: none;
     width: 100%;
@@ -135,7 +139,7 @@ body {
 
 #img_carta_eventos {
     height: 200px;
-    object-fit:cover;
+    object-fit: cover;
     border-radius: 15px;
     margin-top: 25px;
 }
@@ -159,7 +163,7 @@ body {
         margin-top: -60px;
     }
 
-    #datas{
+    #datas {
         font-size: 9pt;
     }
 

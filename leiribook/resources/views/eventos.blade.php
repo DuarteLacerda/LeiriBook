@@ -4,31 +4,30 @@
 
 @section('styles')
 
-    <link rel="stylesheet" href="{{ asset('css/danielcochico_eventos.css') }}">
+<link rel="stylesheet" href="{{ asset('css/danielcochico_eventos.css') }}">
 
 
 @endsection
 
 @section('content')
 
-
+<div class="container-eventos">
     <!-- ======= Event Section ======= -->
     <div id="sliders" onmouseover="onMouseOver(this)" onmouseout="onMouseOut(this)">
         @foreach ($eventosRecentes as $evento)
-            <div class="mySlides fade">
-                <div class="prev" onclick="plusSlides(-1)">❮</div>
+        <div class="mySlides fade">
+            <div class="prev" onclick="plusSlides(-1)">❮</div>
 
-                @if ($evento->fotos->isNotEmpty())
-                    <img class="slider" src="{{ asset('storage/eventos_fotos/' . $evento->fotos->first()->foto) }}"
-                        alt="" />
-                @else
-                    <img class="slider" src="{{ asset('storage/eventos_fotos/logo.png') }}" alt="" />
-                @endif
+            @if ($evento->fotos->isNotEmpty())
+            <img class="slider" src="{{ asset('storage/eventos_fotos/' . $evento->fotos->first()->foto) }}" alt="" />
+            @else
+            <img class="slider" src="{{ asset('storage/eventos_fotos/logo.png') }}" alt="" />
+            @endif
 
-                <div class="text">{{ $evento->nome }} | {{ date('d-m-y', strtotime($evento->data_inicio)) }} /
-                    {{ date('d-m-y', strtotime($evento->data_fim)) }}</div>
-                <div class="next" onclick="plusSlides(1)">❯</div>
-            </div>
+            <div class="text">{{ $evento->nome }} | {{ date('d-m-y', strtotime($evento->data_inicio)) }} /
+                {{ date('d-m-y', strtotime($evento->data_fim)) }}</div>
+            <div class="next" onclick="plusSlides(1)">❯</div>
+        </div>
         @endforeach
     </div>
 
@@ -59,55 +58,57 @@
     </div>
 
     <div class="px-4 px-lg-5 mt-5">
-                <div class="d-flex justify-content-center mt-4">
-                    {{ $eventos->withQueryString()->links() }}
-                </div>
+        <div class="d-flex justify-content-center mt-4">
+            {{ $eventos->withQueryString()->links() }}
+        </div>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             @foreach ($eventos as $evento)
-                <div class="eventos -carta col mb-3  mx-xl-1" data-data-inicio="{{ $evento->data_inicio }}"
-                    data-data-fim="{{ $evento->data_fim }}">
-                    <div id="carta_border" class="card h-100">
+            <div class="eventos -carta col mb-3  mx-xl-1" data-data-inicio="{{ $evento->data_inicio }}"
+                data-data-fim="{{ $evento->data_fim }}">
+                <div id="carta_border" class="card h-100">
 
-                        @if ($evento->fotos->isNotEmpty())
-                            <img class="card-img-top" id="img_carta_eventos"
-                                src="{{ asset('storage/eventos_fotos/' . $evento->fotos->where('ordem', 1)->first()->foto) }}"
-                                alt="..." />
-                        @else
-                            <img class="card-img-top" id="img_carta_eventos"
-                                src="{{ asset('images/danielcochico/logo.png') }}" alt="" />
-                        @endif
+                    @if ($evento->fotos->isNotEmpty())
+                    <img class="card-img-top" id="img_carta_eventos"
+                        src="{{ asset('storage/eventos_fotos/' . $evento->fotos->where('ordem', 1)->first()->foto) }}"
+                        alt="..." />
+                    @else
+                    <img class="card-img-top" id="img_carta_eventos" src="{{ asset('images/danielcochico/logo.png') }}"
+                        alt="" />
+                    @endif
 
-                        <div class="card-body p-4">
-                            <div class="text-center">
+                    <div class="card-body p-4">
+                        <div class="text-center">
 
-                                <h5 class="fw-bolder">{{ $evento->nome }}</h5>
-                                <label id="datas">{{ date('d-m-y', strtotime($evento->data_inicio)) }} /
-                                    {{ date('d-m-y', strtotime($evento->data_fim)) }}</label>
-                            </div>
+                            <h5 class="fw-bolder">{{ $evento->nome }}</h5>
+                            <label id="datas">{{ date('d-m-y', strtotime($evento->data_inicio)) }} /
+                                {{ date('d-m-y', strtotime($evento->data_fim)) }}</label>
                         </div>
+                    </div>
 
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a class="btn btn-dark btn-block gradient-custom-2 mb-3"
-                                    href="{{ route('evento', str_replace(' ', '-', $evento->nome)) }}">Ver detalhes</a>
-                            </div>
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center">
+                            <a class="btn btn-dark btn-block gradient-custom-2 mb-3"
+                                href="{{ route('evento', str_replace(' ', '-', $evento->nome)) }}">Ver detalhes</a>
                         </div>
                     </div>
                 </div>
+            </div>
             @endforeach
         </div>
     </div>
 
     <div id="botao_evento" class="text-center"><a class="btn btn-dark btn-block gradient-custom-2 mb-3"
-            href="{{ route('home') }}">Voltar à página principal</a></div>
+            href="{{ route('home') }}">Voltar à página principal</a>
     </div>
-
     <hr>
     </section><!-- End Cliens Section -->
+</div>
+
+
 
 @section('scripts')
 
-    <script src="{{ asset('js/danielcochico_eventos.js') }}"></script>
+<script src="{{ asset('js/danielcochico_eventos.js') }}"></script>
 @endsection
 
 @endsection
