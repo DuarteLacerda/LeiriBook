@@ -17,16 +17,16 @@
 
     <button onclick="topFunction()" id="myBtn" title="Ir para cima"><i class="fa-solid fa-arrow-up"></i></button>
 
-    <div class="container-evento">
-        <div id="caminho">
-            <a id="caminho_links" href="{{ route('home') }}">Página Principal</a> >
-            <a id="caminho_links" href="{{ route('eventos') }}">Eventos</a> >
-            {{ $evento->nome }}
-        </div>
-
-        <h1 id="titulo">{{ $evento->nome }}</h1>
-
         <div class="container custom-container">
+            
+            <div class="container-evento">
+                <div id="caminho">
+                    <a id="caminho_links" href="{{ route('home') }}">Página Principal</a> >
+                    <a id="caminho_links" href="{{ route('eventos') }}">Eventos</a> >
+                    {{ $evento->nome }}
+                </div>
+
+                <h1 id="titulo">{{ $evento->nome }}</h1>
             <div class="row">
                 <div class="col-lg-8 col-sm-12 text-center">
                     <section id="slider" class="splide">

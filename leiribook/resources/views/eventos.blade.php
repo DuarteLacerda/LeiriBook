@@ -48,7 +48,7 @@
             <a id="caminho_links" href="{{ route('home') }}">Página Principal</a> > Eventos
         </div>
 
-        <div id="botaodatas" class="btn-group mt-3" role="group" aria-label="Event Filters">
+        <div id="botaodatas" class="btn-group mt-3 vertical-align-buttons" role="group" aria-label="Event Filters">
 
             <a class="btn btn-dark {{ request()->route('listar') == 'todos' || request()->route('listar') == null ? 'active' : '' }}"
                 href="{{ route('eventos', ['listar' => 'todos']) }}">Todos os eventos</a>
