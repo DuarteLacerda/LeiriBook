@@ -71,3 +71,13 @@ Insert INTO `faqs` (`id`, `question`, `answer`, `approved`, `created_at`, `updat
 (NULL, 'Qual é a política de privacidade da Leiribook em relação aos dados dos membros?', 'Respeitamos a privacidade dos nossos membros. Consulte as nossas políticas de privacidade para obter informações detalhadas sobre como tratamos e protegemos os dados pessoais.', 1, NULL, NULL),
 (NULL, 'Como é que posso entrar em contato com a equipa da Leiribook em caso de dúvidas ou preocupações?', 'Você pode entrar em contato conosco através do formulário de contacto em nosso site. Estamos aqui para ajudar!', 1, NULL, NULL),
 (NULL, 'Posso sugerir tópicos ou autores para futuros eventos ou discussões?', 'Sim, encorajamos sugestões de membros. Envie as suas ideias para leiribook.contact@gmail.com ou através do formulário de contacto.', 1, NULL, NULL);
+
+#Pedidos
+INSERT INTO pedidos (id, titulo, descricao, edicao, foto, user_id, created_at, updated_at) VALUES
+(3, 'O Homem Que Plantava Árvores', 'livro com capa com árvores e cores verdes e castanho', '1', 'images/imagem_pedidos/iCa3RwZ7DvCNsWVaSVfRPE1qqSkLF2D4DBtCpd5C.jpg', 1, '2023-12-14 11:01:07', '2023-12-14 11:01:07'),
+(4, 'O Diário de um Banana 18', 'Livro 18 Diário Banana', '1', 'images/imagem_pedidos/ORVQqQcO1gKbUpxsfjTKbRKVz1i2NciBlyHQCPpe.png', 1, '2023-12-14 15:36:21', '2023-12-14 15:36:21'),
+(5, 'Aquele Natal Inteiro e Limpo', 'Livro lançado em novembro. Autor: José Gardeazabal.', '1', 'images/imagem_pedidos/Yx6fEeCJgQBMKK0JHyLgJ78ldZL71uUPNiKyBgrq.png', 1, '2023-12-14 19:22:59', '2023-12-14 19:22:59'),
+(6, 'Odeio Pessoas - Guilherme Duarte', 'Comédia hilariante de Guilherme Duarte. Perfeito para uma boa gargalhada. Capa vibrante e divertida.', '1', 'images/imagem_pedidos/JE9bxV93wM2rnumdBdV7WarZFYFitdE7fYjc0xyc.jpg', 1, '2023-12-14 19:36:21', '2023-12-14 19:36:21'),
+(7, 'Tudo é Rio - Carla Madeira', 'Uma jornada envolvente pela vida, cheia de desafios e descobertas. A capa é deslumbrante, com um toque de mistério.', '4', 'images/imagem_pedidos/vHBAQ0P1Pnst8uqLPOgf2T0o4yDA8QQ75rMf9C2o.jpg', 1, '2023-12-14 19:37:59', '2023-12-14 19:37:59'),
+(8, 'Heartstopper Volume 5 - Alice Oseman', 'O romance adorável continua! Nick e Charlie continuam a encantar. A capa é tão doce quanto a história', '2', 'images/imagem_pedidos/K0jnUKoWQB6y0nkPVMYxiDrKTbk4vOZ4nnH448bt.jpg', 1, '2023-12-14 19:38:49', '2023-12-14 19:38:49'),
+(9, 'Pensar, Olhar, Viver', 'Reflexões inspiradoras sobre a vida. Uma leitura que expande a mente. A capa é elegante e séria. Escrito por Sacadura Cabral', '1', 'images/imagem_pedidos/DLa7bNcWmSXeYUxLpubfehsmGsRRwUNhspOlxQuj.jpg', 1, '2023-12-14 19:40:22', '2023-12-14 19:40:22');

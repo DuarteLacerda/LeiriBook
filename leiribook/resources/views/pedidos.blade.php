@@ -26,18 +26,6 @@
             </div>
         </div>
         <div class="pedidos-list">
-            <div class="pedido-card list-card">
-                <div class="pedido-foto">
-                    <img src="https://i1.sndcdn.com/artworks-8Y7nQahd5riN8AGc-jBZpOw-t500x500.jpg" alt="">
-                </div>
-                <div class="pedido-info">
-                    <h4 class="card-title">Titulo de Teste para Um Livro ou Pedido feito Por um Utilizador</h4>
-                    <p class="card-desc">Descrição média/longa de um livro que o utilizador queira. A descrição é ainda mais
-                        longa e estritamnete detalhada.</p>
-                    <p class="card-user">by Utilizador</p>
-                </div>
-
-            </div>
             {{-- foreach... --}}
 
             @foreach ($pedidos as $pedido)
@@ -48,7 +36,7 @@
                     <div class="pedido-info">
                         <h4 class="card-title">{{ $pedido->titulo }}</h4>
                         <p class="card-desc">{{ $pedido->descricao }}</p>
-                        <p class="card-user">by {{ $pedido->usuario->name }}</p>
+                        <p class="card-user">pedido por {{ $pedido->usuario->name }}</p>
                     </div>
                 </div>
             @endforeach
