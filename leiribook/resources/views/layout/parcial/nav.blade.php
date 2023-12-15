@@ -21,11 +21,33 @@
             </div>
             <div class="logo">
                 <!-- Login/registo -->
-                <a class="login" href="{{ route('login') }}">
-                    Login</a>
-                <a class="register" href="{{ route('register') }}">
-                    Registo</a>
-                </a>
+                @guest
+                @if (Route::has('login'))
+                <li><a class="login" href="{{ route('login') }}">Login</a></li>
+                @endif
+                @if (Route::has('register'))
+                <li><a class="register" href="{{ route('register') }}">Registo</a></li>
+                @endif
+                @else
+                <li class="dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button">
+                        {{ Auth::user()->name }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+                @endguest
                 <button type="button" class="search" id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <div class="menu-items">
@@ -51,7 +73,5 @@
                         class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
-
-    </
-div>
+    </div>
 </div>

@@ -106,7 +106,7 @@
 }
 
 .navbar .menu-items {
-    height: 40vh;
+    height: 300px;
     position: absolute;
     width: 100%;
     top: 70px;
@@ -137,6 +137,39 @@
     display: flex;
     align-self: center;
     color: rgb(39, 39, 39);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    position: absolute;
+    min-width: 160px;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-item {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
 }
 
 .search {
@@ -182,7 +215,7 @@
     /* Stay in place */
     z-index: 1;
     /* Sit on top */
-    padding-top: 70px;
+    padding-top: 80px;
     /* Location of the box */
     left: 0;
     top: 0;
@@ -196,6 +229,18 @@
     /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
+}
+
+.modal-hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.modal-visible {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
 
 /* Modal Content */
