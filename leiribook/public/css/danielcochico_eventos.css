@@ -72,7 +72,7 @@ body {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 250px;
+    top: 50%;
     width: auto;
     padding: 15px;
     color: white;
@@ -98,7 +98,6 @@ body {
     color: white;
     font-size: 16px;
     padding: 20px;
-    position: absolute;
     width: 100%;
     text-align: center;
     background-color: black;
@@ -138,6 +137,13 @@ body {
 
 #caminho_links {
     text-decoration: none;
+}
+
+.btn-group a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .eventos-carta {
@@ -184,6 +190,11 @@ body {
 
     .text {
         margin-top: -60px;
+    }
+
+    #caminho {
+        text-align: center;
+        margin-left: 0;
     }
 
     #datas {
