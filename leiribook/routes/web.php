@@ -1,13 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\LivroController;
 use App\Http\Controllers\EventoController;
-use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\PedidoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,10 +35,12 @@ Route::get('/pedidos', [PedidoController::class, 'showPedidos'])->name('pedidos'
 Route::post('/enviar-pedido', [PedidoController::class, 'pedido'])->name('enviar-pedido');
 
 Route::get('/books/filter', [LivroController::class, 'filterByGenre'])->name('filter.books');
+
 Auth::routes(['register' => true, 'verify' => true]);
 Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.', 'prefix' => 'admin'], function () {
     Route::get('/', [PageController::class, 'admin'])->name('dashboard');
     Route::get('/users/{user}/send_reactivate_mail', [UserController::class, 'send_reactivate_email'])->name('users.sendActivationEmail');
     /* Route::delete('/users/{user}/destroy_photo', [UserController::class, 'destroy_photo'])->name('users.destroyPhoto'); */
     Route::resource('evento', EventoController::class);
+    Route::resource('faqs', FaqController::class);
 });
