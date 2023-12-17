@@ -31,6 +31,7 @@
 
     <!-- Main CSS-->
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet" media="all">
+    <link rel="shortcut icon" href="{{ asset('images/logo/SVG/logo-white.svg') }}" type="image/x-icon">
 
 </head>
 
@@ -59,7 +60,7 @@
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a class="js-arrow" href="#">
+                            <a class="js-arrow" href="{{ route('admin.dashboard') }}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard
                             </a>
                         </li>
@@ -107,11 +108,11 @@
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="{{ route('admin.evento.index') }}">
+                                    <a href="{{ route('admin.faqs.index') }}">
                                         </i>Listagem de Preguntas</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.evento.create') }}">
+                                    <a href="{{ route('admin.faqs.create') }}">
                                         Nova Pregunta</a>
                                 </li>
                             </ul>
@@ -250,7 +251,7 @@
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
                             <li class="active has-sub">
-                                <a class="js-arrow" href="#">
+                                <a class="js-arrow" href="{{ route('admin.dashboard') }}">
                                     <i class="fas fa-tachometer-alt"></i>Dashboard
                                 </a>
                             </li>
@@ -286,6 +287,24 @@
                                     <li>
                                         <a href="#">
                                             </i>Nova Foto para Evento</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a class="js-arrow">
+                                    <i class="fas fa-calendar-alt"></i>Perguntas Frequentes
+                                    <span class="arrow">
+                                        <i class="fas fa-angle-down"></i>
+                                    </span>
+                                </a>
+                                <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                    <li>
+                                        <a href="{{ route('admin.faqs.index') }}">
+                                            </i>Listagem de Perguntas</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('admin.faqs.create') }}">
+                                            Nova Pergunta</a>
                                     </li>
                                 </ul>
                             </li>
@@ -373,15 +392,12 @@
 
             <!-- BREADCRUMB-->
             <section class="au-breadcrumb m-t-75">
-                <div class=" section__content section__content--p30">
+                <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="au-breadcrumb-content">
-                                    <div class="au-breadcrumb-left">
-                                        <span class="au-breadcrumb-span">You are here:</span>
-                                        @yield('breadcrumb')
-                                    </div>
+                                    @yield('breadcrumb')
                                 </div>
                             </div>
                         </div>
@@ -389,31 +405,48 @@
                 </div>
             </section>
             <!-- END BREADCRUMB-->
-            @yield('content')
-        </div>
-        <!-- Jquery JS-->
-        <script src="{{ asset('vendor/jquery-3.2.1.min.js') }}"></script>
-        <!-- Bootstrap JS-->
-        <script src="{{ asset('vendor/bootstrap-4.1/popper.min.js') }}"></script>
-        <script src="{{ asset('vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
-        <!-- Vendor JS       -->
-        <script src="{{ asset('vendor/slick/slick.min.js') }}"></script>
-        <script src="{{ asset('vendor/wow/wow.min.js') }}"></script>
-        <script src="{{ asset('vendor/animsition/animsition.min.js') }}"></script>
-        <script src="{{ asset('vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
-        <script src="{{ asset('vendor/counter-up/jquery.waypoints.min.js') }}"></script>
-        <script src="{{ asset('vendor/counter-up/jquery.counterup.min.js') }}"></script>
-        <script src="{{ asset('vendor/circle-progress/circle-progress.min.js') }}"></script>
-        <script src="{{ asset('vendor/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
-        <script src="{{ asset('vendor/chartjs/Chart.bundle.min.js') }}"></script>
-        <script src="{{ asset('vendor/select2/select2.min.js') }}"></script>
-        <script src="{{ asset('vendor/vector-map/jquery.vmap.js') }}"></script>
-        <script src="{{ asset('vendor/vector-map/jquery.vmap.min.js') }}"></script>
-        <script src="{{ asset('vendor/vector-map/jquery.vmap.sampledata.js') }}"></script>
-        <script src="{{ asset('vendor/vector-map/jquery.vmap.world.js') }}"></script>
 
-        <!-- Main JS-->
-        <script src="{{ asset('js/main.js') }}"></script>
+            <!-- MAIN -->
+            @yield('content')
+            <!-- END MAIN -->
+
+            <section>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2023 LeiriBook. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- Jquery JS-->
+    <script src="{{ asset('vendor/jquery-3.2.1.min.js') }}"></script>
+    <!-- Bootstrap JS-->
+    <script src="{{ asset('vendor/bootstrap-4.1/popper.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
+    <!-- Vendor JS       -->
+    <script src="{{ asset('vendor/slick/slick.min.js') }}"></script>
+    <script src="{{ asset('vendor/wow/wow.min.js') }}"></script>
+    <script src="{{ asset('vendor/animsition/animsition.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+    <script src="{{ asset('vendor/counter-up/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('vendor/counter-up/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('vendor/circle-progress/circle-progress.min.js') }}"></script>
+    <script src="{{ asset('vendor/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+    <script src="{{ asset('vendor/chartjs/Chart.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('vendor/vector-map/jquery.vmap.js') }}"></script>
+    <script src="{{ asset('vendor/vector-map/jquery.vmap.min.js') }}"></script>
+    <script src="{{ asset('vendor/vector-map/jquery.vmap.sampledata.js') }}"></script>
+    <script src="{{ asset('vendor/vector-map/jquery.vmap.world.js') }}"></script>
+
+    <!-- Main JS-->
+    <script src="{{ asset('js/main.js') }}"></script>
+    @yield('scripts')
 </body>
 
 </html>
