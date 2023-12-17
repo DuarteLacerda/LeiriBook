@@ -8,13 +8,13 @@
     <li class="list-inline-item seprate">
         <span>/</span>
     </li>
-    <li class="list-inline-item">
+    <li class="list-inline-item active">
         <a href="{{ route('admin.dashboard') }}">Dashboard<a>
     </li>
     <li class="list-inline-item seprate">
         <span>/</span>
     </li>
-    <li class="list-inline-item">
+    <li class="list-inline-item active">
         <a href="{{ route('admin.faqs.index') }}">Faqs<a>
     </li>
     <li class="list-inline-item seprate">
