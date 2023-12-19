@@ -89,14 +89,6 @@
                                     <a href="{{ route('admin.evento.create') }}">
                                         Novo Evento</a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        </i>Listagem de Fotos para eventos</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        </i>Nova Foto para Evento</a>
-                                </li>
                             </ul>
                         </li>
                         <li class="has-sub">
