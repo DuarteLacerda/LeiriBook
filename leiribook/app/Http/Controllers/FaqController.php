@@ -41,17 +41,8 @@ class FaqController extends Controller
         $faq->save();
         return redirect()->route('admin.faqs.index')->with(
             'success',
-            'Faq creada com sucesso'
+            'Pergunta creada com sucesso'
         );
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Faq $faq)
-    {
-        //
-        return view('_admin.faqs.show', compact("faq"));
     }
 
     /**
@@ -72,7 +63,7 @@ class FaqController extends Controller
         $fields = $request->validated();
         $faq->fill($fields);
         $faq->save();
-        return redirect()->route('admin.faqs.index')->with('success', 'Faq atualizada com sucesso');
+        return redirect()->route('admin.faqs.index')->with('success', 'Pergunta atualizada com sucesso');
     }
 
     /**
@@ -81,16 +72,10 @@ class FaqController extends Controller
     public function destroy(Faq $faq)
     {
         //
-        if ($faq->projects()->exists()) {
-            return redirect()->route('admin.faqs.index')->withErrors(
-                ['delete' => 'A Faq que tentou eliminar tem projetos
-           associados']
-            );
-        }
         $faq->delete();
         return redirect()->route('admin.faqs.index')->with(
             'success',
-            'Faq eliminada com sucesso'
+            'Pergunta eliminada com sucesso'
         );
     }
 }

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faq;
 use App\Models\User;
 use App\Models\Livro;
 use App\Models\Evento;
-use App\Models\Faq;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
@@ -100,7 +101,18 @@ class PageController extends Controller
     }
     public function admin()
     {
-        return view("_admin.dashboard");
+        $count_users = User::count();
+        $count_livros = Livro::count();
+        $count_faqs = Faq::count();
+        $count_eventos = Evento::count();
+        $count_users_per_role = User::select('role', DB::raw('count(*) as count'))->groupBy('role')->get();
+        return view('_admin.dashboard', compact(
+            'count_livros',
+            'count_users',
+            'count_faqs',
+            'count_eventos',
+            'count_users_per_role',
+        ));
     }
 
     public function sobrenos()

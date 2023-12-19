@@ -101,7 +101,7 @@
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-question"></i>Preguntas Frequentes
+                                <i class="fas fa-question"></i>Perguntas Frequentes
                                 <span class="arrow">
                                     <i class="fas fa-angle-down"></i>
                                 </span>
@@ -109,11 +109,11 @@
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="{{ route('admin.faqs.index') }}">
-                                        </i>Listagem de Preguntas</a>
+                                        </i>Listagem de Perguntas</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('admin.faqs.create') }}">
-                                        Nova Pregunta</a>
+                                        Nova Pergunta</a>
                                 </li>
                             </ul>
                         </li>
@@ -194,7 +194,11 @@
                                     <div class="account-dropdown__body">
                                         <div class="account-dropdown__item">
                                             <a href="#">
-                                                <i class="zmdi zmdi-account"></i>Account</a>
+                                                <i class="zmdi zmdi-account"></i>Conta</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-account"></i>Alterar Password</a>
                                         </div>
                                         {{-- <div class="account-dropdown__item">
                                             <a href="#">
@@ -406,6 +410,17 @@
             </section>
             <!-- END BREADCRUMB-->
 
+            @if ($errors->any())
+            <section>
+                @include ('layout.parcial.error')
+            </section>
+            @endif
+            @if (!empty(session('success')))
+            <section>
+                @include ('layout.parcial.success')
+            </section>
+            @endif
+
             <!-- MAIN -->
             @yield('content')
             <!-- END MAIN -->
@@ -433,6 +448,7 @@
     <script src="{{ asset('vendor/wow/wow.min.js') }}"></script>
     <script src="{{ asset('vendor/animsition/animsition.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+    <script src="{{ asset('vendor/data-tables/dataTables.min.js') }}"></script>
     <script src="{{ asset('vendor/counter-up/jquery.waypoints.min.js') }}"></script>
     <script src="{{ asset('vendor/counter-up/jquery.counterup.min.js') }}"></script>
     <script src="{{ asset('vendor/circle-progress/circle-progress.min.js') }}"></script>
