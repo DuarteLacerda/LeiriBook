@@ -11,7 +11,7 @@
             <span>/</span>
         </li>
         <li class="list-inline-item active">
-            <a href="{{ route('admin.dashboard') }}">Dashboard<a>
+            <a href="{{ route('admin.dashboard') }}">Dashboard</a>
         </li>
     </ul>
 </div>
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-3">
                     <div class="card shadow">
                         <div class="card-header p-4">
                             <h1 style="display:inline;"> {{ $count_users }} </h1>
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-3">
                     <div class="card shadow">
                         <div class="card-header p-4">
                             <h1 style="display:inline;"> {{ $count_livros }} </h1>
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-3">
                     <div class="card shadow">
                         <div class="card-header p-4">
                             <h1 style="display:inline;"> {{ $count_eventos }} </h1>
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-3">
                     <div class="card shadow">
                         <div class="card-header p-4">
                             <h1 style="display:inline;"> {{ $count_faqs }} </h1>

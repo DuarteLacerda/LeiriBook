@@ -65,9 +65,22 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-user"></i>Utilizadores</a>
-                            <span class="inbox-num">3</span>
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-user"></i>Utilizadores
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{ route('admin.users.index') }}">
+                                        </i>Listagem de Utilizadores</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('admin.users.create') }}">
+                                        Novo Utilizador</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a>
@@ -189,7 +202,7 @@
                                                 <i class="zmdi zmdi-account"></i>Conta</a>
                                         </div>
                                         <div class="account-dropdown__item">
-                                            <a href="#">
+                                            <a href="{{ route('editpassword') }}">
                                                 <i class="zmdi zmdi-account"></i>Alterar Password</a>
                                         </div>
                                         {{-- <div class="account-dropdown__item">
@@ -246,7 +259,7 @@
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
-                            <li class="active has-sub">
+                            <li class="has-sub">
                                 <a class="js-arrow" href="{{ route('admin.dashboard') }}">
                                     <i class="fas fa-tachometer-alt"></i>Dashboard
                                 </a>
@@ -304,82 +317,6 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="has-sub">
-                                <a class="js-arrow" href="#">
-                                    <i class="fas fa-copy"></i>Pages
-                                    <span class="arrow">
-                                        <i class="fas fa-angle-down"></i>
-                                    </span>
-                                </a>
-                                <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                    <li>
-                                        <a href="login.html">
-                                            <i class="fas fa-sign-in-alt"></i>Login</a>
-                                    </li>
-                                    <li>
-                                        <a href="register.html">
-                                            <i class="fas fa-user"></i>Register</a>
-                                    </li>
-                                    <li>
-                                        <a href="forget-pass.html">
-                                            <i class="fas fa-unlock-alt"></i>Forget Password</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="has-sub">
-                                <a class="js-arrow" href="#">
-                                    <i class="fas fa-desktop"></i>UI Elements
-                                    <span class="arrow">
-                                        <i class="fas fa-angle-down"></i>
-                                    </span>
-                                </a>
-                                <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                    <li>
-                                        <a href="button.html">
-                                            <i class="fab fa-flickr"></i>Button</a>
-                                    </li>
-                                    <li>
-                                        <a href="badge.html">
-                                            <i class="fas fa-comment-alt"></i>Badges</a>
-                                    </li>
-                                    <li>
-                                        <a href="tab.html">
-                                            <i class="far fa-window-maximize"></i>Tabs</a>
-                                    </li>
-                                    <li>
-                                        <a href="card.html">
-                                            <i class="far fa-id-card"></i>Cards</a>
-                                    </li>
-                                    <li>
-                                        <a href="alert.html">
-                                            <i class="far fa-bell"></i>Alerts</a>
-                                    </li>
-                                    <li>
-                                        <a href="progress-bar.html">
-                                            <i class="fas fa-tasks"></i>Progress Bars</a>
-                                    </li>
-                                    <li>
-                                        <a href="modal.html">
-                                            <i class="far fa-window-restore"></i>Modals</a>
-                                    </li>
-                                    <li>
-                                        <a href="switch.html">
-                                            <i class="fas fa-toggle-on"></i>Switchs</a>
-                                    </li>
-                                    <li>
-                                        <a href="grid.html">
-                                            <i class="fas fa-th-large"></i>Grids</a>
-                                    </li>
-                                    <li>
-                                        <a href="fontawesome.html">
-                                            <i class="fab fa-font-awesome"></i>FontAwesome</a>
-                                    </li>
-                                    <li>
-                                        <a href="typo.html">
-                                            <i class="fas fa-font"></i>Typography</a>
-                                    </li>
-                                </ul>
-                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -404,12 +341,16 @@
 
             @if ($errors->any())
             <section>
-                @include ('layout.parcial.error')
+                <div class="container-fluid">
+                    @include ('layout.parcial.error')
+                </div>
             </section>
             @endif
             @if (!empty(session('success')))
             <section>
-                @include ('layout.parcial.success')
+                <div class="container-fluid">
+                    @include ('layout.parcial.success')
+                </div>
             </section>
             @endif
 
@@ -440,7 +381,6 @@
     <script src="{{ asset('vendor/wow/wow.min.js') }}"></script>
     <script src="{{ asset('vendor/animsition/animsition.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
-    <script src="{{ asset('vendor/data-tables/dataTables.min.js') }}"></script>
     <script src="{{ asset('vendor/counter-up/jquery.waypoints.min.js') }}"></script>
     <script src="{{ asset('vendor/counter-up/jquery.counterup.min.js') }}"></script>
     <script src="{{ asset('vendor/circle-progress/circle-progress.min.js') }}"></script>

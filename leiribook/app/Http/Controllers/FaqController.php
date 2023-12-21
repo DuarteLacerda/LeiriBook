@@ -41,7 +41,7 @@ class FaqController extends Controller
         $faq->save();
         return redirect()->route('admin.faqs.index')->with(
             'success',
-            'Pergunta creada com sucesso'
+            'Pergunta criada com sucesso'
         );
     }
 

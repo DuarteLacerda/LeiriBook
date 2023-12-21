@@ -14,7 +14,7 @@ class FaqRequest extends FormRequest
     public function rules()
     {
         return [
-            'question' => 'required|string',
+            'question' => 'required|unique:faqs|string',
             'answer' => 'required|string',
             // Add any additional validation rules as needed
         ];
@@ -23,10 +23,9 @@ class FaqRequest extends FormRequest
     public function messages()
     {
         return [
-            'question.required' => 'The question field is required.',
-            'answer.required' => 'The answer field is required.',
+            'question.required' => 'O campo Pergunta é obrigatório.',
+            'answer.required' => 'O campo Resposta é obrigatório.',
             // Add any custom error messages for specific rules
         ];
     }
 }
-

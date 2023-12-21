@@ -25,6 +25,20 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
     ];
 
+    public function roleToStr()
+    {
+        switch ($this->role) {
+            case 'N':
+                return 'Normal';
+            case 'A':
+                return 'Admin';
+        }
+    }
+    public function isAdmin()
+    {
+        return $this->role == 'A';
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -44,5 +58,4 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-
 }
