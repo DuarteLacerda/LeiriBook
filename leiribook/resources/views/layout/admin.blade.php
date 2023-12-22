@@ -47,12 +47,16 @@
             <div class="menu-sidebar2__content js-scrollbar1">
                 <div class="account2">
                     <div class="image img-cir img-120">
+                        @if (Auth::user()->foto == null)
+                        <img src="{{ asset('images/admin/default-user.png') }}" alt="Perfil de Utilizador" />
+                        @else
                         <img src="{{ Auth::user()->foto }}" alt="Perfil de Utilizador" />
+                        @endif
                     </div>
                     <h4 class="name">{{ Auth::user()->name }}</h4>
-                    <a href="#"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Terminar
-                        Sessão</a>
+                    <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt" style="color: #4272d7;"></i>
+                        Terminar Sessão</button>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
@@ -142,7 +146,7 @@
                                 </a>
                             </div>
                             <div class="header-button2">
-                                <div class="header-button-item js-item-menu">
+                                {{-- <div class="header-button-item js-item-menu">
                                     <i class="zmdi zmdi-search"></i>
                                     <div class="search-dropdown js-dropdown">
                                         <form action="">
@@ -154,7 +158,7 @@
                                         </form>
                                     </div>
                                 </div>
-                                {{-- <div class="header-button-item has-noti js-item-menu">
+                                <div class="header-button-item has-noti js-item-menu">
                                     <i class="zmdi zmdi-notifications"></i>
                                     <div class="notifi-dropdown js-dropdown">
                                         <div class="notifi__title">
@@ -241,18 +245,23 @@
             <aside class="menu-sidebar2 js-right-sidebar d-block d-lg-none">
                 <div class="logo">
                     <a href="{{ route('home') }}">
-                        <img src="{{ asset('images/icon/logo-white.png') }}" alt="logotipo" />
+                        <img src="{{ asset('images/logo/PNG/logo-ext-white.png') }}" alt="logotipo" />
                     </a>
                 </div>
                 <div class="menu-sidebar2__content js-scrollbar2">
                     <div class="account2">
                         <div class="image img-cir img-120">
+                            @if (Auth::user()->foto == null)
+                            <img src="{{ asset('images/admin/default-user.png') }}" alt="Perfil de Utilizador" />
+                            @else
                             <img src="{{ Auth::user()->foto }}" alt="Perfil de Utilizador" />
+                            @endif
                         </div>
                         <h4 class="name">{{ Auth::user()->name }}</h4>
-                        <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Terminar
-                            Sessão</a>
+                        <button href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <i class="fas fa-sign-out-alt" style="color: #4272d7;"></i>
+                            Terminar Sessão</button>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>

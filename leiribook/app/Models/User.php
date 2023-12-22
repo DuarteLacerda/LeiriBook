@@ -23,6 +23,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
+        'foto',
+        'role',
     ];
 
     public function roleToStr()

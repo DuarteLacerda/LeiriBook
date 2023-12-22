@@ -40,9 +40,9 @@ Auth::routes(['register' => true, 'verify' => true]);
 Route::group(['middleware' => ['auth', 'verified']], function () {
     route::get('editpassword', [UserController::class, 'editpassword'])->name('editpassword');
     route::patch('updatepassword', [UserController::class, 'updatepassword'])->name('updatepassword');
+    Route::get('/users/{user}/send_reactivate_mail', [UserController::class, 'send_reactivate_email'])->name('users.sendActivationEmail');
     route::group(['middleware' => ['role'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/', [PageController::class, 'admin'])->name('dashboard');
-        Route::get('/users/{user}/send_reactivate_mail', [UserController::class, 'send_reactivate_email'])->name('users.sendActivationEmail');
         Route::delete('/users/{user}/destroy_photo', [UserController::class, 'destroy_photo'])->name('users.destroyPhoto');
         Route::resource('evento', EventoController::class);
         Route::resource('faqs', FaqController::class);

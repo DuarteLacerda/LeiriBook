@@ -48,7 +48,7 @@
                                 @csrf
                                 @method('PUT')
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <div class="form-group">
                                             <label for="name" class="control-label mb-1">Nome:</label>
                                             <input id="name" name="name" type="text" class="form-control"
@@ -56,6 +56,19 @@
                                                 value="{{ $user->name }}">
                                         </div>
                                     </div>
+                                    @if(Auth::user()->role == 'A')
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="password" class="control-label mb-1">Password:</label>
+                                            <button type="button" class="eye1" onclick="previewpass()">
+                                                <i class="fas fa-eye-slash" style="color: #4272d7;" id="eye"></i>
+                                            </button>
+                                            <input id="password" name="password" type="password" class="form-control"
+                                                aria-required="true" aria-invalid="false" placeholder="2y@2d$gd"
+                                                value="{{ $user->password }}">
+                                        </div>
+                                    </div>
+                                    @endif
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
@@ -85,9 +98,11 @@
                                 <div class="form-group">
                                     <label for="inputRole">Previlégios</label>
                                     <select name="role" id="inputRole" class="form-control">
-                                        <option value="A" {{ old('role', $user->role) == 'A' ? 'selected' : ''
-                                            }}>Administrador</option>
-                                        <option value="N" {{ old('role', $user->role) == 'N' ? 'selected' : '' }}>Normal
+                                        <option value="A" {{ old('role', $user->role) == 'A' ? 'selected' : '' }}>
+                                            Administrador
+                                        </option>
+                                        <option value="N" {{ old('role', $user->role) == 'N' ? 'selected' : '' }}>
+                                            Normal
                                         </option>
                                     </select>
                                 </div>
@@ -122,5 +137,19 @@
             reader.readAsDataURL(file);
         }
     }
+
+    function previewpass() {
+        var x = document.getElementById("password");
+        var eye = document.getElementById("eye");
+        if (x.type === "password") {
+            x.type = "text";
+            eye.classList.remove('fa-eye-slash');
+            eye.classList.add('fa-eye');
+        } else {
+            x.type = "password";
+            eye.classList.remove('fa-eye');
+            eye.classList.add('fa-eye-slash');
+        }
+    };
 </script>
 @endsection

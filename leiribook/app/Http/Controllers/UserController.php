@@ -47,12 +47,9 @@ class UserController extends Controller
         $user->fill($fields);
         $user->password = Hash::make('password');
         if ($request->hasFile('file-input')) {
-            $name = $request->file('file-input')->getClientOriginalName();
-            $extension = pathinfo($name, PATHINFO_EXTENSION);
-            $designacao = preg_replace(array("/(á|à|ã|â|ä)/", "/(Á|À|Ã|Â|Ä)/", "/(é|è|ê|ë)/", "/(É|È|Ê|Ë)/", "/(í|ì|î|ï)/", "/(Í|Ì|Î|Ï)/", "/(ó|ò|õ|ô|ö)/", "/(Ó|Ò|Õ|Ô|Ö)/", "/(ú|ù|û|ü)/", "/(Ú|Ù|Û|Ü)/", "/(ñ)/", "/(Ñ)/"), explode(" ", "a A e E i I o O u U n N"), $user->name);
-            $designacao = str_replace(' ', '', $designacao);
-            $name = $designacao  . "." . $extension;
-            $photo_path = $request->file('file-input')->store('storage/users_photos', $name);
+            $photo_path = $request->file('file-input')->store(
+                'public/users_photos'
+            );
             $user->foto = basename($photo_path);
         }
         $user->save();
@@ -99,12 +96,7 @@ class UserController extends Controller
             if (!empty($user->foto)) {
                 Storage::disk('public')->delete('users_photos/' . $user->foto);
             }
-            $name = $request->file('file-input')->getClientOriginalName();
-            $extension = pathinfo($name, PATHINFO_EXTENSION);
-            $designacao = preg_replace(array("/(á|à|ã|â|ä)/", "/(Á|À|Ã|Â|Ä)/", "/(é|è|ê|ë)/", "/(É|È|Ê|Ë)/", "/(í|ì|î|ï)/", "/(Í|Ì|Î|Ï)/", "/(ó|ò|õ|ô|ö)/", "/(Ó|Ò|Õ|Ô|Ö)/", "/(ú|ù|û|ü)/", "/(Ú|Ù|Û|Ü)/", "/(ñ)/", "/(Ñ)/"), explode(" ", "a A e E i I o O u U n N"), $user->name);
-            $designacao = str_replace(' ', '', $designacao);
-            $name = $designacao  . "." . $extension;
-            $photo_path = $request->file('file-input')->store('storage/users_photos', $name);
+            $photo_path = $request->file('file-input')->store('public/users_photos');
             $user->foto = basename($photo_path);
         }
 

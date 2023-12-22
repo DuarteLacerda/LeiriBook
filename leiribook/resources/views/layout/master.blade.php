@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
-    <link rel="icon" href="{{ asset('images/logo/logo.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/logo/SVG/logo.svg') }}" type="image/x-icon">
     @yield('styles')
 </head>
 
