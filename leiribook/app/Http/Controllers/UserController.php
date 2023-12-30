@@ -46,10 +46,8 @@ class UserController extends Controller
         $user = new User();
         $user->fill($fields);
         $user->password = Hash::make('password');
-        if ($request->hasFile('file-input')) {
-            $photo_path = $request->file('file-input')->store(
-                'public/users_photos'
-            );
+        if ($request->hasFile('foto')) {
+            $photo_path = $request->file('foto')->store('public/users_photos');
             $user->foto = basename($photo_path);
         }
         $user->save();
@@ -92,11 +90,11 @@ class UserController extends Controller
 
         $fields = $request->validated();
         $user->fill($fields);
-        if ($request->hasFile('file-input')) {
+        if ($request->hasFile('foto')) {
             if (!empty($user->foto)) {
                 Storage::disk('public')->delete('users_photos/' . $user->foto);
             }
-            $photo_path = $request->file('file-input')->store('public/users_photos');
+            $photo_path = $request->file('foto')->store('public/users_photos');
             $user->foto = basename($photo_path);
         }
 

@@ -44,7 +44,8 @@
                                 <h3 class="text-center title-2">Editar</h3>
                             </div>
                             <hr>
-                            <form action="{{ route('admin.users.update', $user) }}" method="post">
+                            <form action="{{ route('admin.users.update', $user) }}" method="post"
+                                enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="row">
@@ -81,20 +82,27 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <label for="file-input" class=" form-control-label">Inserir</label>
-                                            <input type="file" id="file-input" name="file-input"
-                                                class="form-control-file" onchange="previewFile()">
+                                            <label for="foto" class=" form-control-label">Inserir</label>
+                                            <input type="file" id="foto" name="foto" class="form-control-file"
+                                                onchange="previewFile()">
                                         </div>
-                                        <img id="preview" src="storage/users_photos/{{ $user->foto }}" alt=""
-                                            style="height: 150px">
+                                        @if (old('file', $user->foto))
+                                        <img src="{{ asset('storage/users_photos/' . old('file', $user->foto)) }}"
+                                            alt="" style="height: 150px">
+                                        @endif
+                                        <img id="preview" src="" alt="" style="height: 150px">
                                         <form method="POST" action="{{ route('admin.users.destroyPhoto', $user) }}"
-                                            class="inline">
+                                            class="inline"
+                                            onsubmit="return confirm('Confirma que pretende eliminar esta foto?');">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Apagar foto</button>
+                                            <button type="submit" class="btn btn-danger"><i class="fas fa-trash fa-sm"
+                                                    style="color: white;"></i>
+                                            </button>
                                         </form>
                                     </div>
                                 </div>
+                                @can('updateRole', $user)
                                 <div class="form-group">
                                     <label for="inputRole">Previlégios</label>
                                     <select name="role" id="inputRole" class="form-control">
@@ -106,6 +114,7 @@
                                         </option>
                                     </select>
                                 </div>
+                                @endcan
                                 <div>
                                     <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                         <i class="fa fa-edit fa-xl"></i>&nbsp;
@@ -125,7 +134,7 @@
 <script>
     function previewFile() {
         const preview = document.querySelector('#preview');
-        const file = document.querySelector('#file-input').files[0];
+        const file = document.querySelector('#foto').files[0];
         const reader = new FileReader();
 
         reader.addEventListener("load", function () {

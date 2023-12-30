@@ -42,7 +42,7 @@
                             <h3 class="text-center title-2">Criar</h3>
                         </div>
                         <hr>
-                        <form action="{{ route('admin.users.store') }}" method="post">
+                        <form action="{{ route('admin.users.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-6">
@@ -73,8 +73,8 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label for="file-input" class=" form-control-label">Inserir</label>
-                                        <input type="file" id="file-input" name="file-input" class="form-control-file"
+                                        <label for="foto" class=" form-control-label">Inserir</label>
+                                        <input type="file" id="foto" name="foto" class="form-control-file"
                                             onchange="previewFile()">
                                     </div>
                                     <img id="preview" src="" alt="" style="height: 150px">
@@ -109,7 +109,7 @@
 <script>
     function previewFile() {
         const preview = document.querySelector('#preview');
-        const file = document.querySelector('#file-input').files[0];
+        const file = document.querySelector('#foto').files[0];
         const reader = new FileReader();
 
         reader.addEventListener("load", function () {

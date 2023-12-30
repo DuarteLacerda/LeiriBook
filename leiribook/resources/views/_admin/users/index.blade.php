@@ -53,7 +53,7 @@
                                 <tr>
                                     <td>{{ $user->id }}</td>
                                     <td class="text-left">{{ $user->name }}</td>
-                                    <td>{{ $user->emnail }}</td>
+                                    <td class="text-left">{{ $user->email }}</td>
                                     <td>
                                         <a class="btn btn-primary btn-p" data-toggle="modal" data-target="#userModal"
                                             data-user="{{ $user }}">
@@ -112,10 +112,10 @@
     $('#userModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget)
         var user = button.data('user')
-
+        var imageUrl = "{{ asset('storage/users_photos/') }}/" + user.foto;
         var modal = $(this)
         modal.find('.modal-title').html('Utilizador ' + user.id + ' - Detalhes');
-        modal.find('.modal-body').html('<strong>Nome:</strong> ' + user.name + '<br><hr><strong>Email:</strong> ' + user.email + '<br><hr><strong>Foto de perfil:</strong> ' + "<img id='preview' src='{{ asset('storage/users_photos/" + user.foto + "') }}' alt='' style='height: 150px'>");
+        modal.find('.modal-body').html('<strong>Nome:</strong> ' + user.name + '<br><hr>' + '<strong>Email:</strong> ' + user.email + '<br><hr>' + '<strong>Foto de perfil:</strong> <img id="preview" src="' + imageUrl + '" alt="" style="height: 100px">');
     })
 </script>
 @endsection
