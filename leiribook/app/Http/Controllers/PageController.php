@@ -8,6 +8,7 @@ use App\Models\Livro;
 use App\Models\Evento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class PageController extends Controller
 {
@@ -16,8 +17,6 @@ class PageController extends Controller
         $currentDateTime = now();
 
         $livros = Livro::all()->take(3);
-
-        $eventos = Evento::all();
         $eventos = Evento::where('data_fim', '>', $currentDateTime)
             ->orderBy('data_fim', 'desc')
             ->take(3)
@@ -120,5 +119,13 @@ class PageController extends Controller
         $users = User::all();
         $users = User::where('role', 'like', 'A')->get();
         return view("sobrenos", compact("users"));
+    }
+
+    public function destroy_photo_profile(User $user)
+    {
+        Storage::disk('public')->delete('users_photos/' . $user->foto);
+        $user->foto = null;
+        $user->save();
+        return redirect()->route('profile', $user);
     }
 }

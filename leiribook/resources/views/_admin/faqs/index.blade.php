@@ -17,7 +17,7 @@
             <span>/</span>
         </li>
         <li class="list-inline-item active">
-            <a href="{{ route('admin.faqs.index') }}">Preguntas Frequentes</a>
+            <a href="{{ route('admin.faqs.index') }}">Perguntas Frequentes</a>
         </li>
     </ul>
 </div>

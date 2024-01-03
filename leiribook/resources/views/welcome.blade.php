@@ -52,7 +52,7 @@
                 <span class="title">
                     {{ $livro->titulo }}
                 </span>
-                <a class="action" href="{{ route('evento', str_replace(' ', '-', $evento->nome)) }}">
+                <a class="action" href="#">
                     Saber mais
                     <span aria-hidden="true">
                         <i class="fa-solid fa-arrow-right-long"></i>

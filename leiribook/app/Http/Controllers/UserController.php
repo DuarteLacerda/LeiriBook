@@ -120,7 +120,9 @@ class UserController extends Controller
 
     public function destroy_photo(User $user)
     {
-        Storage::disk('public')->delete('users_photos/' . $user->foto);
+        if (!empty($user->foto)) {
+            Storage::disk('public')->delete('users_photos/' . $user->foto);
+        }
         $user->foto = null;
         $user->save();
         return redirect()->route('admin.users.edit', $user)->with(
@@ -144,5 +146,11 @@ class UserController extends Controller
             'success',
             'Password alterada com sucesso'
         );
+    }
+
+    public function profile(User $user)
+    {
+        //
+        return view('_admin.profile', compact('user'));
     }
 }

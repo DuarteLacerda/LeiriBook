@@ -34,7 +34,7 @@
                         {{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('admin.users.edit', Auth::user()) }}">Profile</a>
+                        <a class="dropdown-item" href="{{ route('profile', Auth::user()) }}">Perfil</a>
                         @if (Auth::user()->role == 'A')
                         <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard</a>
                         @endif

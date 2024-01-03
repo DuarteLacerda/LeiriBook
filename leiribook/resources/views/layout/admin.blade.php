@@ -99,11 +99,11 @@
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="{{ route('admin.evento.index') }}">
+                                    <a href="{{ route('admin.eventos.index') }}">
                                         </i>Listagem de eventos</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.evento.create') }}">
+                                    <a href="{{ route('admin.eventos.create') }}">
                                         Novo Evento</a>
                                 </li>
                             </ul>
@@ -291,11 +291,11 @@
                                 </a>
                                 <ul class="list-unstyled navbar__sub-list js-sub-list">
                                     <li>
-                                        <a href="{{ route('admin.evento.index') }}">
+                                        <a href="{{ route('admin.eventos.index') }}">
                                             </i>Listagem de eventos</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('admin.evento.create') }}">
+                                        <a href="{{ route('admin.eventos.create') }}">
                                             Novo Evento</a>
                                     </li>
                                     <li>
