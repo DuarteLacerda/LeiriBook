@@ -6,13 +6,13 @@
 
 @section('content')
     <div id="large-th">
-        <div class="container">
+        <div class="container1">
             <h1>Biblioteca</h1>
             <br>
             <!-- Filters -->
             <form action="{{ route('filter.books') }}" method="GET">
                 <label for="genre">Filtrar por género</label>
-                <div class="filter-container">
+                <div class="filter-container1">
                 <select name="genre" id="genre" class="select-css">
                     <option value="all">-</option> <!-- Default option -->
                     @foreach ($categorias as $categoria)
