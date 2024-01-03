@@ -44,29 +44,40 @@
                         <hr>
                         <form action="{{ route('admin.eventos.store') }}" method="post">
                             @csrf
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="question" class="control-label mb-1">Nome:</label>
+                                        <input id="question" name="question" type="text" class="form-control"
+                                            aria-required="true" aria-invalid="false" value="{{ $evento->nome }}">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="question" class="control-label mb-1">Local:</label>
+                                        <input id="question" name="question" type="text" class="form-control"
+                                            aria-required="true" aria-invalid="false" value="{{ $evento->local }}">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group">
-                                <label for="question" class="control-label mb-1">Pergunta:</label>
-                                <input id="question" name="question" type="text" class="form-control"
-                                    aria-required="true" aria-invalid="false" placeholder="Pergunta">
+                                <label for="answer" class="control-label mb-1">Descrição:</label>
+                                <textarea id="answer" name="answer" type="text" class="form-control cc-exp"
+                                    data-val="true" rows="5">{{ $evento->descricao }}</textarea>
                             </div>
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label for="answer" class="control-label mb-1">Resposta:</label>
-                                        <textarea id="answer" name="answer" type="text" class="form-control cc-exp"
-                                            data-val="true" placeholder="Estado" rows="5"
-                                            autocomplete="cc-exp"></textarea>
+                                        <label for="question" class="control-label mb-1">Data Inicial:</label>
+                                        <input id="question" name="question" type="date" class="form-control"
+                                            aria-required="true" aria-invalid="false" value="{{ $evento->data_inicio }}">
                                     </div>
                                 </div>
                                 <div class="col-6">
-                                    <label for="state" class="control-label mb-1">Estado</label>
-                                    <div class="input-group">
-                                        <select name="state" id="state" class="form-control">
-                                            <option value="">Selecione um estado</option>
-                                            <option value="0">Pendente</option>
-                                            <option value="1">Aprovado</option>
-                                        </select>
-
+                                    <div class="form-group">
+                                        <label for="question" class="control-label mb-1">Data Final:</label>
+                                        <input id="question" name="question" type="date" class="form-control"
+                                            aria-required="true" aria-invalid="false" value="{{ $evento->data_fim }}">
                                     </div>
                                 </div>
                             </div>
