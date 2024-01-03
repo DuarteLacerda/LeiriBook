@@ -46,7 +46,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     route::group(['middleware' => ['role'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/', [PageController::class, 'admin'])->name('dashboard');
         Route::delete('admin/users/{user}/destroy_photo', [UserController::class, 'destroy_photo'])->name('admin.users.destroyPhoto');
-        Route::resource('evento', EventoController::class);
+        Route::resource('eventos', EventoController::class);
         Route::resource('faqs', FaqController::class);
         Route::resource('users', UserController::class);
         Route::resource('livros', LivroController::class);
