@@ -91,7 +91,7 @@ class UserController extends Controller
         $fields = $request->validated();
         $user->fill($fields);
         if ($request->hasFile('foto')) {
-            if (!empty($user->foto)) {
+            if ($user->foto == basename($request->file('foto'))) {
                 Storage::disk('public')->delete('users_photos/' . $user->foto);
             }
             $photo_path = $request->file('foto')->store('public/users_photos');

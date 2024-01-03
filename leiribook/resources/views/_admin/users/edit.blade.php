@@ -44,7 +44,7 @@
                                 <h3 class="text-center title-2">Editar</h3>
                             </div>
                             <hr>
-                            <form action="{{ route('admin.users.update', $user) }}" method="post"
+                            <form id="form" action="{{ route('admin.users.update', $user) }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
@@ -117,7 +117,8 @@
                                 </div>
                                 @endcan
                                 <div>
-                                    <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                    <button id="payment-button" form="form" type="submit"
+                                        class="btn btn-lg btn-info btn-block">
                                         <i class="fa fa-edit fa-xl"></i>&nbsp;
                                         <span id="payment-button-amount">Editar</span>
                                     </button>
