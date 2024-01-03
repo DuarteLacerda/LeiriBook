@@ -17,7 +17,7 @@ class PageController extends Controller
         $currentDateTime = now();
 
         $livros = Livro::all()->take(3);
-        $eventos = Evento::where('data_fim', '>', $currentDateTime)
+        $eventos = Evento::where('data_fim', '<=', $currentDateTime)
             ->orderBy('data_fim', 'desc')
             ->take(3)
             ->get();
@@ -74,6 +74,17 @@ class PageController extends Controller
             ->take(5)
             ->get();
 
+        if ($eventosRecentes->count() < 5) {
+            $eventosPassados = 5 - $eventosRecentes->count();
+
+            $eventosRecentes = $eventosRecentes->merge(
+                Evento::where('data_fim', '<=', $currentDateTime)
+                    ->orderBy('data_fim', 'desc')
+                    ->take($eventosPassados)
+                    ->get()
+            );
+        }
+
         if ($listar == "passados") {
             $eventos = Evento::where('data_fim', '<', $currentDateTime)
                 ->orderBy('data_fim', 'asc')->paginate(6);
@@ -98,6 +109,14 @@ class PageController extends Controller
         $faqs = Faq::where('approved', '=', 1)->get();
         return view('faqs', compact('faqs'));
     }
+
+    public function sobrenos()
+    {
+        $users = User::all();
+        $users = User::where('role', 'like', 'A')->get();
+        return view("sobrenos", compact("users"));
+    }
+
     public function admin()
     {
         $count_users = User::count();
@@ -114,18 +133,19 @@ class PageController extends Controller
         ));
     }
 
-    public function sobrenos()
+    public function profile(User $user)
     {
-        $users = User::all();
-        $users = User::where('role', 'like', 'A')->get();
-        return view("sobrenos", compact("users"));
+        //
+        return view('_admin.profile', compact('user'));
     }
 
     public function destroy_photo_profile(User $user)
     {
-        Storage::disk('public')->delete('users_photos/' . $user->foto);
+        if (!empty($user->foto)) {
+            Storage::disk('public')->delete('users_photos/' . $user->foto);
+        }
         $user->foto = null;
         $user->save();
-        return redirect()->route('profile', $user);
+        return;
     }
 }

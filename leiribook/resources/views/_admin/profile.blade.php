@@ -85,13 +85,14 @@
                                             alt="" style="height: 150px">
                                         @endif
                                         <img id="preview" src="" alt="" style="height: 150px">
-                                        <form method="POST" action="{{ route('profile.destroyPhotoProfile', $user) }}"
-                                            class="inline"
+                                        <form id="photo" method="POST"
+                                            action="{{ route('profile.destroyPhotoProfile', $user) }}" class="inline"
                                             onsubmit="return confirm('Confirma que pretende eliminar esta foto?');">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger" onclick="deletePhoto()"><i
-                                                    class="fas fa-trash fa-sm" style="color: white;"></i>
+                                            <button type="submit" form="photo" class="btn btn-danger"
+                                                onclick="deletePhoto()"><i class="fas fa-trash fa-sm"
+                                                    style="color: white;"></i>
                                             </button>
                                         </form>
                                     </div>

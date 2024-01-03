@@ -125,10 +125,7 @@ class UserController extends Controller
         }
         $user->foto = null;
         $user->save();
-        return redirect()->route('admin.users.edit', $user)->with(
-            'success',
-            'A foto do utilizador foi apagada com sucesso.'
-        );
+        return;
     }
 
     public function editpassword()
@@ -146,11 +143,5 @@ class UserController extends Controller
             'success',
             'Password alterada com sucesso'
         );
-    }
-
-    public function profile(User $user)
-    {
-        //
-        return view('_admin.profile', compact('user'));
     }
 }

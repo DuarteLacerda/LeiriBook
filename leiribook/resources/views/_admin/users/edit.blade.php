@@ -91,12 +91,13 @@
                                             alt="" style="height: 150px">
                                         @endif
                                         <img id="preview" src="" alt="" style="height: 150px">
-                                        <form method="POST" action="{{ route('admin.users.destroyPhoto', $user) }}"
-                                            class="inline"
+                                        <form id="photo" method="POST"
+                                            action="{{ route('admin.users.destroyPhoto', $user) }}" class="inline"
                                             onsubmit="return confirm('Confirma que pretende eliminar esta foto?');">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger"><i class="fas fa-trash fa-sm"
+                                            <button type="submit" form="photo" class="btn btn-danger"
+                                                onclick="deletePhoto()"><i class="fas fa-trash fa-sm"
                                                     style="color: white;"></i>
                                             </button>
                                         </form>
@@ -145,7 +146,7 @@
         if (file) {
             reader.readAsDataURL(file);
         }
-    }
+    };
 
     function previewpass() {
         var x = document.getElementById("password");
@@ -159,6 +160,13 @@
             eye.classList.remove('fa-eye');
             eye.classList.add('fa-eye-slash');
         }
+    };
+
+    function deletePhoto() {
+        var x = document.getElementById("foto");
+        var y = document.getElementById("preview");
+        x.value = "";
+        y.src = "";
     };
 </script>
 @endsection
