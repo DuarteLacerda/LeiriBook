@@ -2,7 +2,9 @@
 #pagetitle{
  text-align: center;
 }
-
+a{
+    color: black;
+}
 .newsletter-form {
     background-color: #fff;
     border-radius: 8px;
@@ -300,4 +302,20 @@
 /* select and button container1 */
   .filter-container1 {
     display: flex;  /* Use flexbox for layout */
+}
+#bookcontainer{
+    width: 90%;
+    margin: auto;
+}
+#bookimage{
+    width: 30%;
+    height: 400px;
+    display: flex;
+    float: left;
+}
+#bookinfo{
+    width: 70%;
+    height: 400px;
+    display: flex;
+    float: right;
 }

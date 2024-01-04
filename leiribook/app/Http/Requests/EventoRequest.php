@@ -29,7 +29,6 @@ class EventoRequest extends FormRequest
             'local' => 'required|string',
             'data_inicio' => 'required|date',
             'data_fim' => 'required|date|after_or_equal:data_inicio',
-            'user_id' => 'required', // Não é necessário exists nesta versão
         ];
     }
 

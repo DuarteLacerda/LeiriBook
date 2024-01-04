@@ -98,6 +98,9 @@
                     </div>
                 @endforeach
             </div>
+            <div class="d-flex justify-content-center mt-4">
+                {{ $eventos->withQueryString()->links() }}
+            </div>
         </div>
 
         <div id="botao_evento" class="text-center"><a class="btn btn-dark btn-block gradient-custom-2 mb-3"

@@ -47,7 +47,12 @@ class PageController extends Controller
     {
         return view("pedidos");
     }
+    public function livro_detalhe($id)
+    {
+        // Your logic to retrieve livro details based on $id goes here
 
+        return view("livro_detalhe");
+    }
     public function evento($nome)
     {
 
