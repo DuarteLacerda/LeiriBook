@@ -7,8 +7,9 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LivroController;
 use App\Http\Controllers\EventoController;
-use App\Http\Controllers\EventoPhotoController;
 use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\AvaliacaoController;
+use App\Http\Controllers\EventoPhotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::resource('users', UserController::class);
         Route::resource('livros', LivroController::class);
         Route::resource('eventos/{evento}/evento_fotos', EventoPhotoController::class)->parameters(['evento_fotos'=>'foto']);
+
+        Route::resource('avaliacoes', AvaliacaoController::class);
 
     });
 });
