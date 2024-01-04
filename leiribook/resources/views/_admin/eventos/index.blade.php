@@ -17,7 +17,7 @@
             <span>/</span>
         </li>
         <li class="list-inline-item active">
-            <a href="{{ route('admin.eventos.index') }}">Preguntas Frequentes</a>
+            <a href="{{ route('admin.eventos.index') }}">Eventos</a>
         </li>
     </ul>
 </div>
@@ -43,6 +43,7 @@
                                     <th>ID</th>
                                     <th>Nome</th>
                                     <th>Detalhes</th>
+                                    <th>Fotos</th>
                                     <th>Editar</th>
                                     <th>Eliminar</th>
                                 </tr>
@@ -56,6 +57,11 @@
                                         <a class="btn btn-primary btn-p" data-toggle="modal" data-target="#eventoModal"
                                             data-evento="{{ $evento }}">
                                             <i class=" fas fa-eye fa-xs" style="color: white;"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-success btn-p" href="{{ route('admin.evento_fotos.index', $evento) }}">
+                                            <i class="fas fa-photo fa-xs" style="color: white;"></i>
                                         </a>
                                     </td>
                                     <td>

@@ -43,10 +43,10 @@
                             <h3 class="text-center title-2">Editar</h3>
                         </div>
                         <hr>
-                        <form action="{{ route('admin.eventos.update', $evento) }}" method="post">
+                        <form action="{{ route('admin.evento_fotos.update', [$evento,$foto]) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
-                            @include('_admin.eventos.partials.add-edit')
+                            @include('_admin.eventos_fotos.partials.add-edit')
                             <div>
                                 <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                     <i class="fa fa-edit fa-xl"></i>&nbsp;
@@ -61,3 +61,23 @@
     </div>
 </section>
 @endsection
+@section('scripts')
+<script>
+function previewFile() {
+        const preview = document.querySelector('#preview');
+        const file = document.querySelector('#foto').files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener("load", function () {
+            // convert image file to base64 string
+            preview.src = reader.result;
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    };
+
+</script>
+@endsection
+

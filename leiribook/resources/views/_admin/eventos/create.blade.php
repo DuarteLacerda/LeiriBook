@@ -44,43 +44,7 @@
                         <hr>
                         <form action="{{ route('admin.eventos.store') }}" method="post">
                             @csrf
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label for="question" class="control-label mb-1">Nome:</label>
-                                        <input id="question" name="question" type="text" class="form-control"
-                                            aria-required="true" aria-invalid="false" value="{{ $evento->nome }}">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label for="question" class="control-label mb-1">Local:</label>
-                                        <input id="question" name="question" type="text" class="form-control"
-                                            aria-required="true" aria-invalid="false" value="{{ $evento->local }}">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="answer" class="control-label mb-1">Descrição:</label>
-                                <textarea id="answer" name="answer" type="text" class="form-control cc-exp"
-                                    data-val="true" rows="5">{{ $evento->descricao }}</textarea>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label for="question" class="control-label mb-1">Data Inicial:</label>
-                                        <input id="question" name="question" type="date" class="form-control"
-                                            aria-required="true" aria-invalid="false" value="{{ $evento->data_inicio }}">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label for="question" class="control-label mb-1">Data Final:</label>
-                                        <input id="question" name="question" type="date" class="form-control"
-                                            aria-required="true" aria-invalid="false" value="{{ $evento->data_fim }}">
-                                    </div>
-                                </div>
-                            </div>
+                            @include('_admin.eventos.partials.add-edit')
                             <div>
                                 <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                     <i class="fa fa-plus fa-xl"></i>&nbsp;
