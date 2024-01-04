@@ -111,11 +111,9 @@ class UserController extends Controller
         if (!empty($user->foto)) {
             Storage::disk('public')->delete('users_photos/' . $user->foto);
         }
-        $user->delete();
-        return redirect()->route('admin.users.index')->with(
-            'success',
-            'Utilizador eliminado com sucesso'
-        );
+        $user->foto = null;
+        $user->save();
+        return;
     }
 
     public function destroy_photo(User $user)

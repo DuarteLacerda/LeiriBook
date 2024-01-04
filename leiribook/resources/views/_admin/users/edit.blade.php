@@ -54,7 +54,7 @@
                                             <label for="name" class="control-label mb-1">Nome:</label>
                                             <input id="name" name="name" type="text" class="form-control"
                                                 aria-required="true" aria-invalid="false" placeholder="Ana Matias"
-                                                value="{{ $user->name }}">
+                                                value="{{ old('name', $user->name) }}">
                                         </div>
                                     </div>
                                     @if(Auth::user()->role == 'A')
@@ -66,7 +66,7 @@
                                             </button>
                                             <input id="password" name="password" type="password" class="form-control"
                                                 aria-required="true" aria-invalid="false" placeholder="2y@2d$gd"
-                                                value="{{ $user->password }}">
+                                                value="{{ old('password', $user->password)}}">
                                         </div>
                                     </div>
                                     @endif
@@ -77,7 +77,8 @@
                                             <label for="email" class="control-label mb-1">Email:</label>
                                             <input id="email" name="email" type="email" class="form-control cc-exp"
                                                 aria-required="true" aria-invalid="false"
-                                                placeholder="example@example.com" value="{{ $user->email }}">
+                                                placeholder="example@example.com"
+                                                value="{{ old('email', $user->email) }}">
                                         </div>
                                     </div>
                                     <div class="col-6">
@@ -86,7 +87,7 @@
                                             <input type="file" id="foto" name="foto" class="form-control-file"
                                                 onchange="previewFile()">
                                         </div>
-                                        @if (old('file', $user->foto))
+                                        @if ($user->foto)
                                         <img src="{{ asset('storage/users_photos/' . old('file', $user->foto)) }}"
                                             alt="" style="height: 150px">
                                         @endif
