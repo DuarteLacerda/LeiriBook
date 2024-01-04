@@ -2,7 +2,7 @@
 @section('title', 'Eventos - Editar')
 @section('breadcrumb')
 <div class="au-breadcrumb-left">
-    <span class="au-breadcrumb-span">Tu estás aqui:</span>
+    <span class="au-breadcrumb-span">Tu estás aqui:</span>              
     <ul class="list-unstyled list-inline au-breadcrumb__list">
         <li class="list-inline-item">
             <p>Home</p>

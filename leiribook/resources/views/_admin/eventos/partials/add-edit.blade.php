@@ -34,11 +34,4 @@
                 aria-required="true" aria-invalid="false" value="{{ old('data_fim',$evento->data_fim)}}">
         </div>
     </div>
-    <div class="col">
-        <div class="form-group">
-            <label for="user_id" class="control-label mb-1">ID do User:</label>
-            <input id="user_id" name="user_id" type="number" class="form-control"
-                aria-required="true" aria-invalid="false" value="{{ old('data_fim',$evento->user_id)}}">
-        </div>
-    </div>
 </div>

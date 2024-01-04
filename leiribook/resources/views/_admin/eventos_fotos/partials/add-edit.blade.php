@@ -15,7 +15,7 @@
     </div>
 </div>
 
-<div class="col-6">
+<div class="col-6 mb-3">
     <div class="form-group">
         <label for="foto" class=" form-control-label">Inserir</label>
         <input type="file" id="foto" name="foto" class="form-control-file"

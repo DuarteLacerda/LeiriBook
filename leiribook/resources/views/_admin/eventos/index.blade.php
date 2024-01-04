@@ -42,10 +42,8 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Nome</th>
-                                    <th>Detalhes</th>
                                     <th>Fotos</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,24 +52,22 @@
                                     <td>{{ $evento->id }}</td>
                                     <td class="text-left">{{ $evento->nome }}</td>
                                     <td>
-                                        <a class="btn btn-primary btn-p" data-toggle="modal" data-target="#eventoModal"
-                                            data-evento="{{ $evento }}">
-                                            <i class=" fas fa-eye fa-xs" style="color: white;"></i>
-                                        </a>
-                                    </td>
-                                    <td>
                                         <a class="btn btn-success btn-p" href="{{ route('admin.evento_fotos.index', $evento) }}">
                                             <i class="fas fa-photo fa-xs" style="color: white;"></i>
                                         </a>
                                     </td>
                                     <td>
+                                        <a class="btn btn-primary btn-p" data-toggle="modal" data-target="#eventoModal"
+                                            data-evento="{{ $evento }}">
+                                            <i class=" fas fa-eye fa-xs" style="color: white;"></i>
+                                        </a>
+
                                         <a class="btn btn-warning btn-p" href="{{ route('admin.eventos.edit', $evento) }}">
                                             <i class="fas fa-edit fa-xs" style="color: white;"></i>
                                         </a>
-                                    </td>
-                                    <td>
+
                                         <form method="POST" action="{{ route('admin.eventos.destroy', $evento) }}" role="form"
-                                            class="inline"
+                                            class="d-inline"
                                             onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
                                             @csrf
                                             @method('DELETE')

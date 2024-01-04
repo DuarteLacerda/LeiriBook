@@ -1,5 +1,5 @@
 @extends('layout.admin')
-@section('title', 'Eventos - Editar')
+@section('title', 'Fotos - Editar')
 @section('breadcrumb')
 <div class="au-breadcrumb-left">
     <span class="au-breadcrumb-span">Tu estás aqui:</span>
