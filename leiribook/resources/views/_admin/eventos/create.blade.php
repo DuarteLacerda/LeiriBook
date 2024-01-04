@@ -44,32 +44,7 @@
                         <hr>
                         <form action="{{ route('admin.eventos.store') }}" method="post">
                             @csrf
-                            <div class="form-group">
-                                <label for="question" class="control-label mb-1">Pergunta:</label>
-                                <input id="question" name="question" type="text" class="form-control"
-                                    aria-required="true" aria-invalid="false" placeholder="Pergunta">
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label for="answer" class="control-label mb-1">Resposta:</label>
-                                        <textarea id="answer" name="answer" type="text" class="form-control cc-exp"
-                                            data-val="true" placeholder="Estado" rows="5"
-                                            autocomplete="cc-exp"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <label for="state" class="control-label mb-1">Estado</label>
-                                    <div class="input-group">
-                                        <select name="state" id="state" class="form-control">
-                                            <option value="">Selecione um estado</option>
-                                            <option value="0">Pendente</option>
-                                            <option value="1">Aprovado</option>
-                                        </select>
-
-                                    </div>
-                                </div>
-                            </div>
+                            @include('_admin.eventos.partials.add-edit')
                             <div>
                                 <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                     <i class="fa fa-plus fa-xl"></i>&nbsp;

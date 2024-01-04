@@ -37,7 +37,8 @@ class EventoController extends Controller
         $fields = $request->validated();
         //Repare que o conteúdo anterior de validação foi eliminado neste ponto
         $evento = new Evento();
-        $evento->fill($fields);
+        $evento->fill($fields);     
+        $evento->user_id=auth()->user()->id;
         $evento->save();
         return redirect()->route('admin.eventos.index')->with(
             'success',
