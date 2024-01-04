@@ -36,6 +36,8 @@ Route::get('/biblioteca', [LivroController::class, 'biblioteca'])->name('bibliot
 Route::get('/pedidos', [PedidoController::class, 'showPedidos'])->name('pedidos');
 Route::post('/enviar-pedido', [PedidoController::class, 'pedido'])->name('enviar-pedido');
 
+Route::get('/avaliacao', [PageController::class, 'avaliacao'])->name('avaliacao');
+
 Route::get('/books/filter', [LivroController::class, 'filterByGenre'])->name('filter.books');
 
 Auth::routes(['register' => true, 'verify' => true]);

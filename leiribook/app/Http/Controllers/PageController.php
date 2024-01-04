@@ -153,4 +153,10 @@ class PageController extends Controller
         $user->save();
         return;
     }
+
+    public function avaliacao()
+    {
+        return view("layout.parcial.avaliacao");
+    }
+
 }
