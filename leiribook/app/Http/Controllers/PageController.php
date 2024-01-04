@@ -47,7 +47,10 @@ class PageController extends Controller
     {
         return view("pedidos");
     }
-
+    public function livro_detalhe()
+    {
+        return view("livro_detalhe");
+    }
     public function evento($nome)
     {
 
