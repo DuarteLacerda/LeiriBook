@@ -17,7 +17,7 @@
             </ul>
             <ul>
                 <div class="nav-mid">
-                    <li><a href="{{ route('sobre') }}">Sobre</a></li>
+                    <li><a href="{{ route('sobre') }}" @if (Route::currentRouteName() == 'sobre') class="active" @endif>Sobre</a></li>
                     <li><a href="{{ route('biblioteca') }}">Bilioteca Virtual</a></li>
                     <li><a href="{{ route('eventos') }}">Eventos</a></li>
                     <li><a href="{{ route('contactos') }}">Contactos</a></li>
