@@ -43,9 +43,7 @@
                                     <th>ID</th>
                                     <th>Pergunta</th>
                                     <th>Estado</th>
-                                    <th>Detalhes</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar</th>
+                                    <th> </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,15 +57,11 @@
                                             data-faq="{{ $faq }}">
                                             <i class=" fas fa-eye fa-xs" style="color: white;"></i>
                                         </a>
-                                    </td>
-                                    <td>
                                         <a class="btn btn-warning btn-p" href="{{ route('admin.faqs.edit', $faq) }}">
                                             <i class="fas fa-edit fa-xs" style="color: white;"></i>
                                         </a>
-                                    </td>
-                                    <td>
                                         <form method="POST" action="{{ route('admin.faqs.destroy', $faq) }}" role="form"
-                                            class="inline"
+                                            class="d-inline"
                                             onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
                                             @csrf
                                             @method('DELETE')

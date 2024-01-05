@@ -35,9 +35,9 @@ class FaqController extends Controller
     public function store(FaqRequest $request)
     {
         $fields = $request->validated();
-        //Repare que o conteúdo anterior de validação foi eliminado neste ponto
         $faq = new Faq();
         $faq->fill($fields);
+
         $faq->save();
         return redirect()->route('admin.faqs.index')->with(
             'success',
