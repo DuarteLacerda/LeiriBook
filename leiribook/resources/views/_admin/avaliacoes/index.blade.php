@@ -52,8 +52,8 @@
                                                 <td>{{ $avaliacao->id }}</td>
                                                 <td class="text-left">{{ $avaliacao->descricao }}</td>
                                                 <td>{{ $avaliacao->nivel }}</td>
-                                                <td>{{ $avaliacao->user_id }}</td>
-                                                <td>{{ $avaliacao->livro_id }}</td>
+                                                <td>{{ $avaliacao->user->name }}</td>
+                                                <td>{{ $avaliacao->livro->titulo }}</td>
                                                 <td>
                                                     <form method="POST"
                                                         action="{{ route('admin.avaliacoes.destroy', $avaliacao) }}"

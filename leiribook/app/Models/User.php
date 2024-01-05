@@ -60,4 +60,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function user()
+    {
+        return $this->HasMany(Avaliacao::class, 'user_id', 'id');
+    }
 }
