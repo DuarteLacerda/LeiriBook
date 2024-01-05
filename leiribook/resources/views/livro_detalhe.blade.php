@@ -12,7 +12,6 @@
             <img src="{{ asset('storage/books/' . $livroFoto) }}" alt="Imagem do Livro">
         </div>
         <div id="bookinfo">
-            <p>{{ $livroDescricao }}</p>
             <p><strong>Autor:</strong> {{ $livroAutor }}</p>
             <p><strong>Edição:</strong> {{ $livroEdicao }}</p>
 
