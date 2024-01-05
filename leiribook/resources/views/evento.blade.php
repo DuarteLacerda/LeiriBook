@@ -18,7 +18,7 @@
     <button onclick="topFunction()" id="myBtn" title="Ir para cima"><i class="fa-solid fa-arrow-up"></i></button>
 
         <div class="container custom-container">
-            
+
             <div class="container-evento">
                 <div id="caminho">
                     <a id="caminho_links" href="{{ route('home') }}">Página Principal</a> >
@@ -40,7 +40,7 @@
                                     @endforeach
                                 @else
                                     <li class="splide__slide">
-                                        <img src="{{ asset('images/danielcochico/logo.png') }}" alt="" />
+                                        <img src="{{ asset('images/danielcochico/logo_default_horizontal.png') }}" alt="" />
                                     </li>
                                 @endif
                             </ul>
@@ -55,7 +55,7 @@
                             @endforeach
                         @else
                             <li class="thumbnail">
-                                <img src="{{ asset('images/danielcochico/logo.png') }}" alt="" />
+                                <img src="{{ asset('images/danielcochico/logo_default.png') }}" alt="" />
                             </li>
                         @endif
                     </ul>

@@ -38,7 +38,12 @@ class EventoFotoRequest extends FormRequest
     public function messages()
     {
         return [
-
+            'titulo.required' => 'O campo título é obrigatório.',
+            'titulo.string' => 'O campo título deve ser uma string.',
+            'fotos.required' => 'O campo fotos é obrigatório.',
+            'tipo.required' => 'O campo tipo é obrigatório.',
+            'tipo.string' => 'O campo tipo deve ser uma string.',
+            'evento_id.required' => 'O campo evento_id é obrigatório.',
         ];
     }
 }
