@@ -49,32 +49,39 @@ class LivroController extends Controller
     }
     public function livro_detalhe($id)
     {
-        // Retrieve the Livro with selected columns and its related categories
-        $livro = Livro::select('titulo', 'descricao', 'autor', 'foto', 'edicao')
-            ->with('categorias:name') // Select only the 'nome' column from the 'categorias' table
-            ->find($id);
+        // Assuming you have the Livro and Categoria models defined with the correct relationships
 
-        // If the Livro with the given ID is not found, handle accordingly
+        // Retrieve the Livro (book) with the specified ID along with its associated categories
+        $livro = Livro::with('categorias')->find($id);
+
+        // Check if the Livro with the given ID exists
         if (!$livro) {
-            // Handle not found, redirect, show an error, etc.
+            // Handle the case where the Livro is not found
             return redirect()->route('biblioteca')->with('error', 'Livro não encontrado');
         }
 
-        // Access information
+        // Access information about the Livro
         $livroTitulo = $livro->titulo;
         $livroDescricao = $livro->descricao;
         $livroAutor = $livro->autor;
         $livroFoto = $livro->foto;
         $livroEdicao = $livro->edicao;
 
-        // Access related categories as an array
-        $categorias = $livro->categorias->pluck('nome')->toArray();
+        // Access related categories as a collection
+        $categorias = $livro->categorias;
 
-        // Your logic here
+        // You can iterate over $categorias to access category names
+        foreach ($categorias as $categoria) {
+            $categoriaNome = $categoria->nome;
+            // Do something with $categoriaNome
+        }
 
-        // Example: Return a view with the livro and its categories
+        // Return or use the retrieved data as needed
         return view('livro_detalhe', compact('livroTitulo', 'livroDescricao', 'livroAutor', 'livroFoto', 'livroEdicao', 'categorias'));
+
+
     }
+
 
 
 }

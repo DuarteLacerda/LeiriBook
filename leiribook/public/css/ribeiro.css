@@ -1,3 +1,6 @@
+body{
+    padding-top: 50px;
+}
 /*Contactos*/
 #pagetitle{
  text-align: center;
@@ -148,6 +151,7 @@ a{
     text-align: center;
     font-size: 50px;
     margin-bottom: -3px;
+    margin-top: 4rem;
   }
 
   /**********************************
@@ -309,13 +313,13 @@ a{
 }
 #bookimage{
     width: 30%;
-    height: 400px;
-    display: flex;
-    float: left;
+    height: 30rem;
+}
+#bookimage img{
+    width: 100%;
+    height: 100%;
 }
 #bookinfo{
     width: 70%;
     height: 400px;
-    display: flex;
-    float: right;
 }
