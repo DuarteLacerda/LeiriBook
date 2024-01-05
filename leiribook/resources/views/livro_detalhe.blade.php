@@ -6,23 +6,28 @@
 
 @section('content')
     <!--xd-->
-    <h1> </h1>
+    <h1 id="booktitle">{{ $livroTitulo }} </h1>
     <div id="bookcontainer">
         <div id="bookimage">
-
+            <img src="{{ asset('storage/books/' . $livroFoto) }}" alt="Imagem do Livro">
         </div>
         <div id="bookinfo">
-            <!-- livro_detalhe.blade.php -->
+            <p><strong>Autor:</strong> {{ $livroAutor }}<br>
+                <strong>Edição:</strong> {{ $livroEdicao }}<br>
 
-            <h1>{{ $livroTitulo }}</h1>
-            <p>{{ $livroDescricao }}</p>
-            <!-- ... other livro attributes ... -->
 
-            <ul>
-                @foreach ($categorias as $categoria)
-                    <li>{{ $categoria }}</li>
-                @endforeach
-            </ul>
+                <strong>Categorias:</strong>
+                @if (count($categorias) > 1)
+                    @foreach ($categorias as $categoria)
+                        {{ $categoria->nome }},
+            </p>
+            @endforeach
+        @else
+            @foreach ($categorias as $categoria)
+                {{ $categoria->nome }}</p>
+            @endforeach
+            @endif
+
 
 
 

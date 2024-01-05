@@ -29,7 +29,7 @@
     </div>
     <button onclick="location.href='{{ route('admin.evento_fotos.create', $evento) }}';"
         class="au-btn au-btn-icon au-btn--green">
-        <i class="fa fa-plus"></i>add item</button>
+        <i class="fa fa-plus"></i>Adicionar Foto</button>
 @endsection
 
 @section('content')

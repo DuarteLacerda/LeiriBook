@@ -24,7 +24,8 @@
                         <img class="slider" src="{{ asset('storage/eventos_fotos/' . $evento->fotos->first()->foto) }}"
                             alt="" />
                     @else
-                        <img class="slider" src="{{ asset('storage/eventos_fotos/logo.png') }}" alt="" />
+                        <img class="slider" src="{{ asset('storage/eventos_fotos/logo_default_horizontal.png') }}"
+                            alt="" />
                     @endif
 
                     <div class="text">{{ $evento->nome }} | {{ date('d-m-y', strtotime($evento->data_inicio)) }} /
@@ -65,38 +66,43 @@
                 {{ $eventos->withQueryString()->links() }}
             </div>
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                @foreach ($eventos as $evento)
-                    <div class="eventos-carta col mb-3  mx-xl-1" data-data-inicio="{{ $evento->data_inicio }}"
-                        data-data-fim="{{ $evento->data_fim }}">
-                        <div id="carta_border" class="card h-100">
+                @if ($eventos->isNotEmpty())
+                    @foreach ($eventos as $evento)
+                        <div class="eventos-carta col mb-3  mx-xl-1" data-data-inicio="{{ $evento->data_inicio }}"
+                            data-data-fim="{{ $evento->data_fim }}">
+                            <div id="carta_border" class="card h-100">
 
-                            @if ($evento->fotos->isNotEmpty())
-                                <img class="card-img-top" id="img_carta_eventos"
-                                    src="{{ asset('storage/eventos_fotos/' . $evento->fotos->where('ordem', 1)->first()->foto) }}"
-                                    alt="..." />
-                            @else
-                                <img class="card-img-top" id="img_carta_eventos"
-                                    src="{{ asset('images/danielcochico/logo.png') }}" alt="" />
-                            @endif
+                                @if ($evento->fotos->isNotEmpty())
+                                    <img class="card-img-top" id="img_carta_eventos"
+                                        src="{{ asset('storage/eventos_fotos/' . $evento->fotos->where('ordem', 1)->first()->foto) }}"
+                                        alt="..." />
+                                @else
+                                    <img class="card-img-top" id="img_carta_eventos"
+                                        src="{{ asset('images/danielcochico/logo_default.png') }}" alt="" />
+                                @endif
 
-                            <div class="card-body p-4">
-                                <div class="text-center">
+                                <div class="card-body p-4">
+                                    <div class="text-center">
 
-                                    <h5 class="fw-bolder">{{ $evento->nome }}</h5>
-                                    <label id="datas">{{ date('d-m-y', strtotime($evento->data_inicio)) }} /
-                                        {{ date('d-m-y', strtotime($evento->data_fim)) }}</label>
+                                        <h5 class="fw-bolder">{{ $evento->nome }}</h5>
+                                        <label id="datas">{{ date('d-m-y', strtotime($evento->data_inicio)) }} /
+                                            {{ date('d-m-y', strtotime($evento->data_fim)) }}</label>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center">
-                                    <a class="btn btn-dark btn-block gradient-custom-2 mb-3"
-                                        href="{{ route('evento', str_replace(' ', '-', $evento->nome)) }}">Ver detalhes</a>
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                        <a class="btn btn-dark btn-block gradient-custom-2 mb-3"
+                                            href="{{ route('evento', str_replace(' ', '-', $evento->nome)) }}">Ver
+                                            detalhes</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                @else
+                    <h6>Não existem eventos durante este periodo de datas.</h6>
+                @endif
             </div>
             <div class="d-flex justify-content-center mt-4">
                 {{ $eventos->withQueryString()->links() }}

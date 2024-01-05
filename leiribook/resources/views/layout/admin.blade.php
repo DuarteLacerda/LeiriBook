@@ -32,7 +32,7 @@
     <!-- Main CSS-->
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet" media="all">
     <link rel="shortcut icon" href="{{ asset('images/logo/SVG/logo-white.svg') }}" type="image/x-icon">
-
+    @yield('styles')
 </head>
 
 <body class="animsition">
