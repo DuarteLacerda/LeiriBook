@@ -19,9 +19,13 @@
             <!-- ... other livro attributes ... -->
 
             <ul>
-                @foreach ($categorias as $categoria)
-                    <li>{{ $categoria }}</li>
-                @endforeach
+                @if (!empty($categorias))
+                    @foreach ($categorias as $categoria)
+                        <li>{{ $categoria }}</li>
+                    @endforeach
+                @else
+                    <li>No categories available</li>
+                @endif
             </ul>
 
 

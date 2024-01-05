@@ -49,32 +49,24 @@ class LivroController extends Controller
     }
     public function livro_detalhe($id)
     {
-        // Retrieve the Livro with selected columns and its related categories
         $livro = Livro::select('titulo', 'descricao', 'autor', 'foto', 'edicao')
-            ->with('categorias:name') // Select only the 'nome' column from the 'categorias' table
+            ->with('categorias:nome')
             ->find($id);
 
-        // If the Livro with the given ID is not found, handle accordingly
         if (!$livro) {
-            // Handle not found, redirect, show an error, etc.
             return redirect()->route('biblioteca')->with('error', 'Livro não encontrado');
         }
 
-        // Access information
         $livroTitulo = $livro->titulo;
         $livroDescricao = $livro->descricao;
         $livroAutor = $livro->autor;
         $livroFoto = $livro->foto;
         $livroEdicao = $livro->edicao;
-
-        // Access related categories as an array
         $categorias = $livro->categorias->pluck('nome')->toArray();
 
-        // Your logic here
-
-        // Example: Return a view with the livro and its categories
         return view('livro_detalhe', compact('livroTitulo', 'livroDescricao', 'livroAutor', 'livroFoto', 'livroEdicao', 'categorias'));
     }
+
 
 
 }
