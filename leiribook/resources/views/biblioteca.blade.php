@@ -25,6 +25,7 @@
             <!-- End Filters -->
             <div id="list-th">
                 @forelse ($livros as $livro)
+                <a href="{{ route('livro_detalhe', ['id' => $livro->id]) }}">
                     <div class="book">
                         <div class="cover">
                             <img src="{{ asset('storage/books/' . $livro->foto) }}" alt="imagem">
@@ -35,6 +36,7 @@
                             </p>
                         </div>
                     </div>
+                </a>
                 @empty
                     <p>Não há livros</p>
                 @endforelse

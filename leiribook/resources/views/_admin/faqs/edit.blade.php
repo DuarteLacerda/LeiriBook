@@ -43,20 +43,22 @@
                             <h3 class="text-center title-2">Editar</h3>
                         </div>
                         <hr>
-                        <form action="{{ route('admin.faqs.update', $faq) }}" method="post">
+                        <form id="submit" action="{{ route('admin.faqs.update', $faq) }}" method="post">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
                                 <label for="question" class="control-label mb-1">Pergunta:</label>
                                 <input id="question" name="question" type="text" class="form-control"
-                                    aria-required="true" aria-invalid="false" value="{{ $faq->question }}">
+                                    aria-required="true" aria-invalid="false"
+                                    value="{{ old('question', $faq->question) }}">
                             </div>
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="answer" class="control-label mb-1">Resposta:</label>
                                         <textarea id="answer" name="answer" type="text" class="form-control cc-exp"
-                                            data-val="true" placeholder="Estado" rows="5">{{ $faq->answer }}</textarea>
+                                            data-val="true" placeholder="Estado"
+                                            rows="5">{{ old('answer', $faq->answer) }}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-6">
@@ -64,9 +66,11 @@
                                     <div class="input-group">
                                         <select name="state" id="state" class="form-control">
                                             <option value="">Selecione um estado</option>
-                                            <option value="0" {{ ($faq->approved === 0) ? 'selected' : '' }}>Pendente
+                                            <option value="0" {{ (old('state', $faq->approved) == 0) ? 'selected' : ''
+                                                }}>Pendente
                                             </option>
-                                            <option value="1" {{ ($faq->approved !== 0) ? 'selected' : '' }}>Aprovado
+                                            <option value="1" {{ (old('state', $faq->approved) == 1) ? 'selected' : ''
+                                                }}>Aprovado
                                             </option>
                                         </select>
 

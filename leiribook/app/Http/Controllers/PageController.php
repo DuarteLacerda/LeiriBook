@@ -47,8 +47,10 @@ class PageController extends Controller
     {
         return view("pedidos");
     }
-    public function livro_detalhe()
+    public function livro_detalhe($id)
     {
+        // Your logic to retrieve livro details based on $id goes here
+
         return view("livro_detalhe");
     }
     public function evento($nome)
@@ -151,4 +153,10 @@ class PageController extends Controller
         $user->save();
         return;
     }
+
+    public function avaliacao()
+    {
+        return view("layout.parcial.avaliacao");
+    }
+
 }
