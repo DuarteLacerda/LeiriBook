@@ -56,7 +56,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::resource('users', UserController::class);
         Route::resource('livros', LivroController::class);
         Route::resource('eventos/{evento}/evento_fotos', EventoPhotoController::class)->parameters(['evento_fotos'=>'foto']);
-
         Route::resource('avaliacoes', AvaliacaoController::class)->parameters(['avaliacoes'=>'avaliacao']);
 
     });

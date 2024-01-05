@@ -16,10 +16,14 @@ class CheckUserRole
      */
     public function handle($request, Closure $next)
     {
+        /*if ((auth)->user()->isAdmin()){
+            return ... } throw new AccessDeniedHttpException('Acesso não autorizado!')*/
         if (Auth::check() && Auth::user()->role != 'A') {
             return redirect('/');
         }
 
         return $next($request);
+
+        /*depois de fazer isso registar o ficheiro no app/kernel.php*/
     }
 }
