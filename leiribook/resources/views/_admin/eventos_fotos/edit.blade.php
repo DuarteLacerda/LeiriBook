@@ -1,5 +1,10 @@
 @extends('layout.admin')
 @section('title', 'Fotos - Editar')
+@section('styles')
+
+    <link rel="stylesheet" href="{{ asset('css/add_edit_upload_imagem.css') }}">
+
+@endsection
 @section('breadcrumb')
 <div class="au-breadcrumb-left">
     <span class="au-breadcrumb-span">Tu estás aqui:</span>
@@ -23,11 +28,18 @@
             <span>/</span>
         </li>
         <li class="list-inline-item active">
-            <a href="{{ route('admin.eventos.edit', $evento) }}">Editar</a>
+            <a href="{{ route('admin.evento_fotos.index', $evento) }}">Fotos</a>
+        </li>
+        <li class="list-inline-item seprate">
+            <span>/</span>
+        </li>
+        <li class="list-inline-item active">
+            <a href="{{ route('admin.evento_fotos.edit', [$evento,$foto]) }}">Editar</a>
         </li>
     </ul>
 </div>
-<button onclick="location.href='{{ route('admin.eventos.index') }}';" class="au-btn au-btn-icon au-btn--green">
+
+<button onclick="location.href='{{ route('admin.evento_fotos.index', [$evento,$foto]) }}';" class="au-btn au-btn-icon au-btn--green">
     <i class="fa fa-arrow-left"></i>Voltar
 </button>
 @endsection

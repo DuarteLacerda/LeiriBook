@@ -24,7 +24,7 @@ class Avaliacao extends Model
     // Relacionamento com a tabela 'users'
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }
 

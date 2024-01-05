@@ -127,7 +127,7 @@
 
             var modal = $(this)
             modal.find('.modal-title').html(foto.titulo);
-            modal.find('.modal-body').html('<img src="' + imagem + '" alt="Imagem do evento">');
+            modal.find('.modal-body').html('<img src="' + imagem + '" alt="Imagem do evento">' + '<br><hr><strong>Ordem:</strong> ' + foto.ordem);
 
         })
     </script>

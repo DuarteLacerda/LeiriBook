@@ -24,9 +24,9 @@ class EventoFotoRequest extends FormRequest
     public function rules()
     {
         return [
-            'titulo' => 'required|string',
+            'titulo' => 'required|string|unique:eventos_fotos,titulo,'.($this->foto? $this->foto->id:''),
             'ordem' => 'required|integer',
-            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'foto' => ($this->foto? 'nullable':'required').'|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
 
@@ -40,6 +40,7 @@ class EventoFotoRequest extends FormRequest
         return [
             'titulo.required' => 'O campo título é obrigatório.',
             'titulo.string' => 'O campo título deve ser uma string.',
+            'titulo.unique' => 'O título desta imagem já existe noutro registo.',
             'fotos.required' => 'O campo fotos é obrigatório.',
             'tipo.required' => 'O campo tipo é obrigatório.',
             'tipo.string' => 'O campo tipo deve ser uma string.',
