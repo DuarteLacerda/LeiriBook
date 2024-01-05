@@ -28,7 +28,13 @@
             <span>/</span>
         </li>
         <li class="list-inline-item active">
-            <a href="{{ route('admin.eventos.create') }}">Criar</a>
+            <a href="{{ route('admin.evento_fotos.index', $evento) }}">Fotos</a>
+        </li>
+        <li class="list-inline-item seprate">
+            <span>/</span>
+        </li>
+        <li class="list-inline-item active">
+            <a href="{{ route('admin.evento_fotos.create', $evento) }}">Criar</a>
         </li>
     </ul>
 </div>
