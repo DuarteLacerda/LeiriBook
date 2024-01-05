@@ -6,28 +6,34 @@
 
 @section('content')
     <!--xd-->
-    <h1>{{ $livroTitulo }} </h1>
+    <h1 id="booktitle">{{ $livroTitulo }} </h1>
     <div id="bookcontainer">
         <div id="bookimage">
             <img src="{{ asset('storage/books/' . $livroFoto) }}" alt="Imagem do Livro">
         </div>
         <div id="bookinfo">
-            <p><strong>Autor:</strong> {{ $livroAutor }}</p>
-            <p><strong>Edição:</strong> {{ $livroEdicao }}</p>
+            <p><strong>Autor:</strong> {{ $livroAutor }}<br>
+                <strong>Edição:</strong> {{ $livroEdicao }}<br>
 
 
-            <h3>Categorias:</h3>
-            @if (count($categorias) > 0)
-                <ul>
+                <strong>Categorias:</strong>
+                @if (count($categorias) > 1)
                     @foreach ($categorias as $categoria)
-                        <li>{{ $categoria->nome }}</li>
-                    @endforeach
-                </ul>
-            @else
-                <p>Este livro não tem categorias associadas.</p>
+                        {{ $categoria->nome }},
+            </p>
+            @endforeach
+        @else
+            @foreach ($categorias as $categoria)
+                {{ $categoria->nome }}
+            @endforeach
             @endif
-
-
+            <br><select name="estado" id="estado" class="select-css">
+                <option value="-">Não lido</option> <!-- Default option -->
+                <option value="lido">Lido</option> <!-- Default option -->
+                <option value="a_ler">A ler</option> <!-- Default option -->
+                <option value="quero_ler">Quero ler</option> <!-- Default option -->
+            </select>
+</p>
 
 
         </div>
