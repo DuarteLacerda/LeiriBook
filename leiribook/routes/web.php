@@ -7,8 +7,9 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LivroController;
 use App\Http\Controllers\EventoController;
-use App\Http\Controllers\EventoPhotoController;
 use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\AvaliacaoController;
+use App\Http\Controllers\EventoPhotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,10 +32,12 @@ Route::get('/pedidos', [PageController::class, 'pedidos'])->name('pedidos');
 Route::get('/evento/{nome}', [PageController::class, 'evento'])->name('evento')->where('nome', '[\w\d\-\_]+');
 Route::get('/eventos/{listar?}', [PageController::class, 'eventos'])->name('eventos');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
-Route::get('/livro_detalhe/{id}', [PageController::class, 'livro_detalhe'])->name('livro_detalhe');
+Route::get('/livro_detalhe/{id}', [LivroController::class, 'livro_detalhe'])->name('livro_detalhe');
 Route::get('/biblioteca', [LivroController::class, 'biblioteca'])->name('biblioteca');
 Route::get('/pedidos', [PedidoController::class, 'showPedidos'])->name('pedidos');
 Route::post('/enviar-pedido', [PedidoController::class, 'pedido'])->name('enviar-pedido');
+
+Route::get('/avaliacao', [PageController::class, 'avaliacao'])->name('avaliacao');
 
 Route::get('/books/filter', [LivroController::class, 'filterByGenre'])->name('filter.books');
 
@@ -53,6 +56,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::resource('users', UserController::class);
         Route::resource('livros', LivroController::class);
         Route::resource('eventos/{evento}/evento_fotos', EventoPhotoController::class)->parameters(['evento_fotos'=>'foto']);
+
+        Route::resource('avaliacoes', AvaliacaoController::class);
 
     });
 });

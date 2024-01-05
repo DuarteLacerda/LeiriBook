@@ -22,7 +22,7 @@
     </ul>
 </div>
 <button onclick="location.href='{{ route('admin.eventos.create') }}';" class="au-btn au-btn-icon au-btn--green">
-    <i class="fa fa-plus"></i>add item</button>
+    <i class="fa fa-plus"></i>Adicionar Evento</button>
 @endsection
 
 @section('content')

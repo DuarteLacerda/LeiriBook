@@ -2,11 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Avaliacao extends Model
 {
+
+    protected $table = "avaliacoes";
+
+
     use HasFactory;
 
     protected $fillable = ['descricao', 'nivel', 'livro_id', 'user_id'];
@@ -23,3 +27,4 @@ class Avaliacao extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 }
+

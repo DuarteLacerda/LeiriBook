@@ -66,7 +66,6 @@
                                             <option value="0">Pendente</option>
                                             <option value="1">Aprovado</option>
                                         </select>
-
                                     </div>
                                 </div>
                             </div>

@@ -126,6 +126,20 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-star"></i>Avaliações
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{ route('admin.avaliacoes.index') }}">
+                                        </i>Listagem de Avaliações</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
