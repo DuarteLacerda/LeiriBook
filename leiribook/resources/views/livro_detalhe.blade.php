@@ -24,11 +24,16 @@
             @endforeach
         @else
             @foreach ($categorias as $categoria)
-                {{ $categoria->nome }}</p>
+                {{ $categoria->nome }}
             @endforeach
             @endif
-
-
+            <br><select name="estado" id="estado" class="select-css">
+                <option value="-">Não lido</option> <!-- Default option -->
+                <option value="lido">Lido</option> <!-- Default option -->
+                <option value="a_ler">A ler</option> <!-- Default option -->
+                <option value="quero_ler">Quero ler</option> <!-- Default option -->
+            </select>
+</p>
 
 
         </div>

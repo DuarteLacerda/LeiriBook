@@ -18,7 +18,7 @@ class AvaliacaoController extends Controller
     {
         //
         $avaliacao = new Avaliacao;
-        return view('_admin.avaliacoes.create', compact("avaliacoes"));
+        return view('_admin.avaliacoes.create', compact("avaliacao"));
     }
 
     // /**

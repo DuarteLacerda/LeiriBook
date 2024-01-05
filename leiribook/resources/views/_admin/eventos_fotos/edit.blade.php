@@ -28,7 +28,13 @@
             <span>/</span>
         </li>
         <li class="list-inline-item active">
-            <a href="{{ route('admin.eventos.edit', $evento) }}">Editar</a>
+            <a href="{{ route('admin.evento_fotos.index', $evento) }}">Fotos</a>
+        </li>
+        <li class="list-inline-item seprate">
+            <span>/</span>
+        </li>
+        <li class="list-inline-item active">
+            <a href="{{ route('admin.evento_fotos.edit', [$evento,$foto]) }}">Editar</a>
         </li>
     </ul>
 </div>

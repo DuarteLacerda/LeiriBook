@@ -21,6 +21,8 @@
             </li>
         </ul>
     </div>
+    <button onclick="location.href='{{ route('admin.avaliacoes.create') }}';" class="au-btn au-btn-icon au-btn--green">
+        <i class="fa fa-plus"></i>Adicionar Nova Avaliação</button>
 @endsection
 
 @section('content')
@@ -50,7 +52,9 @@
                                         @foreach ($avaliacoes as $avaliacao)
                                             <tr>
                                                 <td>{{ $avaliacao->id }}</td>
-                                                <td class="text-left">{{ $avaliacao->descricao }}</td>
+                                                <td class="text-left">
+                                                    {{ Str::limit($avaliacao->descricao, 30) }}
+                                                </td>
                                                 <td>{{ $avaliacao->nivel }}</td>
                                                 <td>{{ $avaliacao->user->name }}</td>
                                                 <td>{{ $avaliacao->livro->titulo }}</td>
@@ -78,5 +82,38 @@
                 </div>
             </div>
         </div>
+
+        <!-- Avaliacao Modal -->
+        <div class="modal fade" id="avaliacaoModal" tabindex="-1" role="dialog" aria-labelledby="avaliacaoModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="avaliacaoModalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fas fa-times" style="color: blue"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Avaliacao details will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+@endsection
+
+@section('scripts')
+    <script>
+        // $('#avaliacaoModal').on('show.bs.modal', function(event) {
+        //     var button = $(event.relatedTarget)
+        //     var avaliacao = button.data('avaliacao')
+
+        //     var modal = $(this)
+        //     // modal.find('.modal-title').html('Descrição ' + faq.id + ' - Detalhes');
+        //     modal.find('.modal-body').html('<strong>Descrição:</strong> ' + avaliacao.descricao +
+        //         '<br><hr><strong>Nível:</strong> ' + avaliacao.nivel + '<br><hr><strong>Livro:</strong> ' + ((avaliacao
+        //             .livro === 0) ? 'Pendente' : 'Aprovado'))
+        // })
+    </script>
 @endsection

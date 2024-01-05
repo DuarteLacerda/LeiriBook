@@ -24,7 +24,7 @@ class EventoRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => 'required|string',
+            'nome' => 'required|string|unique:eventos,nome,'.($this->evento? $this->evento->id:''),
             'descricao' => 'required|string',
             'local' => 'required|string',
             'data_inicio' => 'required|date',
@@ -42,6 +42,7 @@ class EventoRequest extends FormRequest
         return [
             'nome.required' => 'O campo nome é obrigatório.',
             'nome.string' => 'O campo nome deve ser uma string.',
+            'nome.unique' => 'O nome deste evento já existe noutro registo.',
             'descricao.required' => 'O campo descricao é obrigatório.',
             'descricao.string' => 'O campo descricao deve ser uma string.',
             'local.required' => 'O campo local é obrigatório.',
