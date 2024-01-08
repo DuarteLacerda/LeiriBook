@@ -297,7 +297,7 @@
                                 <span class="inbox-num">3</span>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ route('admin.livros.index') }}">
                                     <i class="fas fa-shopping-basket"></i>Livros</a>
                             </li>
                             <li class="has-sub">
