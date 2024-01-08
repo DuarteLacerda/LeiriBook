@@ -41,9 +41,9 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Nome</th>
-                                    <th>Foto</th>
-                                    <th></th>
+                                    <th>Título</th>
+                                    <th>Capa</th>
+                                    <th>+Info/Editar/Eliminar</th>
                                 </tr>
                             </thead>
                             <tbody>
