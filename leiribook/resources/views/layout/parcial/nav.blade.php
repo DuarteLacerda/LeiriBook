@@ -1,12 +1,16 @@
 <nav>
     <div class="navbar">
         <div class="container nav-container">
+
             <input class="checkbox" type="checkbox" name="" id="" />
-            <div class="hamburger-lines">
+            <div class="hamburger-lines" id="burger-menu">
                 <span class="line line1"></span>
                 <span class="line line2"></span>
                 <span class="line line3"></span>
             </div>
+            <ul>
+            </ul>
+
             {{-- <div class="nave"> --}}
             <ul>
                 <div class="nav-left">
@@ -17,11 +21,16 @@
             </ul>
             <ul>
                 <div class="nav-mid">
-                    <li><a href="{{ route('sobre') }}" @if (Route::currentRouteName() == 'sobre') class="active" @endif>Sobre</a></li>
-                    <li><a href="{{ route('biblioteca') }}" @if (Route::currentRouteName() == 'biblioteca') class="active" @endif>Bilioteca Virtual</a></li>
-                    <li><a href="{{ route('eventos') }}" @if (Route::currentRouteName() == 'eventos') class="active" @endif>Eventos</a></li>
-                    <li><a href="{{ route('contactos') }}" @if (Route::currentRouteName() == 'contactos') class="active" @endif>Contactos</a></li>
-                    <li><a href="{{ route('pedidos') }}" @if (Route::currentRouteName() == 'pedidos') class="active" @endif>Pedidos</a></li>
+                    <li><a href="{{ route('sobre') }}" @if (Route::currentRouteName() == 'sobre') class="active" @endif>Sobre</a>
+                    </li>
+                    <li><a href="{{ route('biblioteca') }}"
+                            @if (Route::currentRouteName() == 'biblioteca') class="active" @endif>Bilioteca Virtual</a></li>
+                    <li><a href="{{ route('eventos') }}"
+                            @if (Route::currentRouteName() == 'eventos') class="active" @endif>Eventos</a></li>
+                    <li><a href="{{ route('contactos') }}"
+                            @if (Route::currentRouteName() == 'contactos') class="active" @endif>Contactos</a></li>
+                    <li><a href="{{ route('pedidos') }}"
+                            @if (Route::currentRouteName() == 'pedidos') class="active" @endif>Pedidos</a></li>
                 </div>
             </ul>
             <ul>

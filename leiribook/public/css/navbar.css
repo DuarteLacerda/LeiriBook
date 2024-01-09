@@ -22,7 +22,7 @@
     z-index: 1000;
     background-color: var(--color-main);
     backdrop-filter: blur(5px);
-    font-family: Verdana, Geneva, Tahoma, sans-serif!important;
+    /*font-family: Verdana, Geneva, Tahoma, sans-serif !important;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,7 +72,7 @@
 }
 
 .nav-container .checkbox {
-    /* position: absolute; */
+    position: absolute;
     display: none;
     height: 32px;
     width: 32px;
@@ -156,10 +156,10 @@
 }
 
 .navbar .menu-items {
-    height: 300px;
+    /* height: 300px; */
     position: absolute;
     width: 100%;
-    top: 70px;
+    top: 60px;
     transform: translate(-150%);
     display: flex;
     flex-direction: column;
@@ -167,16 +167,22 @@
     align-items: center;
     transition: transform 0.5s ease-in-out;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.8);
+    /* backdrop-filter: blur(5px); */
 }
 
 .navbar .menu-items li {
-    margin-bottom: 0.5rem;
+    width: 100%;
+    border-bottom: 1px solid #888;
+    /* margin-bottom: 0.6rem; */
 }
 
 .navbar .menu-items li a {
-    font-size: 1.5rem;
+    width: 100%;
+    justify-content: center;
+    font-size: 1.4rem;
+    padding-bottom: 0.9rem;
+    padding-top: 0.9rem;
     color: rgb(39, 39, 39);
     font-weight: 500;
     text-decoration: none;
@@ -195,14 +201,15 @@
 }
 
 .dropdown-menu {
+    top: 60px;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease;
     position: absolute;
     min-width: 160px;
     border: 0;
-    background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.8);
+    /* backdrop-filter: blur(5px); */
     z-index: 1;
 }
 
@@ -306,9 +313,27 @@
     width: 70%;
 }
 
-@media only screen and (max-width: 990px) {
+@media (min-width: 576px) {
+    .container {
+        max-width: none;
+    }
+}
+
+
+/*990px*/
+@media only screen and (max-width: 1080px) {
     .search {
         display: none;
+    }
+
+    .nav-container ul:nth-child(5) {
+        display: none;
+    }
+
+    .navbar>.container {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
     }
 
     .nav-container .checkbox {
@@ -322,8 +347,27 @@
     .nav-mid {
         display: none;
     }
+    .nav-container ul {
+        padding: 0;
+        /* width: 50px; */
+        /* margin-left: auto;
+        margin-right: auto; */
+    }
 
-    .nav-left {
-        width: 50px;
+    .nav-container ul:nth-child(6) {
+        width: 144px;
+    }
+
+    .nav-container ul:nth-child(3) {
+        width: 144px;
+    }
+
+    .nav-right {
+        position: absolute;
+        right: 0;
+    }
+
+    .dropdown-menu {
+        right: 0px;
     }
 }
