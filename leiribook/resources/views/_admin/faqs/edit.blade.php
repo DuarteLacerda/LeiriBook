@@ -57,19 +57,21 @@
                                     <div class="form-group">
                                         <label for="answer" class="control-label mb-1">Resposta:</label>
                                         <textarea id="answer" name="answer" type="text" class="form-control cc-exp"
-                                            data-val="true" placeholder="Estado"
-                                            rows="5">{{ old('answer', $faq->answer) }}</textarea>
+                                            data-val="true" placeholder="Estado" rows="5"
+                                            style="resize: none">{{ old('answer', $faq->answer) }}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-6">
-                                    <label for="state" class="control-label mb-1">Estado</label>
+                                    <label for="approved" class="control-label mb-1">Estado</label>
                                     <div class="input-group">
-                                        <select name="state" id="state" class="form-control">
+                                        <select name="approved" id="approved" class="form-control">
                                             <option value="">Selecione um estado</option>
-                                            <option value="0" {{ (old('state', $faq->approved) == 0) ? 'selected' : ''
+                                            <option value="0" {{ (old('approved', $faq->approved) == 0) ? 'selected' :
+                                                ''
                                                 }}>Pendente
                                             </option>
-                                            <option value="1" {{ (old('state', $faq->approved) == 1) ? 'selected' : ''
+                                            <option value="1" {{ (old('approved', $faq->approved) == 1) ? 'selected' :
+                                                ''
                                                 }}>Aprovado
                                             </option>
                                         </select>
@@ -78,7 +80,8 @@
                                 </div>
                             </div>
                             <div>
-                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                <button id="payment-button" type="submit" id="submit"
+                                    class="btn btn-lg btn-info btn-block">
                                     <i class="fa fa-edit fa-xl"></i>&nbsp;
                                     <span id="payment-button-amount">Editar</span>
                                 </button>

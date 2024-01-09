@@ -22,10 +22,11 @@ class UserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email',
+            'name' => 'required|string|max:50' ,
+            'email' => 'required|email|unique:users,email,'. ($this->user ? $this->user->id : ''),
             'password' => 'required|string|min:8',
             'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'role' => 'required|in:A,N',
         ];
     }
     public function messages()

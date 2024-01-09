@@ -54,14 +54,14 @@
                                     <div class="form-group">
                                         <label for="answer" class="control-label mb-1">Resposta:</label>
                                         <textarea id="answer" name="answer" type="text" class="form-control cc-exp"
-                                            data-val="true" placeholder="Estado" rows="5"
-                                            autocomplete="cc-exp"></textarea>
+                                            data-val="true" placeholder="Estado" rows="5" autocomplete="cc-exp"
+                                            style="resize: none"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-6">
-                                    <label for="state" class="control-label mb-1">Estado</label>
+                                    <label for="approved" class="control-label mb-1">Estado</label>
                                     <div class="input-group">
-                                        <select name="state" id="state" class="form-control">
+                                        <select name="approved" id="approved" class="form-control">
                                             <option value="">Selecione um estado</option>
                                             <option value="0">Pendente</option>
                                             <option value="1">Aprovado</option>
