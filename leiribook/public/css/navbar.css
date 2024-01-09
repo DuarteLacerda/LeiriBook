@@ -22,7 +22,7 @@
     z-index: 1000;
     background-color: var(--color-main);
     backdrop-filter: blur(5px);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif!important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,12 +53,12 @@
     height: 100%;
 }
 
-.navbar .nav-container a:hover {
+.nav-mid a:hover {
     color: rgb(131, 131, 131);
     border-bottom: 2px solid var(--color-light-blue);
 }
 
-.navbar .nav-container a.active {
+.nav-mid a.active {
     border-bottom: 2px solid var(--color-dark-blue);
 }
 

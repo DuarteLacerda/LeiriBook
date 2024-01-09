@@ -18,10 +18,10 @@
             <ul>
                 <div class="nav-mid">
                     <li><a href="{{ route('sobre') }}" @if (Route::currentRouteName() == 'sobre') class="active" @endif>Sobre</a></li>
-                    <li><a href="{{ route('biblioteca') }}">Bilioteca Virtual</a></li>
-                    <li><a href="{{ route('eventos') }}">Eventos</a></li>
-                    <li><a href="{{ route('contactos') }}">Contactos</a></li>
-                    <li><a href="{{ route('pedidos') }}">Pedidos</a></li>
+                    <li><a href="{{ route('biblioteca') }}" @if (Route::currentRouteName() == 'biblioteca') class="active" @endif>Bilioteca Virtual</a></li>
+                    <li><a href="{{ route('eventos') }}" @if (Route::currentRouteName() == 'eventos') class="active" @endif>Eventos</a></li>
+                    <li><a href="{{ route('contactos') }}" @if (Route::currentRouteName() == 'contactos') class="active" @endif>Contactos</a></li>
+                    <li><a href="{{ route('pedidos') }}" @if (Route::currentRouteName() == 'pedidos') class="active" @endif>Pedidos</a></li>
                 </div>
             </ul>
             <ul>
