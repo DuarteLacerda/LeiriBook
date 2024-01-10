@@ -6,6 +6,7 @@ use App\Models\Livro;
 use App\Models\Categoria;
 use Illuminate\Http\Request;
 use App\Http\Requests\LivroRequest;
+use Illuminate\Support\Facades\Storage;
 
 class LivroController extends Controller
 {
@@ -109,6 +110,10 @@ class LivroController extends Controller
         //Repare que o conteúdo anterior de validação foi eliminado neste ponto
         $livro = new Livro();
         $livro->fill($fields);
+        if ($request->hasFile('foto')) {
+            $photo_path = $request->file('foto')->store('public/books');
+            $livro->foto = basename($photo_path);
+        }
         $livro->user_id=auth()->user()->id;
         $livro->save();
         return redirect()->route('admin.livros.index')->with(
@@ -134,6 +139,14 @@ class LivroController extends Controller
         //
         $fields = $request->validated();
         $livro->fill($fields);
+        if ($request->hasFile('foto')) {
+
+            if ($livro->foto == basename($request->file('foto'))) {
+                Storage::disk('public')->delete('books/' . $livro->foto);
+            }
+            $photo_path = $request->file('foto')->store('public/users_photos');
+            $livro->foto = basename($photo_path);
+        }
         $livro->save();
         return redirect()->route('admin.livros.index')->with('success', 'Livro atualizado com sucesso');
     }
@@ -144,6 +157,7 @@ class LivroController extends Controller
     public function destroy(Livro $livro)
     {
         //
+        Storage::disk('public')->delete('books/' . $livro->foto);
         $livro->delete();
         return redirect()->route('admin.livros.index')->with(
             'success',
