@@ -76,7 +76,7 @@
                                         <div class="input-group">
                                             <select name="state" id="state" class="form-control">
                                                 <option value="">Selecione o livro</option>
-                                                {{-- quando este clica em selecionar o livro ira buscar atraves do livro id todos os livros que existem na base de dados com os nomes --}}
+                                                {{-- quando este clica em selecionar o livro ira buscar atraves do livro id todos os livros que existem na base de dados com os nomes  --}}
                                             </select>
                                         </div>
                                     </div>
