@@ -87,7 +87,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a>
+                            <a href="{{ route('admin.livros.index') }}">
                                 <i class="fas fa-book"></i>Livros</a>
                         </li>
                         <li class="has-sub">
