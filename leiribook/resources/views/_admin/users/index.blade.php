@@ -43,31 +43,27 @@
                                     <th>ID</th>
                                     <th>Nome</th>
                                     <th>Email</th>
-                                    <th>Detalhes</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar</th>
+                                    <th> </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($users as $user)
                                 <tr>
                                     <td>{{ $user->id }}</td>
-                                    <td class="text-left">{{ $user->name }}</td>
-                                    <td class="text-left">{{ $user->email }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
                                     <td>
                                         <a class="btn btn-primary btn-p" data-toggle="modal" data-target="#userModal"
                                             data-user="{{ $user }}">
                                             <i class=" fas fa-eye fa-xs" style="color: white;"></i>
                                         </a>
-                                    </td>
-                                    <td>
+
                                         <a class="btn btn-warning btn-p" href="{{ route('admin.users.edit', $user) }}">
                                             <i class="fas fa-edit fa-xs" style="color: white;"></i>
                                         </a>
-                                    </td>
-                                    <td>
+
                                         <form method="POST" action="{{ route('admin.users.destroy', $user) }}"
-                                            role="form" class="inline"
+                                            role="form" class="d-inline"
                                             onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
                                             @csrf
                                             @method('DELETE')
@@ -115,7 +111,14 @@
         var imageUrl = "{{ asset('storage/users_photos/') }}/" + user.foto;
         var modal = $(this)
         modal.find('.modal-title').html('Utilizador ' + user.id + ' - Detalhes');
-        modal.find('.modal-body').html('<strong>Nome:</strong> ' + user.name + '<br><hr>' + '<strong>Email:</strong> ' + user.email + '<br><hr>' + '<strong>Foto de perfil:</strong> <img id="preview" src="' + imageUrl + '" alt="" style="height: 100px">');
-    })
+            $('#userModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget)
+                var user = button.data('user')
+                var imageUrl = "{{ asset('storage/users_photos/') }}/" + user.foto;
+                var modal = $(this)
+                modal.find('.modal-title').html('Utilizador ' + user.id + ' - Detalhes');
+                modal.find('.modal-body').html('<strong>Nome:</strong> ' + user.name + '<br><hr>' + '<strong>Email:</strong> ' + user.email + '<br><hr>' + '<strong>Função:</strong> ' + (user.role == 'A' ? 'Administrador' : 'Normal') + '<br><hr>' + '<strong>Foto de perfil:</strong> <img id="preview" src="' + imageUrl + '" alt="" style="height: 100px">');
+            })
+        })
 </script>
 @endsection

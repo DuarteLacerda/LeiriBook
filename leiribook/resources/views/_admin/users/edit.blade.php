@@ -1,5 +1,8 @@
 @extends('layout.admin')
 @section('title', 'Utilizadores - Editar')
+@section('styles')
+<link rel="stylesheet" href="{{ asset('css/add_edit_upload_imagem.css') }}">
+@endsection
 @section('breadcrumb')
 <div class="au-breadcrumb-left">
     <span class="au-breadcrumb-span">Tu estás aqui:</span>
@@ -27,7 +30,7 @@
         </li>
     </ul>
 </div>
-<button onclick="location.href='{{ route('admin.faqs.index') }}';" class="au-btn au-btn-icon au-btn--green">
+<button onclick="location.href='{{ route('admin.users.index') }}';" class="au-btn au-btn-icon au-btn--green">
     <i class="fa fa-arrow-left"></i>Voltar
 </button>
 @endsection
@@ -88,20 +91,16 @@
                                                 onchange="previewFile()">
                                         </div>
                                         @if ($user->foto)
-                                        <img src="{{ asset('storage/users_photos/' . old('file', $user->foto)) }}"
-                                            alt="" style="height: 150px">
-                                        @endif
+                                        <img id="preview"
+                                            src="{{ asset('storage/users_photos/' . old('file', $user->foto)) }}" alt=""
+                                            style="height: 150px">
+                                        <button type="submit" form="photo" class="btn btn-danger"
+                                            onclick="deletePhoto()"><i class="fas fa-trash fa-sm"
+                                                style="color: white;"></i>
+                                        </button>
+                                        @else
                                         <img id="preview" src="" alt="" style="height: 150px">
-                                        <form id="photo" method="POST"
-                                            action="{{ route('admin.users.destroyPhoto', $user) }}" class="inline"
-                                            onsubmit="return confirm('Confirma que pretende eliminar esta foto?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" form="photo" class="btn btn-danger"
-                                                onclick="deletePhoto()"><i class="fas fa-trash fa-sm"
-                                                    style="color: white;"></i>
-                                            </button>
-                                        </form>
+                                        @endif
                                     </div>
                                 </div>
                                 @can('updateRole', $user)
@@ -124,6 +123,11 @@
                                         <span id="payment-button-amount">Editar</span>
                                     </button>
                                 </div>
+                            </form>
+                            <form id="photo" method="POST" action="{{ route('admin.users.destroyPhoto', $user) }}"
+                                class="inline" onsubmit="return confirm('Confirma que pretende eliminar esta foto?');">
+                                @csrf
+                                @method('DELETE')
                             </form>
                         </div>
                     </div>

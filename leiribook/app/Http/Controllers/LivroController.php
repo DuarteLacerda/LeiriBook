@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Livro;
-use Illuminate\Http\Request;
 use App\Models\Categoria;
+use Illuminate\Http\Request;
+use App\Http\Requests\LivroRequest;
 
 class LivroController extends Controller
 {
@@ -81,7 +82,74 @@ class LivroController extends Controller
 
 
     }
+    //back-end
+    public function index()
+    {
+        //
+        $livros = Livro::all();
+        return view('_admin.livros.index', compact('livros'));
+    }
 
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+        $livro = new Livro;
+        return view('_admin.livros.create', compact("livro"));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(LivroRequest $request)
+    {
+        $fields = $request->validated();
+        //Repare que o conteúdo anterior de validação foi eliminado neste ponto
+        $livro = new Livro();
+        $livro->fill($fields);
+        $livro->user_id=auth()->user()->id;
+        $livro->save();
+        return redirect()->route('admin.livros.index')->with(
+            'success',
+            'Livro criado com sucesso'
+        );
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Livro $livro)
+    {
+        //
+        return view('_admin.livros.edit', compact('livro'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(LivroRequest $request, Livro $livro)
+    {
+        //
+        $fields = $request->validated();
+        $livro->fill($fields);
+        $livro->save();
+        return redirect()->route('admin.livros.index')->with('success', 'Livro atualizado com sucesso');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Livro $livro)
+    {
+        //
+        $livro->delete();
+        return redirect()->route('admin.livros.index')->with(
+            'success',
+            'Livro eliminado com sucesso'
+        );
+    }
 
 
 }

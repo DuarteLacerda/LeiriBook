@@ -146,12 +146,14 @@ class PageController extends Controller
         }
         $user->foto = null;
         $user->save();
-        return;
+        return redirect()->route('profile', $user)->with(
+            'success',
+            'Foto Eliminada com sucesso'
+        );
     }
 
     public function avaliacao()
     {
         return view("layout.parcial.avaliacao");
     }
-
 }

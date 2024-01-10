@@ -1,5 +1,8 @@
 @extends('layout.admin')
 @section('title', 'Utilizadores - Criar')
+@section('styles')
+<link rel="stylesheet" href="{{ asset('css/add_edit_upload_imagem.css') }}">
+@endsection
 @section('breadcrumb')
 <div class="au-breadcrumb-left">
     <span class="au-breadcrumb-span">Tu estás aqui:</span>
@@ -27,7 +30,7 @@
         </li>
     </ul>
 </div>
-<button onclick="location.href='{{ route('admin.faqs.index') }}'" class="au-btn au-btn-icon au-btn--green">
+<button onclick="location.href='{{ route('admin.users.index') }}'" class="au-btn au-btn-icon au-btn--green">
     <i class="fa fa-arrow-left"></i>Voltar
 </button>
 @endsection

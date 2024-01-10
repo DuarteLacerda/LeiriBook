@@ -289,7 +289,7 @@ textarea {
     background-color: var(--color-grey-light);
 }
 
-.top-bar .search-bar #search-btn:hover{
+.top-bar .search-bar #search-btn:hover {
     background-color: var(--color-grey);
 }
 
@@ -333,7 +333,7 @@ textarea {
     position: relative;
 }
 
-.list-card .pedido-info .card-user{
+.list-card .pedido-info .card-user {
     position: absolute;
     font-size: 95%;
     font-style: italic;
@@ -343,11 +343,11 @@ textarea {
     padding-right: 1rem;
 }
 
-.list-card .pedido-info .card-desc{
+.list-card .pedido-info .card-desc {
     margin-top: 0.8rem;
 }
 
-.pedidos-list{
+.pedidos-list {
     overflow-y: scroll;
     height: 90svh;
 }
@@ -357,3 +357,21 @@ textarea {
 
 
 /* GRID CARD */
+
+
+
+
+
+
+
+
+
+
+
+
+/*REsponsive*/
+@media only screen and (max-width: 1080px) {
+    .pedidos-container {
+        width: 100svw;
+    }
+}

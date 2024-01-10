@@ -1,5 +1,8 @@
 @extends('layout.admin')
-@section('title', 'Utilizadores - Editar')
+@section('title', 'Utilizador - Perfil')
+@section('styles')
+<link rel="stylesheet" href="{{ asset('css/add_edit_upload_imagem.css') }}">
+@endsection
 @section('breadcrumb')
 <div class="au-breadcrumb-left">
     <span class="au-breadcrumb-span">Tu estás aqui:</span>
@@ -11,17 +14,11 @@
             <span>/</span>
         </li>
         <li class="list-inline-item active">
-            <a href="{{ route('admin.dashboard') }}">Dashboard</a>
-        </li>
-        <li class="list-inline-item seprate">
-            <span>/</span>
-        </li>
-        <li class="list-inline-item active">
             <a href="{{ route('profile', $user) }}">Perfil</a>
         </li>
     </ul>
 </div>
-<button onclick="location.href='{{ route('admin.faqs.index') }}';" class="au-btn au-btn-icon au-btn--green">
+<button onclick="location.href='{{ route('home') }}';" class="au-btn au-btn-icon au-btn--green">
     <i class="fa fa-arrow-left"></i>Voltar
 </button>
 @endsection
@@ -80,21 +77,17 @@
                                             <input type="file" id="foto" name="foto" class="form-control-file"
                                                 onchange="previewFile()">
                                         </div>
-                                        @if (old('file', $user->foto))
-                                        <img src="{{ asset('storage/users_photos/' . old('file', $user->foto)) }}"
-                                            alt="" style="height: 150px">
-                                        @endif
+                                        @if ($user->foto)
+                                        <img id="preview"
+                                            src="{{ asset('storage/users_photos/' . old('file', $user->foto)) }}" alt=""
+                                            style="height: 150px">
+                                        <button type="submit" form="photo" class="btn btn-danger"
+                                            onclick="deletePhoto()"><i class="fas fa-trash fa-sm"
+                                                style="color: white;"></i>
+                                        </button>
+                                        @else
                                         <img id="preview" src="" alt="" style="height: 150px">
-                                        <form id="photo" method="POST"
-                                            action="{{ route('profile.destroyPhotoProfile', $user) }}" class="inline"
-                                            onsubmit="return confirm('Confirma que pretende eliminar esta foto?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" form="photo" class="btn btn-danger"
-                                                onclick="deletePhoto()"><i class="fas fa-trash fa-sm"
-                                                    style="color: white;"></i>
-                                            </button>
-                                        </form>
+                                        @endif
                                     </div>
                                 </div>
                                 @can('updateRole', $user)
@@ -124,6 +117,11 @@
             </div>
         </div>
     </div>
+    <form id="photo" method="POST" action="{{ route('admin.users.destroy', $user) }}" class="inline"
+        onsubmit="return confirm('Confirma que pretende eliminar esta foto?');">
+        @csrf
+        @method('DELETE')
+    </form>
 </section>
 @endsection
 @section('scripts')

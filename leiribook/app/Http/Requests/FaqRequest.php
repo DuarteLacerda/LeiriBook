@@ -13,10 +13,12 @@ class FaqRequest extends FormRequest
 
     public function rules()
     {
+
+
         return [
-            'question' => 'required|unique:faqs|string',
+            'question' => 'required|string|unique:faqs,question,' . ($this->faq ? $this->faq->id : ''),
             'answer' => 'required|string',
-            // Add any additional validation rules as needed
+            'approved' => 'required|in:0,1',
         ];
     }
 
@@ -25,7 +27,8 @@ class FaqRequest extends FormRequest
         return [
             'question.required' => 'O campo Pergunta é obrigatório.',
             'answer.required' => 'O campo Resposta é obrigatório.',
-            // Add any custom error messages for specific rules
+            'approved.required' => 'O campo Aprovado é obrigatório.',
+            'question.unique' => 'A pergunta já existe.',
         ];
     }
 }

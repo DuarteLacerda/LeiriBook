@@ -42,7 +42,6 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         $fields = $request->validated();
-        //Repare que o conteúdo anterior de validação foi eliminado neste ponto
         $user = new User();
         $user->fill($fields);
         $user->password = Hash::make('password');
@@ -88,9 +87,9 @@ class UserController extends Controller
             $fields = $request->except("role");
         }
 
-        $fields = $request->validated();
         $user->fill($fields);
         if ($request->hasFile('foto')) {
+
             if ($user->foto == basename($request->file('foto'))) {
                 Storage::disk('public')->delete('users_photos/' . $user->foto);
             }
@@ -108,12 +107,12 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //
-        if (!empty($user->foto)) {
-            Storage::disk('public')->delete('users_photos/' . $user->foto);
-        }
-        $user->foto = null;
-        $user->save();
-        return;
+        Storage::disk('public')->delete('users_photos/' . $user->foto);
+        $user->delete();
+        return redirect()->route('admin.users.index')->with(
+            'success',
+            'Regito Eliminado com sucesso'
+        );
     }
 
     public function destroy_photo(User $user)
@@ -123,7 +122,10 @@ class UserController extends Controller
         }
         $user->foto = null;
         $user->save();
-        return;
+        return redirect()->route('admin.users.edit', $user)->with(
+            'success',
+            'Foto Eliminada com sucesso'
+        );
     }
 
     public function editpassword()
