@@ -22,7 +22,7 @@
     </ul>
 </div>
 <button onclick="location.href='{{ route('admin.users.create') }}';" class="au-btn au-btn-icon au-btn--green">
-    <i class="fa fa-plus"></i>add item</button>
+    <i class="fa fa-plus"></i>Novo Utilizador</button>
 @endsection
 
 @section('content')
@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-12">
                     <br>
-                    <h1>Lista</h1>
+                    <h1>Utilizadores</h1>
                     <br>
                     @if (count($users))
                     <div class="table-responsive table--no-card m-b-30">
