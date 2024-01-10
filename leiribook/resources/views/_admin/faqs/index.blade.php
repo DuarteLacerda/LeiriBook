@@ -22,7 +22,7 @@
     </ul>
 </div>
 <button onclick="location.href='{{ route('admin.faqs.create') }}';" class="au-btn au-btn-icon au-btn--green">
-    <i class="fa fa-plus"></i>add item</button>
+    <i class="fa fa-plus"></i>Nova Pergunta</button>
 @endsection
 
 @section('content')
@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-12">
                     <br>
-                    <h1>Lista</h1>
+                    <h1>Perguntas Frequentes</h1>
                     <br>
                     @if (count($faqs))
                     <div class="table-responsive table--no-card m-b-30">
@@ -108,7 +108,7 @@
         var faq = button.data('faq')
 
         var modal = $(this)
-        modal.find('.modal-title').html('Pergunta ' + faq.id + ' - Detalhes');
+        modal.find('.modal-title').html('Pergunta Nº ' + faq.id + ' - Detalhes');
         modal.find('.modal-body').html('<strong>Pergunta:</strong> ' + faq.question + '<br><hr><strong>Resposta:</strong> ' + faq.answer + '<br><hr><strong>Estado:</strong> ' + ((faq.approved === 0) ? 'Pendente' : 'Aprovado'))
     })
 </script>
