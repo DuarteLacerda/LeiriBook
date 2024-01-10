@@ -46,11 +46,12 @@
             </div>
             <div class="menu-sidebar2__content js-scrollbar1">
                 <div class="account2">
-                    <div class="image img-cir img-120">
+                    <div class="image img-cir">
                         @if (Auth::user()->foto == null)
-                            <img src="{{ asset('images/admin/default-user.png') }}" alt="Perfil de Utilizador" />
+                        <img src="{{ asset('images/admin/default-user.png') }}" alt="Perfil de Utilizador" width="120px" />
                         @else
-                            <img src="{{ Auth::user()->foto }}" alt="Perfil de Utilizador" />
+                        <img src="{{ asset('storage/users_photos/' . Auth::user()->foto) }}"
+                            alt="Perfil de Utilizador" />
                         @endif
                     </div>
                     <h4 class="name">{{ Auth::user()->name }}</h4>
@@ -254,11 +255,11 @@
                                                 <i class="zmdi zmdi-notifications"></i>Notifications</a>
                                         </div>
                                     </div> --}}
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </header>
             <aside class="menu-sidebar2 js-right-sidebar d-block d-lg-none">
                 <div class="logo">
@@ -270,9 +271,10 @@
                     <div class="account2">
                         <div class="image img-cir img-120">
                             @if (Auth::user()->foto == null)
-                                <img src="{{ asset('images/admin/default-user.png') }}" alt="Perfil de Utilizador" />
+                            <img src="{{ asset('images/admin/default-user.png') }}" alt="Perfil de Utilizador" />
                             @else
-                                <img src="{{ Auth::user()->foto }}" alt="Perfil de Utilizador" />
+                            <img src="{{ asset('storage/users_photos/' . Auth::user()->foto) }}"
+                                alt="Perfil de Utilizador" />
                             @endif
                         </div>
                         <h4 class="name">{{ Auth::user()->name }}</h4>
@@ -367,18 +369,18 @@
             <!-- END BREADCRUMB-->
 
             @if ($errors->any())
-                <section>
-                    <div class="container-fluid">
-                        @include ('layout.parcial.error')
-                    </div>
-                </section>
+            <section>
+                <div class="container-fluid">
+                    @include ('layout.parcial.error')
+                </div>
+            </section>
             @endif
             @if (!empty(session('success')))
-                <section>
-                    <div class="container-fluid">
-                        @include ('layout.parcial.success')
-                    </div>
-                </section>
+            <section>
+                <div class="container-fluid">
+                    @include ('layout.parcial.success')
+                </div>
+            </section>
             @endif
 
             <!-- MAIN -->
