@@ -38,6 +38,7 @@ Route::get('/pedidos', [PedidoController::class, 'showPedidos'])->name('pedidos'
 Route::post('/enviar-pedido', [PedidoController::class, 'pedido'])->name('enviar-pedido');
 
 Route::get('/avaliacao', [PageController::class, 'avaliacao'])->name('avaliacao');
+Route::get('/avaliacao/criar', [PageController::class, 'avaliacao_criar'])->name('avaliacao.criar');
 
 Route::get('/books/filter', [LivroController::class, 'filterByGenre'])->name('filter.books');
 

@@ -41,17 +41,17 @@
 
     <h3 class="text-center p-5" id="leiriBookEquipa">Equipa da LeiriBook</h3>
 
-    <div class="container" id="leiriBookEq">
+    <div class="qualquer" id="leiriBookEq">
         <div class="row justify-content-center">
             @if ($users)
             @foreach ($users as $user)
             <!-- Card 1 -->
-            <div class="col-md-3 m-2 mb-2" id="cartao">
-                <div class="card shadow">
+            <div class="col-md-4 mb-4" id="cartao">
+                <div class="card">
                     @if ($user->foto != null)
-                    <img src="{{ asset('storage/users_photos/' . $user->foto) }}" class="card-img-top p-4">
+                    <img src="{{ asset('storage/userss_photos/' . $user->foto) }}" class="p-4">
                     @else
-                    <img src="{{ asset('images/admin/default-user.png') }}" alt="" />
+                    <img src="{{ asset('images/admin/default-user.png') }}" alt="" class="p-4" />
                     @endif
                     <div class="card-body">
                         <h5 class="card-title text-center">{{($user->role == 'A') ? 'Administrador' : 'Normal'}}</h5>
