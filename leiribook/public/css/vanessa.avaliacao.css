@@ -1,14 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-
-
+.form-control{
+margin-bottom: 30px;
+}
 .container-ratings{
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top:6em;
+  padding: 1.5em;
 }
-
+.ratings-container{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.escolherlivro{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
 .panel {
   background-color: white;
   box-shadow: 0 0 7px rgba(0,0,0,.2);
@@ -17,37 +27,30 @@
   text-align: center;
   padding: 30px 20px;
   max-width: 400px;
-max-height: 300px;
+/* max-height: 300px; */
 }
-
 .panel form {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-
 fieldset, label {
   margin: 0;
   padding: 0;
 }
-
 h1 {
   font-size: 22px;
   margin: 10px;
   font-weight: normal;
 }
-
 fieldset {
   margin: 20px 0 40px;
 }
-
-
 .rating {
   border: none;
   float: left;
 }
-
 .rating > input { display: none; }
 .rating > label:before {
   margin: 5px;
@@ -56,14 +59,10 @@ fieldset {
   display: inline-block;
   content: "\f005";
 }
-
-
 .rating > label {
   color: #ddd;
  float: right;
 }
-
-
 .rating > input:checked ~ label, /* show gold star when clicked */
 .rating:not(:checked) > label:hover, /* hover current star */
 .rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */

@@ -2,23 +2,33 @@
     scroll-behavior: smooth;
 }
 
+.qualquer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Adicione isso ao seu arquivo CSS ou bloco de estilo */
 .card {
     opacity: 0;
     transform: translateY(100px);
     transition: opacity 0.5s ease, transform 0.5s ease;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+margin: 0.5em;
+
 }
 
+.card img{
+    max-width: 200px;
+    max-height: 200px;
+}
 .card.show {
     opacity: 1;
     transform: translateY(0);
     background-color: #B4E6FF;
 }
-
-
-
-
-
 
   /* Scroll to top */
   #myBtn {
