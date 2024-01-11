@@ -49,7 +49,7 @@
             <div class="col-md-3 m-2 mb-2" id="cartao">
                 <div class="card shadow">
                     @if ($user->foto != null)
-                    <img src="{{ asset('storage/user_photos/' . $user->foto) }}" class="card-img-top p-4">
+                    <img src="{{ asset('storage/users_photos/' . $user->foto) }}" class="card-img-top p-4">
                     @else
                     <img src="{{ asset('images/admin/default-user.png') }}" alt="" />
                     @endif

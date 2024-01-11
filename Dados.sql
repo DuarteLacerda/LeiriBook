@@ -1,26 +1,26 @@
 # Administrador
-INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role)
-VALUES ('Duarte Lacerda', 'duartelacerda4@gmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A');
-INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role)
-VALUES ('Vanessa Ramalho', 'vanessa310804@gmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A');
-INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role)
-VALUES ('Daniel Cochiço', 'danielcochico39@gmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A');
-INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role)
-VALUES ('Daniel Ribeiro', 'danielribeiro290404@hotmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A');
-INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role)
-VALUES ('Paulo Leal', 'pauloandeleal@gmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A');
+INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
+VALUES ('Duarte Lacerda', 'duartelacerda4@gmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A','lacerda.jpg');
+INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
+VALUES ('Vanessa Ramalho', 'vanessa310804@gmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A', 'vanessa.jpg');
+INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
+VALUES ('Daniel Cochiço', 'danielcochico39@gmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A', 'cochico.jpg');
+INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
+VALUES ('Daniel Ribeiro', 'danielribeiro290404@hotmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A', null);
+INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
+VALUES ('Paulo Leal', 'pauloandeleal@gmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A', null);
 
 # Clientes
-INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role)
-VALUES ('Hugo Soares', '2221019@my.ipleiria.pt', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'N');
-INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role)
-VALUES ('Pedro Rodrigues', '2221031@my.ipleiria.pt', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'N');
-INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role)
-VALUES ('Martim Conceição', '2221003@my.ipleiria.pt', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'N');
-INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role)
-VALUES ('Carlota Gouveia', '2220997@my.ipleiria.pt', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'N');
-INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role)
-VALUES ('Margarida Simões', '2221009@my.ipleiria.pt', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'N');
+INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
+VALUES ('Hugo Soares', '2221019@my.ipleiria.pt', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'N', 'avatar-01.jpg');
+INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
+VALUES ('Pedro Rodrigues', '2221031@my.ipleiria.pt', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'N', 'avatar-03.jpg');
+INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
+VALUES ('Martim Conceição', '2221003@my.ipleiria.pt', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'N', 'avatar-04.jpg');
+INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
+VALUES ('Martim Gouveia', '2220997@my.ipleiria.pt', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'N', 'avatar-05.jpg');
+INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
+VALUES ('Margarida Simões', '2221009@my.ipleiria.pt', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'N', 'avatar-02.jpg');
 
 #Eventos
 INSERT INTO eventos (id, nome, descricao, local, data_inicio, data_fim, user_id, deleted_at, created_at, updated_at) VALUES
