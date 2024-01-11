@@ -12,7 +12,7 @@ class Evento extends Model
     protected $fillable = ['nome', 'descricao', 'data_inicio', 'data_fim', 'local', 'user_id'];
 
     // Relacionamento com a tabela 'users'
-    public function usuario()
+    public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }

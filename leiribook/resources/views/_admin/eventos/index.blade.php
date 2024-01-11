@@ -58,7 +58,7 @@
                                     </td>
                                     <td>
                                         <a class="btn btn-primary btn-p" data-toggle="modal" data-target="#eventoModal"
-                                            data-evento="{{ $evento }}">
+                                            data-evento="{{ $evento }}" data-user="{{ $evento->user }}">
                                             <i class=" fas fa-eye fa-xs" style="color: white;"></i>
                                         </a>
 
@@ -112,10 +112,10 @@
     $('#eventoModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget)
         var evento = button.data('evento')
-
+        var user = button.data('user')
         var modal = $(this)
         modal.find('.modal-title').html('Evento ' + evento.id + ' - Detalhes');
-        modal.find('.modal-body').html('<strong>Nome:</strong> ' + evento.nome + '<br><hr><strong>Descrição:</strong> ' + evento.descricao + '<br><hr><strong>Local:</strong> ' + evento.local + '<br><hr><strong>Data Inicial:</strong> ' + evento.data_inicio + '<br><hr><strong>Data Final:</strong> ' + evento.data_fim)
+        modal.find('.modal-body').html('<strong>Nome:</strong> ' + evento.nome + '<br><hr><strong>Descrição:</strong> ' + evento.descricao + '<br><hr><strong>Local:</strong> ' + evento.local + '<br><hr><strong>Data Inicial:</strong> ' + evento.data_inicio + '<br><hr><strong>Data Final:</strong> ' + evento.data_fim +'<br><hr><strong>Criado por:</strong> ' + user.name)
 
     })
 </script>
