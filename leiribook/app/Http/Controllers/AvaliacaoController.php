@@ -32,6 +32,7 @@ class AvaliacaoController extends Controller
         $fields = $request->validated();
         $avaliacao = new Avaliacao();
         $avaliacao->fill($fields);
+        $avaliacao->user_id=auth()->user()->id;
         $avaliacao->save();
         return redirect()->route('admin.avaliacoes.index')->with(
             'success',
