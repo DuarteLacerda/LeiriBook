@@ -49,7 +49,7 @@
             <div class="col-md-4 mb-4" id="cartao">
                 <div class="card">
                     @if ($user->foto != null)
-                    <img src="{{ asset('storage/userss_photos/' . $user->foto) }}" class="p-4">
+                    <img src="{{ asset('storage/users_photos/' . $user->foto) }}" class="p-4">
                     @else
                     <img src="{{ asset('images/admin/default-user.png') }}" alt="" class="p-4" />
                     @endif
