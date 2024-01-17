@@ -126,6 +126,7 @@ class PageController extends Controller
         $count_livros = Livro::count();
         $count_faqs = Faq::count();
         $count_eventos = Evento::count();
+        $count_avaliacoes = Avaliacao::count();
         $count_users_per_role = User::select('role', DB::raw('count(*) as count'))->groupBy('role')->get();
         return view('_admin.dashboard', compact(
             'count_livros',
@@ -133,6 +134,7 @@ class PageController extends Controller
             'count_faqs',
             'count_eventos',
             'count_users_per_role',
+            'count_avaliacoes'
         ));
     }
 
@@ -159,28 +161,22 @@ class PageController extends Controller
     {
         $avaliacao = new Avaliacao;
         $livros = Livro::all();
-        $user= Auth::user();
+        $user = Auth::user();
         return view('layout.parcial.avaliacao', compact('avaliacao', 'livros', 'user'));
-
-
     }
 
-    public function avaliacao_criar(AvaliacaoRequest $request){
+    public function avaliacao_criar(AvaliacaoRequest $request)
+    {
         $fields = $request->validated();
         $avaliacao = new Avaliacao();
         $avaliacao->fill($fields);
-        $avaliacao->user_id=auth()->user()->id;
+        $avaliacao->nivel = $fields['rating'];
+        $avaliacao->user_id = auth()->user()->id;
+
         $avaliacao->save();
         return redirect()->route('avaliacao')->with(
             'success',
-            'A Avaliação foi criada com sucesso'
+            $avaliacao->nivel
         );
     }
-    public function avaliacao_editar(AvaliacaoRequest $request){
-        $fields = $request->validated();
-        $avaliacao->fill($fields);
-        $avaliacao->save();
-        return redirect()->route('avaliacao')->with('success', 'A Avaliação foi editada e atualizada com sucesso');
-    }
-
 }

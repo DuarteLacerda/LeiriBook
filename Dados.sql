@@ -8,7 +8,7 @@ VALUES ('Daniel Cochiço', 'danielcochico39@gmail.com', '2023-12-11 17:21:25', '
 INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
 VALUES ('Daniel Ribeiro', 'danielribeiro290404@hotmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A', 'ribeiro.jpg');
 INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
-VALUES ('Paulo Leal', 'pauloandeleal@gmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A', null);
+VALUES ('Paulo Leal', 'pauloandeleal@gmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A', 'leal.jpg');
 
 # Clientes
 INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
@@ -81,3 +81,11 @@ INSERT INTO pedidos (id, titulo, descricao, edicao, foto, user_id, created_at, u
 (7, 'Tudo é Rio - Carla Madeira', 'Uma jornada envolvente pela vida, cheia de desafios e descobertas. A capa é deslumbrante, com um toque de mistério.', '4', 'images/imagem_pedidos/vHBAQ0P1Pnst8uqLPOgf2T0o4yDA8QQ75rMf9C2o.jpg', 1, '2023-12-14 19:37:59', '2023-12-14 19:37:59'),
 (8, 'Heartstopper Volume 5 - Alice Oseman', 'O romance adorável continua! Nick e Charlie continuam a encantar. A capa é tão doce quanto a história', '2', 'images/imagem_pedidos/K0jnUKoWQB6y0nkPVMYxiDrKTbk4vOZ4nnH448bt.jpg', 1, '2023-12-14 19:38:49', '2023-12-14 19:38:49'),
 (9, 'Pensar, Olhar, Viver', 'Reflexões inspiradoras sobre a vida. Uma leitura que expande a mente. A capa é elegante e séria. Escrito por Sacadura Cabral', '1', 'images/imagem_pedidos/DLa7bNcWmSXeYUxLpubfehsmGsRRwUNhspOlxQuj.jpg', 1, '2023-12-14 19:40:22', '2023-12-14 19:40:22');
+
+#Avaliações
+INSERT INTO avaliacoes (descricao, nivel, livro_id, user_id, created_at, updated_at) VALUES
+('Não me envolveu completamente; a abordagem densa de Yalom, combinando filosofia e ficção, pode tornar a leitura complexa e menos acessível para alguns.', '1', '1', 1, '2023-12-14 11:01:07', '2023-12-14 11:01:07'),
+('Recomendo este livro, pois sua narrativa intensa e comovente oferece uma visão poderosa das lutas pela igualdade racial nos anos 1960, proporcionando uma leitura envolvente e impactante.', '5', '2', 2, '2023-12-14 11:01:07', '2023-12-14 11:01:07'),
+('Decepcionou pela superficialidade em certas discussões financeiras. A ênfase constante na mentalidade empreendedora pode parecer exagerada e não aplicável a todos os leitores.', '2', '3', 3, '2023-12-14 11:01:07', '2023-12-14 11:01:07'),
+('Embora o livro ofereça uma abordagem reconfortante sobre temas espirituais e explore o destino de maneira envolvente, a trama tende a ser previsível e idealista, com clichês espirituais que podem comprometer a originalidade da obra.', '3', '4', 4, '2023-12-14 11:01:07', '2023-12-14 11:01:07'),
+('Recomendo este livro por sua inspiração e positividade. Cullum oferece uma visão motivadora sobre a importância da empatia desde a infância, tornando-o ideal para quem busca uma mensagem otimista sobre construir uma sociedade mais solidária.', '4', '5', 5, '2023-12-14 11:01:07', '2023-12-14 11:01:07');

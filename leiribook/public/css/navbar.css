@@ -313,6 +313,10 @@
     width: 70%;
 }
 
+#b-menu {
+    display: none;
+}
+
 @media (min-width: 576px) {
     .container {
         max-width: none;
@@ -322,6 +326,10 @@
 
 /*990px*/
 @media only screen and (max-width: 1080px) {
+    #b-menu {
+        display: flex;
+    }
+
     .search {
         display: none;
     }
@@ -347,6 +355,7 @@
     .nav-mid {
         display: none;
     }
+
     .nav-container ul {
         padding: 0;
         /* width: 50px; */

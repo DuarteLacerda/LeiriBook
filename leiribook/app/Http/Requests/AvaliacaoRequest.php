@@ -23,7 +23,7 @@ class AvaliacaoRequest extends FormRequest
     {
         return [
             'descricao' => 'required|string',
-            'nivel' => 'required|in:1,2,3,4,5',
+            'rating' => 'required|in:1,2,3,4,5',
             'livro_id' => 'required',/*|unique:avaliacoes, livro_id' . ($this->avaliacao ? $this->avaliacao->id : ''),*/
             //'user_id' => 'required|unique:avaliacoes,user_id' . ($this->avaliacao ? $this->avaliacao->id : ''),
         ];
@@ -33,7 +33,7 @@ class AvaliacaoRequest extends FormRequest
         return [
             'descricao.required' => 'O campo descrição é obrigatório.',
             'descricao.string' => 'O campo descrição deve ser uma string.',
-            'nivel.required' => 'O campo nível é obrigatório.',
+            'rating.required' => 'O campo nível é obrigatório.',
             'livro_id.required' => 'O campo livro_id é obrigatório.',
             //'user_id.required' => 'O campo user_id é obrigatório.',
             //'livro_id.unique' => 'Este livro já foi avaliado.',
