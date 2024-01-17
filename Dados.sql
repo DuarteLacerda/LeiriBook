@@ -8,7 +8,7 @@ VALUES ('Daniel Cochiço', 'danielcochico39@gmail.com', '2023-12-11 17:21:25', '
 INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
 VALUES ('Daniel Ribeiro', 'danielribeiro290404@hotmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A', 'ribeiro.jpg');
 INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
-VALUES ('Paulo Leal', 'pauloandeleal@gmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A', null);
+VALUES ('Paulo Leal', 'pauloandeleal@gmail.com', '2023-12-11 17:21:25', '$2y$12$/HIRxktjEiJNElVnX6OD8e1ZN5o8WtXoOv5mBFOtG10.TVPaS/rWK', '2023-12-11 17:20:51', '2023-12-11 17:21:25', 'A', 'leal.jpg');
 
 # Clientes
 INSERT INTO users (name, email, email_verified_at, password, created_at, updated_at, role, foto)
