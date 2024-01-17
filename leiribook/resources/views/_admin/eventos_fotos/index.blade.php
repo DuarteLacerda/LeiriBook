@@ -1,5 +1,5 @@
 @extends('layout.admin')
-@section('title', 'Eventos - Lista')
+@section('title', 'Eventos - Fotos - Lista')
 @section('breadcrumb')
     <div class="au-breadcrumb-left">
         <span class="au-breadcrumb-span">Tu estás aqui:</span>
@@ -39,7 +39,7 @@
                 <div class="row">
                     <div class="col-12">
                         <br>
-                        <h1>Lista de fotos do Evento: {{ $evento->nome }}</h1>
+                        <h1>Fotos do Evento: {{ $evento->nome }}</h1>
                         <br>
                         @if (count($fotos))
                             <div class="table-responsive table--no-card m-b-30">
@@ -48,7 +48,7 @@
                                     <thead>
                                         <tr>
                                             <th>Imagem</th>
-                                            <th>Titulo</th>
+                                            <th>ID</th>
                                             <th>Ordem</th>
                                             <th></th>
                                         </tr>
@@ -60,7 +60,7 @@
                                                     <img src=" {{ asset('storage/eventos_fotos/' . $foto->foto) }}"
                                                         width="100" alt="Foto do evento">
                                                 </td>
-                                                <td class="text-left">{{ $foto->titulo }}</td>
+                                                <td class="text-center">{{ $foto->id }}</td>
                                                 <td class="text-center">{{ $foto->ordem }}</td>
 
                                                 <td>
@@ -126,8 +126,8 @@
             var imagem = button.data('imagem')
 
             var modal = $(this)
-            modal.find('.modal-title').html(foto.titulo);
-            modal.find('.modal-body').html('<img src="' + imagem + '" alt="Imagem do evento">' + '<br><hr><strong>Ordem:</strong> ' + foto.ordem);
+            modal.find('.modal-title').html('Foto ' + foto.id + ' - Detalhes');
+            modal.find('.modal-body').html('<img src="' + imagem + '" alt="Imagem do evento">' + '<br><hr><strong>Descrição:</strong> ' + foto.titulo + '<br><hr><strong>Ordem:</strong> ' + foto.ordem);
 
         })
     </script>
