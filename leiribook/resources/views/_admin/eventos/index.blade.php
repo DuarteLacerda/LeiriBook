@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-12">
                     <br>
-                    <h1>Lista</h1>
+                    <h1>Eventos</h1>
                     <br>
                     @if (count($eventos))
                     <div class="table-responsive table--no-card m-b-30">
