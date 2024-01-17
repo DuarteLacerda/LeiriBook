@@ -1,9 +1,14 @@
 const form = document.getElementById('ratingForm');
 
 form.onsubmit = function(e) {
-  e.preventDefault();
+
   const valueStars = document.querySelector('input[name="rating"]:checked').value;
-  showThankyou(valueStars);
+  if (!valueStars){
+    e.preventDefault();
+  }
+  return true;
+
+  //showThankyou(valueStars);
 }
 
 function showThankyou(val) {

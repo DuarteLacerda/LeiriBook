@@ -38,12 +38,14 @@ Route::get('/pedidos', [PedidoController::class, 'showPedidos'])->name('pedidos'
 Route::post('/enviar-pedido', [PedidoController::class, 'pedido'])->name('enviar-pedido');
 
 Route::get('/avaliacao', [PageController::class, 'avaliacao'])->name('avaliacao');
-Route::get('/avaliacao/criar', [PageController::class, 'avaliacao_criar'])->name('avaliacao.criar');
+Route::post('/avaliacao/criar', [PageController::class, 'avaliacao_criar'])->name('avaliacao.criar');
 
 Route::get('/books/filter', [LivroController::class, 'filterByGenre'])->name('filter.books');
 
 Auth::routes(['register' => true, 'verify' => true]);
 Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::get('/avaliacao', [PageController::class, 'avaliacao'])->name('avaliacao');
+    Route::post('/avaliacao/criar', [PageController::class, 'avaliacao_criar'])->name('avaliacao.criar');
     Route::get('/profile/{user}', [PageController::class, 'profile'])->name('profile');
     route::get('editpassword', [UserController::class, 'editpassword'])->name('editpassword');
     route::patch('updatepassword', [UserController::class, 'updatepassword'])->name('updatepassword');

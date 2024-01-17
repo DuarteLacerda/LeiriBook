@@ -169,18 +169,14 @@ class PageController extends Controller
         $fields = $request->validated();
         $avaliacao = new Avaliacao();
         $avaliacao->fill($fields);
+        $avaliacao->nivel =$fields['rating'];
         $avaliacao->user_id=auth()->user()->id;
+
         $avaliacao->save();
         return redirect()->route('avaliacao')->with(
-            'success',
-            'A Avaliação foi criada com sucesso'
+            'success', $avaliacao->nivel
         );
     }
-    public function avaliacao_editar(AvaliacaoRequest $request){
-        $fields = $request->validated();
-        $avaliacao->fill($fields);
-        $avaliacao->save();
-        return redirect()->route('avaliacao')->with('success', 'A Avaliação foi editada e atualizada com sucesso');
-    }
+   
 
 }
