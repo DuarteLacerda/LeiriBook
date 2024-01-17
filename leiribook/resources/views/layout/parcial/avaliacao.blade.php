@@ -1,9 +1,11 @@
-{{-- no fim de tudo tirar a rota da pag web.php e tirar o extends('layout.master') e tirar as sections @section('title', 'LeiriBook - Avaliação')
-@section('styles') e tirar a section dos scripts, as ligacoes dos links e dos scripts tem que ser feitas na pagina do daniel ribeiro --}}
+{{-- no fim de tudo tirar a rota da pag web.php e tirar o extends('layout.master') e tirar as sections @section('title',
+'LeiriBook - Avaliação')
+@section('styles') e tirar a section dos scripts, as ligacoes dos links e dos scripts tem que ser feitas na pagina do
+daniel ribeiro --}}
 @extends('layout.master')
 @section('title', 'LeiriBook - Avaliação')
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/vanessa.avaliacao.css') }}">
+<link rel="stylesheet" href="{{ asset('css/vanessa.avaliacao.css') }}">
 @endsection
 @section('content')
     <div class="container-ratings">
@@ -80,5 +82,5 @@
     </div>
 @endsection
 @section('scripts')
-    <script src="{{ asset('js/vanessa.avaliacao.js') }}"></script>
+<script src="{{ asset('js/vanessa.avaliacao.js') }}"></script>
 @endsection
