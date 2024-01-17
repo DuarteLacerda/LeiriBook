@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Livro;
 use App\Models\Avaliacao;
 use Illuminate\Http\Request;
+use App\Http\Requests\AvaliacaoRequest;
 
 class AvaliacaoController extends Controller
 {
@@ -18,45 +21,42 @@ class AvaliacaoController extends Controller
     {
         //
         $avaliacao = new Avaliacao;
-        return view('_admin.avaliacoes.create', compact("avaliacao"));
+        $utilizadores = User::all();
+        $livros = Livro::all();
+        return view('_admin.avaliacoes.create', compact("avaliacao", "utilizadores", "livros"));
     }
 
-    // /**
-    //  * Store a newly created resource in storage.
-    //  */
-    // public function store(FaqRequest $request)
-    // {
-    //     $fields = $request->validated();
-    //     //Repare que o conteúdo anterior de validação foi eliminado neste ponto
-    //     $faq = new Faq();
-    //     $faq->fill($fields);
-    //     $faq->save();
-    //     return redirect()->route('admin.faqs.index')->with(
-    //         'success',
-    //         'Pergunta criada com sucesso'
-    //     );
-    // }
 
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  */
-    // public function edit(Faq $faq)
-    // {
-    //     //
-    //     return view('_admin.faqs.edit', compact('faq'));
-    // }
+    public function store(AvaliacaoRequest $request)
+    {
+        $fields = $request->validated();
+        $avaliacao = new Avaliacao();
+        $avaliacao->fill($fields);
+        $avaliacao->user_id=auth()->user()->id;
+        $avaliacao->save();
+        return redirect()->route('admin.avaliacoes.index')->with(
+            'success',
+            'A Avaliação foi criada com sucesso'
+        );
+    }
 
-    // /**
-    //  * Update the specified resource in storage.
-    //  */
-    // public function update(FaqRequest $request, Faq $faq)
-    // {
-    //     //
-    //     $fields = $request->validated();
-    //     $faq->fill($fields);
-    //     $faq->save();
-    //     return redirect()->route('admin.faqs.index')->with('success', 'Pergunta atualizada com sucesso');
-    // }
+
+    public function edit(Avaliacao $avaliacao)
+    {
+        $utilizadores = User::all();
+        $livros = Livro::all();
+        return view('_admin.avaliacoes.edit', compact('avaliacao', "utilizadores", "livros"));
+    }
+
+
+    public function update(AvaliacaoRequest $request, Avaliacao $avaliacao)
+    {
+        //
+        $fields = $request->validated();
+        $avaliacao->fill($fields);
+        $avaliacao->save();
+        return redirect()->route('admin.avaliacoes.index')->with('success', 'A Avaliação foi atualizada com sucesso');
+    }
 
 
 

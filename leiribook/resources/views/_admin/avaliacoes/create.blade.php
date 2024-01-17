@@ -44,43 +44,7 @@
                             <hr>
                             <form action="{{ route('admin.avaliacoes.store') }}" method="post">
                                 @csrf
-                                {{-- <div class="form-group">
-                                <label for="question" class="control-label mb-1">Descrição:</label>
-                                <input id="question" name="question" type="text" class="form-control"
-                                    aria-required="true" aria-invalid="false" placeholder="Descricao">
-                            </div> --}}
-                                <div class="row">
-                                    <div class="col">
-                                        <label for="rating" class="control-label mb-1">Nível de Avaliação</label>
-                                        <div class="input-group">
-                                            <select name="rating" id="rating" class="form-control">
-                                                <option value="">Selecione um nível</option>
-                                                <option value="1">1 estrela</option>
-                                                <option value="2">2 estrelas</option>
-                                                <option value="3">3 estrelas</option>
-                                                <option value="4">4 estrelas</option>
-                                                <option value="5">5 estrelas</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="descricao" class="control-label mb-1">Descrição:</label>
-                                            <textarea id="descricao" name="descricao" type="text" class="form-control cc-exp" data-val="true" placeholder="Escreve uma descrição aqui..."
-                                                rows="5" autocomplete="cc-exp"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="col">
-                                        <label for="state" class="control-label mb-1">Livro</label>
-                                        <div class="input-group">
-                                            <select name="state" id="state" class="form-control">
-                                                <option value="">Selecione o livro</option>
-                                                {{-- quando este clica em selecionar o livro ira buscar atraves do livro id todos os livros que existem na base de dados com os nomes --}}
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                                @include('_admin.avaliacoes.partials.add-edit')
                                 <div>
                                     <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                         <i class="fa fa-plus fa-xl"></i>&nbsp;

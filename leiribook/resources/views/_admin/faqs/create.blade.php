@@ -39,7 +39,7 @@
                 <div class="col-12">
                     <div class="card-body">
                         <div class="card-title">
-                            <h3 class="text-center title-2">Criar</h3>
+                            <h3 class="text-center title-2">Nova Pergunta</h3>
                         </div>
                         <hr>
                         <form action="{{ route('admin.faqs.store') }}" method="post">

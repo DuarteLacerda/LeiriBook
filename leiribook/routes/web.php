@@ -38,11 +38,14 @@ Route::get('/pedidos', [PedidoController::class, 'showPedidos'])->name('pedidos'
 Route::post('/enviar-pedido', [PedidoController::class, 'pedido'])->name('enviar-pedido');
 
 Route::get('/avaliacao', [PageController::class, 'avaliacao'])->name('avaliacao');
+Route::post('/avaliacao/criar', [PageController::class, 'avaliacao_criar'])->name('avaliacao.criar');
 
 Route::get('/books/filter', [LivroController::class, 'filterByGenre'])->name('filter.books');
 
 Auth::routes(['register' => true, 'verify' => true]);
 Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::get('/avaliacao', [PageController::class, 'avaliacao'])->name('avaliacao');
+    Route::post('/avaliacao/criar', [PageController::class, 'avaliacao_criar'])->name('avaliacao.criar');
     Route::get('/profile/{user}', [PageController::class, 'profile'])->name('profile');
     route::get('editpassword', [UserController::class, 'editpassword'])->name('editpassword');
     route::patch('updatepassword', [UserController::class, 'updatepassword'])->name('updatepassword');
@@ -55,8 +58,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::resource('faqs', FaqController::class);
         Route::resource('users', UserController::class);
         Route::resource('livros', LivroController::class);
-        Route::resource('eventos/{evento}/evento_fotos', EventoPhotoController::class)->parameters(['evento_fotos'=>'foto']);
-        Route::resource('avaliacoes', AvaliacaoController::class)->parameters(['avaliacoes'=>'avaliacao']);
-
+        Route::resource('eventos/{evento}/evento_fotos', EventoPhotoController::class)->parameters(['evento_fotos' => 'foto']);
+        Route::resource('avaliacoes', AvaliacaoController::class)->parameters(['avaliacoes' => 'avaliacao']);
     });
 });

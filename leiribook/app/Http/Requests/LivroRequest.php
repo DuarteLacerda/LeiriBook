@@ -29,7 +29,6 @@ class LivroRequest extends FormRequest
             'autor' => 'required|string',
             'foto' => 'required', // Adapte a regra de validação para o campo 'foto' conforme necessário
             'edicao' => 'required|string',
-            'user_id' => 'required', // Não é necessário exists nesta versão
         ];
     }
 

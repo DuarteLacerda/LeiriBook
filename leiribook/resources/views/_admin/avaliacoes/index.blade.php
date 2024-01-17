@@ -22,7 +22,7 @@
         </ul>
     </div>
     <button onclick="location.href='{{ route('admin.avaliacoes.create') }}';" class="au-btn au-btn-icon au-btn--green">
-        <i class="fa fa-plus"></i>Adicionar Nova Avaliação</button>
+        <i class="fa fa-plus"></i>Nova Avaliação</button>
 @endsection
 
 @section('content')
@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="col-12">
                         <br>
-                        <h1>Lista</h1>
+                        <h1>Avaliações</h1>
                         <br>
                         @if (count($avaliacoes))
                             <div class="table-responsive table--no-card m-b-30">
@@ -45,7 +45,7 @@
                                             <th>Nível</th>
                                             <th>Utilizador</th>
                                             <th>Livro</th>
-                                            <th>Eliminar</th>
+                                            <th>Opções</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -53,15 +53,23 @@
                                             <tr>
                                                 <td>{{ $avaliacao->id }}</td>
                                                 <td class="text-left">
-                                                    {{ Str::limit($avaliacao->descricao, 30) }}
+                                                    {{ Str::limit($avaliacao->descricao, 20) }}
                                                 </td>
                                                 <td>{{ $avaliacao->nivel }}</td>
                                                 <td>{{ $avaliacao->user->name }}</td>
                                                 <td>{{ $avaliacao->livro->titulo }}</td>
                                                 <td>
+                                                    <a class="btn btn-primary btn-p" data-toggle="modal"
+                                                        data-target="#avaliacaoModal" data-avaliacao="{{ $avaliacao }}">
+                                                        <i class=" fas fa-eye fa-xs" style="color: white;"></i>
+                                                    </a>
+                                                    <a class="btn btn-warning btn-p"
+                                                        href="{{ route('admin.avaliacoes.edit', $avaliacao) }}">
+                                                        <i class="fas fa-edit fa-xs" style="color: white;"></i>
+                                                    </a>
                                                     <form method="POST"
                                                         action="{{ route('admin.avaliacoes.destroy', $avaliacao) }}"
-                                                        role="form" class="inline"
+                                                        role="form" class="d-inline"
                                                         onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
                                                         @csrf
                                                         @method('DELETE')
@@ -95,7 +103,6 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <!-- Avaliacao details will be inserted here -->
                     </div>
                 </div>
             </div>
@@ -105,15 +112,15 @@
 
 @section('scripts')
     <script>
-        // $('#avaliacaoModal').on('show.bs.modal', function(event) {
-        //     var button = $(event.relatedTarget)
-        //     var avaliacao = button.data('avaliacao')
+        $('#avaliacaoModal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var avaliacao = button.data('avaliacao')
 
-        //     var modal = $(this)
-        //     // modal.find('.modal-title').html('Descrição ' + faq.id + ' - Detalhes');
-        //     modal.find('.modal-body').html('<strong>Descrição:</strong> ' + avaliacao.descricao +
-        //         '<br><hr><strong>Nível:</strong> ' + avaliacao.nivel + '<br><hr><strong>Livro:</strong> ' + ((avaliacao
-        //             .livro === 0) ? 'Pendente' : 'Aprovado'))
-        // })
+            var modal = $(this)
+            modal.find('.modal-title').html('Avaliação Número: ' + avaliacao.id + ' - Detalhes');
+            modal.find('.modal-body').html('<strong>Descrição:</strong> ' + avaliacao.descricao +
+                '<br><hr><strong>Nível:</strong> ' + avaliacao.nivel + '<br><hr><strong>Livro:</strong> ' +
+                avaliacao.livro.titulo +'<br><hr><strong>Utilizador:</strong> ' +avaliacao.user.name)
+        })
     </script>
 @endsection
