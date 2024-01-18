@@ -19,7 +19,7 @@
     </div>
     <div class="sec4">
         <div class="secVid">
-            <video autoplay loop controls controlsList="nodownload">
+            <video autoplay loop controls controlsList="nodownload" poster="{{ asset('images/promoVideo.jpg') }}">
                 <source src="{{ asset('images/promoVideo.mp4') }}" type="video/mp4">
             </video>
         </div>
