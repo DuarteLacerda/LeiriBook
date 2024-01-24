@@ -92,6 +92,10 @@
                                 <i class="fas fa-book"></i>Livros</a>
                         </li>
                         <li>
+                            <a href="{{ route('admin.categorias.index') }}">
+                                <i class="fas fa-book"></i>Categorias</a>
+                        </li>
+                        <li>
                             <a href="{{ route('admin.pedidos.index') }}">
                                 <i class="fas fa-hand-point-up"></i>Pedidos</a>
                         </li>
