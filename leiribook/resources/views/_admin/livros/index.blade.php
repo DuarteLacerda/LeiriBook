@@ -42,6 +42,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Título</th>
+                                    <th>Categorias</th>
                                     <th>Capa</th>
                                     <th>+Info/Editar/Eliminar</th>
                                 </tr>
@@ -51,6 +52,8 @@
                                 <tr>
                                     <td>{{ $livro->id }}</td>
                                     <td class="text-left">{{ $livro->titulo }}</td>
+                                    <td><button onclick="location.href='{{ route('admin.livros.create') }}';" class="au-btn au-btn-icon au-btn--green">
+                                        <i class=" fas fa-eye fa-xs" style="color: white;"></i>Géneros</button></td>
                                     <td>
                                         <img style="width:50px; height:75px" src="{{ asset('storage/books/' . $livro->foto) }}">
                                     </td>
