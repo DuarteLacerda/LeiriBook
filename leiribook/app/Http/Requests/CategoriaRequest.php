@@ -26,7 +26,6 @@ class CategoriaRequest extends FormRequest
         return [
             'nome' => 'required|string',
             'descricao' => 'required|string',
-            'livro_id' => 'required',
         ];
     }
 
@@ -42,7 +41,6 @@ class CategoriaRequest extends FormRequest
             'nome.string' => 'O campo nome deve ser uma string.',
             'descricao.required' => 'O campo descricao é obrigatório.',
             'descricao.string' => 'O campo descricao deve ser uma string.',
-            'livro_id.required' => 'O campo livro_id é obrigatório.',
         ];
     }
 }
