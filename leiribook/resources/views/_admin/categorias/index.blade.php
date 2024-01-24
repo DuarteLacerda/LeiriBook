@@ -41,8 +41,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Título</th>
-                                    <th>Capa</th>
+                                    <th>Nome</th>
                                     <th>+Info/Editar/Eliminar</th>
                                 </tr>
                             </thead>
@@ -50,6 +49,7 @@
                                 @foreach ($categorias as $categoria)
                                 <tr>
                                     <td>{{ $categoria->id }}</td>
+                                    <td>{{ $categoria->nome }}</td>
                                     <td>
                                         <a class="btn btn-primary btn-p" data-toggle="modal" data-target="#categoriaModal"
                                             data-categoria="{{ $categoria }}">
@@ -109,7 +109,7 @@
 
         var modal = $(this)
         modal.find('.modal-title').html('Categoria ' + categoria.id + ' - Detalhes');
-        modal.find('.modal-body').html('<strong>Descrição:</strong> ' + livro.descricao)
+        modal.find('.modal-body').html('<strong>Nome:</strong> ' + categoria.nome + '<br><hr><strong>Descrição:</strong> ' + categoria.descricao)
 
     })
 </script>
