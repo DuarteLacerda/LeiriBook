@@ -13,26 +13,29 @@
 
     <button onclick="topFunction()" id="myBtn" title="Ir para cima"><i class="fa-solid fa-arrow-up"></i></button>
 
-    <div class="container-eventos">
+    <div class="container-eventos hide-content">
         <!-- ======= Event Section ======= -->
         <div id="sliders" onmouseover="onMouseOver(this)" onmouseout="onMouseOut(this)">
             @foreach ($eventosRecentes as $evento)
                 <div class="mySlides fade">
-                    <div class="prev" onclick="plusSlides(-1)">❮</div>
-
                     @if ($evento->fotos->isNotEmpty())
-                        <img class="slider" src="{{ asset('storage/eventos_fotos/' . $evento->fotos->first()->foto) }}"
-                            alt="" />
+                        <img class="slider" src="{{ asset('storage/eventos_fotos/' . $evento->fotos->first()->foto) }}" alt="" />
                     @else
-                        <img class="slider" src="{{ asset('storage/eventos_fotos/logo_default_horizontal.png') }}"
-                            alt="" />
+                        <img class="slider" src="{{ asset('storage/eventos_fotos/logo_default_horizontal.png') }}" alt="" />
                     @endif
+
+                    <div class="button-container">
+                        <div class="prev" onclick="plusSlides(-1)">❮</div>
+                        <div class="next" onclick="plusSlides(1)">❯</div>
+                    </div>
 
                     <div class="text">{{ $evento->nome }} | {{ date('d-m-y', strtotime($evento->data_inicio)) }} /
                         {{ date('d-m-y', strtotime($evento->data_fim)) }}</div>
-                    <div class="next" onclick="plusSlides(1)">❯</div>
-                </div>
+                    </div>
             @endforeach
+            <!-- ... other code ... -->
+        </div>
+
             <div class="dots" style="text-align:center">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
@@ -51,13 +54,13 @@
 
         <div id="botaodatas" class="btn-group mt-3 vertical-align-buttons" role="group" aria-label="Event Filters">
 
-            <a class="btn btn-dark {{ request()->route('listar') == 'todos' || request()->route('listar') == null ? 'active' : '' }}"
+            <a id="datas_botoes" class="btn btn-dark {{ request()->route('listar') == 'todos' || request()->route('listar') == null ? 'active' : '' }}"
                 href="{{ route('eventos', ['listar' => 'todos']) }}">Todos os eventos</a>
-            <a class="btn btn-dark {{ request()->route('listar') == 'decorrer' ? 'active' : '' }}"
+            <a id="datas_botoes" class="btn btn-dark {{ request()->route('listar') == 'decorrer' ? 'active' : '' }}"
                 href="{{ route('eventos', ['listar' => 'decorrer']) }}">Eventos a decorrer</a>
-            <a class="btn btn-dark {{ request()->route('listar') == 'futuros' ? 'active' : '' }}"
+            <a id="datas_botoes" class="btn btn-dark {{ request()->route('listar') == 'futuros' ? 'active' : '' }}"
                 href="{{ route('eventos', ['listar' => 'futuros']) }}">Eventos futuros</a>
-            <a class="btn btn-dark {{ request()->route('listar') == 'passados' ? 'active' : '' }}"
+            <a id="datas_botoes" class="btn btn-dark {{ request()->route('listar') == 'passados' ? 'active' : '' }}"
                 href="{{ route('eventos', ['listar' => 'passados']) }}">Eventos passados</a>
         </div>
 
@@ -84,15 +87,15 @@
                                 <div class="card-body p-4">
                                     <div class="text-center">
 
-                                        <h5 class="fw-bolder">{{ $evento->nome }}</h5>
-                                        <label id="datas">{{ date('d-m-y', strtotime($evento->data_inicio)) }} /
-                                            {{ date('d-m-y', strtotime($evento->data_fim)) }}</label>
+                                        <h5 id="titulo_evento" class="fw-bolder">{{ $evento->nome }}</h5>
+                                            <label class="datas" id="data-inicio">De: {{ date('d-m-y', strtotime($evento->data_inicio)) }}</label>
+                                            <label class="datas" id="data-fim">Até: {{ date('d-m-y', strtotime($evento->data_fim)) }}</label>
                                     </div>
                                 </div>
 
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                     <div class="text-center">
-                                        <a class="btn btn-dark btn-block gradient-custom-2 mb-3"
+                                        <a id="botao_detalhes" class="btn btn-primary btn-block gradient-custom-2 mb-3"
                                             href="{{ route('evento', str_replace(' ', '-', $evento->nome)) }}">Ver
                                             detalhes</a>
                                     </div>
@@ -109,7 +112,7 @@
             </div>
         </div>
 
-        <div id="botao_evento" class="text-center"><a class="btn btn-dark btn-block gradient-custom-2 mb-3"
+        <div id="botao_evento" class="text-center"><a id="botao_eventos" class="btn btn-dark btn-block gradient-custom-2 mb-3"
                 href="{{ route('home') }}">Voltar à página principal</a>
         </div>
         <hr>

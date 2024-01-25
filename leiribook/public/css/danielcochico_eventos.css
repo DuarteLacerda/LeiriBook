@@ -7,6 +7,20 @@ body {
     text-align: center;
 }
 
+#sliders {
+    position: relative;
+}
+
+.button-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 #myBtn {
     display: none;
     width: 50px;
@@ -32,13 +46,22 @@ body {
 
 .container-eventos {
     margin-top: 75px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
+.container-eventos.show {
+    opacity: 1;
+}
+
+
 .mySlides {
-    display: none;
+    position: relative;
     width: 100%;
     height: 80vh;
+    min-height: 300px;
     transition: transform 0.5s ease-in-out;
+    overflow: hidden;
 }
 
 .fade {
@@ -70,9 +93,6 @@ body {
 .prev,
 .next {
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
     padding: 15px;
     color: white;
     background-color: rgba(0, 0, 0, 0.8);
@@ -88,20 +108,18 @@ body {
     transition: 0.6s ease;
 }
 
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
 
 .text {
     color: white;
-    font-size: 16px;
+    margin: auto;
+    font-size: 14pt;
     padding: 20px;
     width: 100%;
     text-align: center;
     background-color: black;
     opacity: 0.9;
-    margin-top: -64px;
+    margin-top: -65px;
+
 }
 
 .dots {
@@ -146,7 +164,7 @@ body {
 }
 
 .eventos-carta {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgb(0, 47, 255) 1px 1px 8px;
     border-radius: 15px;
     transition: opacity 0.6s ease-in-out;
     opacity: 0;
@@ -158,7 +176,7 @@ body {
 
 .eventos-carta:hover,
 .eventos-carta:hover #carta_border {
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(235, 240, 250);
 }
 
 #carta_border {
@@ -172,12 +190,115 @@ body {
     margin-top: 25px;
 }
 
+.datas {
+    display: block;
+    margin-top: 5px;
+}
+
 #botao_evento {
     margin-top: 25px;
     margin-bottom: 25px;
     user-select: none;
 }
 
+@media screen and (max-width: 1300px) and (min-width: 1000px) {
+    .text{
+        font-size: 16pt;
+    }
+
+    #caminho{
+        font-size: 22pt;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    #datas_botoes{
+        font-size: 20pt;
+    }
+
+    #titulo_evento{
+        font-size: 24pt;
+    }
+
+    .datas{
+        font-size: 20pt;
+    }
+
+    #botao_detalhes{
+        font-size: 16pt;
+    }
+
+    #botao_eventos{
+        font-size: 18pt;
+    }
+
+}
+
+@media screen and (max-width: 1000px) and (min-width: 900px) {
+    .text{
+        font-size: 16pt;
+    }
+
+    #caminho{
+        font-size: 20pt;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    #datas_botoes{
+        font-size: 18pt;
+    }
+
+    #titulo_evento{
+        font-size: 24pt;
+    }
+
+    .datas{
+        font-size: 18pt;
+    }
+
+    #botao_detalhes{
+        font-size: 18pt;
+    }
+
+    #botao_eventos{
+        font-size: 16pt;
+    }
+
+}
+
+@media screen and (max-width: 900px) and (min-width: 768px) {
+    .text{
+        font-size: 16pt;
+    }
+
+    #caminho{
+        font-size: 18pt;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    #datas_botoes{
+        font-size: 16pt;
+    }
+
+    #titulo_evento{
+        font-size: 20pt;
+    }
+
+    .datas{
+        font-size: 16pt;
+    }
+
+    #botao_detalhes{
+        font-size: 16pt;
+    }
+
+    #botao_eventos{
+        font-size: 16pt;
+    }
+
+}
 
 @media only screen and (max-width: 768px) {
 
@@ -196,21 +317,79 @@ body {
 
     .text {
         margin-top: -60px;
+        font-size: 12pt;
     }
 
     .prev,
-    .next,
-    .text {
+    .next{
         font-size: 14px
     }
 
     #caminho {
         text-align: center;
         margin-left: 0;
+        font-size: 14pt;
     }
 
-    #datas {
-        font-size: 9pt;
+    #datas_botoes{
+        font-size: 14pt;
+    }
+
+    #titulo_evento{
+        font-size: 16pt;
+    }
+
+    .datas{
+        font-size: 14pt;
+    }
+
+}
+
+@media screen and (max-width: 400px) and (min-width: 370px) {
+
+    .datas{
+        font-size: 13pt;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+
+    .datas{
+        font-size: 11.5pt;
+    }
+}
+
+@media screen and (max-width: 300px) and (min-width: 100px) {
+    .text{
+        font-size: 10pt;
+    }
+
+    #caminho{
+        font-size: 10pt;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    #datas_botoes{
+        font-size: 8pt;
+    }
+
+    #titulo_evento{
+        font-size: 11pt;
+    }
+
+    .datas{
+        font-size: 12pt;
+    }
+
+    #botao_detalhes{
+        font-size: 10pt;
+        margin: auto 0;
+        justify-content: center;
+    }
+
+    #botao_eventos{
+        font-size: 10pt;
     }
 
 }

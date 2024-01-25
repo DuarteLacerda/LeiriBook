@@ -128,7 +128,7 @@ h2::after {
 #texto {
     padding: 40px;
     margin-bottom: 15px;
-    text-align: justify;
+    text-align: left;
     margin-top: 20px;
     font-size: 14pt;
 }
@@ -145,11 +145,61 @@ h2::after {
     text-decoration: none;
 }
 
+@media screen and (max-width: 1300px) and (min-width: 800px) {
+    #caminho{
+        font-size: 16pt;
+    }
+    #localidade{
+        font-size: 16pt;
+    }
+    #local{
+        font-size: 16pt;
+    }
+    #datas{
+        font-size: 16pt;
+    }
+    #data_inicio{
+        font-size: 16pt;
+    }
+    #data_fim{
+        font-size: 16pt;
+    }
+    #botao_eventos{
+        font-size: 18pt;
+    }
+    #texto {
+        font-size: 20pt;
+    }
+}
+
 @media only screen and (max-width: 768px) {
 
     #caminho {
         text-align: center;
         margin-left: 0;
+        font-size: 16pt;
+    }
+
+    #localidade{
+        font-size: 14pt;
+    }
+    #local{
+        font-size: 14pt;
+    }
+    #datas{
+        font-size: 14pt;
+    }
+    #data_inicio{
+        font-size: 14pt;
+    }
+    #data_fim{
+        font-size: 14pt;
+    }
+    #botao_eventos{
+        font-size: 14pt;
+    }
+    #texto {
+        font-size: 14pt;
     }
 
     #titulo {
@@ -173,3 +223,29 @@ h2::after {
 
 }
 
+@media screen and (max-width: 300px) and (min-width: 100px) {
+    #caminho{
+        font-size: 12pt;
+    }
+    #localidade{
+        font-size: 10pt;
+    }
+    #local{
+        font-size: 10pt;
+    }
+    #datas{
+        font-size: 10pt;
+    }
+    #data_inicio{
+        font-size: 10pt;
+    }
+    #data_fim{
+        font-size: 10pt;
+    }
+    #botao_eventos{
+        font-size: 10pt;
+    }
+    #texto {
+        font-size: 12pt;
+    }
+}

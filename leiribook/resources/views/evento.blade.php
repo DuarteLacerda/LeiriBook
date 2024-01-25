@@ -28,7 +28,7 @@
 
                 <h1 id="titulo">{{ $evento->nome }}</h1>
             <div class="row">
-                <div class="col-lg-8 col-sm-12 text-center">
+                <div class="col-lg-7 col-sm-12 text-center">
                     <section id="slider" class="splide">
                         <div class="splide__track">
                             <ul class="splide__list">
@@ -60,26 +60,26 @@
                         @endif
                     </ul>
                 </div>
-                <div class="col-lg-4 col-sm-12" id="labels">
+                <div class="col-lg-5 col-sm-12" id="labels">
 
                     <h1 id="detalhes">Detalhes do Evento</h1>
 
                     <table class="table table-bordered text-start">
                         <tbody>
                             <tr class="table-active">
-                                <td>Localidade</td>
+                                <td id="localidade">Localidade</td>
                             </tr>
                             <tr>
-                                <td>{{ $evento->local }}</td>
+                                <td id="local">{{ $evento->local }}</td>
                             </tr>
                             <tr class="table-active">
-                                <td>Datas</td>
+                                <td id="datas">Datas</td>
                             </tr>
                             <tr>
-                                <td>Data Inícial - {{ date('d-m-y', strtotime($evento->data_inicio)) }}</td>
+                                <td id="data_inicio">Data Inícial - {{ date('d-m-y', strtotime($evento->data_inicio)) }}</td>
                             </tr>
                             <tr>
-                                <td>Data Final - {{ date('d-m-y', strtotime($evento->data_fim)) }}</td>
+                                <td id="data_fim">Data Final - {{ date('d-m-y', strtotime($evento->data_fim)) }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -95,7 +95,7 @@
                     </div>
                 </div>
             </div>
-            <div id="botao_evento" class="text-center"><a class="btn btn-dark btn-block gradient-custom-2 mb-3"
+            <div id="botao_evento" class="text-center"><a id="botao_eventos" class="btn btn-primary btn-block gradient-custom-2 mb-3"
                     href="{{ route('eventos') }}">Voltar aos eventos</a></div>
         </div>
 
