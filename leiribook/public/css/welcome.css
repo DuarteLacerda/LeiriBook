@@ -12,13 +12,19 @@
     background-color: transparent;
 }
 
-.sec1 {
-    height: 100vh;
+.cont {
     background: url('../images/bg-home.jpg');
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: darken;
+}
+
+.sec1 {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -81,6 +87,20 @@
         transform: translateY(0);
         opacity: 0;
     }
+}
+
+.sec4 {
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #ffffff;
+}
+
+.secVid {
+    width: 75%;
+    object-fit: cover;
+    border-radius: 0.5rem;
 }
 
 .sec2 {
@@ -197,9 +217,6 @@
 
 .sec3 {
     height: 80vh;
-    background-image: url('../images/bg-home.jpg');
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: darken;
     display: flex;
     justify-content: center;
     align-items: center;
