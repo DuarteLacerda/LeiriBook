@@ -68,7 +68,7 @@ class CategoriaController extends Controller
     public function destroy(Categoria $categoria)
     {
         //
-
+        $categoria->livros()->detach();
         $categoria->delete();
         return redirect()->route('admin.categorias.index')->with(
             'success',

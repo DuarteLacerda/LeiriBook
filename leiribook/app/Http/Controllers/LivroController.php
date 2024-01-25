@@ -158,6 +158,7 @@ class LivroController extends Controller
     {
         //
         Storage::disk('public')->delete('books/' . $livro->foto);
+        $livro->categorias()->detach();
         $livro->delete();
         return redirect()->route('admin.livros.index')->with(
             'success',
