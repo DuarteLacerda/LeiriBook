@@ -153,6 +153,24 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-newspaper"></i>Notícias
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{ route('admin.noticias.index') }}">
+                                        </i>Listagem de Notícias</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('admin.noticias.create') }}">
+                                        </i>Nova Notícia</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -351,6 +369,24 @@
                                     <li>
                                         <a href="{{ route('admin.faqs.create') }}">
                                             Nova Pergunta</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="js-arrow" href="#">
+                                    <i class="fas fa-newspaper"></i>Notícias
+                                    <span class="arrow">
+                                        <i class="fas fa-angle-down"></i>
+                                    </span>
+                                </a>
+                                <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                    <li>
+                                        <a href="{{ route('admin.noticias.index') }}">
+                                            </i>Listagem de Notícias</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('admin.noticias.create') }}">
+                                            </i>Nova Notícia</a>
                                     </li>
                                 </ul>
                             </li>

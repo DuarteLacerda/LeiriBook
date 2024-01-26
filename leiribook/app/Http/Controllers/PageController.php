@@ -6,6 +6,7 @@ use App\Models\Faq;
 use App\Models\User;
 use App\Models\Livro;
 use App\Models\Evento;
+use App\Models\Noticia;
 use App\Models\Avaliacao;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -127,6 +128,7 @@ class PageController extends Controller
         $count_faqs = Faq::count();
         $count_eventos = Evento::count();
         $count_avaliacoes = Avaliacao::count();
+        $count_noticias = Noticia::count();
         $count_users_per_role = User::select('role', DB::raw('count(*) as count'))->groupBy('role')->get();
         return view('_admin.dashboard', compact(
             'count_livros',
@@ -134,7 +136,8 @@ class PageController extends Controller
             'count_faqs',
             'count_eventos',
             'count_users_per_role',
-            'count_avaliacoes'
+            'count_avaliacoes',
+            'count_noticias'
         ));
     }
 

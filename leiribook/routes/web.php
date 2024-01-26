@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LivroController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\AvaliacaoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\EventoPhotoController;
@@ -61,6 +62,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::resource('users', UserController::class);
         Route::resource('livros', LivroController::class);
         Route::resource('livros_categorias', LivroCategoriaController::class)->except(['show']);
+        Route::resource('noticias', NoticiaController::class);
         Route::get('/livros_categorias/{id}', [LivroCategoriaController::class, 'index'])
         ->name('livros_categorias.index');
         Route::delete('/livros_categorias/{livro}/{categoria}', [LivroCategoriaController::class, 'destroy'])

@@ -109,7 +109,7 @@
                             <span aria-hidden="true"><i class="fas fa-times" style="color: blue"></i></span>
                         </button>
                     </div>
-                    <div class="modal-body text-center">
+                    <div class="modal-body">
                         <!-- Eventos details will be inserted here -->
                     </div>
                 </div>

@@ -68,6 +68,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-12 col-md-3">
+                    <div class="card shadow">
+                        <div class="card-header p-4">
+                            <h1 style="display:inline;"> {{ $count_noticias }} </h1>
+                            <h3 style="display:inline;"> Notícias </h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

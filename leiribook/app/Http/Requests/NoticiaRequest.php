@@ -27,8 +27,7 @@ class NoticiaRequest extends FormRequest
             'titulo' => 'required|string',
             'descricao' => 'required|string',
             'data' => 'required|date',
-            'foto' => 'required', // Adapte a regra de validação para o campo 'foto' conforme necessário
-            'user_id' => 'required', // Não é necessário exists nesta versão
+            'foto' => ($this->noticia? 'nullable':'required').'|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
 
@@ -47,6 +46,9 @@ class NoticiaRequest extends FormRequest
             'data.required' => 'O campo data é obrigatório.',
             'data.date' => 'O campo data deve ser uma data válida.',
             'foto.required' => 'O campo foto é obrigatório.',
+            'foto.image' => 'O arquivo deve ser uma imagem.',
+            'foto.mimes' => 'O arquivo deve ser do tipo: jpeg, png, jpg, gif ou svg.',
+            'foto.max' => 'A foto não deve ser maior que 2048 kilobytes.',
             'user_id.required' => 'O campo user_id é obrigatório.',
         ];
     }
