@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('interesses', function (Blueprint $table) {
             $table->id();
-            $table->date('data_leitura');
+            $table->date('data_leitura')->nullable();
             $table->enum('estado', ['lido', 'a_ler', 'quero_ler']);
             $table->unsignedBigInteger('livro_id');
             $table->foreign('livro_id')->references('id')->on('livros');
@@ -22,6 +22,7 @@ return new class extends Migration
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      */

@@ -65,6 +65,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::resource('noticias', NoticiaController::class);
         Route::get('/livros_categorias/{id}', [LivroCategoriaController::class, 'index'])
         ->name('livros_categorias.index');
+        Route::get('/livros_categorias/create/{livroId}', [LivroCategoriaController::class, 'create'])
+    ->name('livros_categorias.create');
+    Route::post('/livros_categorias/{livroId}', [LivroCategoriaController::class, 'store'])
+    ->name('livros_categorias.store');
         Route::delete('/livros_categorias/{livro}/{categoria}', [LivroCategoriaController::class, 'destroy'])
         ->name('livros_categorias.destroy');
 

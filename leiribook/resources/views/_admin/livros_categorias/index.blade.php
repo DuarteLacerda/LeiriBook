@@ -21,7 +21,7 @@
         </li>
     </ul>
 </div>
-<button onclick="location.href='{{ route('admin.livros_categorias.create') }}';" class="au-btn au-btn-icon au-btn--green">
+<button onclick="location.href='{{ route('admin.livros_categorias.create', ['livroId' => $livro->id]) }}';" class="au-btn au-btn-icon au-btn--green">
     <i class="fa fa-plus"></i>Adicionar novo género a este livro</button>
 @endsection
 
