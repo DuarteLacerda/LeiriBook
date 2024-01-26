@@ -20,18 +20,19 @@
                 @if (count($categorias) > 1)
                     @foreach ($categorias as $categoria)
                         {{ $categoria->nome }},
-            </p>
+
             @endforeach
+        </p>
         @else
             @foreach ($categorias as $categoria)
                 {{ $categoria->nome }}
             @endforeach
             @endif
             <br><select name="estado" id="estado" class="select-css">
-                <option value="-">Não lido</option> <!-- Default option -->
-                <option value="lido">Lido</option> <!-- Default option -->
-                <option value="a_ler">A ler</option> <!-- Default option -->
-                <option value="quero_ler">Quero ler</option> <!-- Default option -->
+                <option value="-" {{ $interesseEstado === '-' ? 'selected' : '' }}>Não lido</option>
+                <option value="lido" {{ $interesseEstado === 'lido' ? 'selected' : '' }}>Lido</option>
+                <option value="a_ler" {{ $interesseEstado === 'a_ler' ? 'selected' : '' }}>A ler</option>
+                <option value="quero_ler" {{ $interesseEstado === 'quero_ler' ? 'selected' : '' }}>Quero ler</option>
             </select>
 </p>
 

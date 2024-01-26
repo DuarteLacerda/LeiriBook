@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Livro;
 use App\Models\Categoria;
+use App\Models\Interesse;
 use Illuminate\Http\Request;
 use App\Http\Requests\LivroRequest;
 use Illuminate\Support\Facades\Storage;
@@ -77,9 +78,17 @@ class LivroController extends Controller
             $categoriaNome = $categoria->nome;
             // Do something with $categoriaNome
         }
+        // Get the authenticated user's ID
+    $userId = auth()->id();
+
+    // Retrieve the Interesse record for the user and livro
+    $interesse = Interesse::where('user_id', $userId)
+        ->where('livro_id', $id)
+        ->first();
+        $interesseEstado = $interesse ? $interesse->estado : '-';
 
         // Return or use the retrieved data as needed
-        return view('livro_detalhe', compact('livroTitulo', 'livroDescricao', 'livroAutor', 'livroFoto', 'livroEdicao', 'categorias'));
+        return view('livro_detalhe', compact('livroTitulo', 'livroDescricao', 'livroAutor', 'livroFoto', 'livroEdicao', 'categorias', 'interesseEstado'));
 
 
     }
