@@ -108,6 +108,30 @@ class PageController extends Controller
         return view('eventos', compact('eventos', 'eventosRecentes'));
     }
 
+    public function noticia($titulo)
+    {
+
+        $noticia = Noticia::where('titulo', $titulo)->firstOrFail();
+
+        $tituloPagina = $noticia->titulo;
+
+        return view('noticia', compact('noticia', 'tituloPagina'));
+    }
+
+
+
+    public function noticias($listar = null)
+    {
+        $noticiasRecentes = Noticia::orderBy('data', 'desc')
+            ->take(4)
+            ->get();
+
+        $noticias = Noticia::orderBy('data', 'desc')->paginate(10);
+
+        return view('noticias', compact('noticias', 'noticiasRecentes'));
+    }
+
+
     public function faqs()
     {
         $faqs = Faq::where('approved', '=', 1)->get();

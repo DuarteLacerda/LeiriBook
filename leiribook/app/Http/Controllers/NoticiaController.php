@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Noticia;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -24,6 +25,7 @@ class NoticiaController extends Controller
     {
         //
         $noticia = new Noticia;
+
         return view('_admin.noticias.create', compact("noticia"));
     }
 
@@ -38,6 +40,8 @@ class NoticiaController extends Controller
         }
 
         $fields['user_id'] = auth()->user()->id;
+
+        $fields['data'] = $fields['data'] ?? Carbon::now()->toDateString();
 
         $noticia = Noticia::create($fields);
 

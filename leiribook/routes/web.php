@@ -34,6 +34,8 @@ Route::get('/pedido_livro', [PageController::class, 'pedido_livro'])->name('pedi
 Route::get('/pedidos', [PageController::class, 'pedidos'])->name('pedidos');
 Route::get('/evento/{nome}', [PageController::class, 'evento'])->name('evento')->where('nome', '[\w\d\-\_]+');
 Route::get('/eventos/{listar?}', [PageController::class, 'eventos'])->name('eventos');
+Route::get('/noticia/{nome}', [PageController::class, 'noticia'])->name('noticia');
+Route::get('/noticias/{listar?}', [PageController::class, 'noticias'])->name('noticias');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 Route::get('/livro_detalhe/{id}', [LivroController::class, 'livro_detalhe'])->name('livro_detalhe');
 Route::get('/biblioteca', [LivroController::class, 'biblioteca'])->name('biblioteca');

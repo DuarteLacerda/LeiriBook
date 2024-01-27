@@ -20,6 +20,9 @@
                     <li>
                         <a href="{{ route('contactos') }}" class="text-dark text-decoration-none">Contactos</a>
                     </li>
+                    <li>
+                        <a href="{{ route('noticias') }}" class="text-dark text-decoration-none">Notícias</a>
+                    </li>
                 </ul>
             </div>
             <!--Grid column-->

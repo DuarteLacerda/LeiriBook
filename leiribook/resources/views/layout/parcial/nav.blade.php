@@ -31,6 +31,8 @@
                             @if (Route::currentRouteName() == 'contactos') class="active" @endif>Contactos</a></li>
                     <li><a href="{{ route('pedidos') }}"
                             @if (Route::currentRouteName() == 'pedidos') class="active" @endif>Pedidos</a></li>
+                    <li><a href="{{ route('noticias') }}"
+                            @if (Route::currentRouteName() == 'noticias') class="active" @endif>Notícias</a></li>
                 </div>
             </ul>
             <ul>
@@ -112,6 +114,7 @@
                 <li><a href="{{ route('eventos') }}">Eventos</a></li>
                 <li><a href="{{ route('contactos') }}">Contactos</a></li>
                 <li><a href="{{ route('pedidos') }}">Pedidos</a></li>
+                <li><a href="{{ route('noticias') }}">Notícias</a></li>
                 </a></li>
             </div>
         </div>

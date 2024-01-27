@@ -41,7 +41,7 @@ class EventoFotoRequest extends FormRequest
             'titulo.required' => 'O campo título é obrigatório.',
             'titulo.string' => 'O campo título deve ser uma string.',
             'titulo.unique' => 'O título desta imagem já existe noutro registo.',
-            'fotos.required' => 'O campo fotos é obrigatório.',
+            'foto.required' => 'O campo fotos é obrigatório.',
             'foto.image' => 'O arquivo deve ser uma imagem.',
             'foto.mimes' => 'O arquivo deve ser do tipo: jpeg, png, jpg, gif ou svg.',
             'foto.max' => 'A foto não deve ser maior que 2048 kilobytes.',
