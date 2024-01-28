@@ -12,6 +12,44 @@ body {
     padding-top: 50px;
 }
 
+/*scroll bar*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #b2b2b2;
+    border-radius: 3px;
+    background-clip: padding-box;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}
+
+
+
+
+.highlight {
+    background-color: rgba(255, 208, 67, 0.649);
+    font-weight: bold;
+}
+
+
+
+
+
 #tc-section {
     width: 60svw;
     margin-left: auto !important;
@@ -215,8 +253,9 @@ textarea {
 .pedidos-container {
     margin-left: auto;
     margin-right: auto;
-    width: 70svw;
-    border: 1px solid var(--color-dark-blue);
+    width: 80svw;
+    margin-bottom: 8svh;
+    /*border: 1px solid var(--color-dark-blue);*/
 }
 
 /* TOP BAR */
@@ -296,8 +335,16 @@ textarea {
 
 /* CARD */
 .pedido-card {
-    border: 1px solid var(--color-subtitle);
     border-radius: 2rem;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    height: 15rem;
+    /* Set a fixed height for the card */
+    overflow: hidden;
+    /* Hide any overflow content */
+    position: relative;
+    /* Set position to relative */
+    margin-bottom: 1rem;
+    /* Add margin at the bottom for spacing */
 }
 
 .pedido-foto {
@@ -326,11 +373,17 @@ textarea {
 }
 
 .list-card .pedido-info {
+    padding: 1.5rem 1rem;
     width: 80%;
-    margin: 0;
-    padding: 1rem;
-    height: 100%;
-    position: relative;
+    position: absolute;
+    /* Set position to absolute */
+    top: 0;
+    /* Position at the top of the relative container */
+    /* Position at the left of the relative container */
+    right: 0;
+    /* Position at the right of the relative container */
+    bottom: 0;
+    /* Position at the bottom of the relative container */
 }
 
 .list-card .pedido-info .card-user {
@@ -341,6 +394,15 @@ textarea {
     bottom: 0;
     right: 0;
     padding-right: 1rem;
+}
+
+.list-card .pedido-info .card-title {
+    margin-top: 0;
+    white-space: nowrap;
+    /* Prevent title from wrapping to a new line */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Display an ellipsis (...) for overflow text */
 }
 
 .list-card .pedido-info .card-desc {
@@ -357,7 +419,78 @@ textarea {
 
 
 /* GRID CARD */
+.pedidos-list {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 0 1rem;
+}
 
+.vertical-card {
+    position: relative;
+    width: 20svw;
+    height: auto;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.vertical-card .pedido-foto {
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+}
+
+.vertical-card .pedido-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vertical-card .pedido-info {
+    padding: 1rem;
+    position: relative;
+    height: 32svh;
+}
+
+.vertical-card .pedido-info .card-title {
+    margin-top: 0;
+}
+
+.vertical-card .pedido-info .card-desc-wrapper {
+    position: relative;
+    padding-bottom: 1rem;
+
+}
+
+.vertical-card .pedido-info .card-desc-wrapper::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 9svh;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 40%, rgba(255, 255, 255, 0));
+    /*background-size: 100% 100%;*/
+    /*background-position: 0 100%;*/
+}
+
+.vertical-card .pedido-info .card-desc {
+    height: 9svh;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: var(--color-grey-dark);
+}
+
+.vertical-card .pedido-info .card-user {
+    position: absolute;
+    bottom: 0.1rem;
+    left: 1rem;
+    font-size: 90%;
+    font-style: italic;
+    color: var(--color-grey-dark);
+}
 
 
 

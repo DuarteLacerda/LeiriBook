@@ -21,7 +21,7 @@
             </div>
             <div class="search-bar">
                 <!-- Adicione a barra de pesquisa aqui -->
-                <input type="text" placeholder="Pesquisar">
+                <input type="text" id="searchBar" placeholder="Pesquisar">
                 <button id="search-btn"><span class="icon">🔍</span></button>
             </div>
         </div>
@@ -35,12 +35,16 @@
                     </div>
                     <div class="pedido-info">
                         <h4 class="card-title">{{ $pedido->titulo }}</h4>
-                        <p class="card-desc">{{ $pedido->descricao }}</p>
+                        <div class="card-desc-wrapper">
+                            <p class="card-desc">{{ $pedido->descricao }}</p>
+                        </div>
                         <p class="card-user">pedido por {{ $pedido->usuario->name }}</p>
                     </div>
                 </div>
             @endforeach
         </div>
     </div>
-
+@section('scripts')
+    <script src="{{ asset('js/paulo.js') }}"></script>
+@endsection
 @endsection

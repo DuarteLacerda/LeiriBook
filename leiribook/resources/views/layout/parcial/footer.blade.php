@@ -5,20 +5,23 @@
         <div class="row">
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                <h5 class="text-uppercase text-dark mb-4">Navegação</h5>
+                <h5 class="text-uppercase text-dark mb-4">Outras Páginas</h5>
 
                 <ul class="list-unstyled mb-4">
                     <li>
-                        <a href="#" class="text-dark text-decoration-none">Sobre</a>
+                        <a href="{{ route('sobre') }}" class="text-dark text-decoration-none">Sobre</a>
                     </li>
                     <li>
-                        <a href="#" class="text-dark text-decoration-none">Biblioteca Virtual</a>
+                        <a href="{{ route('biblioteca') }}" class="text-dark text-decoration-none">Biblioteca Virtual</a>
                     </li>
                     <li>
                         <a href="{{ route('eventos') }}" class="text-dark text-decoration-none">Eventos</a>
                     </li>
                     <li>
                         <a href="{{ route('contactos') }}" class="text-dark text-decoration-none">Contactos</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('pedido_livro') }}" class="text-dark text-decoration-none">Fazer Pedido</a>
                     </li>
                 </ul>
             </div>

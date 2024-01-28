@@ -8,6 +8,8 @@ use App\Http\Requests\PedidoRequest;
 use Illuminate\Http\Request;
 use App\Models\Pedido;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
+
 
 class PedidoController extends Controller
 {
@@ -29,7 +31,8 @@ class PedidoController extends Controller
         }
 
         // Hardcode user_id for now (replace with actual user ID later)
-        $user_id = 1;
+        $user = Auth::user();
+        $user_id = $user->id;
 
         // Store the form data in the database
         Pedido::create([
