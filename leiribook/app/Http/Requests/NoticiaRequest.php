@@ -26,7 +26,7 @@ class NoticiaRequest extends FormRequest
         return [
             'titulo' => 'required|string',
             'descricao' => 'required|string',
-            'data' => 'required|date',
+            'data' => 'nullable|date',
             'foto' => ($this->noticia? 'nullable':'required').'|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }

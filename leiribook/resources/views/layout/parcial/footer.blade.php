@@ -15,13 +15,16 @@
                         <a href="{{ route('biblioteca') }}" class="text-dark text-decoration-none">Biblioteca Virtual</a>
                     </li>
                     <li>
+                        <a href="{{ route('pedido_livro') }}" class="text-dark text-decoration-none">Fazer Pedido</a>
+                    </li>
+                    <li>
                         <a href="{{ route('eventos') }}" class="text-dark text-decoration-none">Eventos</a>
                     </li>
                     <li>
                         <a href="{{ route('contactos') }}" class="text-dark text-decoration-none">Contactos</a>
                     </li>
                     <li>
-                        <a href="{{ route('pedido_livro') }}" class="text-dark text-decoration-none">Fazer Pedido</a>
+                        <a href="{{ route('noticias') }}" class="text-dark text-decoration-none">Notícias</a>
                     </li>
                 </ul>
             </div>

@@ -1,16 +1,9 @@
 <div class="row">
-    <div class="col-6">
+    <div class="col">
         <div class="form-group">
             <label for="titulo" class="control-label mb-1">Titulo:</label>
             <input id="titulo" name="titulo" type="text" class="form-control"
                 aria-required="true" aria-invalid="false" value="{{ old('titulo',$noticia->titulo) }}">
-        </div>
-    </div>
-    <div class="col-6">
-        <div class="form-group">
-            <label for="data" class="control-label mb-1">Data:</label>
-            <input id="data" name="data" type="date" class="form-control"
-                aria-required="true" aria-invalid="false" value="{{ old('data',$noticia->data) }}">
         </div>
     </div>
 </div>
@@ -20,7 +13,7 @@
         data-val="true" rows="5">{{ old('descricao',$noticia->descricao) }}</textarea>
 </div>
 <div class="row">
-    <div class="col-6 mb-3">
+    <div class="col mb-3">
         <div class="form-group">
             <label for="foto" class=" form-control-label">Inserir</label>
             <input type="file" id="foto" name="foto" class="form-control-file" onchange="previewFile()">
