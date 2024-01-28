@@ -38,12 +38,18 @@
                         <div class="card-desc-wrapper">
                             <p class="card-desc">{{ $pedido->descricao }}</p>
                         </div>
-                        <p class="card-user">pedido por {{ $pedido->usuario->name }}</p>
+                        <p class="card-user">pedido por {{ $pedido->user->name }}</p>
                     </div>
                 </div>
             @endforeach
+
         </div>
+
     </div>
+    <div class="pageBar">
+        {{ $pedidos->links() }}
+    </div>
+
 @section('scripts')
     <script src="{{ asset('js/paulo.js') }}"></script>
 @endsection

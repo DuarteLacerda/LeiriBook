@@ -30,7 +30,7 @@ Route::get('/sobre', [PageController::class, 'sobrenos'])->name('sobre');
 Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos');
 Route::get('/politica_privacidade', [PageController::class, 'politica_privacidade'])->name('politica_privacidade');
 Route::get('/termos_e_condicoes', [PageController::class, 'termos_e_condicoes'])->name('termos_e_condicoes');
-Route::get('/pedido_livro', [PageController::class, 'pedido_livro'])->name('pedido_livro');
+
 Route::get('/pedidos', [PageController::class, 'pedidos'])->name('pedidos');
 Route::get('/evento/{nome}', [PageController::class, 'evento'])->name('evento')->where('nome', '[\w\d\-\_]+');
 Route::get('/eventos/{listar?}', [PageController::class, 'eventos'])->name('eventos');
@@ -40,7 +40,7 @@ Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 Route::get('/livro_detalhe/{id}', [LivroController::class, 'livro_detalhe'])->name('livro_detalhe');
 Route::get('/biblioteca', [LivroController::class, 'biblioteca'])->name('biblioteca');
 Route::get('/pedidos', [PedidoController::class, 'showPedidos'])->name('pedidos');
-Route::post('/enviar-pedido', [PedidoController::class, 'pedido'])->name('enviar-pedido');
+
 
 Route::get('/avaliacao', [PageController::class, 'avaliacao'])->name('avaliacao');
 Route::post('/avaliacao/criar', [PageController::class, 'avaliacao_criar'])->name('avaliacao.criar');
@@ -66,17 +66,20 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::resource('livros_categorias', LivroCategoriaController::class)->except(['show']);
         Route::resource('noticias', NoticiaController::class);
         Route::get('/livros_categorias/{id}', [LivroCategoriaController::class, 'index'])
-        ->name('livros_categorias.index');
+            ->name('livros_categorias.index');
         Route::get('/livros_categorias/create/{livroId}', [LivroCategoriaController::class, 'create'])
-    ->name('livros_categorias.create');
-    Route::post('/livros_categorias/{livroId}', [LivroCategoriaController::class, 'store'])
-    ->name('livros_categorias.store');
+            ->name('livros_categorias.create');
+        Route::post('/livros_categorias/{livroId}', [LivroCategoriaController::class, 'store'])
+            ->name('livros_categorias.store');
         Route::delete('/livros_categorias/{livro}/{categoria}', [LivroCategoriaController::class, 'destroy'])
-        ->name('livros_categorias.destroy');
+            ->name('livros_categorias.destroy');
 
         Route::resource('categorias', CategoriaController::class);
         Route::resource('pedidos', PedidoController::class);
         Route::resource('eventos/{evento}/evento_fotos', EventoPhotoController::class)->parameters(['evento_fotos' => 'foto']);
         Route::resource('avaliacoes', AvaliacaoController::class)->parameters(['avaliacoes' => 'avaliacao']);
     });
+
+    Route::post('/enviar-pedido', [PedidoController::class, 'pedido'])->name('enviar-pedido');
+    Route::get('/pedido_livro', [PageController::class, 'pedido_livro'])->name('pedido_livro');
 });
