@@ -13,6 +13,7 @@ use App\Http\Controllers\AvaliacaoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\EventoPhotoController;
 use App\Http\Controllers\LivroCategoriaController;
+use App\Http\Controllers\InteresseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,4 +83,5 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::post('/enviar-pedido', [PedidoController::class, 'pedido'])->name('enviar-pedido');
     Route::get('/pedido_livro', [PageController::class, 'pedido_livro'])->name('pedido_livro');
+    Route::resource('interesses', InteresseController::class);
 });
