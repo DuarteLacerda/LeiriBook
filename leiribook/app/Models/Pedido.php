@@ -12,7 +12,7 @@ class Pedido extends Model
     protected $fillable = ['titulo', 'descricao', 'edicao', 'foto', 'user_id'];
 
     // Relacionamento com a tabela 'users'
-    public function usuario()
+    public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }

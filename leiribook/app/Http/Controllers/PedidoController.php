@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Pedido;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class PedidoController extends Controller
@@ -49,9 +50,15 @@ class PedidoController extends Controller
 
     public function showPedidos()
     {
-        $pedidos = Pedido::with('usuario')->get();
+        // $pedidos = Pedido::with('usuario')->get();
 
-        return view('pedidos', compact('pedidos'));
+        // return view('pedidos', compact('pedidos'));
+
+        $pedidos = Pedido::with('user')->paginate(10);
+        return view('pedidos', ['pedidos' => $pedidos]);
+
+        // $pedidos = DB::table('pedidos')->paginate(10);
+        // return view('pedidos', ['pedidos' => $pedidos]);
     }
 
 
@@ -61,6 +68,7 @@ class PedidoController extends Controller
         //
         $pedidos = Pedido::all();
         return view('_admin.pedidos.index', compact('pedidos'));
+
     }
 
     /**
