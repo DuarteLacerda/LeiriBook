@@ -72,7 +72,7 @@
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center">
                                     <a id="botao_detalhes" class="btn btn-primary btn-block gradient-custom-2 mb-3"
-                                    href="{{ route('noticia', $noticia->titulo) }}">Ver detalhes</a>
+                                    href="{{ route('noticia', $noticia->id) }}">Ver detalhes</a>
                                 </div>
                             </div>
                         </div>

@@ -22,8 +22,4 @@ class Evento extends Model
     {
         return $this->hasMany(EventoFoto::class, 'evento_id');
     }
-    public function getRouteKeyName()
-{
-    return 'nome';
-}
 }

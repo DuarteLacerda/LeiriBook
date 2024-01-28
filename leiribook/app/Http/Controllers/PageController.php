@@ -52,17 +52,13 @@ class PageController extends Controller
         return view("pedidos");
     }
 
-    public function evento($nome)
+    public function evento($id)
     {
-
-        $nome = str_replace('-', ' ', $nome);
-
         $evento = Evento::with(['fotos' => function ($query) {
             $query->orderBy('ordem');
-        }])->where('nome', $nome)->firstOrFail();
+        }])->findOrFail($id);
 
         $tituloPagina = $evento->nome;
-
 
         return view('evento', compact('evento', 'tituloPagina'));
     }
@@ -108,15 +104,15 @@ class PageController extends Controller
         return view('eventos', compact('eventos', 'eventosRecentes'));
     }
 
-    public function noticia($titulo)
+    public function noticia($id)
     {
-
-        $noticia = Noticia::where('titulo', $titulo)->firstOrFail();
+        $noticia = Noticia::findOrFail($id);
 
         $tituloPagina = $noticia->titulo;
 
         return view('noticia', compact('noticia', 'tituloPagina'));
     }
+
 
 
 

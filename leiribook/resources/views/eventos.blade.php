@@ -71,7 +71,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 @if ($eventos->isNotEmpty())
                     @foreach ($eventos as $evento)
-                        <div class="eventos-carta col mb-3  mx-xl-1" data-data-inicio="{{ $evento->data_inicio }}"
+                        <div class="eventos-carta col mb-4  mx-xl-3" data-data-inicio="{{ $evento->data_inicio }}"
                             data-data-fim="{{ $evento->data_fim }}">
                             <div id="carta_border" class="card h-100">
 
@@ -96,8 +96,7 @@
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                     <div class="text-center">
                                         <a id="botao_detalhes" class="btn btn-primary btn-block gradient-custom-2 mb-3"
-                                            href="{{ route('evento', str_replace(' ', '-', $evento->nome)) }}">Ver
-                                            detalhes</a>
+                                        href="{{ route('evento', $evento->id) }}">Ver detalhes</a>
                                     </div>
                                 </div>
                             </div>

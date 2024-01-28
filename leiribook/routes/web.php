@@ -32,9 +32,9 @@ Route::get('/politica_privacidade', [PageController::class, 'politica_privacidad
 Route::get('/termos_e_condicoes', [PageController::class, 'termos_e_condicoes'])->name('termos_e_condicoes');
 Route::get('/pedido_livro', [PageController::class, 'pedido_livro'])->name('pedido_livro');
 Route::get('/pedidos', [PageController::class, 'pedidos'])->name('pedidos');
-Route::get('/evento/{nome}', [PageController::class, 'evento'])->name('evento')->where('nome', '[\w\d\-\_]+');
+Route::get('/evento/{id}', [PageController::class, 'evento'])->name('evento');
 Route::get('/eventos/{listar?}', [PageController::class, 'eventos'])->name('eventos');
-Route::get('/noticia/{nome}', [PageController::class, 'noticia'])->name('noticia');
+Route::get('/noticia/{id}', [PageController::class, 'noticia'])->name('noticia');
 Route::get('/noticias/{listar?}', [PageController::class, 'noticias'])->name('noticias');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 Route::get('/livro_detalhe/{id}', [LivroController::class, 'livro_detalhe'])->name('livro_detalhe');
