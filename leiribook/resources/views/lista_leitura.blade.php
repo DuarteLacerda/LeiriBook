@@ -13,10 +13,10 @@
                 <label for="estado">Filtrar por interesse</label>
                 <div class="filter-container1">
                     <select name="estado" id="estado" class="select-css">
-                        <option value="all" @if($selectedEstado === 'all') selected @endif>-</option>
-                        @foreach ($interesses as $interesse)
-                            <option value="{{ $interesse->estado }}" @if($selectedEstado === $interesse->estado) selected @endif>{{ $interesse->estado }}</option>
-                        @endforeach
+                        <option value="all" {{ $selectedEstado === '-' ? 'selected' : '' }}>Não lido</option>
+                        <option value="lido" {{ $selectedEstado === 'lido' ? 'selected' : '' }}>Lido</option>
+                        <option value="a_ler" {{ $selectedEstado === 'a_ler' ? 'selected' : '' }}>A ler</option>
+                        <option value="quero_ler" {{ $selectedEstado === 'quero_ler' ? 'selected' : '' }}>Quero ler</option>
                     </select>
                     <button class="custom-btn btn-3" type="submit"><span>Filtrar</span></button>
                 </div>
