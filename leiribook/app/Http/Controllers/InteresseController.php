@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Interesse;
+use Illuminate\Http\Request;
 
 class InteresseController extends Controller
 {
