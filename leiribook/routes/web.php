@@ -39,6 +39,8 @@ Route::get('/noticia/{id}', [PageController::class, 'noticia'])->name('noticia')
 Route::get('/noticias/{listar?}', [PageController::class, 'noticias'])->name('noticias');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 Route::get('/livro_detalhe/{id}', [LivroController::class, 'livro_detalhe'])->name('livro_detalhe');
+// Update interesse
+Route::post('/livro_detalhe/{id}/update-interesse', [InteresseController::class, 'updateInteresse'])->name('livro.update.interesse');
 Route::get('/biblioteca', [LivroController::class, 'biblioteca'])->name('biblioteca');
 Route::get('/pedidos', [PedidoController::class, 'showPedidos'])->name('pedidos');
 
@@ -83,7 +85,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::post('/enviar-pedido', [PedidoController::class, 'pedido'])->name('enviar-pedido');
     Route::get('/pedido_livro', [PageController::class, 'pedido_livro'])->name('pedido_livro');
-    Route::resource('interesses', InteresseController::class);
-    Route::patch('/interesses/{livroId}', [InteresseController::class, 'updateState'])->name('interesses.updateState');
+
 
 });

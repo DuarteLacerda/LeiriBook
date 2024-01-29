@@ -79,16 +79,16 @@ class LivroController extends Controller
             // Do something with $categoriaNome
         }
         // Get the authenticated user's ID
-    $userId = auth()->id();
+        $userId = auth()->id();
 
-    // Retrieve the Interesse record for the user and livro
-    $interesse = Interesse::where('user_id', $userId)
-        ->where('livro_id', $id)
-        ->first();
+        // Retrieve the Interesse record for the user and livro
+        $interesse = Interesse::where('user_id', auth()->id())
+            ->where('livro_id', $id)
+            ->first();
         $interesseEstado = $interesse ? $interesse->estado : '-';
 
         // Return or use the retrieved data as needed
-        return view('livro_detalhe', compact('livroTitulo', 'livroDescricao', 'livroAutor', 'livroFoto', 'livroEdicao', 'categorias', 'interesseEstado'));
+        return view('livro_detalhe', compact('livroTitulo', 'livroDescricao', 'livroAutor', 'livroFoto', 'livroEdicao', 'categorias', 'interesseEstado', 'livro'));
 
 
     }
@@ -123,7 +123,7 @@ class LivroController extends Controller
             $photo_path = $request->file('foto')->store('public/books');
             $livro->foto = basename($photo_path);
         }
-        $livro->user_id=auth()->user()->id;
+        $livro->user_id = auth()->user()->id;
         $livro->save();
         return redirect()->route('admin.livros.index')->with(
             'success',
