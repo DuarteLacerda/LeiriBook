@@ -13,7 +13,7 @@
                 <label for="estado">Filtrar por interesse</label>
                 <div class="filter-container1">
                     <select name="estado" id="estado" class="select-css">
-                        <option value="all" {{ $selectedEstado === '-' ? 'selected' : '' }}>Todos</option>
+                        <option value="all" {{ $selectedEstado === 'all' ? 'selected' : '' }}>Todos</option>
                         <option value="lido" {{ $selectedEstado === 'lido' ? 'selected' : '' }}>Lido</option>
                         <option value="a_ler" {{ $selectedEstado === 'a_ler' ? 'selected' : '' }}>A ler</option>
                         <option value="quero_ler" {{ $selectedEstado === 'quero_ler' ? 'selected' : '' }}>Quero ler</option>
