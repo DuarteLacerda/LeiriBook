@@ -115,13 +115,6 @@ h2::after {
     user-select: none;
 }
 
-#copyright {
-    background-color: #d6d6d6;
-}
-
-#copyrightlink {
-    text-decoration: none;
-}
 
 @media screen and (max-width: 1300px) and (min-width: 800px) {
     #caminho{

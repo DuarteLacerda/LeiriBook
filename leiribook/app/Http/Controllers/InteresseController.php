@@ -100,7 +100,7 @@ class InteresseController extends Controller
 
         // If "all" is selected, retrieve all books without applying the estado filter
         if ($selectedEstado === 'all') {
-            $livrosUser = $user->interesses()->with('livro')->paginate(9);
+            return redirect()->route('livros.lista_leitura', ['selectedEstado' => 'all']);
 
         } else {
             // Otherwise, retrieve books based on the selected estado
@@ -109,6 +109,7 @@ class InteresseController extends Controller
 
         // Get all interests for the filter dropdown
         $interesses = Interesse::all();
+        $livrosUser->appends(['estado' => $selectedEstado]);
 
         // Return the view with the filtered results
         return view('lista_leitura', compact('livrosUser', 'interesses', 'selectedEstado'));

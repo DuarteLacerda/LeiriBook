@@ -156,58 +156,6 @@ body {
 }
 
 
-.prev,
-.next {
-    cursor: pointer;
-    padding: 15px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.8);
-    font-weight: bold;
-    font-size: 18px;
-    user-select: none;
-}
-
-.prev:hover,
-.next:hover {
-    color: black;
-    background-color: white;
-    transition: 0.6s ease;
-}
-
-.text {
-    color: white;
-    margin: auto;
-    font-size: 14pt;
-    padding: 20px;
-    width: 100%;
-    text-align: center;
-    background-color: black;
-    opacity: 0.9;
-    margin-top: -65px;
-}
-
-.dots {
-    margin-top: 15px;
-    margin-bottom: 50px;
-}
-
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.5s ease;
-    margin-top: 10px;
-}
-
-.ativo,
-.dot:hover {
-    background-color: #717171;
-}
-
 #caminho {
     text-align: left;
     margin-left: 15%;
@@ -219,23 +167,12 @@ body {
     text-decoration: none;
 }
 
-.btn-group a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
 .noticias-carta {
     box-shadow: rgb(54, 54, 54) 1px 1px 8px;
     transition: opacity 0.6s ease-in-out;
-    opacity: 0;
+    opacity: 1;
     overflow: hidden;
     position: relative;
-}
-
-.noticias-carta:not(.hidden) {
-    opacity: 1;
 }
 
 .noticias-carta:hover,
@@ -258,6 +195,10 @@ body {
     object-fit: cover;
     border-radius: 15px;
     margin-top: 25px;
+}
+
+.card-title{
+    font-weight: bold;
 }
 
 .datas {
