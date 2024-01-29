@@ -84,4 +84,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('/enviar-pedido', [PedidoController::class, 'pedido'])->name('enviar-pedido');
     Route::get('/pedido_livro', [PageController::class, 'pedido_livro'])->name('pedido_livro');
     Route::resource('interesses', InteresseController::class);
+    Route::patch('/interesses/{livroId}', [InteresseController::class, 'updateState'])->name('interesses.updateState');
+
 });
