@@ -13,7 +13,7 @@
                 <label for="estado">Filtrar por interesse</label>
                 <div class="filter-container1">
                     <select name="estado" id="estado" class="select-css">
-                        <option value="all" {{ $selectedEstado === '-' ? 'selected' : '' }}>Não lido</option>
+                        <option value="all" {{ $selectedEstado === '-' ? 'selected' : '' }}>Todos</option>
                         <option value="lido" {{ $selectedEstado === 'lido' ? 'selected' : '' }}>Lido</option>
                         <option value="a_ler" {{ $selectedEstado === 'a_ler' ? 'selected' : '' }}>A ler</option>
                         <option value="quero_ler" {{ $selectedEstado === 'quero_ler' ? 'selected' : '' }}>Quero ler</option>
@@ -39,7 +39,7 @@
                 @empty
                     <p>Não há livros</p>
                 @endforelse
-
+                {{ $livrosUser->links() }}
             </div>
         </div>
     </div>
