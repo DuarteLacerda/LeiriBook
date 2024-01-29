@@ -14,7 +14,7 @@ class LivroController extends Controller
     public function biblioteca()
     {
         $categorias = Categoria::all();
-        $livros = Livro::all();
+        $livros = Livro::paginate(9);
         return view('biblioteca', compact('categorias', 'livros'));
     }
     public function filterByGenre(Request $request)
@@ -27,10 +27,10 @@ class LivroController extends Controller
             } else {
                 $livros = Livro::whereHas('categorias', function ($query) use ($genre) {
                     $query->where('nome', $genre);
-                })->get();
+                })->paginate(9);
             }
         } else {
-            $livros = Livro::all();
+            $livros = Livro::paginate(9);
             $genre = 'all';
         }
 
