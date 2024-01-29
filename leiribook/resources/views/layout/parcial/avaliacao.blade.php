@@ -1,11 +1,10 @@
-{{-- no fim de tudo tirar a rota da pag web.php e tirar o extends('layout.master') e tirar as sections @section('title',
-'LeiriBook - Avaliação')
+{{-- no fim de tudo tirar a rota da pag web.php e tirar o extends('layout.master') e tirar as sections @section('title', 'LeiriBook - Avaliação')
 @section('styles') e tirar a section dos scripts, as ligacoes dos links e dos scripts tem que ser feitas na pagina do
 daniel ribeiro --}}
 @extends('layout.master')
 @section('title', 'LeiriBook - Avaliação')
 @section('styles')
-<link rel="stylesheet" href="{{ asset('css/vanessa.avaliacao.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/vanessa.avaliacao.css') }}">
 @endsection
 @section('content')
     <div class="container-ratings">
@@ -38,8 +37,8 @@ daniel ribeiro --}}
 
                     </div>
                     @error('livro_id')
-                            <div class="text-danger d-block">{{ $message }}</div>
-                        @enderror
+                        <div class="text-danger d-block">{{ $message }}</div>
+                    @enderror
                     <h1>Como classificas o livro?</h1>
                     <div class="ratings-container">
                         <fieldset class="rating">
@@ -51,9 +50,9 @@ daniel ribeiro --}}
                                 {{ old('rating', $avaliacao->nivel) == '4' ? 'checked' : '' }} /><label class="full"
                                 for="star4" title="4 stars"></label>
 
-                            <input type="radio" id="star3" name="rating"
-                                value="3" {{ old('rating', $avaliacao->nivel) == '3' ? 'checked' : '' }} /><label
-                                class="full" for="star3" title="3 stars"></label>
+                            <input type="radio" id="star3" name="rating" value="3"
+                                {{ old('rating', $avaliacao->nivel) == '3' ? 'checked' : '' }} /><label class="full"
+                                for="star3" title="3 stars"></label>
 
                             <input type="radio" id="star2" name="rating" value="2"
                                 {{ old('rating', $avaliacao->nivel) == '2' ? 'checked' : '' }} /><label class="full"
@@ -82,5 +81,5 @@ daniel ribeiro --}}
     </div>
 @endsection
 @section('scripts')
-<script src="{{ asset('js/vanessa.avaliacao.js') }}"></script>
+    <script src="{{ asset('js/vanessa.avaliacao.js') }}"></script>
 @endsection
