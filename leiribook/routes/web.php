@@ -50,6 +50,7 @@ Route::post('/avaliacao/criar', [PageController::class, 'avaliacao_criar'])->nam
 
 Route::get('/books/filter', [LivroController::class, 'filterByGenre'])->name('filter.books');
 
+
 Auth::routes(['register' => true, 'verify' => true]);
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/avaliacao', [PageController::class, 'avaliacao'])->name('avaliacao');
@@ -85,6 +86,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::post('/enviar-pedido', [PedidoController::class, 'pedido'])->name('enviar-pedido');
     Route::get('/pedido_livro', [PageController::class, 'pedido_livro'])->name('pedido_livro');
-
+    Route::resource('interesses', InteresseController::class);
+    Route::get('/lista-leitura', [InteresseController::class, 'list'])->name('livros.lista_leitura');
+    Route::get('/lista-leitura/filterInteresse', [InteresseController::class, 'filterByInteresse'])->name('filter.interesses');
+    Route::patch('/interesses/{livroId}', [InteresseController::class, 'updateState'])->name('interesses.updateState');
 
 });
