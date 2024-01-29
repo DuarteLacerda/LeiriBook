@@ -17,23 +17,23 @@ class PedidoController extends Controller
     public function pedido(PedidoRequest $request)
     {
         // Validate the form data using the PedidoRequest
-        $validatedData = $request->validated();
+        $fields = $request->validated();
+
+        $pedido = new Pedido();
+        $pedido->fill($fields);
 
         // Handle image upload if provided
-        $imagemPath = $request->file('imagem')->store('images/imagem_pedidos', 'public');
+        if ($request->hasFile('foto')) {
+            $photo_path = $request->file('foto')->store('public/images/imagem_pedidos');
+            $pedido->foto = basename($photo_path);
+        }
+
 
         // Hardcode user_id for now (replace with actual user ID later)
-        $user = Auth::user();
-        $user_id = $user->id;
+        $pedido->user_id = auth()->user()->id;
 
         // Store the form data in the database
-        Pedido::create([
-            'titulo' => $validatedData['titulo'],
-            'descricao' => $validatedData['descricao'],
-            'edicao' => $validatedData['edicao'],
-            'foto' => $imagemPath,
-            'user_id' => $user_id,
-        ]);
+        $pedido->save();
 
         // Redirect or do additional processing as needed
         return redirect()->back()->with('success', 'Pedido enviado com sucesso!');
@@ -84,7 +84,9 @@ class PedidoController extends Controller
             if ($pedido->foto == basename($request->file('foto'))) {
                 Storage::disk('public')->delete('images/imagem_pedidos/' . $pedido->foto);
             }
-            $photo_path = $request->file('foto')->store('public/images/imagem_pedidos/');
+            // $photo_path = $request->file('foto')->store('public/images/imagem_pedidos');
+            // $photo_path = $request->file('imagem')->store('images/imagem_pedidos', 'public');
+            $photo_path = $request->file('foto')->store('public/images/imagem_pedidos');
             $pedido->foto = basename($photo_path);
         }
         $pedido->save();

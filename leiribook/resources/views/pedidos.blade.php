@@ -31,7 +31,7 @@
             @foreach ($pedidos as $pedido)
                 <div class="pedido-card list-card">
                     <div class="pedido-foto">
-                        <img src="{{ asset('storage/' . $pedido->foto) }}" alt="{{ $pedido->titulo }}">
+                        <img src="{{ asset('storage/images/imagem_pedidos/' . $pedido->foto) }}" alt="{{ $pedido->titulo }}">
                     </div>
                     <div class="pedido-info">
                         <h4 class="card-title">{{ $pedido->titulo }}</h4>
