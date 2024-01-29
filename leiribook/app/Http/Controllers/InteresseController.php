@@ -108,5 +108,34 @@ class InteresseController extends Controller
         return redirect()->route('interesses.index')->with('success', 'Interesse eliminado com sucesso!');
     }
 
+    public function list(){
+        $user = auth()->user();
+        $livrosUser = $user->interesses()->with('livro')->get();
+        $interesses = Interesse::all();
+        $selectedEstado = "all";
+        return view('lista_leitura', compact('livrosUser','interesses','selectedEstado'));
 
+    }
+    public function filterByInteresse(Request $request)
+{
+    // Get the authenticated user
+    $user = auth()->user();
+
+    // Get the selected estado from the form
+    $selectedEstado = $request->input('estado');
+
+    // If "all" is selected, retrieve all books without applying the estado filter
+    if ($selectedEstado === 'all') {
+        $livrosUser = $user->interesses()->with('livro')->get();
+    } else {
+        // Otherwise, retrieve books based on the selected estado
+        $livrosUser = $user->interesses()->where('estado', $selectedEstado)->with('livro')->get();
+    }
+
+    // Get all interests for the filter dropdown
+    $interesses = Interesse::all();
+
+    // Return the view with the filtered results
+    return view('lista_leitura', compact('livrosUser', 'interesses','selectedEstado'));
+}
 }
