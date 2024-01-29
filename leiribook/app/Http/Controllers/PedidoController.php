@@ -14,22 +14,13 @@ use Illuminate\Support\Facades\DB;
 
 class PedidoController extends Controller
 {
-    public function pedido(Request $request)
+    public function pedido(PedidoRequest $request)
     {
-        // Validate the form data
-        $request->validate([
-            'titulo' => 'required|string',
-            'descricao' => 'required|string',
-            'edicao' => 'required|integer',
-            'imagem' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust file types and size as needed
-        ]);
+        // Validate the form data using the PedidoRequest
+        $validatedData = $request->validated();
 
         // Handle image upload if provided
-        if ($request->hasFile('imagem')) {
-            $imagemPath = $request->file('imagem')->store('images/imagem_pedidos', 'public');
-        } else {
-            $imagemPath = null;
-        }
+        $imagemPath = $request->file('imagem')->store('images/imagem_pedidos', 'public');
 
         // Hardcode user_id for now (replace with actual user ID later)
         $user = Auth::user();
@@ -37,9 +28,9 @@ class PedidoController extends Controller
 
         // Store the form data in the database
         Pedido::create([
-            'titulo' => $request->input('titulo'),
-            'descricao' => $request->input('descricao'),
-            'edicao' => $request->input('edicao'),
+            'titulo' => $validatedData['titulo'],
+            'descricao' => $validatedData['descricao'],
+            'edicao' => $validatedData['edicao'],
             'foto' => $imagemPath,
             'user_id' => $user_id,
         ]);
@@ -93,7 +84,7 @@ class PedidoController extends Controller
             if ($pedido->foto == basename($request->file('foto'))) {
                 Storage::disk('public')->delete('images/imagem_pedidos/' . $pedido->foto);
             }
-            $photo_path = $request->file('foto')->store('public/users_photos');
+            $photo_path = $request->file('foto')->store('public/images/imagem_pedidos/');
             $pedido->foto = basename($photo_path);
         }
         $pedido->save();
