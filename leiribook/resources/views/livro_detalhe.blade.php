@@ -20,23 +20,29 @@
                 @if (count($categorias) > 1)
                     @foreach ($categorias as $categoria)
                         {{ $categoria->nome }},
-
-            @endforeach
-        </p>
+                    @endforeach
+            </p>
         @else
             @foreach ($categorias as $categoria)
                 {{ $categoria->nome }}
             @endforeach
             @endif
-            <br><select name="estado" id="estado" class="select-css">
-                <option value="-" {{ $interesseEstado === '-' ? 'selected' : '' }}>Não lido</option>
-                <option value="lido" {{ $interesseEstado === 'lido' ? 'selected' : '' }}>Lido</option>
-                <option value="a_ler" {{ $interesseEstado === 'a_ler' ? 'selected' : '' }}>A ler</option>
-                <option value="quero_ler" {{ $interesseEstado === 'quero_ler' ? 'selected' : '' }}>Quero ler</option>
-            </select>
-</p>
+            <br>
+
+            <form action="{{ route('livro.update.interesse', ['id' => $livro->id]) }}" method="post">
+                @csrf
+                <select name="estado" id="estado" class="select-css" onchange="this.form.submit()">
+                    <option value="-" {{ $interesseEstado === '-' ? 'selected' : '' }}>Não lido</option>
+                    <option value="lido" {{ $interesseEstado === 'lido' ? 'selected' : '' }}>Lido</option>
+                    <option value="a_ler" {{ $interesseEstado === 'a_ler' ? 'selected' : '' }}>A ler</option>
+                    <option value="quero_ler" {{ $interesseEstado === 'quero_ler' ? 'selected' : '' }}>Quero ler</option>
+                </select>
+            </form>
 
 
         </div>
     </div>
+@section('scripts')
+    <script src="{{ asset('js/daniel.js') }}"></script>
+@endsection
 @endsection

@@ -10,29 +10,28 @@ use App\Http\Requests\LivrosCategoriasRequest;
 
 class LivroCategoriaController extends Controller
 {
-    //
+
     public function index($id)
     {
-        //
-        // Retrieve the specific book and its associated genres/categories
+
         $livro = Livro::with('categorias')->find($id);
 
-        // Pass the data to the view
+
         return view('_admin.livros_categorias.index', compact('livro'));
     }
 
     public function create($livroId){
 
-        // Get the livro
+
     $livro = Livro::with('categorias')->find($livroId);
 
-    // Get all categories
+
     $allCategorias = Categoria::all();
 
-    // Get the categories that the livro doesn't have
+
     $categoriasNotInLivro = $allCategorias->diff($livro->categorias);
 
-    // Pass the data to the view
+
     return view('_admin.livros_categorias.create', compact('livro', 'categoriasNotInLivro'));
 
     }
@@ -41,7 +40,7 @@ class LivroCategoriaController extends Controller
 {
     $validatedData = $request->validated();
 
-    // Create a new LivroCategoria instance
+
     $livroCategoria = new LivroCategoria();
     $livroCategoria->livro_id = $livroId;
     $livroCategoria->categoria_id = $validatedData['categoria_id'];
@@ -52,7 +51,7 @@ class LivroCategoriaController extends Controller
 
     public function destroy(Livro $livro, Categoria $categoria)
     {
-        //
+
 
         $livro->categorias()->detach($categoria->id);
 

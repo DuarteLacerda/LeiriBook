@@ -13,6 +13,7 @@ use App\Http\Controllers\AvaliacaoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\EventoPhotoController;
 use App\Http\Controllers\LivroCategoriaController;
+use App\Http\Controllers\InteresseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,8 @@ Route::get('/noticia/{id}', [PageController::class, 'noticia'])->name('noticia')
 Route::get('/noticias/{listar?}', [PageController::class, 'noticias'])->name('noticias');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 Route::get('/livro_detalhe/{id}', [LivroController::class, 'livro_detalhe'])->name('livro_detalhe');
+// Update interesse
+Route::post('/livro_detalhe/{id}/update-interesse', [InteresseController::class, 'updateInteresse'])->name('livro.update.interesse');
 Route::get('/biblioteca', [LivroController::class, 'biblioteca'])->name('biblioteca');
 Route::get('/pedidos', [PedidoController::class, 'showPedidos'])->name('pedidos');
 
@@ -46,6 +49,7 @@ Route::get('/avaliacao', [PageController::class, 'avaliacao'])->name('avaliacao'
 Route::post('/avaliacao/criar', [PageController::class, 'avaliacao_criar'])->name('avaliacao.criar');
 
 Route::get('/books/filter', [LivroController::class, 'filterByGenre'])->name('filter.books');
+
 
 Auth::routes(['register' => true, 'verify' => true]);
 Route::group(['middleware' => ['auth', 'verified']], function () {
@@ -82,4 +86,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::post('/enviar-pedido', [PedidoController::class, 'pedido'])->name('enviar-pedido');
     Route::get('/pedido_livro', [PageController::class, 'pedido_livro'])->name('pedido_livro');
+    Route::resource('interesses', InteresseController::class);
+    Route::get('/lista-leitura', [InteresseController::class, 'list'])->name('livros.lista_leitura');
+    Route::get('/lista-leitura/filterInteresse', [InteresseController::class, 'filterByInteresse'])->name('filter.interesses');
+    Route::patch('/interesses/{livroId}', [InteresseController::class, 'updateState'])->name('interesses.updateState');
+
 });

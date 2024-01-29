@@ -40,7 +40,7 @@
                 @empty
                     <p>Não há livros</p>
                 @endforelse
-
+                {{ $livros->links() }}
                 <!--<div class="book">
                                 <div class="cover">
                                     <img src="https://alysbcohen.files.wordpress.com/2015/01/little-princess-book-cover.jpg">
