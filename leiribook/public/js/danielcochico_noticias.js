@@ -17,6 +17,6 @@ function topFunction() {
 
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
-        document.querySelector('.container-eventos').classList.add('show');
+        document.querySelector('.container-noticias').classList.add('show');
     }, 1);
 });

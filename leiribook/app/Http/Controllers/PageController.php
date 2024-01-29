@@ -122,7 +122,7 @@ class PageController extends Controller
             ->take(4)
             ->get();
 
-        $noticias = Noticia::orderBy('data', 'desc')->paginate(10);
+        $noticias = Noticia::orderBy('data', 'desc')->paginate(6);
 
         return view('noticias', compact('noticias', 'noticiasRecentes'));
     }

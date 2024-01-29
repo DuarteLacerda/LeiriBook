@@ -172,7 +172,7 @@ h2::after {
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
 
     #caminho {
         text-align: center;

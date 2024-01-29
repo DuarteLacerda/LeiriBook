@@ -2,6 +2,89 @@
     box-sizing: border-box;
 }
 
+
+.custom-card {
+    transition: border-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+    box-shadow: rgb(54, 54, 54) 1px 1px 8px;
+}
+
+.custom-card:hover {
+    filter: brightness(80%);
+}
+
+.custom-card:hover img {
+    filter: brightness(100%);
+    transition: filter 0.3s ease-in-out;
+}
+
+
+
+#noticias_recentes {
+    text-align: left;
+    margin-left: 5%;
+    font-size: 40pt;
+    margin-top: 75px;
+    margin-bottom: 30px;
+    text-decoration: underline lightskyblue;
+    color: rgb(80, 168, 223);
+}
+
+.mySlides {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    height: 80vh;
+    min-height: 300px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.mySlides .card {
+    position: relative;
+    height: 80vh;
+    min-height: 300px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.mySlides img {
+    object-fit: cover;
+}
+
+.mySlides .card:hover img {
+    filter: brightness(70%);
+    transition: filter 0.6s ease-in-out;
+}
+
+.mySlides .card:hover .dark-overlay {
+    opacity: 0.5;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.dark-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.mySlides .card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+#noticias_underline{
+    text-decoration: none;
+}
+
 body {
     margin: 0;
     text-align: center;
@@ -14,7 +97,7 @@ body {
 .button-container {
     position: absolute;
     top: 0;
-    bottom: 0;
+    right: 0;
     width: 100%;
     display: flex;
     align-items: center;
@@ -44,25 +127,8 @@ body {
     transition: 0.5s ease-in-out;
 }
 
-.container-eventos {
-    margin-top: 75px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.container-eventos.show {
-    opacity: 1;
-}
 
 
-.mySlides {
-    position: relative;
-    width: 100%;
-    height: 80vh;
-    min-height: 300px;
-    transition: transform 0.5s ease-in-out;
-    overflow: hidden;
-}
 
 .fade {
     animation-name: fade;
@@ -82,13 +148,13 @@ body {
 .fade:not(.show) {
     opacity: 1;
 }
-
 .slider {
     vertical-align: middle;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 
 .prev,
 .next {
@@ -108,7 +174,6 @@ body {
     transition: 0.6s ease;
 }
 
-
 .text {
     color: white;
     margin: auto;
@@ -119,14 +184,12 @@ body {
     background-color: black;
     opacity: 0.9;
     margin-top: -65px;
-
 }
 
 .dots {
     margin-top: 15px;
     margin-bottom: 50px;
 }
-
 
 .dot {
     cursor: pointer;
@@ -163,27 +226,34 @@ body {
     text-align: center;
 }
 
-.eventos-carta {
-    box-shadow: rgb(0, 47, 255) 1px 1px 8px;
-    border-radius: 15px;
+.noticias-carta {
+    box-shadow: rgb(54, 54, 54) 1px 1px 8px;
     transition: opacity 0.6s ease-in-out;
     opacity: 0;
+    overflow: hidden;
+    position: relative;
 }
 
-.eventos-carta:not(.hidden) {
+.noticias-carta:not(.hidden) {
     opacity: 1;
 }
 
-.eventos-carta:hover,
-.eventos-carta:hover #carta_border {
+.noticias-carta:hover,
+.noticias-carta:hover #carta_border {
     background-color: rgb(235, 240, 250);
+}
+
+.noticias-carta:hover #img_carta_noticias {
+    transform: scale(1.05);
+    transition: transform 0.6s ease-in-out;
+    filter: brightness(70%);
 }
 
 #carta_border {
     border: none;
 }
 
-#img_carta_eventos {
+#img_carta_noticias {
     height: 200px;
     object-fit: cover;
     border-radius: 15px;
@@ -195,113 +265,144 @@ body {
     margin-top: 5px;
 }
 
-#botao_evento {
+#botao_noticia {
     margin-top: 25px;
     margin-bottom: 25px;
     user-select: none;
 }
 
 @media screen and (max-width: 1300px) and (min-width: 1000px) {
-    .text{
+    .mySlides .card-body {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .text {
         font-size: 16pt;
     }
 
-    #caminho{
+    #caminho {
         font-size: 22pt;
         text-align: center;
         margin-left: 0;
     }
 
-    #datas_botoes{
+    #datas_botoes {
         font-size: 20pt;
     }
 
-    #titulo_evento{
+    #titulo_noticia {
         font-size: 24pt;
     }
 
-    .datas{
+    .datas {
         font-size: 20pt;
     }
 
-    #botao_detalhes{
+    #botao_detalhes {
         font-size: 16pt;
     }
 
-    #botao_eventos{
+    #botao_noticias {
         font-size: 18pt;
     }
-
 }
 
 @media screen and (max-width: 1000px) and (min-width: 900px) {
-    .text{
+    .mySlides .card-body {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .text {
         font-size: 16pt;
     }
 
-    #caminho{
+    #caminho {
         font-size: 20pt;
         text-align: center;
         margin-left: 0;
     }
 
-    #datas_botoes{
+    #datas_botoes {
         font-size: 18pt;
     }
 
-    #titulo_evento{
+    #titulo_noticia {
         font-size: 24pt;
     }
 
-    .datas{
+    .datas {
         font-size: 18pt;
     }
 
-    #botao_detalhes{
+    #botao_detalhes {
         font-size: 18pt;
     }
 
-    #botao_eventos{
+    #botao_noticias {
         font-size: 16pt;
     }
-
 }
 
 @media screen and (max-width: 900px) and (min-width: 768px) {
-    .text{
+    .mySlides .card-body {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .text {
         font-size: 16pt;
     }
 
-    #caminho{
+    #caminho {
         font-size: 18pt;
         text-align: center;
         margin-left: 0;
     }
 
-    #datas_botoes{
+    #datas_botoes {
         font-size: 16pt;
     }
 
-    #titulo_evento{
+    #titulo_noticia {
         font-size: 20pt;
     }
 
-    .datas{
+    .datas {
         font-size: 16pt;
     }
 
-    #botao_detalhes{
+    #botao_detalhes {
         font-size: 16pt;
     }
 
-    #botao_eventos{
+    #botao_noticias {
         font-size: 16pt;
     }
-
 }
 
 @media only screen and (max-width: 768px) {
+    #noticias_recentes {
+        text-align: center;
+        margin-left: 0%;
+        font-size: 40pt;
+    }
+    .dark-overlay {
+        height: 40%;
+    }
+    .mySlides .card {
+        height: 40vh;
+        min-height: 200px;
+    }
+    .mySlides .card-body {
+        padding: 0px;
+    }
+    .mySlides .card-body h5 {
+        font-size: 18px;
+    }
 
+    .mySlides .card-body p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
     .mySlides {
         vertical-align: middle;
         width: 100%;
@@ -321,8 +422,8 @@ body {
     }
 
     .prev,
-    .next{
-        font-size: 14px
+    .next {
+        font-size: 14px;
     }
 
     #caminho {
@@ -331,65 +432,100 @@ body {
         font-size: 14pt;
     }
 
-    #datas_botoes{
+    #datas_botoes {
         font-size: 14pt;
     }
 
-    #titulo_evento{
+    #titulo_noticia {
         font-size: 16pt;
     }
 
-    .datas{
+    .datas {
         font-size: 14pt;
     }
-
 }
 
 @media screen and (max-width: 400px) and (min-width: 370px) {
-
-    .datas{
+    #noticias_recentes {
+        text-align: center;
+        margin-left: 0%;
+        font-size: 20pt;
+    }
+    .mySlides .card {
+        height: 60vh;
+        min-height: 200px;
+    }
+    .mySlides .card-body {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .datas {
         font-size: 13pt;
     }
 }
 
 @media only screen and (max-width: 370px) {
-
-    .datas{
+    #noticias_recentes {
+        text-align: center;
+        margin-left: 0%;
+        font-size: 20pt;
+    }
+    .mySlides .card {
+        height: 60vh;
+        min-height: 200px;
+    }
+    .mySlides .card-body {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .datas {
         font-size: 11.5pt;
     }
 }
 
 @media screen and (max-width: 300px) and (min-width: 100px) {
-    .text{
+    #noticias_recentes {
+        text-align: center;
+        margin-left: 0%;
+        font-size: 20pt;
+    }
+    .mySlides .card {
+        height: 60vh;
+        min-height: 200px;
+    }
+    .mySlides .card-body {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .text {
         font-size: 10pt;
     }
 
-    #caminho{
+    #caminho {
         font-size: 10pt;
         text-align: center;
         margin-left: 0;
     }
 
-    #datas_botoes{
+    #datas_botoes {
         font-size: 8pt;
     }
 
-    #titulo_evento{
+    #titulo_noticia {
         font-size: 11pt;
     }
 
-    .datas{
+    .datas {
         font-size: 12pt;
     }
 
-    #botao_detalhes{
+    #botao_detalhes {
         font-size: 10pt;
         margin: auto 0;
         justify-content: center;
     }
 
-    #botao_eventos{
+    #botao_noticias {
         font-size: 10pt;
     }
-
 }

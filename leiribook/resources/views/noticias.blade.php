@@ -12,31 +12,55 @@
 
     <button onclick="topFunction()" id="myBtn" title="Ir para cima"><i class="fa-solid fa-arrow-up"></i></button>
 
-    <div class="container-evento hide-content">
-        <!-- ======= Event Section ======= -->
+    <h1 id="noticias_recentes">Notícias Recentes</h1>
+
+    <div class="container-fluid hide-content">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-8 mb-3">
                 <div id="sliders" class="mb-3">
                     @foreach ($noticiasRecentes->take(1) as $index => $noticia)
-                    <div class="mySlides fade">
-                        <img class="slider" src="{{ asset('storage/noticias/' . $noticia->foto) }}" alt="" />
-                        <div class="text">{{ $noticia->titulo }} | {{ date('d-m-y', strtotime($noticia->data)) }}</div>
-                    </div>
-                @endforeach
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="row">
-                    @foreach ($noticiasRecentes->slice(1, 3) as $noticia)
-                        <div class="col-md-12 mb-3">
-                            <img src="{{ asset('storage/noticias/' . $noticia->foto) }}" alt="" class="img-fluid" />
-                            <div class="text">{{ $noticia->titulo }} | {{ date('d-m-y', strtotime($noticia->data)) }}</div>
-                        </div>
+                        <a href="{{ route('noticia', ['id' => $noticia->id]) }}" class="mySlides fade position-relative">
+                            <div class="card position-relative">
+                                <img class="card" src="{{ asset('storage/noticias/' . $noticia->foto) }}" alt="Featured News Image">
+                                <div class="dark-overlay"></div>
+                                <div class="card-body text-white position-absolute bottom-0 start-0">
+                                    <h5 class="card-title">{{ $noticia->titulo }}</h5>
+                                    <p class="card-text">{{ date('d-m-y', strtotime($noticia->data)) }}</p>
+                                </div>
+                            </div>
+                        </a>
                     @endforeach
                 </div>
             </div>
+
+            <div class="col-lg-4">
+                @foreach ($noticiasRecentes->slice(1, 3) as $noticia)
+                <a id="noticias_underline" href="{{ route('noticia', ['id' => $noticia->id]) }}" class="row mb-3">
+                    <div class="col-12">
+                        <div class="card h-100 custom-card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img src="{{ asset('storage/noticias/' . $noticia->foto) }}" alt="Small News Image" class="img-fluid">
+                                    </div>
+                                    <div class="col-8">
+                                        <h6 class="card-title">{{ $noticia->titulo }}</h6>
+                                        <p class="card-text">{{ date('d-m-y', strtotime($noticia->data)) }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            @endforeach
+
+            </div>
+
         </div>
     </div>
+
+
+
 
 
 
@@ -51,28 +75,30 @@
         <div class="d-flex justify-content-center mt-4">
             {{ $noticias->withQueryString()->links() }}
         </div>
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div class="row row-cols-1 row-cols-md-1 row-cols-xl-3 justify-content-center">
             @if ($noticias->isNotEmpty())
                 @foreach ($noticias as $noticia)
-                    <div class="eventos-carta col mb-3  mx-xl-1" data-data="{{ $noticia->data }}">
+                    <div class="noticias-carta col mb-3 mx-xl-1" data-data="{{ $noticia->data }}">
                         <div id="carta_border" class="card h-100">
-
-                            <img class="card-img-top" id="img_carta_eventos"
-                                src="{{ asset('storage/noticias/' . $noticia->foto) }}" alt="..." />
-
-                            <div class="card-body p-4">
-                                <div class="text-center">
-
-                                    <h5 id="titulo_evento" class="fw-bolder">{{ $noticia->titulo }}</h5>
-                                    <label class="datas" id="data-inicio">De:
-                                        {{ date('d-m-y', strtotime($noticia->data)) }}</label>
+                            <div class="row g-0">
+                                <div class="col-sm-6">
+                                    <img class="card-img-top" id="img_carta_noticias"
+                                        src="{{ asset('storage/noticias/' . $noticia->foto) }}" alt="..." />
                                 </div>
-                            </div>
-
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center">
-                                    <a id="botao_detalhes" class="btn btn-primary btn-block gradient-custom-2 mb-3"
-                                    href="{{ route('noticia', $noticia->id) }}">Ver detalhes</a>
+                                <div class="col-sm-6">
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 id="titulo_noticia" class="fw-bolder">{{ $noticia->titulo }}</h5>
+                                            <label class="datas" id="data-inicio">De:
+                                                {{ date('d-m-y', strtotime($noticia->data)) }}</label>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center">
+                                            <a id="botao_detalhes" class="btn btn-primary gradient-custom-2"
+                                                href="{{ route('noticia', $noticia->id) }}">Ver detalhes</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +113,9 @@
         </div>
     </div>
 
-    <div id="botao_evento" class="text-center"><a id="botao_eventos" class="btn btn-dark btn-block gradient-custom-2 mb-3"
+
+
+    <div id="botao_noticia" class="text-center"><a id="botao_noticias" class="btn btn-dark btn-block gradient-custom-2 mb-3"
             href="{{ route('home') }}">Voltar à página principal</a>
     </div>
     <hr>

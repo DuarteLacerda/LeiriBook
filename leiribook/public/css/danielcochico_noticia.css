@@ -25,10 +25,9 @@ body {
     transition: 0.5s ease-in-out;
 }
 
-.container-evento {
+.container-noticia {
     margin-top: 90px;
 }
-
 
 #caminho {
     text-align: left;
@@ -44,8 +43,14 @@ body {
 #titulo {
     text-align: left;
     margin-left: 5%;
-    font-size: 40pt;
+    font-size: 30pt;
     margin-bottom: 50px;
+}
+
+#img_noticia{
+    height: 400px;
+    width: auto;
+    margin-bottom: 40px;
 }
 
 .container {
@@ -59,41 +64,14 @@ body {
     margin-top: 20px;
 }
 
-.splide {
-    margin: 0 auto;
-    z-index: 0;
+#data{
+    font-size: 14pt;
+    text-align: left;
+    margin-left: 5%;
+    font-weight: bold;
+    margin-bottom: 50px;
 }
 
-.thumbnails {
-    display: flex;
-    margin: 1rem auto 0;
-    padding: 0;
-    justify-content: center;
-    margin-bottom: 25px;
-}
-
-.thumbnail {
-    width: 70px;
-    height: 70px;
-    overflow: hidden;
-    list-style: none;
-    margin: 0 0.2rem;
-    cursor: pointer;
-    opacity: 0.3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.thumbnail.is-active {
-    opacity: 1;
-}
-
-.thumbnail img {
-    width: 100%;
-    height: 80%;
-    object-fit: cover;
-}
 
 #detalhes {
     text-align: start;
@@ -133,7 +111,7 @@ h2::after {
     font-size: 14pt;
 }
 
-#botao_evento {
+#botao_noticia {
     user-select: none;
 }
 
@@ -149,71 +127,64 @@ h2::after {
     #caminho{
         font-size: 16pt;
     }
-    #localidade{
+    #img_noticia{
+        height: 300px;
+        width: auto;
+    }
+    #data{
         font-size: 16pt;
     }
-    #local{
-        font-size: 16pt;
-    }
-    #datas{
-        font-size: 16pt;
-    }
-    #data_inicio{
-        font-size: 16pt;
-    }
-    #data_fim{
-        font-size: 16pt;
-    }
-    #botao_eventos{
+    #botao_noticias{
         font-size: 18pt;
     }
     #texto {
-        font-size: 20pt;
+        font-size: 14pt;
+    }
+    #detalhes{
+        text-align: center;
+        margin-left: 0;
+        font-size: 18pt;
+    }
+    #botao_noticias{
+        font-size: 14pt;
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
 
     #caminho {
         text-align: center;
         margin-left: 0;
-        font-size: 16pt;
+        font-size: 12pt;
     }
-
-    #localidade{
+    #img_noticia{
+        height: 200px;
+        width: auto;
+    }
+    #data{
         font-size: 14pt;
     }
-    #local{
-        font-size: 14pt;
-    }
-    #datas{
-        font-size: 14pt;
-    }
-    #data_inicio{
-        font-size: 14pt;
-    }
-    #data_fim{
-        font-size: 14pt;
-    }
-    #botao_eventos{
+    #botao_noticias{
         font-size: 14pt;
     }
     #texto {
-        font-size: 14pt;
+        font-size: 12pt;
     }
 
     #titulo {
         text-align: center;
         margin-left: 0;
-        font-size: 26pt;
-    }
-
-    .thumbnails {
-        margin-bottom: 50px;
+        font-size: 18pt;
     }
 
     #detalhes {
         text-align: center;
+        margin-top: 15px;
+        font-size: 22pt;
+    }
+
+    #botao_noticias{
+        font-size: 12pt;
     }
 
     h2::before,
@@ -227,25 +198,17 @@ h2::after {
     #caminho{
         font-size: 12pt;
     }
-    #localidade{
+    #img_noticia{
+        height: 150px;
+        width: auto;
+    }
+    #data{
         font-size: 10pt;
     }
-    #local{
-        font-size: 10pt;
-    }
-    #datas{
-        font-size: 10pt;
-    }
-    #data_inicio{
-        font-size: 10pt;
-    }
-    #data_fim{
-        font-size: 10pt;
-    }
-    #botao_eventos{
+    #botao_noticias{
         font-size: 10pt;
     }
     #texto {
-        font-size: 12pt;
+        font-size: 10pt;
     }
 }

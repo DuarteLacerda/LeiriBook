@@ -33,7 +33,7 @@
                         {{ date('d-m-y', strtotime($evento->data_fim)) }}</div>
                     </div>
             @endforeach
-            <!-- ... other code ... -->
+
         </div>
 
             <div class="dots" style="text-align:center">
