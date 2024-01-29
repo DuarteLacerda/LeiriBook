@@ -17,7 +17,7 @@ class Interesse extends Model
         return $this->belongsTo(Livro::class, 'livro_id');
     }
 
-    // Relacionamento com a tabela 'users'
+    // Relationship with the 'users' table
     public function usuario()
     {
         return $this->belongsTo(User::class, 'user_id');
