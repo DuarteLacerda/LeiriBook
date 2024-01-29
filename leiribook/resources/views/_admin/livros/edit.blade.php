@@ -46,7 +46,7 @@
                             <h3 class="text-center title-2">Editar</h3>
                         </div>
                         <hr>
-                        <form action="{{ route('admin.livros.update', $livro) }}" method="post">
+                        <form action="{{ route('admin.livros.update', $livro) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             @include('_admin.livros.partials.add-edit')
