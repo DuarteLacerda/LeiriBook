@@ -19,6 +19,9 @@ class PedidoController extends Controller
         // Validate the form data using the PedidoRequest
         $fields = $request->validated();
 
+        // Hardcode user_id for now (replace with actual user ID later)
+        $fields['user_id'] = auth()->user()->id;
+
         $pedido = new Pedido();
         $pedido->fill($fields);
 
@@ -28,16 +31,13 @@ class PedidoController extends Controller
             $pedido->foto = basename($photo_path);
         }
 
-
-        // Hardcode user_id for now (replace with actual user ID later)
-        $pedido->user_id = auth()->user()->id;
-
         // Store the form data in the database
         $pedido->save();
 
         // Redirect or do additional processing as needed
         return redirect()->back()->with('success', 'Pedido enviado com sucesso!');
     }
+
 
     public function showPedidos()
     {

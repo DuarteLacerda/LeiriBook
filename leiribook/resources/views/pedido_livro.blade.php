@@ -11,17 +11,18 @@
     </div>
 
     <form class="form-request" action="{{ route('enviar-pedido') }}" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
         @csrf
         <!-- Coluna da Esquerda -->
         <div class="column">
             <label for="titulo">Título</label>
-            <input type="text" id="titulo" name="titulo" required>
+            <input type="text" id="titulo" name="titulo" value="{{ old('titulo') }}" required>
 
             <label for="descricao">Descrição</label>
-            <textarea id="descricao" name="descricao" rows="4" required></textarea>
+            <textarea id="descricao" name="descricao" rows="4" required>{{ old('descricao') }}</textarea>
 
             <label for="edicao">Nº de Edição</label>
-            <input type="number" id="edicao" name="edicao" required>
+            <input type="number" id="edicao" name="edicao" value="{{ old('edicao') }}" required>
         </div>
 
         <!-- Coluna da Direita -->
@@ -30,8 +31,8 @@
                 ondragleave="handleDragLeave()">
                 <div id="uploadContent">
                     <p id="uploadText">Arraste e solte a imagem aqui ou </p>
-                    <input type="file" id="imagem" name="imagem" accept="image/*" onchange="displayImage()" multiple>
-                    <label id="image-pickup" for="imagem">clique para selecionar</label>
+                    <input type="file" id="foto" name="foto" accept="image/*" onchange="displayImage()" multiple>
+                    <label id="image-pickup" for="foto">clique para selecionar</label>
                 </div>
                 <div id="previewContainer" style="position: relative; max-width: 100%; max-height: 80vh; overflow: hidden;">
                     <!-- Adiciona um botão "X" no canto superior direito da caixa de upload -->
@@ -48,6 +49,35 @@
         </div>
     </form>
 
+
+    {{-- MODALS --}}
+
+
+    {{-- Error Modal --}}
+    @if ($errors->any())
+        <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel"
+            aria-hidden="true">
+            <!-- Modal Content - Similar to the previous example -->
+        </div>
+    @endif
+
+    {{-- Success Modal --}}
+    @if (session('success'))
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
+            aria-hidden="true">
+            <!-- Modal Content - Similar to the previous example -->
+        </div>
+    @endif
+
+
+
+
+
+
+
+
+
+
     <script>
         function handleDragOver(event) {
             event.preventDefault();
@@ -62,7 +92,7 @@
             event.preventDefault();
             document.getElementById('uploadArea').classList.remove('dragover');
 
-            const fileInput = document.getElementById('imagem');
+            const fileInput = document.getElementById('foto');
             const files = event.dataTransfer.files;
 
             if (files.length > 0) {
@@ -72,7 +102,7 @@
         }
 
         function displayImage() {
-            const fileInput = document.getElementById('imagem');
+            const fileInput = document.getElementById('foto');
             const uploadContent = document.getElementById('uploadContent');
             const preview = document.getElementById('previewContainer');
             const cancelButton = document.getElementById('cancelButton');
@@ -107,7 +137,7 @@
         }
 
         function cancelUpload() {
-            const fileInput = document.getElementById('imagem');
+            const fileInput = document.getElementById('foto');
             const uploadContent = document.getElementById('uploadContent');
             const preview = document.getElementById('previewContainer');
             const cancelButton = document.getElementById('cancelButton');
@@ -128,6 +158,24 @@
             // Torna o botão de cancelar invisível
             cancelButton.style.visibility = 'hidden';
         }
+
+
+
+        //Modals
+
+        {{-- Open the Error Modal if there are any validation errors --}}
+        @if ($errors->any())
+            $(document).ready(function() {
+                $('#errorModal').modal('show');
+            });
+        @endif
+
+        {{-- Open the Success Modal if there is a success message --}}
+        @if (session('success'))
+            $(document).ready(function() {
+                $('#successModal').modal('show');
+            });
+        @endif
     </script>
 
 

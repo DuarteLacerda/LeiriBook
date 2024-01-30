@@ -27,7 +27,7 @@ class PedidoRequest extends FormRequest
             'titulo' => 'required|string',
             'descricao' => 'required|string',
             'edicao' => 'required|string',
-            'foto' => 'required', // Adapte a regra de validação para o campo 'foto' conforme necessário
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adapte a regra de validação para o campo 'foto' conforme necessário
             'user_id' => 'required', // Não é necessário exists nesta versão
         ];
     }
