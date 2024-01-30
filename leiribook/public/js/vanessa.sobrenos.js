@@ -68,35 +68,18 @@ $(document).ready(function () {
             }
         });
 
+        // avalia
+        $("#leiriBookAvalia").each(function () {
+            var offset = $(this).offset().top;
 
-
-
-        // id leiriBookDescricao
-        // $("#leiriBookDescricao").each(function () {
-        //     var offset = $(this).offset().top;
-
-        //     if (scrollPosition > offset - windowHeight + 200) {
-        //         $(this).css({
-        //             'opacity': '1',
-        //             'transform': 'translateY(0)'
-        //         });
-        //     }
-        // });
-
-        // id historia
-        // $("#leiriBookHistoria").each(function () {
-        //     var offset = $(this).offset().top;
-
-        //     if (scrollPosition > offset - windowHeight + 200) {
-        //         $(this).css({
-        //             'opacity': '1',
-        //             'transform': 'translateY(0)'
-        //         });
-        //     }
-        // });
-
-
-
+            if (scrollPosition > offset - windowHeight + 200) {
+                $(this).css({
+                    'opacity': '1',
+                    'transform': 'translateY(0)'
+                });
+            }
+        });
+       
 
         // id leiriBookEquipa
         $("#leiriBookEquipa").each(function () {
