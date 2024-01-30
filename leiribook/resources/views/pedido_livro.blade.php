@@ -68,13 +68,6 @@
     </div>
 
     <br>
-    <div class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
-        <span class="badge badge-pill badge-primary">Sucesso</span>
-        {{ session('success') }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
 
     <!-- Your Script Goes Here -->
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
@@ -181,17 +174,12 @@
         //     });
         // @endif
 
-        $(document).ready(function() {
+        @if ($errors->any())
             // Close the error modal if it exists
             $('.alert-danger .close').click(function() {
                 $(this).closest('.alert-danger').alert('close');
             });
-
-            // Close the success modal if it exists
-            $('.alert-primary .close').click(function() {
-                $(this).closest('.alert-primary').alert('close');
-            });
-        });
+        @endif
     </script>
 
 
