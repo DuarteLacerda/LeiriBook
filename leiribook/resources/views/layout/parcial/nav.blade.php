@@ -51,6 +51,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('profile', Auth::user()) }}">Perfil</a>
+                                <a class="dropdown-item" href="{{ route('livros.lista_leitura') }}">A sua lista</a>
                                 @if (Auth::user()->role == 'A')
                                     <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard</a>
                                 @endif
