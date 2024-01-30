@@ -50,30 +50,36 @@
     </form>
 
 
-    {{-- MODALS --}}
-
-
-    {{-- Error Modal --}}
-    @if ($errors->any())
-        <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel"
-            aria-hidden="true">
-            <!-- Modal Content - Similar to the previous example -->
-        </div>
-    @endif
-
-    {{-- Success Modal --}}
-    @if (session('success'))
-        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
-            aria-hidden="true">
-            <!-- Modal Content - Similar to the previous example -->
-        </div>
-    @endif
 
 
 
 
+    <br>
+    <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
+        <span class="badge badge-pill badge-danger">Error</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <ul>
+            @foreach ($errors->all() as $message)
+                <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+    </div>
 
+    <br>
+    <div class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
+        <span class="badge badge-pill badge-primary">Sucesso</span>
+        {{ session('success') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 
+    <!-- Your Script Goes Here -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/js/bootstrap.min.js"></script>
 
 
 
@@ -161,21 +167,31 @@
 
 
 
-        //Modals
+        // // Open the Error Modal if there are any validation errors
+        // @if ($errors->any())
+        //     $(document).ready(function() {
+        //         $('#errorModal').modal('show');
+        //     });
+        // @endif
 
-        {{-- Open the Error Modal if there are any validation errors --}}
-        @if ($errors->any())
-            $(document).ready(function() {
-                $('#errorModal').modal('show');
-            });
-        @endif
+        // // Open the Success Modal if there is a success message
+        // @if (session('success'))
+        //     $(document).ready(function() {
+        //         $('#successModal').modal('show');
+        //     });
+        // @endif
 
-        {{-- Open the Success Modal if there is a success message --}}
-        @if (session('success'))
-            $(document).ready(function() {
-                $('#successModal').modal('show');
+        $(document).ready(function() {
+            // Close the error modal if it exists
+            $('.alert-danger .close').click(function() {
+                $(this).closest('.alert-danger').alert('close');
             });
-        @endif
+
+            // Close the success modal if it exists
+            $('.alert-primary .close').click(function() {
+                $(this).closest('.alert-primary').alert('close');
+            });
+        });
     </script>
 
 
