@@ -72,8 +72,10 @@ class EventoController extends Controller
      */
     public function destroy(Evento $evento)
     {
-        //
+        $evento->fotos()->delete();
+
         $evento->delete();
+
         return redirect()->route('admin.eventos.index')->with(
             'success',
             'Evento eliminado com sucesso'

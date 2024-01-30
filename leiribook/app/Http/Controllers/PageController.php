@@ -87,7 +87,7 @@ class PageController extends Controller
 
         if ($listar == "passados") {
             $eventos = Evento::where('data_fim', '<', $currentDateTime)
-                ->orderBy('data_fim', 'asc')->paginate(6);
+                ->orderBy('data_fim', 'desc')->paginate(6);
         } elseif ($listar == "decorrer") {
             $eventos = Evento::where('data_fim', '>=', $currentDateTime)->where('data_inicio', '<=', $currentDateTime)
                 ->orderBy('data_fim', 'asc')->paginate(6);
@@ -96,7 +96,7 @@ class PageController extends Controller
             $eventos = Evento::where('data_inicio', '>', $currentDateTime)
                 ->orderBy('data_fim', 'asc')->paginate(6);
         } else {
-            $eventos = Evento::orderBy('data_fim', 'asc')->paginate(6);
+            $eventos = Evento::orderBy('data_fim', 'desc')->paginate(6);
         }
 
 
