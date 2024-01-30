@@ -51,7 +51,7 @@
                                     <td>{{ $pedido->id }}</td>
                                     <td class="text-left">{{ $pedido->titulo }}</td>
                                     <td>
-                                        <img style="width:50px; height:75px" src="{{ asset('storage/' . $pedido->foto) }}">
+                                        <img style="width:50px; height:75px" src="{{ asset('storage/images/imagem_pedidos/' . $pedido->foto) }}">
                                     </td>
                                     <td>
                                         <a class="btn btn-primary btn-p" data-toggle="modal" data-target="#pedidoModal"

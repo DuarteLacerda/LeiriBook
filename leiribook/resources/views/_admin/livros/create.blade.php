@@ -45,7 +45,7 @@
                             <h3 class="text-center title-2">Criar</h3>
                         </div>
                         <hr>
-                        <form action="{{ route('admin.livros.store') }}" method="post">
+                        <form action="{{ route('admin.livros.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @include('_admin.livros.partials.add-edit')
                             <div>

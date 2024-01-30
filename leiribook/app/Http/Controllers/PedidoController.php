@@ -14,39 +14,30 @@ use Illuminate\Support\Facades\DB;
 
 class PedidoController extends Controller
 {
-    public function pedido(Request $request)
+    public function pedido(PedidoRequest $request)
     {
-        // Validate the form data
-        $request->validate([
-            'titulo' => 'required|string',
-            'descricao' => 'required|string',
-            'edicao' => 'required|integer',
-            'imagem' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust file types and size as needed
-        ]);
-
-        // Handle image upload if provided
-        if ($request->hasFile('imagem')) {
-            $imagemPath = $request->file('imagem')->store('images/imagem_pedidos', 'public');
-        } else {
-            $imagemPath = null;
-        }
+        // Validate the form data using the PedidoRequest
+        $fields = $request->validated();
 
         // Hardcode user_id for now (replace with actual user ID later)
-        $user = Auth::user();
-        $user_id = $user->id;
+        $fields['user_id'] = auth()->user()->id;
+
+        $pedido = new Pedido();
+        $pedido->fill($fields);
+
+        // Handle image upload if provided
+        if ($request->hasFile('foto')) {
+            $photo_path = $request->file('foto')->store('public/images/imagem_pedidos');
+            $pedido->foto = basename($photo_path);
+        }
 
         // Store the form data in the database
-        Pedido::create([
-            'titulo' => $request->input('titulo'),
-            'descricao' => $request->input('descricao'),
-            'edicao' => $request->input('edicao'),
-            'foto' => $imagemPath,
-            'user_id' => $user_id,
-        ]);
+        $pedido->save();
 
         // Redirect or do additional processing as needed
         return redirect()->back()->with('success', 'Pedido enviado com sucesso!');
     }
+
 
     public function showPedidos()
     {
@@ -93,7 +84,9 @@ class PedidoController extends Controller
             if ($pedido->foto == basename($request->file('foto'))) {
                 Storage::disk('public')->delete('images/imagem_pedidos/' . $pedido->foto);
             }
-            $photo_path = $request->file('foto')->store('public/users_photos');
+            // $photo_path = $request->file('foto')->store('public/images/imagem_pedidos');
+            // $photo_path = $request->file('imagem')->store('images/imagem_pedidos', 'public');
+            $photo_path = $request->file('foto')->store('public/images/imagem_pedidos');
             $pedido->foto = basename($photo_path);
         }
         $pedido->save();

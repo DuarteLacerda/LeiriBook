@@ -128,7 +128,7 @@ class LivroController extends Controller
             if ($livro->foto == basename($request->file('foto'))) {
                 Storage::disk('public')->delete('books/' . $livro->foto);
             }
-            $photo_path = $request->file('foto')->store('public/users_photos');
+            $photo_path = $request->file('foto')->store('public/books');
             $livro->foto = basename($photo_path);
         }
         $livro->save();
