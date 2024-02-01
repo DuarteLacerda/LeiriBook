@@ -19,7 +19,7 @@
     </div>
     <div class="sec4">
         <div class="secVid">
-            <video autoplay loop controls autoplay preload="none" controlsList="nodownload"
+            <video loop controls preload="none" controlsList="nodownload"
                 poster="{{ asset('images/promoVideo.jpg') }}" width="100%">
                 <source src="{{ asset('images/promoVideo.mp4') }}" type="video/mp4">
             </video>
@@ -61,7 +61,7 @@
                     <span class="title">
                         {{ $livro->titulo }}
                     </span>
-                    <a class="action" href="#">
+                    <a class="action" href="{{ route('livro_detalhe', $livro->id) }}">
                         Saber mais
                         <span aria-hidden="true">
                             <i class="fa-solid fa-arrow-right-long"></i>
