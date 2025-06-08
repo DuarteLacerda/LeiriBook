@@ -1,7 +1,7 @@
 # Leiribook 📚
 
-**Mar 2023 – Jun 2023**  
-*University group project – 1st year, 2nd semester*
+**Sep 2024 – Jan 2025**  
+*University group project – 2nd year, 1st semester*
 
 Leiribook is a web project simulating a bookstore. It was developed as part of a university course to showcase a fully functional site with book presentation, filtering, and CRUD (Create, Read, Update, Delete) operations.
 
